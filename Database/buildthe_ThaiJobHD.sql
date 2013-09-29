@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 29, 2013 at 03:19 PM
+-- Generation Time: Sep 30, 2013 at 12:02 AM
 -- Server version: 5.1.67
 -- PHP Version: 5.3.27
 
@@ -23,10 +23,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `buildthedot_jobhd_ad`
+-- Table structure for table `buildthedot_thaijobhd_ad`
 --
 
-CREATE TABLE IF NOT EXISTS `buildthedot_jobhd_ad` (
+CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_ad` (
   `PictureID` int(11) NOT NULL,
   `AdPic` text COLLATE utf8_unicode_ci NOT NULL,
   `AdLink` text COLLATE utf8_unicode_ci NOT NULL,
@@ -36,10 +36,10 @@ CREATE TABLE IF NOT EXISTS `buildthedot_jobhd_ad` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `buildthedot_jobhd_job`
+-- Table structure for table `buildthedot_thaijobhd_job`
 --
 
-CREATE TABLE IF NOT EXISTS `buildthedot_jobhd_job` (
+CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_job` (
   `JobID` int(11) NOT NULL AUTO_INCREMENT,
   `CompanyName` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
   `PositionThai` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
@@ -57,10 +57,10 @@ CREATE TABLE IF NOT EXISTS `buildthedot_jobhd_job` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `buildthedot_jobhd_job_attribute`
+-- Table structure for table `buildthedot_thaijobhd_job_attribute`
 --
 
-CREATE TABLE IF NOT EXISTS `buildthedot_jobhd_job_attribute` (
+CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_job_attribute` (
   `AttributeID` int(11) NOT NULL AUTO_INCREMENT,
   `JobID` int(11) NOT NULL,
   `AtrributDescription` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
@@ -70,10 +70,10 @@ CREATE TABLE IF NOT EXISTS `buildthedot_jobhd_job_attribute` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `buildthedot_jobhd_job_idea`
+-- Table structure for table `buildthedot_thaijobhd_job_idea`
 --
 
-CREATE TABLE IF NOT EXISTS `buildthedot_jobhd_job_idea` (
+CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_job_idea` (
   `CompanyID` int(11) NOT NULL AUTO_INCREMENT,
   `MainIdea` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
   `Description1` text COLLATE utf8_unicode_ci NOT NULL,
@@ -91,10 +91,10 @@ CREATE TABLE IF NOT EXISTS `buildthedot_jobhd_job_idea` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `buildthedot_jobhd_top_company`
+-- Table structure for table `buildthedot_thaijobhd_top_company`
 --
 
-CREATE TABLE IF NOT EXISTS `buildthedot_jobhd_top_company` (
+CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_top_company` (
   `TopCompanyID` int(11) NOT NULL AUTO_INCREMENT,
   `TopCompanyName` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
   `LinkAddress` text COLLATE utf8_unicode_ci NOT NULL,
@@ -107,10 +107,10 @@ CREATE TABLE IF NOT EXISTS `buildthedot_jobhd_top_company` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `buildthedot_jobhd_user_account`
+-- Table structure for table `buildthedot_thaijobhd_user_account`
 --
 
-CREATE TABLE IF NOT EXISTS `buildthedot_jobhd_user_account` (
+CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_account` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
