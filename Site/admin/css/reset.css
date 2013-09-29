@@ -16,8 +16,6 @@ address, caption, cite, code, dfn, em, strong, th, var {
 	font-weight: normal;
 }
 
-caption, th { text-align: left; }
-
 h1, h2, h3, h4, h5, h6 { font-weight: normal; }
 
 q:before, q:after { content: ''; }
@@ -58,7 +56,7 @@ body { font-size: 1em; /* Prevents an IE bug where em's scale out of proportion 
 }
 
 p {
-	margin-bottom: 1.25em; /* 20/16 */
+	/*margin-bottom: 1.25em; /* 20/16 */
 	color: #9498a1;
 }
 

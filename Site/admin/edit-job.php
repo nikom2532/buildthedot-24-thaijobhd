@@ -1,16 +1,42 @@
-<?php include("include/header.php");?>
+<?php include("include/header2.php");?>
 <?php include("include/top-bar.php");?>
-	
+<script type="text/javascript">
+<!--calendar -->
+	$(function() {
+		$( "#date_from" ).datepicker({
+			inline:true,
+			showOtherMonths:true,
+			changeMonth: true,
+			dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+			dateFormat:"yy-mm-dd",
+			onClose: function( selectedDate ) {
+				$( "#date_to" ).datepicker( "option", "minDate", selectedDate );
+				
+			}
+		});
+		$( "#date_to" ).datepicker({
+			inline:true,
+			showOtherMonths:true,
+			changeMonth: true,
+			dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+			dateFormat:"yy-mm-dd",
+			onClose: function( selectedDate ) {
+				$( "#date_from" ).datepicker( "option", "maxDate", selectedDate );
+			}
+		});
+		 
+	});
+</script>
 	<!-- HEADER -->
 	<div id="header-with-tabs">
 		
 		<div class="page-full-width cf">
 	
 			<ul id="tabs" class="left">
-				<li><a href="main.php" class="active-tab">งาน</a></li>
-				<li><a href="customer.php">ไดเดียธุรกิจ</a></li>
-				<li><a href="pdf.php">โฆษณา</a></li>
-                <li><a href="tag.php">บริษัทชั้นนำ</a></li>
+				<li><a href="job.php" class="active-tab">งาน</a></li>
+				<li><a href="business-idea.php" >ไอเดียธุรกิจ</a></li>
+				<li><a href="advertisement.php">โฆษณา</a></li>
+                <li><a href="top-company.php">บริษัทชั้นนำ</a></li>
 			</ul> <!-- end tabs -->
 			
 			<!-- company logo -->
@@ -31,7 +57,7 @@
                 	</div>
 					<div id="content-detail" class="container_12">
                     <section>
-                    	<form>
+                    	<form id="form-edit" name="form-edit">
                           <div class="grid_2">
                              <h6 class="detail-title"> ตำแหน่ง</h6>
                           </div>
@@ -70,7 +96,43 @@
                           </div>
                           <div class="grid_2">
                           	<a href="#" class="button round black">เพิ่ม</a>
+                          </div><br class="clear"/>
+                          <div class="grid_2">
+                                <h6 class="detail-title">บริษัท</h6>   
                           </div>
+                          <div class="grid_8">
+                          		<p><input type="text" id="company" name ="company" class="round"/></p>
+                          </div><br class="clear"/>
+                          <div class="grid_2">
+                                <h6 class="detail-title">ลักษณะงาน</h6>   
+                          </div>
+                          <div class="grid_8">
+                          		<p><label for="read" class="alt-label"><input type="radio" id="test" name="test" checked="checked" />
+            					Full Time
+            				</label>
+							<label for="read" class="alt-label"><input type="radio" id="test" name="test" />
+           						Part Time
+            				</label> </p>
+                          </div><br class="clear"/>
+                          <div class="grid_2">
+                                <h6 class="detail-title">เริ่ม</h6>   
+                          </div>
+                          <div class="grid_8">
+                          		<p><input name="date_from" type="text" id="date_from" class="round"/></p>
+                          </div><br class="clear"/>
+                          <div class="grid_2">
+                                <h6 class="detail-title">สิ้นสุด</h6>   
+                          </div>
+                          <div class="grid_8">
+                          		<p><input name="date_to" type="text" id="date_to" class="round"/></p>
+                          </div><br class="clear"/>
+                          <div class="grid_2">
+                                <h6 class="detail-title">งานแนะนำ</h6>   
+                          </div>
+                          <div class="grid_8">
+                          		<p><input type="checkbox" id="recommend" />แนะนำ</p>
+                          </div><br class="clear"/>
+
                           <br class="clear"/>
                           <div class="prefix_2" id="prefix_2">
                           	  <p class="center head-table grid_5">ระดับการศึกษา</p>

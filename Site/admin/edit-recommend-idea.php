@@ -8,7 +8,7 @@
 	
 			<ul id="tabs" class="left">
 				<li><a href="job.php">งาน</a></li>
-				<li><a href="reccomend-idea.php" class="active-tab">ไอเดียธุรกิจ</a></li>
+				<li><a href="business-idea.php" class="active-tab">ไอเดียธุรกิจ</a></li>
 				<li><a href="advertisement.php">โฆษณา</a></li>
                 <li><a href="top-company.php">บริษัทชั้นนำ</a></li>
 			</ul> <!-- end tabs -->
@@ -80,7 +80,18 @@
                             <div class="grid_12">
                           		<p>test.png<a href="#" class="button round black right">แก้ไข</a></p>
                             </div><br class="clear"/>
-                          </div>						
+                          </div>
+                          <div class="grid_2">
+                                <h6 class="detail-title">Status</h6>   
+                          </div>
+                          <div class="grid_8">
+                          		<p><label for="active" class="alt-label"><input type="radio" id="status" name="status" />
+            					Active
+            				</label>
+							<label for="inactive" class="alt-label"><input type="radio" id="status" name="status" />
+           						Inactive
+            				</label> </p>
+                          </div><br class="clear"/>						
             		</section>      
                      <div class="center"><a href="#" class="save-button blue round">บันทึก</a></div>
                      </form>

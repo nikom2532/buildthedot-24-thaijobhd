@@ -8,7 +8,7 @@
 	
 			<ul id="tabs" class="left">
 				<li><a href="job.php">งาน</a></li>
-				<li><a href="reccomend-idea.php">ไอเดียธุรกิจ</a></li>
+				<li><a href="business-idea.php">ไอเดียธุรกิจ</a></li>
 				<li><a href="advertisement.php">โฆษณา</a></li>
                 <li><a href="top-company.php" class="active-tab">บริษัทชั้นนำ</a></li>
 			</ul> <!-- end tabs -->
@@ -35,7 +35,7 @@
 					
 							<tr>
 								<th width="9%">ลำดับที่</th>
-								<th width="43%">ชื่อรูป</th>
+								<th width="43%">ชื่อบริษัท</th>
 								<th width="23%">ลิงค์</th>
                                 <th width="14%">สถานะ</th>
 								<th width="11%">Action</th>
