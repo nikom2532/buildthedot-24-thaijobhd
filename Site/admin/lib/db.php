@@ -1,5 +1,5 @@
 ﻿<?php
-class DB {
+class DB{
 	var $host = '';
 	var $user = '';
 	var $password = '';
@@ -31,7 +31,7 @@ class DB {
 		if (@!mysql_select_db($this -> database, $this -> conn)) {
 			return false;
 		}
-		@mysql_query("SET NAMES tis620");
+		@mysql_query("SET NAMES utf8");
 		return true;
 	}
 
@@ -71,6 +71,4 @@ class DB {
 	function freeResult() {
 		return (@mysql_free_result($this -> result));
 	}
-
 }
-?>
