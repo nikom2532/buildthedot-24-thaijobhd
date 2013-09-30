@@ -2,12 +2,6 @@
 $rootpath = "./";
 session_start();
 include ("include/header.php");
-require_once ($rootpath . "lib/db.php");
-require_once ($rootpath . "lib/conn.inc.php");
-include ($rootpath . "lib/func_date.php");
-if (!$db -> open()) {
-	die($db -> error());
-}
 include ("include/top-bar.php");
 ?><!-- HEADER asdf--><div id="header-with-tabs">
 

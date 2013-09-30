@@ -16,3 +16,10 @@
 
 	</head>
 	<body>
+<?php
+require_once ($rootpath . "lib/db.php");
+require_once ($rootpath . "lib/conn.inc.php");
+include ($rootpath . "lib/func_date.php");
+if (!$db -> open()) {
+	die($db -> error());
+}
