@@ -6,8 +6,8 @@
         </div>
         <div class="right">
         	<ul id="my-profile">
-            	<li><a href="view-profile.php" class="text-blue">Wc Fone</a></li>
-                <li><a href="#" class="text-grey">Logout</a></li>
+            	<li><a href="signin.php" class="text-blue">Sign in</a></li>
+                <li><a href="register.php" class="text-grey">Register</a></li>
             </ul>
         </div>
         <div id="top-nav" class="grid_8 prefix_1">
@@ -24,10 +24,10 @@
     <div id="content" class="container_12">
     	<div id="content-profile">
         	<div id="head-title">
-    			<h1>ฝากประวัติ <span class="text-blue">-  แก้ไขประวัติส่วนตัว</span></h1>
+    			<h1>Register</h1>
     		</div> 
             
-          	<h2><a href="#" class="button black round">เพิ่มรูป</a></h2>
+           	<h2><a href="#" class="button black round">เพิ่มรูป</a></h2>
             <p class="grid_2">ขนาด 200*200 px</p><br class="clear"/>
             
             <p class="grid_2">Lorem Ipsum</p>
@@ -151,7 +151,18 @@
             <p class="grid_2">เบอร์โทรศัพท์</p>
             <p class="grid_2"><input type="text" id="name" name ="name" class="round" /></p><br class="clear"/>
                   
-           	<p class="grid_12 center"><a href="#" class="save-button blue round">บันทึก</a></p>
+            <p class="grid_2">Username</p>
+            <p class="grid_5"><input type="text" id="name" name ="name" class="round" /><span class="text-red" id="error">error message</span></p><br class="clear"/>
+            <p class="grid_2">Password</p>
+            <p class="grid_5"><input type="password" id="name" name ="name" class="round" /><span class="text-red" id="error">error message</span></p><br class="clear"/>
+            
+             <p class="grid_2">คำถาม</p>
+            <p class="grid_5"><input type="text" id="name" name ="name" class="round" /></p><br class="clear"/>
+            <p class="grid_2">คำตอบ</p>
+            <p class="grid_5"><input type="password" id="name" name ="name" class="round" /></p><br class="clear"/>
+            
+            
+           	<p class="grid_12 center"><a href="#" class="save-button blue round">สมัครบริการ</a></p>
             
       	</div>	
     </div><!--end content -->

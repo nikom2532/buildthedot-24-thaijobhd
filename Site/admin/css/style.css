@@ -1,6 +1,3 @@
-body{
-	margin-top: -23px;
-}
 .blue {
 	background-color: #2069b4;
 	color: white;
@@ -53,6 +50,7 @@ body{
 	width: 312px;
 	text-align: center;
 	font-weight: bold;
+	margin-top:20px;
 }
 .text-blue{
 	color:#47A0D8;

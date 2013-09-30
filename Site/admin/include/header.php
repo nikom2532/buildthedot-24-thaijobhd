@@ -1,25 +1,23 @@
 <!DOCTYPE html>
+
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>CMS ThaiJobHD</title>
-		<!-- Stylesheets -->
-		<link href="css/reset.css" rel="stylesheet" type="text/css">
-		<link href="css/960.css" rel="stylesheet" type="text/css">
-		<link href="css/style.css" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" href="css/table.css">
+<head>
+	<meta charset="utf-8">
+	<title>CMS ThaiJobHD</title>	
+	<!-- Stylesheets -->
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/960.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/table.css">
+	
+	<script src="js/jquery-1.7.1.min.js"></script>
+	<script src="js/script.js"></script>  
+	
+    <!--Date -picker -->
+    
+  
+    
 
-		<script src="js/jquery-1.7.1.min.js"></script>
-		<script src="js/script.js"></script>
-
-		<!--Date -picker -->
-
-	</head>
-	<body>
-<?php
-require_once ($rootpath . "lib/db.php");
-require_once ($rootpath . "lib/conn.inc.php");
-include ($rootpath . "lib/func_date.php");
-if (!$db -> open()) {
-	die($db -> error());
-}
+	
+</head>
+<body>

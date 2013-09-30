@@ -73,7 +73,7 @@ p{
 /* ---------- LINK ---------- */
 	a, a:visited {color:white;text-decoration: none; outline: 0; }
 	p a, p a:visited { line-height: inherit; }
-input[type="text"] {
+input[type="text"],input[type="password"]{
 	border:none;
 	outline:none;
 	padding-right: 3em; /* 36/12 */
@@ -90,7 +90,7 @@ input[type="checkbox"], input[type="radio"] { }
 	width:70px;
 	margin-left:10px;
 }
-form input[type="password"], textarea {
+textarea {
 	/*
 	border: 1px solid #d9dbdd;
 	*/
@@ -112,7 +112,7 @@ form input[type="password"], textarea {
 }
 .save-button{
 	padding: 0.433em 1.9em;
-	margin-top:20px;
+	margin-top:10px;
 	display: inline-block;
 	text-decoration: none;
 	background-repeat: no-repeat;
@@ -135,6 +135,13 @@ form input[type="password"], textarea {
 	background-repeat: no-repeat;
 	color: white;
 	font-size:0.9em;
+}
+.login-button{
+	padding: 0.433em 1.9em;
+	display: inline-block;
+	text-decoration: none;
+	background-repeat: no-repeat;
+	color: white;
 }
 .text-blue{
 	color:#47A0D8;
@@ -286,6 +293,19 @@ form input[type="password"], textarea {
 #search-form input {
 	border: none; /* 36/12 */
 }
+input[type="submit"]{
+	border: none;
+	cursor: pointer; /* 10/12 */
+	background-position: right;
+	background-repeat: no-repeat;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding-top: 0.733em;
+	padding-right: 1.2em;
+	padding-bottom: 0.733em;
+	padding-left: 1em;
+	margin-right: 0.5em;
+} 
 #search-form input[type="submit"] {
 	border: none;
 	cursor: pointer; /* 10/12 */
@@ -316,7 +336,7 @@ form input[type="password"], textarea {
 }
 #content {
 	padding-top: 20px;
-	padding-bottom: 50px;
+	padding-bottom: 100px;
 	background-color:white;
 }
 
@@ -571,6 +591,29 @@ form input[type="password"], textarea {
 	top:52.5em;
 	left:74.3em;
 }
+#error{
+	margin-left:10px;
+}
+/*----------login------------*/
+#forgot-pass {
+}
+#forgot-pass a{	
+	color:#2069B4;	
+}
+#forgot-pass a:hover{
+	color:#2069B4;	
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #2069B4;
+}
+#content-login p{
+	padding-bottom:0.8em;
+	line-height:1.5em;
+	font-size:0.95em;
+}
+#login-form{
+	margin-top:60px;
+}
 
 #footer {
 	background-color: #1d1e1e;
@@ -597,3 +640,4 @@ form input[type="password"], textarea {
 	color: #FFF;
 	margin-top: 10px;
 }
+

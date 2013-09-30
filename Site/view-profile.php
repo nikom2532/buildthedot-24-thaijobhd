@@ -1,8 +1,8 @@
 <?php include("include/header.php");?>
 <div id="wrapper">
     <div id="header" class="container_12">
-        <div id="login-intro" class="grid_3">
-            <img src="images/logo.png" alt="ThaiJobHD">	
+         <div id="login-intro" class="grid_3">
+            <img src="images/logo.png" alt="ThaiJobHD" width="130" height="71">	
         </div>
         <div class="right">
         	<ul id="my-profile">
