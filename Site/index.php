@@ -1,7 +1,7 @@
 <?php include("include/header.php");?>
 <?php include("include/top-menu.php");?>
 <?php include("include/search-bar.php");?>   
-asdfghjkl;;;;;;;;'
+
 	<!--start banner -->
 	<div id="banner-1">
     <img src="admin/images/banner-2.png" width="144" height="143">
@@ -60,7 +60,7 @@ asdfghjkl;;;;;;;;'
     		<h1>งานแนะนำ</h1>
     	</div>
         <div class="grid_6" id="content-reccommend">
-        	<h2 id="sub-title">Full Time <span class="right"><a href="#" class="button round black">ดูทั้งหมด</a></span></h2>
+        	<h2 id="sub-title">Full Time8888888 <span class="right"><a href="#" class="button round black">ดูทั้งหมด</a></span></h2>
             <h6 id="headline">Lorem Ipsum is simply dummy text of the printing</h6>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
             <h6 id="headline">Lorem Ipsum is simply dummy text of the printing</h6>
