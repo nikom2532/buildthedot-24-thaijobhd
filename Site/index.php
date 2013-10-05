@@ -1,7 +1,7 @@
 <?php include("include/header.php");?>
 <?php include("include/top-menu.php");?>
 <?php include("include/search-bar.php");?>   
-<?php echo "^_^" ; ?>
+asdfghjkl;;;;;;;;'
 	<!--start banner -->
 	<div id="banner-1">
     <img src="admin/images/banner-2.png" width="144" height="143">
