@@ -1,6 +1,7 @@
 <?php include("include/header.php");?>
 <?php include("include/top-bar.php");?>
-	
+<?php include("include/top-bar.php");?>
+		
 	<!-- HEADER -->
 	<div id="header-with-tabs">
 		
@@ -45,12 +46,23 @@
 
 						<tfoot>
 						
-						
+					
 						<tbody>
 
 							<tr>
 								<td>1</td>
-								<td>Adrian Purdila</td>
+								<td>Adrian Purdila
+								<?php
+									$sql = "SELECT * FROM buildthedot_thaijobhd_ad";
+									$result = mysql_query($sql); 
+									if($result)
+									{
+										echo "555+";
+										/*/while($show = mysql_fetch_array($result))
+										{$F = $show['FName'];}*/
+									}
+								
+								?></td>
 								<td>Adrian Purdila</td>
                                 <td id="status"><img src="images/icons/message-boxes/confirmation.png" alt="active"></td>
 								<td id="action" class="center">
