@@ -61,7 +61,9 @@
 										/*/while($show = mysql_fetch_array($result))
 										{$F = $show['FName'];}*/
 									}
-								
+									else {
+										echo "l";
+									}
 								?></td>
 								<td>Adrian Purdila</td>
                                 <td id="status"><img src="images/icons/message-boxes/confirmation.png" alt="active"></td>
