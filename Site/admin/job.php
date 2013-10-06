@@ -143,6 +143,22 @@
 	<?php 
 	} 
 ?>
+<?php
+	
+	function test()
+	{
+		$sql = "SELECT email, job_status FROM buildthedot_thaijobhd_user_account WHERE email = '$Admin' ORDER BY id DESC ";
+		$result = mysql_query($sql);
+		$i = 0;
+		while($show = mysql_fetch_array($result))
+		{
+			$a = $show['email'];
+			$i++;
+		}
+		
+	}
 
+
+?>
 	
 <?php include("include/footer.php");?>
