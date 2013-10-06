@@ -1,10 +1,14 @@
 <?php 
 $rootpath="../";
 $rootadminpath="./";
-
 include($rootadminpath."include/header.php");
 include($rootpath."include/opendb.php");
-include($rootadminpath."include/top-bar.php");
+$_SESSION["userid"] = "1";
+if ($_SESSION["userid"] == "") {
+	include ($rootpath . "include/login.php");
+	include ("include/footer.php");
+} else { echo "aaa";
+	include($rootadminpath."include/top-bar.php");
 ?>
 	<!-- HEADER -->
 	<div id="header-with-tabs">
@@ -116,5 +120,7 @@ include($rootadminpath."include/top-bar.php");
 			</div> <!-- end content-module -->
 			
 	</div> <!-- end content -->
-	
-<?php include($rootadminpath."include/footer.php");?>
+<?php 
+	include($rootadminpath."include/footer.php");
+	}//end check user session
+?>
