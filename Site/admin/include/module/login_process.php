@@ -22,11 +22,11 @@ if(($email!="")&&($password!="")) {
 	$result=@mysql_query($SQL);
 	if($rs=@mysql_fetch_array($result)){
 		echo $_SESSION["userid"]=$rs["id"];
-		header("location: {$rootadminpath}business-idea.php");
+		header("location: {$rootadminpath}job.php");
 	}
 	else{
 ?>
-		<form id="login_false_message" action="<?php echo $rootadminpath; ?>business-idea.php" method="POST">
+		<form id="login_false_message" action="<?php echo $rootadminpath; ?>job.php" method="POST">
 			<input type="hidden" id="login_messaage" name="login_messaage" value="login_false" />
 		</form>
 		<script>
@@ -37,7 +37,7 @@ if(($email!="")&&($password!="")) {
 }
 else{
 ?>
-	<form id="login_false_message" action="<?php echo $rootadminpath; ?>business-idea.php" method="POST">
+	<form id="login_false_message" action="<?php echo $rootadminpath; ?>job.php" method="POST">
 		<input type="hidden" id="login_messaage" name="login_messaage" value="forget_formdata_login" />
 	</form>
 	<script>
