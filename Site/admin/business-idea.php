@@ -18,7 +18,7 @@ else{
 	//normal mode
 	else{
 		include($rootadminpath."include/top-bar.php");
-	?>
+?>
 		<!-- HEADER -->
 		<div id="header-with-tabs">
 			
@@ -60,7 +60,7 @@ else{
 <?php
 								$sql="
 									SELECT * 
-									FROM  `buildthedot_thaijobhd_job_idea` 
+									FROM  `buildthedot_thaijobhd_job_idea` ;
 								";
 								$result=@mysql_query($sql);
 								while($rs=@mysql_fetch_array($result)){
@@ -68,7 +68,7 @@ else{
 									<tr>
 										<td><?php echo $rs["CompanyID"]; ?></td>
 										<td>
-											<a href="business-idea-detail.php" class="text-black"><?php echo $rs["MainIdea"]; ?></a>
+											<a href="business-idea-detail.php?CompanyID=<?php echo $rs["CompanyID"]; ?>" class="text-black"><?php echo $rs["MainIdea"]; ?></a>
 										</td>
 										<td id="status">
 											<img src="images/icons/message-boxes/<?php 
@@ -93,8 +93,8 @@ else{
 					</div> <!-- end content-module-main -->
 				</div> <!-- end content-module -->
 		</div> <!-- end content -->
-	<?php
+<?php
 	include ($rootadminpath . "include/footer.php");
 	}
-	}//end check user session
-		?>
+}//end check user session
+?>
