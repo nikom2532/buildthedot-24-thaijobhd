@@ -7,8 +7,10 @@
                 <li class="v-sep text-blue" id="admin-ic"><strong>Logged in as admin</strong>
                 </li>
             
-                <li><a href="#" class="round button dark menu-logoff image-left">Log out</a></li>
-                
+                <li>
+                	<!-- <a href="<?php echo $rootadminpath; ?>include/module/logout_process.php" class="round button dark menu-logoff image-left">Log out</a> -->
+                	<a href="<?php echo $rootadminpath; ?>business-idea.php?mode=logout" class="round button dark menu-logoff image-left">Log out</a>
+                </li>
             </ul> <!-- end nav -->
 		</div> <!-- end full-width -->	
 
