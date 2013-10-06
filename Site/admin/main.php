@@ -1,6 +1,11 @@
-<?php include("include/header.php");?>
-<?php include("include/top-bar.php");?>
-	
+<?php 
+$rootpath="../";
+$rootadminpath="./";
+
+include($rootadminpath."include/header.php");
+include($rootpath."include/opendb.php");
+include($rootadminpath."include/top-bar.php");
+?>
 	<!-- HEADER -->
 	<div id="header-with-tabs">
 		
@@ -112,4 +117,4 @@
 			
 	</div> <!-- end content -->
 	
-<?php include("include/footer.php");?>
+<?php include($rootadminpath."include/footer.php");?>
