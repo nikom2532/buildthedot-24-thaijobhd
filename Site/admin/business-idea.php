@@ -49,7 +49,7 @@ else{
 								<tr>
 									<th width="8%">ลำดับที่</th>
 									<th width="65%">ชื่อเรื่อง</th>
-	                                <th width="12%">สถานะ</th>
+									<th width="12%">ไอเดียแนะนำ</th>
 									<th width="15%">Action</th>
 								</tr>
 							

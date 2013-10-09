@@ -3,7 +3,6 @@ session_start();
 $rootpath="../";
 $rootadminpath="./";
 include($rootadminpath."include/header.php");
-//include($rootpath."include/opendb.php");
 include($rootadminpath."include/connect-to-database.php");
 //$_SESSION["userid"] = "";
 if($_SESSION["userid"] == "") {
@@ -56,7 +55,8 @@ else{
 						<h1>ไอเดียธุรกิจ <span>- Lorem Ipsum </span><span class="text-black">- แก้ไข </span></h1>
 					</div>
 					<div id="" class="container_12">
-						<form id="form-edit">
+						<form id="form-edit" action="<?php echo $rootadminpath; ?>include/module/edit-recommend-idea-process.php" method="POST" enctype="multipart/form-data">
+							<input type="hidden" name="CompanyID" value="<?php echo $_GET["CompanyID"]; ?>" />
 							<section>
 <?php
 								$sql="
@@ -72,7 +72,7 @@ else{
 									</div>
 									<div class="grid_8">
 										<p>
-											<input type="text" id="name" name ="name" class="round" value="<?php echo $rs["MainIdea"]; ?>"/>
+											<input type="text" id="name" name ="MainIdea" class="round" value="<?php echo $rs["MainIdea"]; ?>"/>
 										</p>
 									</div>
 									<br class="clear"/>
@@ -81,7 +81,7 @@ else{
 									</div>
 									<div class="grid_8">
 										<p>
-											<textarea type="text" id="name" name ="name" class="round" value="<?php echo $rs["Description1"]; ?>"></textarea>
+											<textarea type="text" id="name" name ="Description1" class="round" value="<?php echo $rs["Description1"]; ?>"></textarea>
 										</p>
 									</div>
 									<br class="clear"/>
@@ -90,7 +90,7 @@ else{
 									</div>
 									<div class="grid_8">
 										<p>
-											<textarea type="text" id="name" name ="name" class="round" value="<?php echo $rs["Description2"]; ?>"></textarea>
+											<textarea type="text" id="name" name ="Description2" class="round" value="<?php echo $rs["Description2"]; ?>"></textarea>
 										</p>
 									</div>
 									<br class="clear"/>
@@ -99,7 +99,7 @@ else{
 									</div>
 									<div class="grid_8">
 										<p>
-											<textarea type="text" id="name" name ="name" class="round" value="<?php echo $rs["Description3"]; ?>"></textarea>
+											<textarea type="text" id="name" name ="Description3" class="round" value="<?php echo $rs["Description3"]; ?>"></textarea>
 										</p>
 									</div>
 									<br class="clear"/>
@@ -109,7 +109,7 @@ else{
 									<div class="prefix_2" id="prefix_2">
 										<div class="grid_12">
 											<p>
-												test.png<a href="#" class="button round black right">แก้ไข</a>
+												<?php echo $rs["Pic1"]; ?><!-- <a href="#" class="button round black right">แก้ไข</a> --><input type="file" name="pic1" class="button round black right" />
 											</p>
 										</div>
 										<br class="clear"/>
@@ -120,7 +120,7 @@ else{
 									<div class="prefix_2" id="prefix_2">
 										<div class="grid_12">
 											<p>
-												test.png<a href="#" class="button round black right">แก้ไข</a>
+												<?php echo $rs["Pic2"]; ?><!-- <a href="#" class="button round black right">แก้ไข</a> --><input type="file" name="pic2" class="button round black right" />
 											</p>
 										</div>
 										<br class="clear"/>
@@ -131,22 +131,33 @@ else{
 									<div class="prefix_2" id="prefix_2">
 										<div class="grid_12">
 											<p>
-												test.png<a href="#" class="button round black right">แก้ไข</a>
+												<?php echo $rs["Pic3"]; ?><!-- <a href="#" class="button round black right">แก้ไข</a> --><input type="file" name="pic3" class="button round black right" />
 											</p>
 										</div>
 										<br class="clear"/>
 									</div>
 									<div class="grid_2">
-										<h6 class="detail-title">Status</h6>
+										<h6 class="detail-title">ไอเดียแนะนำ</h6>
 									</div>
+									
 									<div class="grid_8">
 										<p>
 											<label for="active" class="alt-label">
-												<input type="radio" id="status" name="status" />
-												Active </label>
+												<input type="radio" id="status" name="IdeaRecomment" <?php 
+													if ($rs["IdeaRecomment"]==1) {
+														echo "checked=\"checked\"";
+													}
+												?> />
+												Active 
+											</label>
 											<label for="inactive" class="alt-label">
-												<input type="radio" id="status" name="status" />
-												Inactive </label>
+												<input type="radio" id="status" name="IdeaRecomment" <?php 
+													if ($rs["IdeaRecomment"]==0) {
+														echo "checked=\"checked\"";
+													}
+												?> />
+												Inactive
+											</label>
 										</p>
 									</div>
 									<br class="clear"/>
@@ -155,7 +166,7 @@ else{
 ?>
 							</section>
 							<div class="center">
-								<a href="#" class="save-button blue round">บันทึก</a>
+								<a href="#" class="save-button blue round" onclick="document.getElementById('form-edit').submit(); ">บันทึก</a>
 							</div>
 						</form>
 					</div>
