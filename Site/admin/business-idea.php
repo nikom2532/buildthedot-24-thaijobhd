@@ -82,7 +82,8 @@ else{
 										</td>
 										<td id="action" class="center">
 											<a href="edit-recommend-idea.php?CompanyID=<?php echo $rs["CompanyID"]; ?>" class="table-actions-button text-blue">แก้ไข</a>
-											<a href="#" class="table-actions-button text-red">ลบ</a>
+											<!-- <a href="<?php echo $rootadminpath; ?>include/module/delete-recommend-idea-process.php?CompanyID=<?php echo $rs["CompanyID"]; ?>" class="table-actions-button text-red">ลบ</a> -->
+											<a href="#" onclick="delete_recommend_idea('<?php echo $rootadminpath; ?>' , '<?php echo $rs["CompanyID"]; ?>');" class="table-actions-button text-red">ลบ</a>
 										</td>
 									</tr>
 <?php

@@ -10,3 +10,11 @@ $(document).ready(function() {
 	});
 	
 });
+function delete_recommend_idea(rootadminpath, CompanyID){
+	if (confirm('Do you want to confirm to delete?')) {
+	    // Save it!
+	    window.location = rootadminpath+"include/module/delete-recommend-idea-process.php?CompanyID="+CompanyID;
+	} else {
+	    // Do nothing!
+	}
+}

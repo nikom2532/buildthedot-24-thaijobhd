@@ -100,7 +100,7 @@ else{
 									<div class="prefix_2" id="prefix_2">
 										<div class="grid_12">
 											<p>
-												<?php echo $rs["Pic1"]; ?><!-- <a href="#" class="button round black right">แก้ไข</a> --><input type="file" name="pic1" class="button round black right" />
+												<!-- <a href="#" class="button round black right">แก้ไข</a> --><input type="file" name="pic1" class="button round black right" />
 											</p>
 										</div>
 										<br class="clear"/>
@@ -111,7 +111,7 @@ else{
 									<div class="prefix_2" id="prefix_2">
 										<div class="grid_12">
 											<p>
-												<?php echo $rs["Pic2"]; ?><!-- <a href="#" class="button round black right">แก้ไข</a> --><input type="file" name="pic2" class="button round black right" />
+												<!-- <a href="#" class="button round black right">แก้ไข</a> --><input type="file" name="pic2" class="button round black right" />
 											</p>
 										</div>
 										<br class="clear"/>
@@ -122,7 +122,7 @@ else{
 									<div class="prefix_2" id="prefix_2">
 										<div class="grid_12">
 											<p>
-												<?php echo $rs["Pic3"]; ?><!-- <a href="#" class="button round black right">แก้ไข</a> --><input type="file" name="pic3" class="button round black right" />
+												<!-- <a href="#" class="button round black right">แก้ไข</a> --><input type="file" name="pic3" class="button round black right" />
 											</p>
 										</div>
 										<br class="clear"/>
