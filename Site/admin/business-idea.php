@@ -40,7 +40,7 @@ else{
 					
 					<div class="content-module-main">
 					
-						<h2>ไอเดียธุรกิจ<span class="right"><a href="#" class="add-button blue round">เพิ่ม</a></span></h2>
+						<h2>ไอเดียธุรกิจ<span class="right"><a href="add-recommend-idea.php" class="add-button blue round">เพิ่ม</a></span></h2>
 						
 						<table>
 						
