@@ -39,7 +39,7 @@ else{
 		<div id="content">
 			<div class="content-module">
 				<div class="content-module-main">
-					<h2>โฆษณา<span class="right"><a href="#" class="add-button blue round">เพิ่ม</a></span></h2>
+					<h2>โฆษณา<span class="right"><a href="<?php echo $rootadminpath; ?>add-advertisement.php" class="add-button blue round">เพิ่ม</a></span></h2>
 					<table>
 						<thead>
 							<tr>

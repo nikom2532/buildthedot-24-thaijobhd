@@ -46,24 +46,15 @@ else{
 						<h2>Side Ads</h2>
 						<h6>** ขนาด 350*200 px. | ชื่อรูปขึ้นต้นด้วย sideAds ตามด้วยหมายเลข 1-4 </h6>
 						<div id="content-detail" class="container_12">
-							<form id="form-advertisement" action="<?php echo $rootadminpath; ?>include/module/edit-advertisement-process.php" method="POST">
-								<input type="hidden" name="adid" value="<?php echo $_GET["adid"]; ?>" />
-<?php
-								$sql="
-									SELECT * 
-									FROM  `buildthedot_thaijobhd_ad` 
-									WHERE `PictureID` = '".$_GET["adid"]."';
-								";
-								$result=@mysql_query($sql);
-								if($rs=@mysql_fetch_array($result)){
-?>
+							<form id="form-advertisement" action="<?php echo $rootadminpath; ?>include/module/add-advertisement-process.php" method="POST">
+								<!-- <input type="hidden" name="adid" value="<?php echo $_GET["adid"]; ?>" /> -->
 									<div class="grid_7">
 										<section class="grid_7">
 											<div class="grid_1">
 												<h6>เลือกรูป</h6>
 											</div>
 											<div class="grid_5">
-												<a href="#"><?php echo $rs["AdPic"]; ?>contentAds1.png</a>
+												<a href="#">New image</a>
 											</div>
 											<br class="clear"/>
 											<div class="prefix_1 grid_5">
@@ -86,14 +77,14 @@ else{
 	    										<select name="ad_position">
 														<option value="1">1</option>
 														<option value="2">2</option>
-														<option value="3" selected>3</option>
+														<option value="3">3</option>
 														<option value="4">4</option>
 													</select>
 												</span>
 											</h5>
 											<br class="clear"/>
 											<div class="prefix_1 grid_5">
-												<input type="text" id="AdLink" name ="AdLink" class="round" value="<?php echo $rs["AdLink"]; ?>"/>
+												<input type="text" id="AdLink" name ="AdLink" class="round" value=""/>
 											</div><br class="clear"/>
 											<div class="grid_6 center">
 												<a href="#" onclick="document.getElementById('form-advertisement').submit();" class="save-button blue round">บันทึก</a>
@@ -101,9 +92,6 @@ else{
 										</section>
 										<br class="clear"/>
 									</div>
-<?php
-								}
-?>
 								<section class="grid_4">
 									<img src="images/banner-1.png" width="600" height="175">   
 								</section>

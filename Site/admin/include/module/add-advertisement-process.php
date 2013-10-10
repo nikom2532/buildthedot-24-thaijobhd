@@ -9,23 +9,38 @@ if($_SESSION["userid"] == "") {
 	include ("include/footer.php");
 }
 else{
-	$adid = $_POST["adid"];
 	// $AdPic = $_POST["AdPic"];
 	$AdLink = $_POST["AdLink"];
 	$ad_type = $_POST["ad_type"];
-	$ad_position = $_POST["ad_position"];
+	echo $ad_position = $_POST["ad_position"];
 	$time_now = strtotime("now");
+	
 	$sql="
-		UPDATE `buildthedot_thaijobhd_ad` 
-		SET 
-		`AdLink` = '".$AdLink."',
-		`AdType` = '".$ad_type."',
-		`AdPosition` = '".$ad_position."'
-		WHERE `PictureID` = '{$adid}' ;
+		SELECT * 
+		FROM  `buildthedot_thaijobhd_ad`
+		WHERE `AdType` = '{$ad_type}'
+		AND `AdPosition` = '{$ad_position}' 
 	";
-	@mysql_query($sql);
-	
-	
+	$result = @mysql_query($sql);
+	if($rs = @mysql_fetch_array($result)){
+		$sql2="
+			UPDATE `buildthedot_thaijobhd_ad` 
+			SET 
+			`AdLink` = '".$AdLink."'
+			WHERE `AdType` = '".$ad_type."'
+			AND `AdPosition` = '".$ad_position."' ;
+		";
+		@mysql_query($sql2);
+	}
+	else{
+		$sql2="
+			INSERT INTO `buildthedot_thaijobhd_ad` 
+			(`AdLink`, `AdType`, `AdPosition`)
+			VALUE
+			('{$AdLink}', '{$ad_type}', '{$ad_position}') ;
+		";
+		@mysql_query($sql2);
+	}
 	if(file_exists($_FILES['AdPic']['tmp_name']) && is_uploaded_file($_FILES['AdPic']['tmp_name'])){
 		// echo $_FILES['pic1']['tmp_name'];
 		include($rootadminpath."include/module/edit-recommend-idea-process2.php");

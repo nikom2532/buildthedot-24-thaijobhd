@@ -63,7 +63,7 @@ else{
 												<h6>เลือกรูป</h6>
 											</div>
 											<div class="grid_5">
-												<a href="#"><?php echo $rs["AdPic"]; ?>contentAds1.png</a>
+												<a href="#"><?php echo $rs["AdPic"]; ?></a>
 											</div>
 											<br class="clear"/>
 											<div class="prefix_1 grid_5">
@@ -73,9 +73,9 @@ else{
 												Choose Ad type:
 											</h5>
 											<div class="prefix_1 grid_5">
-												<input type="radio" name="ad_type" id="ad_type1" class="radio round black inline tall5" value="Content_Ads" />
+												<input type="radio" name="ad_type" id="ad_type1" class="radio round black inline tall5" value="Content_Ads" <?php if($rs["AdType"]=="Content_Ads"){ echo "checked"; } ?> />
     										<label for="ad_type1">Content Ads</label>
-    										<input type="radio" name="ad_type" id="ad_type2" class="radio round black inline tall5" value="Side_Ads" />
+    										<input type="radio" name="ad_type" id="ad_type2" class="radio round black inline tall5" value="Side_Ads" <?php if($rs["AdType"]=="Side_Ads"){ echo "checked"; } ?>/>
     										<label for="ad_type2">Side Ads</label>
 											</div>
 											<h5 class="prefix_1 grid_5 tall10">
@@ -84,10 +84,10 @@ else{
 												</span>
 												<span class="grid_2">
 	    										<select name="ad_position">
-														<option value="1">1</option>
-														<option value="2">2</option>
-														<option value="3" selected>3</option>
-														<option value="4">4</option>
+														<option value="1" <?php if($rs["AdPosition"]=="1"){ echo "selected"; } ?>>1</option>
+														<option value="2" <?php if($rs["AdPosition"]=="2"){ echo "selected"; } ?>>2</option>
+														<option value="3" <?php if($rs["AdPosition"]=="3"){ echo "selected"; } ?>>3</option>
+														<option value="4" <?php if($rs["AdPosition"]=="4"){ echo "selected"; } ?>>4</option>
 													</select>
 												</span>
 											</h5>
