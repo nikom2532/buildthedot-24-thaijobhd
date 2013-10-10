@@ -150,7 +150,7 @@ else {
 		$i = 0;
 		while($show = mysql_fetch_array($result))
 		{
-			$a = $show['email'];
+			$email = $show['email'];
 			$i++;
 		}
 		
