@@ -31,6 +31,7 @@ else {
 				$e_mail = $show['email'];
 				$Status = $show['job_status'];
 			}
+			
 			if($Status = 1)
 			{
 ?>
