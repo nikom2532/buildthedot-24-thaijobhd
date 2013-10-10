@@ -27,7 +27,7 @@ else{
 					<li><a href="<?php echo $rootadminpath; ?>job.php">งาน</a></li>
 					<li><a href="<?php echo $rootadminpath; ?>business-idea.php" class="active-tab">ไอเดียธุรกิจ</a></li>
 					<li><a href="<?php echo $rootadminpath; ?>advertisement.php">โฆษณา</a></li>
-	                <li><a href="<?php echo $rootadminpath; ?>top-company.php">บริษัทชั้นนำ</a></li>
+					<li><a href="<?php echo $rootadminpath; ?>top-company.php">บริษัทชั้นนำ</a></li>
 				</ul> <!-- end tabs -->
 				<!-- company logo -->
 				
