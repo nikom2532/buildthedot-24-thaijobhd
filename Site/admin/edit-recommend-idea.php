@@ -95,9 +95,14 @@ else{
 										<h6 class="detail-title pic-post">รูปที่ 1 </h6>
 									</div>
 									<div class="prefix_2" id="prefix_2">
-										<div class="grid_12">
+										<div class="grid_4">
 											<p>
-												<?php echo $rs["Pic1"]; ?><!-- <a href="#" class="button round black right">แก้ไข</a> --><input type="file" name="pic1" class="button round black right" />
+												<?php echo $rs["Pic1"]; ?><!-- <a href="#" class="button round black right">แก้ไข</a> -->
+											</p>
+										</div>
+										<div class="grid_8">
+											<p>
+												<input type="file" name="pic1" class="button round black" />
 											</p>
 										</div>
 										<br class="clear"/>
@@ -106,9 +111,14 @@ else{
 										<h6 class="detail-title pic-post">รูปที่ 2</h6>
 									</div>
 									<div class="prefix_2" id="prefix_2">
-										<div class="grid_12">
+										<div class="grid_4">
 											<p>
-												<?php echo $rs["Pic2"]; ?><!-- <a href="#" class="button round black right">แก้ไข</a> --><input type="file" name="pic2" class="button round black right" />
+												<?php echo $rs["Pic2"]; ?><!-- <a href="#" class="button round black right">แก้ไข</a> -->
+											</p>
+										</div>
+										<div class="grid_8">
+											<p>
+												<input type="file" name="pic2" class="button round black" />
 											</p>
 										</div>
 										<br class="clear"/>
@@ -117,9 +127,14 @@ else{
 										<h6 class="detail-title pic-post">รูปที่ 3 </h6>
 									</div>
 									<div class="prefix_2" id="prefix_2">
-										<div class="grid_12">
+										<div class="grid_4">
 											<p>
-												<?php echo $rs["Pic3"]; ?><!-- <a href="#" class="button round black right">แก้ไข</a> --><input type="file" name="pic3" class="button round black right" />
+												<?php echo $rs["Pic3"]; ?><!-- <a href="#" class="button round black right">แก้ไข</a> -->
+											</p>
+										</div>
+										<div class="grid_8">
+											<p>
+												<input type="file" name="pic3" class="button round black" />
 											</p>
 										</div>
 										<br class="clear"/>

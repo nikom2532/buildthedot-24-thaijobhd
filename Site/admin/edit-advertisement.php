@@ -52,12 +52,17 @@ else{
 										<div class="grid_1">
 											<h6>เลือกรูป</h6>
 										</div>
-										<div class="grid_4">
+										
+										<!-- <div class="grid_4">
 											<a href="#">contentAds1.png</a>
 										</div>
 										<div class="grid_1">
 											<a href="#" class="text-blue">เลือกรูป</a>
-										</div><br class="clear"/>
+										</div> -->
+										<input type="file" name="pic3" class="button round black" />
+										
+										
+										<br class="clear"/>
 										<div class="prefix_1 grid_5">
 											<input type="text" id="name" name ="name" class="round"value="http://wwww.xxx.com"/>
 										</div><br class="clear"/>
