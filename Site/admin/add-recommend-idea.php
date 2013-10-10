@@ -20,30 +20,18 @@ else{
 ?>
 		<!-- HEADER -->
 		<div id="header-with-tabs">
+			
 			<div class="page-full-width cf">
 				<ul id="tabs" class="left">
-					<li>
-						<a href="job.php">งาน</a>
-					</li>
-					<li>
-						<a href="business-idea.php" class="active-tab">ไอเดียธุรกิจ</a>
-					</li>
-					<li>
-						<a href="advertisement.php">โฆษณา</a>
-					</li>
-					<li>
-						<a href="top-company.php">บริษัทชั้นนำ</a>
-					</li>
-				</ul>
-				<!-- end tabs -->
-		
+					<li><a href="<?php echo $rootadminpath; ?>job.php">งาน</a></li>
+					<li><a href="<?php echo $rootadminpath; ?>business-idea.php" class="active-tab">ไอเดียธุรกิจ</a></li>
+					<li><a href="<?php echo $rootadminpath; ?>advertisement.php">โฆษณา</a></li>
+					<li><a href="<?php echo $rootadminpath; ?>top-company.php">บริษัทชั้นนำ</a></li>
+				</ul> <!-- end tabs -->
 				<!-- company logo -->
-		
-			</div>
-			<!-- end full-width -->
-		
-		</div>
-		<!-- end header -->
+				
+			</div> <!-- end full-width -->	
+		</div> <!-- end header -->
 		
 		<!-- MAIN CONTENT -->
 		<div id="content">
@@ -100,7 +88,7 @@ else{
 									<div class="prefix_2" id="prefix_2">
 										<div class="grid_12">
 											<p>
-												<?php echo $rs["Pic1"]; ?><!-- <a href="#" class="button round black right">แก้ไข</a> --><input type="file" name="pic1" class="button round black right" />
+												<!-- <a href="#" class="button round black right">แก้ไข</a> --><input type="file" name="pic1" class="button round black right" />
 											</p>
 										</div>
 										<br class="clear"/>
@@ -111,7 +99,7 @@ else{
 									<div class="prefix_2" id="prefix_2">
 										<div class="grid_12">
 											<p>
-												<?php echo $rs["Pic2"]; ?><!-- <a href="#" class="button round black right">แก้ไข</a> --><input type="file" name="pic2" class="button round black right" />
+												<!-- <a href="#" class="button round black right">แก้ไข</a> --><input type="file" name="pic2" class="button round black right" />
 											</p>
 										</div>
 										<br class="clear"/>
@@ -122,7 +110,7 @@ else{
 									<div class="prefix_2" id="prefix_2">
 										<div class="grid_12">
 											<p>
-												<?php echo $rs["Pic3"]; ?><!-- <a href="#" class="button round black right">แก้ไข</a> --><input type="file" name="pic3" class="button round black right" />
+												<!-- <a href="#" class="button round black right">แก้ไข</a> --><input type="file" name="pic3" class="button round black right" />
 											</p>
 										</div>
 										<br class="clear"/>
