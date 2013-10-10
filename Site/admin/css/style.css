@@ -498,7 +498,7 @@ h6 #headline{
 form#form-edit input[type="text"]{
 	width:545px;	
 }
-form#form-advertisement input{
+form#form-advertisement input[type="file"]{
 	width:250px;
 }
 #content-detail a{
@@ -570,4 +570,13 @@ div#footer p{
 }
 #wrap-add-customer {
 	margin-bottom: 15px;
+}
+.tall5{
+	margin-top: 5px;
+}
+.tall10{
+	margin-top: 10px;
+}
+.inline{
+	float:left;
 }
