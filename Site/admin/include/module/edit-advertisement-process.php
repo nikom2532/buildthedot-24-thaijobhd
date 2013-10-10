@@ -12,10 +12,15 @@ else{
 	$adid = $_POST["adid"];
 	// $AdPic = $_POST["AdPic"];
 	$AdLink = $_POST["AdLink"];
+	$ad_type = $_POST["ad_type"];
+	$ad_position = $_POST["ad_position"];
 	$time_now = strtotime("now");
 	$sql="
 		UPDATE `buildthedot_thaijobhd_job_ad` 
-		SET `AdLink` = '".$AdLink."',
+		SET 
+		`AdLink` = '".$AdLink."',
+		`AdType` = '".$ad_type."',
+		`AdPosition` = '".$ad_position."'
 		WHERE `PictureID` = '{$adid}' ;
 	";
 	@mysql_query($sql);
