@@ -54,7 +54,7 @@ else {
 				<div id="content">
 					<div class="content-module">
 						<div class="content-module-main">
-							<h2>งาน<span class="right"><a href="edit-job.php" class="add-button blue round">เพิ่ม</a></span></h2>
+							<h2>งาน<span class="right"><a href="insert-job.php" class="add-button blue round" vlaue="insert">เพิ่ม</a></span></h2>
 							<table id="tb-view">
 								<thead>
 									<tr>
@@ -143,7 +143,7 @@ else {
 		} 
 ?>
 <?php
-	function test()
+	/*function test()
 	{
 		$sql = "SELECT email, job_status FROM buildthedot_thaijobhd_user_account WHERE email = '$Admin' ORDER BY id DESC ";
 		$result = mysql_query($sql);
@@ -154,7 +154,7 @@ else {
 			$i++;
 		}
 		
-	}
+	}*/
 ?>
 <?php 
 		include($rootadminpath."include/footer.php");
