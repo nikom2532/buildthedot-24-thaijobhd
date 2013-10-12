@@ -72,42 +72,47 @@
 							<div id="content-detail" class="container_12">
 		                    <section>
 		                    	<form id="form-edit" name="form-edit">
+
 		                         <div class="grid_2">
 		                             <h6 class="detail-title">ชื่อบริษัท</h6>
 		                          </div>
 		                          <div class="grid_8">
-		                          		<p><input type="text" id="name" name ="name" class="round" value=""/></p>
+		                          		<p><input type="text" id="name" name ="CompanyName" class="round" value=""/></p>
 		                          </div><br class="clear"/>
+
 		                          <div class="grid_2">
 		                             <h6 class="detail-title">ตำแหน่ง(ภาษาไทย)</h6>
 		                          </div>
 		                          <div class="grid_8">
-		                          		<p><input type="text" id="name" name ="name" class="round" value=""/></p>
+		                          		<p><input type="text" id="name" name ="PositionThaiName" class="round" value=""/></p>
 		                          </div><br class="clear"/>
+		                          
 		                          <div class="grid_2">
 		                             <h6 class="detail-title">ตำแหน่ง(ภาษาอังกฤษ)</h6>
 		                          </div>
 		                          <div class="grid_8">
-		                          		<p><input type="text" id="name" name ="name" class="round" value=""/></p>
+		                          		<p><input type="text" id="name" name ="PositionEngName" class="round" value=""/></p>
 		                          </div><br class="clear"/>
+		                         
 		                          <div class="grid_2">
 		                                <h6 class="detail-title">สถานที่ปฏิบัติงาน</h6>   
 		                          </div>
 		                          <div class="grid_8">
-		                          		<p><textarea type="text" id="name" name ="name" class="round" value=""></textarea>				                                </p>
+		                          		<p><textarea type="text" id="name" name ="Placename" class="round" value=""></textarea>				                                </p>
 		                          </div><br class="clear"/>
+		                          
 		                          <br class="clear"/>
 		                          <div class="grid_2">
 		                                <h6 class="detail-title">อัตรา</h6>   
 		                          </div>
 		                          <div class="grid_8">
-		                          		<p><input type="text" id="name" name ="name" class="round" value=""/></p>
+		                          		<p><input type="text" id="name" name ="Quantity" class="round" value=""/></p>
 		                          </div><br class="clear"/>
 		                          <div class="grid_2">
 		                                <h6 class="detail-title">เงินเดือน</h6>   
 		                          </div>
 		                          <div class="grid_8">
-		                          		<p><input type="text" id="name" name ="name" class="round" value=""/></p>
+		                          		<p><input type="text" id="name" name ="Salaly" class="round" value=""/></p>
 		                          </div><br class="clear"/>
 		                          <div class="grid_2">
 		                                <h6 class="detail-title">คุณสมบัติ</h6>   
