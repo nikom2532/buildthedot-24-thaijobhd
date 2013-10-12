@@ -79,7 +79,13 @@
 		                          		<p><input type="text" id="name" name ="name" class="round" value=""/></p>
 		                          </div><br class="clear"/>
 		                          <div class="grid_2">
-		                             <h6 class="detail-title"> ตำแหน่ง</h6>
+		                             <h6 class="detail-title">ตำแหน่ง(ภาษาไทย)</h6>
+		                          </div>
+		                          <div class="grid_8">
+		                          		<p><input type="text" id="name" name ="name" class="round" value=""/></p>
+		                          </div><br class="clear"/>
+		                          <div class="grid_2">
+		                             <h6 class="detail-title">ตำแหน่ง(ภาษาอังกฤษ)</h6>
 		                          </div>
 		                          <div class="grid_8">
 		                          		<p><input type="text" id="name" name ="name" class="round" value=""/></p>
