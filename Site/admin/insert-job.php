@@ -177,10 +177,10 @@
 		                                    	<a href="#" class="table-actions-button text-red">ลบ</a>
 		                                    </div>
 		                              </div>
-		                           </div>  <div class="grid_12 center"></div>      
+		                           </div>  <div class="grid_12 center"><a href="#" class="save-button blue round">บันทึก</a></div>      
 								</form>
 		            		</section> 
-		                    <div class="grid_12 center"><a href="#" class="save-button blue round">บันทึก</a></div>
+		                    <div class="grid_12 center"></div>
 		                    </div>         
 		                   
 						</div> <!-- end content-module-main -->
