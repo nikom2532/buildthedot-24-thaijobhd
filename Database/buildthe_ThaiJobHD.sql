@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.8
+-- version 3.4.10.1deb1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 30, 2013 at 12:19 PM
--- Server version: 5.1.67
--- PHP Version: 5.3.27
+-- Generation Time: Oct 12, 2013 at 02:30 PM
+-- Server version: 5.5.32
+-- PHP Version: 5.3.10-1ubuntu3.7
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `buildthe_ThaiJobHD`
+-- Database: `buildthedot_24ThaiJobHD`
 --
 
 -- --------------------------------------------------------
@@ -27,11 +27,23 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_ad` (
-  `PictureID` int(11) NOT NULL,
+  `PictureID` int(11) NOT NULL AUTO_INCREMENT,
   `AdPic` text COLLATE utf8_unicode_ci NOT NULL,
   `AdLink` text COLLATE utf8_unicode_ci NOT NULL,
+  `AdType` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
+  `AdPosition` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`PictureID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `buildthedot_thaijobhd_ad`
+--
+
+INSERT INTO `buildthedot_thaijobhd_ad` (`PictureID`, `AdPic`, `AdLink`, `AdType`, `AdPosition`) VALUES
+(1, '1', '1', '', ''),
+(2, '1', '1', '', ''),
+(3, '', 'weeerrr', 'Side_Ads', '2'),
+(4, '', 'wert', 'Side_Ads', '3');
 
 -- --------------------------------------------------------
 
@@ -86,7 +98,14 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_job_idea` (
   `IdeaTime` datetime NOT NULL,
   `Status` int(11) NOT NULL,
   PRIMARY KEY (`CompanyID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `buildthedot_thaijobhd_job_idea`
+--
+
+INSERT INTO `buildthedot_thaijobhd_job_idea` (`CompanyID`, `MainIdea`, `Description1`, `Description2`, `Description3`, `Pic1`, `Pic2`, `Pic3`, `IdeaRecomment`, `IdeaTime`, `Status`) VALUES
+(1, 'Adrian Purdila test', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'picture.png', 'picture.png', 'picture.png', 0, '2013-10-07 00:00:00', 1);
 
 -- --------------------------------------------------------
 
@@ -119,9 +138,18 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_account` (
   `lastname` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `job_id` int(40) NOT NULL,
   `job_status` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `admin_status` int(1) NOT NULL,
   `address` longtext COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `buildthedot_thaijobhd_user_account`
+--
+
+INSERT INTO `buildthedot_thaijobhd_user_account` (`id`, `email`, `password`, `firstname`, `midname`, `lastname`, `job_id`, `job_status`, `admin_status`, `address`) VALUES
+(1, 'a@a.com', '77de54ccf56eb6f7dbf99e4d3be949ab6f9b0a55df8ac28564cb9f63a10be8af6ab3f7c2', 'a', 'a', 'a', 1, '1', 0, '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
