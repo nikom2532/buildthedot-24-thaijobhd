@@ -1,6 +1,6 @@
 <?php
 		$target_path = $rootpath."images/ad/";
-		$filename = "userimage_".$_SESSION["userid"]."_".$time_now."_".basename($_FILES["AdPic"]['name']);
+		$filename = "ad_".$_SESSION["userid"]."_".$ad_type."_".$ad_position."_".$time_now."_".basename($_FILES["AdPic"]['name']);
 		$target_path = $target_path . $filename;
 		
 		$allowedExts = array("gif", "jpeg", "jpg", "png");
@@ -19,7 +19,7 @@
 				if (move_uploaded_file($_FILES["AdPic"]['tmp_name'], $target_path)) {
 					echo "The file " . basename($_FILES["AdPic"]['name']) . " has been uploaded";
 					$sql="
-						UPDATE `buildthedot_thaijobhd_job_ad` 
+						UPDATE `buildthedot_thaijobhd_ad` 
 						SET `AdPic` = '".$filename."'
 						WHERE `PictureID` = '{$adid}' ;
 					";

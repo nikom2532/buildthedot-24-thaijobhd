@@ -46,7 +46,7 @@ else{
 						<h2>Side Ads</h2>
 						<h6>** ขนาด 350*200 px. | ชื่อรูปขึ้นต้นด้วย sideAds ตามด้วยหมายเลข 1-4 </h6>
 						<div id="content-detail" class="container_12">
-							<form id="form-advertisement" action="<?php echo $rootadminpath; ?>include/module/add-advertisement-process.php" method="POST">
+							<form id="form-advertisement" action="<?php echo $rootadminpath; ?>include/module/add-advertisement-process.php" method="POST" enctype="multipart/form-data">
 								<!-- <input type="hidden" name="adid" value="<?php echo $_GET["adid"]; ?>" /> -->
 									<div class="grid_7">
 										<section class="grid_7">

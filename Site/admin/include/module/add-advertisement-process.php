@@ -9,11 +9,12 @@ if($_SESSION["userid"] == "") {
 	include ("include/footer.php");
 }
 else{
+	
 	// $AdPic = $_POST["AdPic"];
 	$AdLink = $_POST["AdLink"];
 	$ad_type = $_POST["ad_type"];
-	echo $ad_position = $_POST["ad_position"];
-	$time_now = strtotime("now");
+	$ad_position = $_POST["ad_position"];
+	$time_now = strtotime("now");	//.date('Y-m-d H:i:s', $time_now)
 	
 	$sql="
 		SELECT * 
@@ -26,11 +27,13 @@ else{
 		$sql2="
 			UPDATE `buildthedot_thaijobhd_ad` 
 			SET 
-			`AdLink` = '".$AdLink."'
-			WHERE `AdType` = '".$ad_type."'
-			AND `AdPosition` = '".$ad_position."' ;
+				`AdLink` = '".$AdLink."'
+			WHERE 
+				`AdType` = '".$ad_type."'
+				AND `AdPosition` = '".$ad_position."';
 		";
 		@mysql_query($sql2);
+		$adid=$rs["PictureID"];
 	}
 	else{
 		$sql2="
@@ -40,10 +43,12 @@ else{
 			('{$AdLink}', '{$ad_type}', '{$ad_position}') ;
 		";
 		@mysql_query($sql2);
+		$adid = @mysql_insert_id();
 	}
+	
 	if(file_exists($_FILES['AdPic']['tmp_name']) && is_uploaded_file($_FILES['AdPic']['tmp_name'])){
-		// echo $_FILES['pic1']['tmp_name'];
-		include($rootadminpath."include/module/edit-recommend-idea-process2.php");
+		echo $_FILES['pic1']['tmp_name'];
+		include($rootadminpath."include/module/edit-advertisement-process2.php");
 	}
 	header("Location: {$rootadminpath}advertisement.php");
 }
