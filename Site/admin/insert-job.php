@@ -84,9 +84,7 @@
 		                          <div class="grid_8">
 		                          		<p><textarea type="text" id="name" name ="name" class="round" value=""></textarea>				                                </p>
 		                          </div><br class="clear"/>
-		                          <div class="grid_2">
-		                                <h6 class="detail-title">สถานที่ปฏิบัติงาน</h6>   
-		                          </div>
+		                          
 		                          <div class="grid_8">
 		                          		<p><textarea type="text" id="name" name ="name" class="round" value=""></textarea>                                </p>
 		                          </div><br class="clear"/>
