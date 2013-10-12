@@ -72,6 +72,12 @@
 							<div id="content-detail" class="container_12">
 		                    <section>
 		                    	<form id="form-edit" name="form-edit">
+		                         <div class="grid_2">
+		                             <h6 class="detail-title">ชื่อบริษัท</h6>
+		                          </div>
+		                          <div class="grid_8">
+		                          		<p><input type="text" id="name" name ="name" class="round" value=""/></p>
+		                          </div><br class="clear"/>
 		                          <div class="grid_2">
 		                             <h6 class="detail-title"> ตำแหน่ง</h6>
 		                          </div>
