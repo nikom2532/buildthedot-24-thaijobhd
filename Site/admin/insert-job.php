@@ -133,30 +133,32 @@
 		                                <h6 class="detail-title">ลักษณะงาน</h6>   
 		                          </div>
 		                          <div class="grid_8">
-		                          		<p><label for="read" class="alt-label"><input type="radio" id="test" name="test" checked="checked" />
+		                          		<p><label for="read" class="alt-label"><input type="radio" id="test" name="Full" checked="checked" value="1" />
 		            					Full Time
 		            				</label>
-									<label for="read" class="alt-label"><input type="radio" id="test" name="test" />
+									<label for="read" class="alt-label"><input type="radio" id="test" name="Part" value="2"/>
 		           						Part Time
 		            				</label> </p>
+		            				
 		                          </div><br class="clear"/>
 		                          <div class="grid_2">
 		                                <h6 class="detail-title">เริ่ม</h6>   
 		                          </div>
 		                          <div class="grid_8">
-		                          		<p><input name="date_from" type="text" id="date_from" class="round"/></p>
+		                          		<p><input name="date_start" type="text" id="date_from" class="round"/></p>
 		                          </div><br class="clear"/>
 		                          <div class="grid_2">
 		                                <h6 class="detail-title">สิ้นสุด</h6>   
 		                          </div>
 		                          <div class="grid_8">
-		                          		<p><input name="date_to" type="text" id="date_to" class="round"/></p>
+		                          		<p><input name="date_end" type="text" id="date_to" class="round"/></p>
 		                          </div><br class="clear"/>
 		                          <div class="grid_2">
 		                                <h6 class="detail-title">งานแนะนำ</h6>   
 		                          </div>
+		                          
 		                          <div class="grid_8">
-		                          		<p><input type="checkbox" id="recommend" />แนะนำ</p>
+		                          		<p><input type="checkbox" id="recommend" value="1" />แนะนำ</p>
 		                          </div><br class="clear"/>
 		
 		                          <br class="clear"/>
@@ -175,10 +177,11 @@
 		                                    	<a href="#" class="table-actions-button text-red">ลบ</a>
 		                                    </div>
 		                              </div>
-		                           </div>      
+		                           </div>
+		                            <div class="grid_12 center"><input type="submit" class="save-button blue round">บันทึก</a></div>      
 								</form>
 		            		</section> 
-		                    <div class="grid_12 center"><a href="#" class="save-button blue round">บันทึก</a></div>
+		                   
 		                    </div>         
 		                   
 						</div> <!-- end content-module-main -->
