@@ -67,7 +67,7 @@
 						
 						<div class="content-module-main">
 		                    <div id="head-title">
-		                    	<h1>งาน <span>- Lorem Ipsum </span><span class="text-black">- แก้ไข </span></h1>
+		                    	<h1>งาน <span>-</span><span class="text-black">เพิ่ม</span></h1>
 		                	</div>
 							<div id="content-detail" class="container_12">
 		                    <section>
