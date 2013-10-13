@@ -9,25 +9,25 @@ if($_SESSION["userid"] == "") {
 	include ("include/footer.php");
 }
 else{
-	$CompanyID = $_GET["CompanyID"];
+	$adid = $_GET["adid"];
 	$time_now = strtotime("now");
 	
 	$sql="
 		SELECT * 
-		FROM  `buildthedot_thaijobhd_top_company` 
-		WHERE `TopCompanyID` = '{$CompanyID}' ;
+		FROM  `buildthedot_thaijobhd_ad` 
+		WHERE `PictureID` = '{$adid}' ;
 	";
 	$result = @mysql_query($sql);
 	while ($rs = @mysql_fetch_array($result)) {
-		if($rs["CompanyPic"]!=""){
-			unlink($rootpath."images/top_company/".$rs["CompanyPic"]);
+		if($rs["AdPic"]!=""){
+			unlink($rootpath."images/ad/".$rs["AdPic"]);
 		}
 	}
 	
 	$sql="
-		DELETE FROM `buildthedot_thaijobhd_top_company` 
-		WHERE `TopCompanyID` = '{$CompanyID}' ;
+		DELETE FROM `buildthedot_thaijobhd_ad` 
+		WHERE `PictureID` = '{$adid}' ;
 	";
 	@mysql_query($sql);
-	header("Location: {$rootadminpath}top-company.php");
+	header("Location: {$rootadminpath}advertisement.php");
 }

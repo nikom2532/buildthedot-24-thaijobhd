@@ -12,17 +12,19 @@ $(document).ready(function() {
 });
 function delete_recommend_idea(rootadminpath, CompanyID){
 	if (confirm('Do you want to confirm to delete?')) {
-	    // Save it!
+	    // Delete it!
 	    window.location = rootadminpath+"include/module/delete-recommend-idea-process.php?CompanyID="+CompanyID;
-	} else {
-	    // Do nothing!
+	}
+}
+function delete_advertisement(rootadminpath, adid){
+	if (confirm('Do you want to confirm to delete?')) {
+	    // Delete it!
+	    window.location = rootadminpath+"include/module/delete-advertisement-process.php?adid="+adid;
 	}
 }
 function delete_top_company(rootadminpath, CompanyID){
 	if (confirm('Do you want to confirm to delete?')) {
-	    // Save it!
+	    // Delete it!
 	    window.location = rootadminpath+"include/module/delete-company-process.php?CompanyID="+CompanyID;
-	} else {
-	    // Do nothing!
 	}
 }

@@ -19,9 +19,15 @@ else{
 	";
 	$result = @mysql_query($sql);
 	while ($rs = @mysql_fetch_array($result)) {
-		unlink($rootpath."images/business-idea/".$rs["Pic1"]);
-		unlink($rootpath."images/business-idea/".$rs["Pic2"]);
-		unlink($rootpath."images/business-idea/".$rs["Pic3"]);
+		if($rs["Pic1"]!=""){
+			unlink($rootpath."images/business-idea/".$rs["Pic1"]);
+		}
+		if($rs["Pic2"]!=""){
+			unlink($rootpath."images/business-idea/".$rs["Pic2"]);
+		}
+		if($rs["Pic3"]!=""){
+			unlink($rootpath."images/business-idea/".$rs["Pic3"]);
+		}
 	}
 	
 	$sql="
