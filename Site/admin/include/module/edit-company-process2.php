@@ -8,7 +8,7 @@ $sql="
 $result=@mysql_query($sql);
 if($rs=@mysql_fetch_array($result)){
 	if($rs["CompanyPic"] != ""){
-		unlink($rootpath."images/top_company/".$rs["AdPic"]);
+		unlink($rootpath."images/top_company/".$rs["CompanyPic"]);
 	}
 }
 
@@ -16,7 +16,8 @@ if($rs=@mysql_fetch_array($result)){
 $target_path = $rootpath."images/top_company/";
 
 //Remove whitespace
-$filename=preg_replace('/\s+/', '', basename($_FILES["CompanyPic"]['name']));
+$filename = preg_replace('/\s+/', '', basename($_FILES["CompanyPic"]['name']));
+$filename = str_replace(" ", "", $filename);
 
 $filename = "tc_".$_SESSION["userid"]."_".$company_id."_".$title."_".$time_now."_".$filename;
 $target_path = $target_path . $filename;

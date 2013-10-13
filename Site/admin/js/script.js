@@ -18,3 +18,11 @@ function delete_recommend_idea(rootadminpath, CompanyID){
 	    // Do nothing!
 	}
 }
+function delete_top_company(rootadminpath, CompanyID){
+	if (confirm('Do you want to confirm to delete?')) {
+	    // Save it!
+	    window.location = rootadminpath+"include/module/delete-company-process.php?CompanyID="+CompanyID;
+	} else {
+	    // Do nothing!
+	}
+}

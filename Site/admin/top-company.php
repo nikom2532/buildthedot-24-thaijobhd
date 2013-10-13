@@ -74,7 +74,7 @@ else{
 											echo "error.png";
 										}
 									?>" alt="active"></td>
-									<td id="action" class="center"><a href="<?php echo $rootadminpath; ?>edit-company.php?company_id=<?php echo $rs["TopCompanyID"]; ?>" class="table-actions-button text-blue">แก้ไข</a><a href="#" class="table-actions-button text-red">ลบ</a></td>
+									<td id="action" class="center"><a href="<?php echo $rootadminpath; ?>edit-company.php?company_id=<?php echo $rs["TopCompanyID"]; ?>" class="table-actions-button text-blue">แก้ไข</a><a href="#" class="table-actions-button text-red" onclick="delete_top_company('<?php echo $rootadminpath; ?>' , '<?php echo $rs["TopCompanyID"]; ?>')">ลบ</a></td>
 								</tr>
 <?php
 							}
