@@ -69,7 +69,7 @@ else{
 									</div>
 									<div class="grid_8">
 										<p>
-											<textarea type="text" id="name" name ="Description1" class="round" value="<?php echo $rs["Description1"]; ?>"></textarea>
+											<textarea type="text" id="name" name ="Description1" class="round"><?php echo $rs["Description1"]; ?></textarea>
 										</p>
 									</div>
 									<br class="clear"/>
@@ -78,7 +78,7 @@ else{
 									</div>
 									<div class="grid_8">
 										<p>
-											<textarea type="text" id="name" name ="Description2" class="round" value="<?php echo $rs["Description2"]; ?>"></textarea>
+											<textarea type="text" id="name" name ="Description2" class="round"><?php echo $rs["Description2"]; ?></textarea>
 										</p>
 									</div>
 									<br class="clear"/>
@@ -87,7 +87,7 @@ else{
 									</div>
 									<div class="grid_8">
 										<p>
-											<textarea type="text" id="name" name ="Description3" class="round" value="<?php echo $rs["Description3"]; ?>"></textarea>
+											<textarea type="text" id="name" name ="Description3" class="round"><?php echo $rs["Description3"]; ?></textarea>
 										</p>
 									</div>
 									<br class="clear"/>
@@ -97,7 +97,7 @@ else{
 									<div class="prefix_2" id="prefix_2">
 										<div class="grid_4">
 											<p>
-												<?php echo $rs["Pic1"]; ?><!-- <a href="#" class="button round black right">แก้ไข</a> -->
+												<a href="<?php echo $rootpath; ?>images/business-idea/<?php echo $rs["Pic1"]; ?>" target="_blank" ><img src="<?php echo $rootpath; ?>images/business-idea/<?php echo $rs["Pic1"]; ?>" width="200" /></a>
 											</p>
 										</div>
 										<div class="grid_8">
@@ -113,7 +113,7 @@ else{
 									<div class="prefix_2" id="prefix_2">
 										<div class="grid_4">
 											<p>
-												<?php echo $rs["Pic2"]; ?><!-- <a href="#" class="button round black right">แก้ไข</a> -->
+												<a href="<?php echo $rootpath; ?>images/business-idea/<?php echo $rs["Pic2"]; ?>" target="_blank" ><img src="<?php echo $rootpath; ?>images/business-idea/<?php echo $rs["Pic2"]; ?>" width="200" /></a>
 											</p>
 										</div>
 										<div class="grid_8">
@@ -129,7 +129,7 @@ else{
 									<div class="prefix_2" id="prefix_2">
 										<div class="grid_4">
 											<p>
-												<?php echo $rs["Pic3"]; ?><!-- <a href="#" class="button round black right">แก้ไข</a> -->
+												<a href="<?php echo $rootpath; ?>images/business-idea/<?php echo $rs["Pic3"]; ?>" target="_blank" ><img src="<?php echo $rootpath; ?>images/business-idea/<?php echo $rs["Pic3"]; ?>" width="200" /></a>
 											</p>
 										</div>
 										<div class="grid_8">
@@ -146,7 +146,7 @@ else{
 									<div class="grid_8">
 										<p>
 											<label for="active" class="alt-label">
-												<input type="radio" id="status" name="IdeaRecomment" <?php 
+												<input type="radio" id="status" name="IdeaRecomment" value="1" <?php 
 													if ($rs["IdeaRecomment"]==1) {
 														echo "checked=\"checked\"";
 													}
@@ -154,7 +154,7 @@ else{
 												Active 
 											</label>
 											<label for="inactive" class="alt-label">
-												<input type="radio" id="status" name="IdeaRecomment" <?php 
+												<input type="radio" id="status" name="IdeaRecomment" value="0" <?php 
 													if ($rs["IdeaRecomment"]==0) {
 														echo "checked=\"checked\"";
 													}

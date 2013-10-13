@@ -122,11 +122,11 @@ else{
 									<div class="grid_8">
 										<p>
 											<label for="active" class="alt-label">
-												<input type="radio" id="status" name="IdeaRecomment" />
+												<input type="radio" id="status" name="IdeaRecomment" value="1" />
 												Active 
 											</label>
 											<label for="inactive" class="alt-label">
-												<input type="radio" id="status" name="IdeaRecomment" />
+												<input type="radio" id="status" name="IdeaRecomment" value="0" />
 												Inactive
 											</label>
 										</p>
