@@ -2,7 +2,6 @@
 <?php include("include/top-bar.php");?>
 <?php include("include/connect-to-database.php");?>
 <?php session_start();?>
-<script src="http://localhost/buildthedot-24-thaijobhd/Site/js/jquery-1.7.1.min.js"></script>
 <script type="text/javascript">
 <!--calendar -->
 	$(function() {
@@ -29,34 +28,22 @@
 		});
 		 
 	});
-</script>
-<script>
-	$(document).ready(function(){
-		
-	});
-	
 	
 </script>
 
 <?php 
-$rootpath="../";
-$rootadminpath="./";
-include($rootadminpath."include/header.php");
-include($rootadminpath."include/connect-to-database.php");
-//$_SESSION["userid"] = "";
-if($_SESSION["userid"] == "") {
-	include ($rootadminpath . "include/login.php");
-	include ("include/footer.php");
-}
-else{
-	//check for Logout mode
-	if($_GET["mode"]=="logout"){
-		include($rootadminpath."include/module/logout_process.php");
-	}
-	//normal mode
-	else{
-		include($rootadminpath."include/top-bar.php");
-?>
+	$Admin = "a@a.com";
+	$sql = "SELECT email, job_status FROM buildthedot_thaijobhd_user_account WHERE email = '$Admin'";
+	$result = mysql_query($sql);
+	if($result)
+	{ 
+		while($show = mysql_fetch_array($result))
+		{
+			$e_mail = $show['email'];
+			$Status = $show['job_status'];
+		}
+		if($Status = 1)
+		{?>
 				<!-- HEADER -->
 				<div id="header-with-tabs">
 					<div class="page-full-width cf">
@@ -80,93 +67,84 @@ else{
 						
 						<div class="content-module-main">
 		                    <div id="head-title">
-		                    	<h1>งาน <span>-</span><span class="text-black">เพิ่ม</span></h1>
+		                    	<h1>งาน <span>- Lorem Ipsum </span><span class="text-black">- แก้ไข </span></h1>
 		                	</div>
 							<div id="content-detail" class="container_12">
 		                    <section>
-		                    	<form id="form-insert" name="form-edit" method="post">
-
-		                         <div class="grid_2">
-		                             <h6 class="detail-title">ชื่อบริษัท</h6>
-		                          </div>
-		                          <div class="grid_8">
-		                          		<p><input type="text" id="name" name ="CompanyName" class="round" value=""/></p>
-		                          </div><br class="clear"/>
-
+		                    	<form id="form-edit" name="form-edit">
 		                          <div class="grid_2">
-		                             <h6 class="detail-title">ตำแหน่ง(ภาษาไทย)</h6>
+		                             <h6 class="detail-title"> ตำแหน่ง</h6>
 		                          </div>
 		                          <div class="grid_8">
-		                          		<p><input type="text" id="name" name ="PositionThaiName" class="round" value=""/></p>
+		                          		<p><input type="text" id="name" name ="name" class="round" value="Lorem Ipsum is simply dummy text of the printing"/></p>
 		                          </div><br class="clear"/>
-		                          
-		                          <div class="grid_2">
-		                             <h6 class="detail-title">ตำแหน่ง(ภาษาอังกฤษ)</h6>
-		                          </div>
-		                          <div class="grid_8">
-		                          		<p><input type="text" id="name" name ="PositionEngName" class="round" value=""/></p>
-		                          </div><br class="clear"/>
-		                         
 		                          <div class="grid_2">
 		                                <h6 class="detail-title">สถานที่ปฏิบัติงาน</h6>   
 		                          </div>
 		                          <div class="grid_8">
-		                          		<p><textarea type="text" id="name" name ="Placename" class="round" value=""></textarea>				                                </p>
+		                          		<p><textarea type="text" id="name" name ="name" class="round" value=""></textarea>				                                </p>
 		                          </div><br class="clear"/>
-		                          
-		                          <br class="clear"/>
+		                          <div class="grid_2">
+		                                <h6 class="detail-title">สถานที่ปฏิบัติงาน</h6>   
+		                          </div>
+		                          <div class="grid_8">
+		                          		<p><textarea type="text" id="name" name ="name" class="round" value=""></textarea>                                </p>
+		                          </div><br class="clear"/>
 		                          <div class="grid_2">
 		                                <h6 class="detail-title">อัตรา</h6>   
 		                          </div>
 		                          <div class="grid_8">
-		                          		<p><input type="text" id="name" name ="Quantity" class="round" value=""/></p>
+		                          		<p><input type="text" id="name" name ="name" class="round" value="Lorem Ipsum is simply dummy text of the printing"/></p>
 		                          </div><br class="clear"/>
 		                          <div class="grid_2">
 		                                <h6 class="detail-title">เงินเดือน</h6>   
 		                          </div>
 		                          <div class="grid_8">
-		                          		<p><input type="text" id="name" name ="Salaly" class="round" value=""/></p>
+		                          		<p><input type="text" id="name" name ="name" class="round" value="Lorem Ipsum is simply dummy text of the printing"/></p>
 		                          </div><br class="clear"/>
 		                          <div class="grid_2">
 		                                <h6 class="detail-title">คุณสมบัติ</h6>   
 		                          </div>
 		                          <div class="grid_8">
-		                          		<p><p><textarea type="text" id="name" name ="Placename" class="round" value=""></textarea></p>
+		                          		<p><input type="text" id="name" name ="name" class="round" value="Lorem Ipsum is simply dummy text of the printing"/></p>
 		                          </div>
 		                          <div class="grid_2">
-		                          	
+		                          	<a href="#" class="button round black">เพิ่ม</a>
 		                          </div><br class="clear"/>
-		                      		<br class="clear"/>
+		                          <div class="grid_2">
+		                                <h6 class="detail-title">บริษัท</h6>   
+		                          </div>
+		                          <div class="grid_8">
+		                          		<p><input type="text" id="company" name ="company" class="round"/></p>
+		                          </div><br class="clear"/>
 		                          <div class="grid_2">
 		                                <h6 class="detail-title">ลักษณะงาน</h6>   
 		                          </div>
 		                          <div class="grid_8">
-		                          		<p><label for="read" class="alt-label"><input type="radio" id="test" name="Full" checked="checked" value="1" />
+		                          		<p><label for="read" class="alt-label"><input type="radio" id="test" name="test" checked="checked" />
 		            					Full Time
 		            				</label>
-									<label for="read" class="alt-label"><input type="radio" id="test" name="Part" value="2"/>
+									<label for="read" class="alt-label"><input type="radio" id="test" name="test" />
 		           						Part Time
 		            				</label> </p>
-		            				
 		                          </div><br class="clear"/>
 		                          <div class="grid_2">
 		                                <h6 class="detail-title">เริ่ม</h6>   
 		                          </div>
 		                          <div class="grid_8">
-		                          		<p><input name="date_start" type="text" id="date_from" class="round"/></p>
+		                          		<p><input name="date_from" type="text" id="date_from" class="round"/></p>
 		                          </div><br class="clear"/>
 		                          <div class="grid_2">
 		                                <h6 class="detail-title">สิ้นสุด</h6>   
 		                          </div>
 		                          <div class="grid_8">
-		                          		<p><input name="date_end" type="text" id="date_to" class="round"/></p>
+		                          		<p><input name="date_to" type="text" id="date_to" class="round"/></p>
 		                          </div><br class="clear"/>
 		                          <div class="grid_2">
 		                                <h6 class="detail-title">งานแนะนำ</h6>   
 		                          </div>
-		                          
 		                          <div class="grid_8">
-		                          		<p><input type="checkbox" id="recommend" value="1" />แนะนำ</p>
+		                          		<p><input type="checkbox" id="recommend" />แนะนำ</p>
 		                          </div><br class="clear"/>
 		
 		                          <br class="clear"/>
@@ -179,11 +157,16 @@ else{
 		                                    	<a href="#" class="table-actions-button text-blue">แก้ไข</a>
 		                                    	<a href="#" class="table-actions-button text-red">ลบ</a>
 		                                    </div><br class="clear"/>
-		                                  
+		                                    <div class="grid_5">dddd</div>
+		                                    <div class="grid_3">
+		                                    	<a href="#" class="table-actions-button text-blue">แก้ไข</a>
+		                                    	<a href="#" class="table-actions-button text-red">ลบ</a>
+		                                    </div>
 		                              </div>
-		                           </div> 
+		                           </div>      
+								</form>
 		            		</section> 
-		                     <div class="grid_12 center">	<a href="#" class="save-button blue round" onclick="document.getElementById('form-edit').submit(); ">บันทึก</a></div>
+		                    <div class="grid_12 center"><a href="#" class="save-button blue round">บันทึก</a></div>
 		                    </div>         
 		                   
 						</div> <!-- end content-module-main -->
@@ -191,8 +174,24 @@ else{
 					</div> <!-- end content-module -->
 					
 			</div> <!-- end content -->
-<?php
-	include ($rootadminpath . "include/footer.php");
+		<?php 
+		}
+		else 
+		{?>
+				<script language="text/JavaScript">
+					alert("Kakkkk");
+				</script>	
+		<?php 
+		}
 	}
-}//end check user session
-?>
+	else
+	{
+		?>
+				<script language="JavaScript">
+					alert("Kakkkk");
+				</script>	
+			<?php 
+	}
+	
+	?>
+<?php include("include/footer.php");?>
