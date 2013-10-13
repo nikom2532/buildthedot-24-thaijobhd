@@ -185,7 +185,9 @@ textarea {
 	padding-right: 3em; /* 36/12 */
 }
 .ic-search {
-	background-image: url(../images/ic_zoom.png);
+	background-image: url(../images/ic_search.png);
+	background-position:center;
+	background-repeat:no-repeat;
 }
 .seperator {
 	margin-bottom: 25px;
@@ -215,7 +217,6 @@ textarea {
 }
 
 #top-nav ul{
-	margin-top:20px;
 	list-style-type: none;
 	padding-left: 55px;
 }
@@ -229,7 +230,7 @@ textarea {
 	padding-right: 1em;
 	padding-bottom: 0.5em;
 	padding-left: 0.4em;
-	margin-top: 20px;
+	margin-top: 10px;
 }
 #top-nav li:hover {
 	border-left-width: 1px;
@@ -243,13 +244,16 @@ textarea {
 	margin-top: 0;
 	font-size: 1.1em;
 }
+/*
 #my-profile{
 	position:absolute;
 	top:1em;
 	left:63em;
 }
+*/
 #my-profile{
 	text-transform:uppercase;
+	padding-top:5px;
 }
 
 #my-profile li {
@@ -296,7 +300,7 @@ textarea {
 input[type="submit"]{
 	border: none;
 	cursor: pointer; /* 10/12 */
-	background-position: right;
+	/*background-position: right;*/
 	background-repeat: no-repeat;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -309,14 +313,14 @@ input[type="submit"]{
 #search-form input[type="submit"] {
 	border: none;
 	cursor: pointer; /* 10/12 */
-	background-position: right;
+	/*background-position: right;*/
 	background-repeat: no-repeat;
 	font-weight: bold;
 	text-transform: uppercase;
-	padding-top: 0.733em;
-	padding-right: 1.2em;
-	padding-bottom: 0.733em;
-	padding-left: 1em;
+	padding-top: 0.913em;
+	padding-right: 1.5em;
+	padding-bottom: 0.913em;
+	padding-left: 1.5em;
 	margin-right: 0.5em;
 }
 .icSearch {
