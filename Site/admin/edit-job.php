@@ -192,8 +192,6 @@
 				</script>	
 			<?php 
 	}
-		?>
-
 	
-	
+	?>
 <?php include("include/footer.php");?>

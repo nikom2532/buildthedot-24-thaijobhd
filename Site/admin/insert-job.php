@@ -2,6 +2,7 @@
 <?php include("include/top-bar.php");?>
 <?php include("include/connect-to-database.php");?>
 <?php session_start();?>
+<script src="http://localhost/buildthedot-24-thaijobhd/Site/js/jquery-1.7.1.min.js"></script>
 <script type="text/javascript">
 <!--calendar -->
 	$(function() {
@@ -28,22 +29,34 @@
 		});
 		 
 	});
+</script>
+<script>
+	$(document).ready(function(){
+		
+	});
+	
 	
 </script>
 
 <?php 
-	$Admin = "a@a.com";
-	$sql = "SELECT email, job_status FROM buildthedot_thaijobhd_user_account WHERE email = '$Admin'";
-	$result = mysql_query($sql);
-	if($result)
-	{ 
-		while($show = mysql_fetch_array($result))
-		{
-			$e_mail = $show['email'];
-			$Status = $show['job_status'];
-		}
-		if($Status = 1)
-		{?>
+$rootpath="../";
+$rootadminpath="./";
+include($rootadminpath."include/header.php");
+include($rootadminpath."include/connect-to-database.php");
+//$_SESSION["userid"] = "";
+if($_SESSION["userid"] == "") {
+	include ($rootadminpath . "include/login.php");
+	include ("include/footer.php");
+}
+else{
+	//check for Logout mode
+	if($_GET["mode"]=="logout"){
+		include($rootadminpath."include/module/logout_process.php");
+	}
+	//normal mode
+	else{
+		include($rootadminpath."include/top-bar.php");
+?>
 				<!-- HEADER -->
 				<div id="header-with-tabs">
 					<div class="page-full-width cf">
@@ -71,7 +84,7 @@
 		                	</div>
 							<div id="content-detail" class="container_12">
 		                    <section>
-		                    	<form id="form-edit" name="form-edit">
+		                    	<form id="form-insert" name="form-edit" method="post">
 
 		                         <div class="grid_2">
 		                             <h6 class="detail-title">ชื่อบริษัท</h6>
@@ -118,17 +131,12 @@
 		                                <h6 class="detail-title">คุณสมบัติ</h6>   
 		                          </div>
 		                          <div class="grid_8">
-		                          		<p><input type="text" id="name" name ="name" class="round" value=""/></p>
+		                          		<p><p><textarea type="text" id="name" name ="Placename" class="round" value=""></textarea></p>
 		                          </div>
 		                          <div class="grid_2">
-		                          	<a href="#" class="button round black">เพิ่ม</a>
+		                          	
 		                          </div><br class="clear"/>
-		                          <div class="grid_2">
-		                                <h6 class="detail-title">บริษัท</h6>   
-		                          </div>
-		                          <div class="grid_8">
-		                          		<p><input type="text" id="company" name ="company" class="round"/></p>
-		                          </div><br class="clear"/>
+		                      		<br class="clear"/>
 		                          <div class="grid_2">
 		                                <h6 class="detail-title">ลักษณะงาน</h6>   
 		                          </div>
@@ -171,16 +179,11 @@
 		                                    	<a href="#" class="table-actions-button text-blue">แก้ไข</a>
 		                                    	<a href="#" class="table-actions-button text-red">ลบ</a>
 		                                    </div><br class="clear"/>
-		                                    <div class="grid_5">dddd</div>
-		                                    <div class="grid_3">
-		                                    	<a href="#" class="table-actions-button text-blue">แก้ไข</a>
-		                                    	<a href="#" class="table-actions-button text-red">ลบ</a>
-		                                    </div>
+		                                  
 		                              </div>
-		                           </div>  <div class="grid_12 center"><a href="#" class="save-button blue round">บันทึก</a></div>      
-								</form>
+		                           </div> 
 		            		</section> 
-		                    <div class="grid_12 center"></div>
+		                     <div class="grid_12 center">	<a href="#" class="save-button blue round" onclick="document.getElementById('form-edit').submit(); ">บันทึก</a></div>
 		                    </div>         
 		                   
 						</div> <!-- end content-module-main -->
@@ -188,24 +191,8 @@
 					</div> <!-- end content-module -->
 					
 			</div> <!-- end content -->
-		<?php 
-		}
-		else 
-		{?>
-				<script language="text/JavaScript">
-					alert("Kakkkk");
-				</script>	
-		<?php 
-		}
+<?php
+	include ($rootadminpath . "include/footer.php");
 	}
-	else
-	{
-		?>
-				<script language="JavaScript">
-					alert("Kakkkk");
-				</script>	
-			<?php 
-	}
-	
-	?>
-<?php include("include/footer.php");?>
+}//end check user session
+?>
