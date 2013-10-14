@@ -2,12 +2,37 @@ $(document).ready(function() {
 
 	//Content boxes expand/collapse
 	$(".initial-expand").hide();
-
 	$("div.content-module-heading").click(function(){
 		$(this).next("div.content-module-main").slideToggle();
-
 		$(this).children(".expand-collapse-text").toggle();
 	});
+	
+	//####### Edit Advertisement Page #######
+	$('#ad_content_position').hide();
+	$('#ad_side_position').hide();
+	if($("form#form-advertisement #ad_type1").is(":checked")){
+		$('#ad_content_position').show();
+		$('#ad_side_position').attr("name","ad_position_barbage");
+	}
+	else if($("form#form-advertisement #ad_type2").is(":checked")){
+		$('#ad_side_position').show();
+		$('#ad_content_position').attr("name","ad_position_barbage");
+	}
+	$('form#form-advertisement').click(function(){
+		if($("form#form-advertisement #ad_type1").is(":checked")){
+			$('#ad_content_position').show();
+			$('#ad_side_position').hide();
+			$('#ad_content_position').attr("name","ad_position");
+			$('#ad_side_position').attr("name","ad_position_barbage");
+		}
+		else if($("form#form-advertisement #ad_type2").is(":checked")){
+			$('#ad_content_position').hide();
+			$('#ad_side_position').show();
+			$('#ad_content_position').attr("name","ad_position_barbage");
+			$('#ad_side_position').attr("name","ad_position");
+		}
+	});
+	//####### End Edit Advertisement Page #######
 	
 });
 function delete_recommend_idea(rootadminpath, CompanyID){

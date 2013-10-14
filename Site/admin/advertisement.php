@@ -44,9 +44,11 @@ else{
 						<thead>
 							<tr>
 								<th width="9%">ลำดับที่</th>
-								<th width="43%">ชื่อ Banner</th>
-								<th width="23%">ลิ้งค์</th>
-								<th width="11%">Action</th>
+								<th width="33%">ชื่อ Banner</th>
+								<th width="10%">Type</th>
+								<th width="8%">Position</th>
+								<th width="18%">ลิ้งค์</th>
+								<th width="8%">Action</th>
 							</tr>
 						</thead>
 						<tfoot>
@@ -63,6 +65,8 @@ else{
 									<tr>
 										<td><?php echo $i++; ?></td>
 										<td><a href="<?php echo $rootpath; ?>images/ad/<?php echo $rs["AdPic"]; ?>" target="_blank"><?php echo $rs["AdPic"]; ?></a></td>
+										<td><?php echo $rs["AdType"]; ?></td>
+										<td><?php echo $rs["AdPosition"]; ?></td>
 										<td><a href="<?php echo $rs["AdLink"]; ?>" target="_block"><?php echo $rs["AdLink"]; ?></a></td>
 										<td id="action" class="center"><a href="edit-advertisement.php?adid=<?php echo $rs["PictureID"]; ?>" class="table-actions-button text-blue">แก้ไข</a><a href="#" class="table-actions-button text-red" onclick="delete_advertisement('<?php echo $rootadminpath; ?>', '<?php echo $rs["PictureID"]; ?>')">ลบ</a></td>
 									</tr>

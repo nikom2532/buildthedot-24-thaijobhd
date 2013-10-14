@@ -83,11 +83,20 @@ else{
 													Choose Position:
 												</span>
 												<span class="grid_2">
-	    										<select name="ad_position">
+	    										<select name="ad_position" id="ad_content_position">
 														<option value="1" <?php if($rs["AdPosition"]=="1"){ echo "selected"; } ?>>1</option>
 														<option value="2" <?php if($rs["AdPosition"]=="2"){ echo "selected"; } ?>>2</option>
 														<option value="3" <?php if($rs["AdPosition"]=="3"){ echo "selected"; } ?>>3</option>
 														<option value="4" <?php if($rs["AdPosition"]=="4"){ echo "selected"; } ?>>4</option>
+													</select>
+													<select name="ad_position" id="ad_side_position">
+<?php
+														for($init=1; $init<=10; $init++){
+?>
+															<option value="<?php echo $init; ?>" <?php if($rs["AdPosition"]==$init){ echo "selected"; } ?>><?php echo $init; ?></option>
+<?php
+														}
+?>
 													</select>
 												</span>
 											</h5>
