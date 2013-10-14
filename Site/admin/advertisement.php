@@ -62,7 +62,7 @@ else{
 ?>
 									<tr>
 										<td><?php echo $i++; ?></td>
-										<td><?php echo $rs["AdPic"]; ?></td>
+										<td><a href="<?php echo $rootpath; ?>images/ad/<?php echo $rs["AdPic"]; ?>" target="_blank"><?php echo $rs["AdPic"]; ?></a></td>
 										<td><a href="<?php echo $rs["AdLink"]; ?>" target="_block"><?php echo $rs["AdLink"]; ?></a></td>
 										<td id="action" class="center"><a href="edit-advertisement.php?adid=<?php echo $rs["PictureID"]; ?>" class="table-actions-button text-blue">แก้ไข</a><a href="#" class="table-actions-button text-red" onclick="delete_advertisement('<?php echo $rootadminpath; ?>', '<?php echo $rs["PictureID"]; ?>')">ลบ</a></td>
 									</tr>
