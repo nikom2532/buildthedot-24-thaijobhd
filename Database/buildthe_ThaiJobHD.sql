@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.10.1deb1
+-- version 3.5.8
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 12, 2013 at 02:30 PM
--- Server version: 5.5.32
--- PHP Version: 5.3.10-1ubuntu3.7
+-- Generation Time: Oct 14, 2013 at 11:41 PM
+-- Server version: 5.1.67
+-- PHP Version: 5.3.27
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `buildthedot_24ThaiJobHD`
+-- Database: `buildthe_ThaiJobHD`
 --
 
 -- --------------------------------------------------------
@@ -60,8 +60,8 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_job` (
   `Saraly` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `JobDescription` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
   `Recomment` int(11) NOT NULL,
-  `StartTime` datetime NOT NULL,
-  `EndTime` datetime NOT NULL,
+  `StartTime` date NOT NULL,
+  `EndTime` date NOT NULL,
   `JobType` int(11) NOT NULL,
   PRIMARY KEY (`JobID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
