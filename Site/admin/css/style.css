@@ -315,7 +315,7 @@ a#company-branding-small img { height: 30px; }
 /* ---------- TABS ---------- */
 ul#tabs { list-style-type: none; }
 
-ul#tabs li { float: left; width:100px;}
+ul#tabs li { float: left; width:120px;}
 
 ul#tabs li a {
 	border: 1px solid #eeefef;
