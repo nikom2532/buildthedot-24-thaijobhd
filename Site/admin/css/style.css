@@ -464,7 +464,8 @@ div.content-module-main { padding: 1em; /* 16/16 */ }
 	padding-bottom: 0.34em;
 	color:#47A0D8;
 }
-h6 #headline{
+h6 #headline,
+h6#headline{
 	font-family: "CustomFont", Verdana, Tahoma;
 	font-size: 1.1em;
 	color:#ADADAD;
