@@ -50,5 +50,8 @@ else{
 		echo $_FILES['pic1']['tmp_name'];
 		include($rootadminpath."include/module/edit-advertisement-process2.php");
 	}
-	header("Location: {$rootadminpath}advertisement.php");
+	// header("Location: {$rootadminpath}advertisement.php");
+	?><script type="text/javascript">
+		window.location="<?php echo $rootadminpath; ?>advertisement.php";
+	</script><?php
 }

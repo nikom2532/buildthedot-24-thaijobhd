@@ -31,5 +31,8 @@ else{
 	if(file_exists($_FILES['CompanyPic']['tmp_name']) && is_uploaded_file($_FILES['CompanyPic']['tmp_name'])){
 		include($rootadminpath."include/module/edit-company-process2.php");
 	}
-	header("Location: {$rootadminpath}top-company.php");
+	// header("Location: {$rootadminpath}top-company.php");
+	?><script type="text/javascript">
+		window.location="<?php echo $rootadminpath; ?>top-company.php";
+	</script><?php
 }

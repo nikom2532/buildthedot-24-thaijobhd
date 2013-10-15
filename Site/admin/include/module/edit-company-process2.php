@@ -36,8 +36,8 @@ if ((($_FILES["CompanyPic"]["type"] == "image/gif")
 		echo "Error: " . $_FILES["CompanyPic"]["error"] . "<br />";
 	} else {
 		if (move_uploaded_file($_FILES["CompanyPic"]['tmp_name'], $target_path)) {
-			echo "The file " . basename($_FILES["CompanyPic"]['name']) . " has been uploaded";
-			echo $sql="
+			// echo "The file " . basename($_FILES["CompanyPic"]['name']) . " has been uploaded";
+			$sql="
 				UPDATE `buildthedot_thaijobhd_top_company` 
 				SET `CompanyPic` = '".$filename."'
 				WHERE `TopCompanyID` = '{$company_id}' ;

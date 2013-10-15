@@ -17,7 +17,7 @@
 				echo "Error: " . $_FILES["AdPic"]["error"] . "<br />";
 			} else {
 				if (move_uploaded_file($_FILES["AdPic"]['tmp_name'], $target_path)) {
-					echo "The file " . basename($_FILES["AdPic"]['name']) . " has been uploaded";
+					// echo "The file " . basename($_FILES["AdPic"]['name']) . " has been uploaded";
 					$sql="
 						UPDATE `buildthedot_thaijobhd_ad` 
 						SET `AdPic` = '".$filename."'

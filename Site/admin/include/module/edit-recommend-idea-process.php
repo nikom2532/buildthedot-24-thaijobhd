@@ -40,5 +40,8 @@ else{
 		// echo $_FILES['pic1']['tmp_name'];
 		include($rootadminpath."include/module/edit-recommend-idea-process4.php");
 	}
-	header("Location: {$rootadminpath}business-idea.php");
+	// header("Location: {$rootadminpath}business-idea.php");
+	?><script type="text/javascript">
+		window.location="<?php echo $rootadminpath; ?>business-idea.php";
+	</script><?php
 }

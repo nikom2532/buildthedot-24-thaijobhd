@@ -35,5 +35,8 @@ else{
 		WHERE `CompanyID` = '{$CompanyID}' ;
 	";
 	@mysql_query($sql);
-	header("Location: {$rootadminpath}business-idea.php");
+	// header("Location: {$rootadminpath}business-idea.php");
+	?><script type="text/javascript">
+		window.location="<?php echo $rootadminpath; ?>business-idea.php";
+	</script><?php
 }

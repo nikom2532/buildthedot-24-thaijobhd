@@ -36,7 +36,7 @@ if ((($_FILES["pic3"]["type"] == "image/gif")
 		echo "Error: " . $_FILES["pic3"]["error"] . "<br />";
 	} else {
 		if (move_uploaded_file($_FILES["pic3"]['tmp_name'], $target_path)) {
-			echo "The file " . basename($_FILES["pic3"]['name']) . " has been uploaded";
+			// echo "The file " . basename($_FILES["pic3"]['name']) . " has been uploaded";
 			$sql="
 				UPDATE `buildthedot_thaijobhd_job_idea` 
 				SET `Pic3` = '".$filename."'

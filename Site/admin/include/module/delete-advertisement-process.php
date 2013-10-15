@@ -29,5 +29,8 @@ else{
 		WHERE `PictureID` = '{$adid}' ;
 	";
 	@mysql_query($sql);
-	header("Location: {$rootadminpath}advertisement.php");
+	// header("Location: {$rootadminpath}advertisement.php");
+	?><script type="text/javascript">
+		window.location="<?php echo $rootadminpath; ?>advertisement.php";
+	</script><?php
 }

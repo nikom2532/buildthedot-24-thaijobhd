@@ -29,5 +29,8 @@ else{
 		WHERE `TopCompanyID` = '{$CompanyID}' ;
 	";
 	@mysql_query($sql);
-	header("Location: {$rootadminpath}top-company.php");
+	// header("Location: {$rootadminpath}top-company.php");
+	?><script type="text/javascript">
+		window.location="<?php echo $rootadminpath; ?>top-company.php";
+	</script><?php
 }
