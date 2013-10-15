@@ -97,7 +97,16 @@ else{
 									<div class="prefix_2" id="prefix_2">
 										<div class="grid_4">
 											<p>
+<?php
+												if ($rs["Pic1"]=="") {
+
+													?><img src="<?php echo $rootpath; ?>images/banner-2.png" /><?php
+												}else{
+?>
 												<a href="<?php echo $rootpath; ?>images/business-idea/<?php echo $rs["Pic1"]; ?>" target="_blank" ><img src="<?php echo $rootpath; ?>images/business-idea/<?php echo $rs["Pic1"]; ?>" width="200" /></a>
+<?php
+												}
+?>
 											</p>
 										</div>
 										<div class="grid_8">
@@ -113,7 +122,16 @@ else{
 									<div class="prefix_2" id="prefix_2">
 										<div class="grid_4">
 											<p>
+<?php
+												if ($rs["Pic2"]=="") {
+
+													?><img src="<?php echo $rootpath; ?>images/banner-2.png" /><?php
+												}else{
+?>
 												<a href="<?php echo $rootpath; ?>images/business-idea/<?php echo $rs["Pic2"]; ?>" target="_blank" ><img src="<?php echo $rootpath; ?>images/business-idea/<?php echo $rs["Pic2"]; ?>" width="200" /></a>
+<?php
+												}
+?>
 											</p>
 										</div>
 										<div class="grid_8">
@@ -129,7 +147,16 @@ else{
 									<div class="prefix_2" id="prefix_2">
 										<div class="grid_4">
 											<p>
+<?php
+												if ($rs["Pic3"]=="") {
+
+													?><img src="<?php echo $rootpath; ?>images/banner-2.png" /><?php
+												}else{
+?>
 												<a href="<?php echo $rootpath; ?>images/business-idea/<?php echo $rs["Pic3"]; ?>" target="_blank" ><img src="<?php echo $rootpath; ?>images/business-idea/<?php echo $rs["Pic3"]; ?>" width="200" /></a>
+<?php
+												}
+?>												
 											</p>
 										</div>
 										<div class="grid_8">
