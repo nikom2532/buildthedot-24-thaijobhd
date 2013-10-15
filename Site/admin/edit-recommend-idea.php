@@ -153,10 +153,10 @@ else{
 													?><img src="<?php echo $rootpath; ?>images/banner-2.png" /><?php
 												}else{
 ?>
-												<a href="<?php echo $rootpath; ?>images/business-idea/<?php echo $rs["Pic3"]; ?>" target="_blank" ><img src="<?php echo $rootpath; ?>images/business-idea/<?php echo $rs["Pic3"]; ?>" width="200" /></a>
+													<a href="<?php echo $rootpath; ?>images/business-idea/<?php echo $rs["Pic3"]; ?>" target="_blank" ><img src="<?php echo $rootpath; ?>images/business-idea/<?php echo $rs["Pic3"]; ?>" width="200" /></a>
 <?php
 												}
-?>												
+?>
 											</p>
 										</div>
 										<div class="grid_8">
