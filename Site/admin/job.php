@@ -127,7 +127,7 @@ else {
 			{
 			?>
 				<script language="JavaScript">
-					alert("Kakkkk");
+					alert("Login fail");
 				</script>	
 			<?php 
 			}
@@ -136,7 +136,7 @@ else {
 		{
 ?>
 		<script language="JavaScript">
-			alert("Kakkkk");
+			alert("Login fail");
 		</script>	
 <?php 
 		} 
