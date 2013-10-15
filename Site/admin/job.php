@@ -6,7 +6,7 @@ include($rootadminpath."include/header.php");
 include("include/connect-to-database.php");
 
 //For Development mode(No need to login)
-$_SESSION["userid"] = "1";
+// $_SESSION["userid"] = "1";
 
 if ($_SESSION["userid"] == "") {
 	include ($rootadminpath . "include/login.php");

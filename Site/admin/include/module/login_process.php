@@ -22,7 +22,10 @@ if(($email!="")&&($password!="")) {
 	$result=@mysql_query($SQL);
 	if($rs=@mysql_fetch_array($result)){
 		echo $_SESSION["userid"]=$rs["id"];
-		header("location: {$rootadminpath}job.php");
+		// header("location: {$rootadminpath}job.php");
+		?><script type="text/javascript">
+			window.location="<?php echo $rootadminpath; ?>job.php";
+		</script><?php
 	}
 	else{
 ?>
