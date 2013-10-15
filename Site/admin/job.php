@@ -34,6 +34,7 @@ else {
 			
 			if($Status = 1)
 			{
+				
 ?>
 				<!-- HEADER -->
 				<div id="header-with-tabs">
@@ -67,56 +68,44 @@ else {
 								</thead>
 								<tfoot>
 								<tbody>
-									<tr>
-										<td>1</td> <a href="maps.php?param1=value1&amp;param2=value2">
-										<td><a href="maps.php?param1=value1&amp;param2=value2"> Adrian Purdila </a></td>
-										<td>Adrian Purdila</td>
-		                                <td id="status"><img src="images/icons/message-boxes/confirmation.png" alt="active"></td>
-										<td id="action" class="center">
-		                                    <a href="edit-job.php" class="table-actions-button text-blue">แก้ไข</a>
-		                                    <a href="#" class="table-actions-button text-red">ลบ</a>
-		                                </td>
-									</tr>
-									<tr>
-										<td>2</td>
-										<td>Adrian Purdila</td>
-										<td>Adrian Purdila</td>
-		                                <td id="status"><img src="images/icons/message-boxes/error.png" alt="active"></td>
-										<td>
-		                                	<a href="edit-job.php" class="table-actions-button text-blue">แก้ไข</a>
-		                                    <a href="#" class="table-actions-button text-red">ลบ</a>
-		                                </td>
-									</tr>
-									<tr>
-										<td>3</td>
-										<td>Adrian Purdila</td>
-										<td>Adrian Purdila</td>
-		                                <td id="status"><img src="images/icons/message-boxes/confirmation.png" alt="active"></td>
-										<td>
-		                                	<a href="edit-job.php" class="table-actions-button text-blue">แก้ไข</a>
-		                                    <a href="#" class="table-actions-button text-red">ลบ</a>
-		                                </td>
-									</tr>
-									<tr>
-										<td>4</td>
-										<td>Adrian Purdila</td>
-										<td>Adrian Purdila</td>
-		                                <td id="status"><img src="images/icons/message-boxes/confirmation.png" alt="active"></td>
-										<td>
-		                                	<a href="edit-job.php" class="table-actions-button text-blue">แก้ไข</a>
-		                                    <a href="#" class="table-actions-button text-red">ลบ</a>
-		                                </td>
-									</tr>
-									<tr>
-										<td>5</td>
-										<td>Adrian Purdila</td>
-										<td>Adrian Purdila</td>
-		                                <td id="status"><img src="images/icons/message-boxes/error.png" alt="active"></td>
-										<td>
-		                                	<a href="edit-job.php" class="table-actions-button text-blue">แก้ไข</a>
-		                                    <a href="#" class="table-actions-button text-red">ลบ</a>
-		                                </td>
-									</tr>
+									<?php
+										$SQL = "SELECT * FROM buildthedot_thaijobhd_job";
+										$resultSQL = mysql_query($SQL);
+										if($resultSQL)
+										{
+											$i = 0;
+											while($show = mysql_fetch_array($resultSQL))
+											{
+												$Company[$i] = $show['CompanyName'];
+												$PositionName[$i] = $show['PositionThai'];
+												$JID = $show['JobID'];
+												$i++;
+												?>
+												<tr>
+												<td><?php echo $i; ?></td>
+												<td><?php echo $PositionName[$i-1];?></td>
+												<td><?php echo $Company[$i-1];?></td>
+				                                <td id="status">
+				                                	<img src="images/icons/message-boxes/confirmation.png" alt="active"></td>
+												<td id="action" class="center">
+				                                <a href="edit-job.php" class="table-actions-button text-blue" id="<?php echo $JID[$i-1];?>">แก้ไข</a>
+				                                <a href="#" class="table-actions-button text-red" id="<?php echo $JID[$i-1];?>" >ลบ</a>
+				                                </td>
+												</tr>
+												<?php
+											
+											}
+											$i = $i-1;
+										}
+										else 
+										{
+											
+										}
+									?>
+									
+									
+								
+									
 								</tbody>
 							</table>
 						</div> <!-- end content-module-main -->
