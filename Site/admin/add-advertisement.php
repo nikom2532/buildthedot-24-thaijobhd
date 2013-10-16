@@ -84,6 +84,9 @@ else{
 											</h5>
 											<br class="clear"/>
 											<div class="prefix_1 grid_5">
+												Link URL:
+											</div>
+											<div class="prefix_1 grid_5">
 												<input type="text" id="AdLink" name ="AdLink" class="round" value=""/>
 											</div><br class="clear"/>
 											<div class="grid_6 center">
