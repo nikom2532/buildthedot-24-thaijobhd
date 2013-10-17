@@ -58,6 +58,7 @@ else{
 							<tfoot>
 							<tbody>
 <?php
+								$i=1;
 								$sql="
 									SELECT * 
 									FROM  `buildthedot_thaijobhd_job_idea` ;
@@ -66,7 +67,7 @@ else{
 								while($rs=@mysql_fetch_array($result)){
 ?>
 									<tr>
-										<td><?php echo $rs["CompanyID"]; ?></td>
+										<td><?php //echo $rs["CompanyID"]; ?><?php echo $i++; ?></td>
 										<td>
 											<a href="business-idea-detail.php?CompanyID=<?php echo $rs["CompanyID"]; ?>" class="text-black"><?php echo $rs["MainIdea"]; ?></a>
 										</td>
