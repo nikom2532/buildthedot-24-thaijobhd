@@ -53,4 +53,10 @@ a.table-actions-button {
 	margin-right:35px;
 }
 
+a.table-actions-button-del {
+	width: 1.25em;
+	height: 1.25em;
+	display: inline-block;
+	margin-right:35px;
+}
 

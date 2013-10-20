@@ -1,30 +1,41 @@
-<script src="js/jquery-1.7.1.min.js">
-	/*$(document).ready(function(){
-		$(".table-actions-button text-red").click(function(){
-			$("").append('body')
-                    .html('<div><h6>Are you sure?</h6></div>')
-                    .dialog({
-                        modal: true, title: 'Delete message', zIndex: 10000, autoOpen: true,
-                        width: 'auto', resizable: false,
-                        buttons: {
-                            Yes: function () {
-                                // $(obj).removeAttr('onclick');                                
-                                // $(obj).parents('.Parent').remove();
-
-                                $(this).dialog("close");
-                            },
-                            No: function () {
-                                $(this).dialog("close");
-                            }
-                        },
-                        close: function (event, ui) {
-                            $(this).remove();
-                        }
-                    });					
-		});
-				
-	});
+<script src="js/jquery-1.7.1.min.js"></script>
+<script language="JavaScript">
+	/*function deleteFunction()
+	{
+		var con = confirm("Delete");
+		if (con==true)
+  		{
+  			var a = this.document.getElementsByTagName("a")[0];
+			//document.getElementById("demo").innerHTML=a.getAttribute("id");
+			alert(a.getAttribute("id"));
+  		}
+		else
+  		{
+  			
+  		}
+	}
 	*/
+</script>
+<script>
+	$(document).ready(function(){
+  		$(".table-actions-button-del").live("click",function() 
+  		{
+			if (confirm("Do you want to delete")){
+     	 		id = $(this).attr('id');
+     	 		$.post("include/module/delete-job-process.php",{JID : id},funcion(data){
+     	 			alert(data);
+     	 		});
+     	 		//$.post("include/module/delete-job-process.php",{JID = id},function(data){alert("Delete Job Sucess");});	
+    		}
+    		else
+    		{
+    			
+    		}
+		});
+  		/*.click(function(){
+    		
+  		});*/
+	});
 	
 </script>
 <?php 
@@ -69,7 +80,7 @@ else {
 				<div id="header-with-tabs">
 					<div class="page-full-width cf">
 						<ul id="tabs" class="left">
-							<li><a href="<?php echo $rootadminpath; ?>job.php"  class="active-tab">งาน</a></li>
+							<li><a href="<?php echo $rootadminpath; ?>job.php"  class="active-tab" id="s">งาน</a></li>
 							<li><a href="<?php echo $rootadminpath; ?>business-idea.php">ไอเดียธุรกิจ</a></li>
 							<li><a href="<?php echo $rootadminpath; ?>advertisement.php">โฆษณา</a></li>
 							<li><a href="<?php echo $rootadminpath; ?>top-company.php">บริษัทชั้นนำ</a></li>
@@ -107,7 +118,7 @@ else {
 											{
 												$Company[$i] = $show['CompanyName'];
 												$PositionName[$i] = $show['PositionThai'];
-												$JID = $show['JobID'];
+												$JID[$i] = $show['JobID'];
 												$ST = $show['StartTime'];
 												$ET = $show['EndTime'];
 												$i++;
@@ -115,7 +126,9 @@ else {
 												<tr>
 												<td><?php echo $i; ?></td>
 												<td><?php echo $PositionName[$i-1];?></td>
-												<td><?php echo $Company[$i-1];?></td>
+												<td><?php echo $Company[$i-1];?>
+												
+												</td>
 				                                <td id="status">
 				                                <?php
 				                                if(checkTime($ST,$ET))
@@ -133,7 +146,7 @@ else {
 				                                </td>
 													<td id="action" class="center">
 				                                		<a href="edit-job.php" class="table-actions-button text-blue" id="<?php echo $JID[$i-1];?>">แก้ไข</a>
-				                                		<a href="#" class="table-actions-button text-red" id="<?php echo $JID[$i-1];?>" name="delete" >ลบ</a>
+				                                		<a href="#" class="table-actions-button-del" style="color: red" id="<?php echo $JID[$i-1];?>">ลบ</a> 
 				                                	</td>
 												</tr>
 												<?php
