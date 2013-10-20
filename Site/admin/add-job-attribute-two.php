@@ -92,7 +92,7 @@
 		                	</div>
 							<div id="content-detail" class="container_12">
 		                    <section>
-		                    	<form action="include/module/update-job-process.php" onsubmit="return check_value_data()" id="form-edit" name="form-edit" method="post">
+		                    	<form action="include/module/update-job-attribute-process.php" onsubmit="return check_value_data()" id="form-edit" name="form-edit" method="post">
 		                    	
 		                       <div class="prefix_2" id="prefix_2">
 		                          	  <p class="center head-table grid_5">ระดับการศึกษา</p>
