@@ -22,8 +22,16 @@
   		{
 			if (confirm("Do you want to delete")){
      	 		id = $(this).attr('id');
-     	 		$.post("include/module/delete-job-process.php",{JID : id},funcion(data){
-     	 			alert(data);
+     	 		$.post("include/module/delete-job-process.php",{JID : id},function(data){
+     	 			if(data == true)
+     	 			{
+     	 				alert("Delete Complete");
+     	 				  location.reload();
+     	 			}
+     	 			else
+     	 			{
+     	 				alert("Delete Uncomplete");
+     	 			}
      	 		});
      	 		//$.post("include/module/delete-job-process.php",{JID = id},function(data){alert("Delete Job Sucess");});	
     		}
@@ -32,9 +40,6 @@
     			
     		}
 		});
-  		/*.click(function(){
-    		
-  		});*/
 	});
 	
 </script>
