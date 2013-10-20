@@ -2,39 +2,33 @@
 <?php include("include/top-bar.php");?>
 <?php include("include/connect-to-database.php");?>
 <?php session_start();?>
-<script type="text/javascript">
-<!--calendar -->
-	$(function() {
-		$( "#date_from" ).datepicker({
-			inline:true,
-			showOtherMonths:true,
-			changeMonth: true,
-			dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-			dateFormat:"yy-mm-dd",
-			onClose: function( selectedDate ) {
-				$( "#date_to" ).datepicker( "option", "minDate", selectedDate );
+<script src="js/jquery-1.7.1.min.js"></script>
+<script>
+		$(document).ready(function(){
+			
+				$(".table-actions-button_text-blue").live("click",function(){
+						var a = $(".eduction").attr('name');
+						alert(a);
+						<?php
+							$_SESSION['count'] = $count+1;
+							$count = $_SESSION['count'];
+						?>
+						
+						$(".edu").append('<input type="text" id="<?php echo $count; ?>" class="education" name="edu[]"/>');
+						
+				});
 				
-			}
+				$(".table-actions-button_text-red").live("click",function(){
+					
+					$(".education").empty();
+				});  
 		});
-		$( "#date_to" ).datepicker({
-			inline:true,
-			showOtherMonths:true,
-			changeMonth: true,
-			dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-			dateFormat:"yy-mm-dd",
-			onClose: function( selectedDate ) {
-				$( "#date_from" ).datepicker( "option", "maxDate", selectedDate );
-			}
-		});
-		 
-	});
-	
 </script>
-
 <?php 
 	$Admin = "a@a.com";
 	$sql = "SELECT email, job_status FROM buildthedot_thaijobhd_user_account WHERE email = '$Admin'";
 	$result = mysql_query($sql);
+	$jid = 	$_SESSION['jid']; 
 	if($result)
 	{ 
 		while($show = mysql_fetch_array($result))
@@ -44,8 +38,8 @@
 		}
 		if($Status = 1)
 		{
-			$jid = $_REQUEST['id']; 
-			$_SESSION['jid'] = $jid;
+			
+			
 			?>
 				<!-- HEADER -->
 				<div id="header-with-tabs">
@@ -95,93 +89,8 @@
 							<div id="content-detail" class="container_12">
 		                    <section>
 		                    	<form action="include/module/update-job-process.php" onsubmit="return check_value_data()" id="form-edit" name="form-edit" method="post">
-		                    	  
-		                    	  <div class="grid_2">
-		                                <h6 class="detail-title">บริษัท</h6>   
-		                          </div>
-		                          <div class="grid_8">
-		                          		<p><input type="text" id="CompanyName" name ="CompanyName" class="round" value="<?php echo $company;?>"/></p>
-		                          </div><br class="clear"/>
-		                          <div class="grid_2">
-		                             <h6 class="detail-title">ตำแหน่ง(ไทย)</h6>
-		                          </div>
-		                          <div class="grid_8">
-		                          		<p><input type="text" id="PositionThaiName" name ="PositionThaiName" class="round" value="<?php echo $postionThai ;?>"/></p>
-		                          </div><br class="clear"/>
-		                           <div class="grid_2">
-		                             <h6 class="detail-title">ตำแหน่ง(อังกฤษ)</h6>
-		                          </div>
-		                          <div class="grid_8">
-		                          		<p><input type="text" id="PositionEngName" name ="PositionEngName" class="round" value="<?php echo $postionEng;?>"/></p>
-		                          </div><br class="clear"/>
-		                          <div class="grid_2">
-		                                <h6 class="detail-title">สถานที่ปฏิบัติงาน</h6>   
-		                          </div>
-		                          <div class="grid_8">
-		                          		<p><textarea type="text" id="PlaceName" name ="PlaceName" class="round"><?php echo $place;?></textarea> </p>
-		                          </div><br class="clear"/>
-		                         
-		                         <div class="grid_2">
-		                                <h6 class="detail-title">ลายละเอียดงาน</h6>   
-		                          </div>
-		                          <div class="grid_8">
-		                          		<p><textarea type="text" id="Description" name ="Description" class="round"><?php echo $description;?></textarea> </p>
-		                          </div><br class="clear"/>
-		                         
-		                          <div class="grid_2">
-		                                <h6 class="detail-title">อัตรา</h6>   
-		                          </div>
-		                          <div class="grid_8">
-		                          		<p><input type="text" id="Quantity" name ="Quantity" class="round" value="<?php echo $quantity;?>"/></p>
-		                          </div><br class="clear"/>
-		                          <div class="grid_2">
-		                                <h6 class="detail-title">เงินเดือน</h6>   
-		                          </div>
-		                          <div class="grid_8">
-		                          		<p><input type="text" id="Saraly" name ="Saraly" class="round" value="<?php echo $saraly;?>"/></p>
-		                          </div><br class="clear"/>
-		                          <div class="grid_2">
-		                                <h6 class="detail-title">คุณสมบัติ</h6>   
-		                          </div>
-		                          <div class="grid_8">
-		                          		<p><input type="text" id="Property" name ="Property" class="round" value="<?php echo $property;?>"/></p>
-		                          </div>
-		                          <br class="clear"/>
-		                        
-		                          <div class="grid_2">
-		                                <h6 class="detail-title">ลักษณะงาน - <?php if($type==1){echo "Full Time";}else{echo "Part Time";} ?></h6>   
-		                          </div>
-		                          <div class="grid_8">
-		                          		<p><label for="read" class="alt-label"><input type="radio" id="Full" name="FP" value="1" checked="checked"  />
-		            					Full Time
-		            				</label>
-									<label for="read" class="alt-label"><input type="radio" id="Part" name="FP" value="2" />
-		           						Part Time
-		            				</label> </p>
-		                          </div><br class="clear"/>
-		                          
-		                          <div class="grid_2">
-		                                <h6 class="detail-title">เริ่ม</h6>   
-		                          </div>
-		                          <div class="grid_8">
-		                          		<p><input name="date_from" type="text" id="date_from" class="round" value="<?php echo $st;?>"/></p>
-		                          </div><br class="clear"/>
-		                          <div class="grid_2">
-		                                <h6 class="detail-title">สิ้นสุด</h6>   
-		                          </div>
-		                          <div class="grid_8">
-		                          		<p><input name="date_to" type="text" id="date_to" class="round" value="<?php echo $et;?>"/></p>
-		                          </div><br class="clear"/>
-		                          <div class="grid_2">
-		                                <h6 class="detail-title">งานแนะนำ - <?php if($recomment == 1){echo "Recomment";}else{echo "Non recomment";}?> </h6>   
-		                          </div>
-		                          <div class="grid_8">
-		                          		<p><input type="checkbox" id="recommend" value="re" />แนะนำ</p>
-		                          </div><br class="clear"/>
-		
-		                          <br class="clear"/>
-		                      
-								  <div class="prefix_2" id="prefix_2">
+		                    	
+		                       <div class="prefix_2" id="prefix_2">
 		                          	  <p class="center head-table grid_5">ระดับการศึกษา</p>
 		                         	
 		                         	  <br class="clear"/>
@@ -206,15 +115,18 @@
 		                         	  	if($i == 1)
 										{
 		                         	  ?>
-		                                   
 		                                    <div class="grid_3">
 		                                    	<a href="edit-job-attribute.php" class="table-actions-button text-blue">แก้ไข</a>
 		                                    </div>
-		                               <?php } ?>  
+		                               <?php } ?> 
+		                                  <div class="edu">
+		                                    <input type="text" id="edu" class="eduction" name="edu[]"/>
+		                                    </div> 
 		                                    <br class="clear"/>
-		                                    	<a href="add-job-attribute-two.php" class="table-actions-button text-red">เพิ่ม</a>
+		                                    	<a href="add-job-attribute-two.php" class="table-actions-button_text-blue">เพิ่ม</a>
 		                              </div>
 		                           </div>
+		                         
 		                         
 		            <?php            
 		            }
