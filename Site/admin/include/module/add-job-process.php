@@ -66,8 +66,8 @@ include($rootadminpath."include/connect-to-database.php");
 	VALUES ($company_name, $position_thai_name, $position_eng_name, $place_name, $saraly, $description, $recommented, $date_start,$date_end, $FPint)";
 	*/
 	
-	$SQL = "INSERT INTO  buildthedot_thaijobhd_job (  CompanyName ,  PositionThai ,  PositionEng ,  Place ,  Saraly ,  JobDescription ,  Recomment,  StartTime ,  EndTime ,  JobType ) 
-			VALUES ( '$company_name',  '$position_thai_name',  '$position_eng_name',  '$place_name',  '$saraly',  '$description',  '$recommented',  '$date_start',  '$date_end',  '$FPint')";
+	$SQL = "INSERT INTO  buildthedot_thaijobhd_job (  CompanyName ,  PositionThai ,  PositionEng ,  Place , Quantity , Saraly ,  JobDescription ,  Recomment, Property , StartTime ,  EndTime ,  JobType ) 
+			VALUES ( '$company_name',  '$position_thai_name',  '$position_eng_name',  '$place_name', '$quantity' ,'$saraly',  '$description',  '$recommented', '$property' , '$date_start',  '$date_end',  '$FPint')";
 	$resultSQL = mysql_query($SQL);
 	
 	

@@ -150,7 +150,7 @@ else {
 												?>
 				                                </td>
 													<td id="action" class="center">
-				                                		<a href="edit-job.php" class="table-actions-button text-blue" id="<?php echo $JID[$i-1];?>">แก้ไข</a>
+				                                		<a href="edit-job.php?id=<?php echo $JID[$i-1];?>" class="table-actions-button text-blue" id="<?php echo $JID[$i-1];?>">แก้ไข</a>
 				                                		<a href="#" class="table-actions-button-del" style="color: red" id="<?php echo $JID[$i-1];?>">ลบ</a> 
 				                                	</td>
 												</tr>
