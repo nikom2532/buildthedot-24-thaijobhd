@@ -1,3 +1,32 @@
+<script src="js/jquery-1.7.1.min.js">
+	/*$(document).ready(function(){
+		$(".table-actions-button text-red").click(function(){
+			$("").append('body')
+                    .html('<div><h6>Are you sure?</h6></div>')
+                    .dialog({
+                        modal: true, title: 'Delete message', zIndex: 10000, autoOpen: true,
+                        width: 'auto', resizable: false,
+                        buttons: {
+                            Yes: function () {
+                                // $(obj).removeAttr('onclick');                                
+                                // $(obj).parents('.Parent').remove();
+
+                                $(this).dialog("close");
+                            },
+                            No: function () {
+                                $(this).dialog("close");
+                            }
+                        },
+                        close: function (event, ui) {
+                            $(this).remove();
+                        }
+                    });					
+		});
+				
+	});
+	*/
+	
+</script>
 <?php 
 session_start();
 $rootpath="../";
@@ -79,6 +108,8 @@ else {
 												$Company[$i] = $show['CompanyName'];
 												$PositionName[$i] = $show['PositionThai'];
 												$JID = $show['JobID'];
+												$ST = $show['StartTime'];
+												$ET = $show['EndTime'];
 												$i++;
 												?>
 												<tr>
@@ -86,11 +117,24 @@ else {
 												<td><?php echo $PositionName[$i-1];?></td>
 												<td><?php echo $Company[$i-1];?></td>
 				                                <td id="status">
-				                                	<img src="images/icons/message-boxes/confirmation.png" alt="active"></td>
-												<td id="action" class="center">
-				                                <a href="edit-job.php" class="table-actions-button text-blue" id="<?php echo $JID[$i-1];?>">แก้ไข</a>
-				                                <a href="#" class="table-actions-button text-red" id="<?php echo $JID[$i-1];?>" >ลบ</a>
+				                                <?php
+				                                if(checkTime($ST,$ET))
+											   	{
+				                                ?>
+				                                	<img src="images/icons/message-boxes/confirmation.png" alt="active">
+				                               	<?php
+												}
+												else
+												{ ?>
+													<img src="images/icons/message-boxes/error.png" alt="active">
+												<?php
+												}
+												?>
 				                                </td>
+													<td id="action" class="center">
+				                                		<a href="edit-job.php" class="table-actions-button text-blue" id="<?php echo $JID[$i-1];?>">แก้ไข</a>
+				                                		<a href="#" class="table-actions-button text-red" id="<?php echo $JID[$i-1];?>" name="delete" >ลบ</a>
+				                                	</td>
 												</tr>
 												<?php
 											
@@ -101,11 +145,8 @@ else {
 										{
 											
 										}
-									?>
-									
-									
-								
-									
+									?>	
+
 								</tbody>
 							</table>
 						</div> <!-- end content-module-main -->
@@ -131,7 +172,8 @@ else {
 <?php 
 		} 
 ?>
-<?php
+
+<?php	
 	/*function test()
 	{
 		$sql = "SELECT email, job_status FROM buildthedot_thaijobhd_user_account WHERE email = '$Admin' ORDER BY id DESC ";
@@ -146,7 +188,113 @@ else {
 	}*/
 ?>
 <?php 
-		include($rootadminpath."include/footer.php");
+		
 	}
 }//end check user session
+
+
+
+	function checkTime($ST,$ET)
+	{
+		$NY = (int)date("Y");
+		$SY = substr($ST,0,4);
+		$EY = substr($ET,0,4);
+		//echo $SY."-".$NY."-".$EY;
+		if($NY < $SY || $NY > $EY) 
+		{	//echo "^_^";
+			return FALSE;
+		}
+		elseif($NY > $SY && $NY < $EY)
+		{	//echo "^.^";
+			return TRUE;	
+		}
+		elseif($NY == $SY && $NY == $EY) 
+		{	//echo "^8^";
+			if(checkStartMonth($ST) && checkEndMonth($ET))
+			{
+				return TRUE;
+			}
+		}
+		elseif($NY == $SY && $NY < $EY)
+		{	//echo "^U^";
+			return checkEndMonth($ET);	
+		}
+		elseif ($NY > $SY && $NY == $EY) 
+		{	//echo "^3^";
+			return checkEndMonth($ET);
+		}
+	}
+	
+	
+	function checkStartMonth($ST)
+	{
+			$NM = (int)date("m");
+			$SM = substr($ST,5,2);
+			//echo $NM."--".$SM;
+			if($NM == $SM)
+			{
+				return checkDayStart($ST);
+			}
+			elseif($NM > $SM) 
+			{
+				return TRUE;	
+			}
+			elseif($NM < $SM) {
+				return FALSE;
+			}
+	}	
+
+	function checkEndMonth($ET)
+	{
+			$NM = (int)date("m");
+			$EM = substr($ET,5,2);
+			//echo $NM."-".$EM;
+			if($NM == $EM)
+			{
+				return checkDayEnd($ET);
+			}
+			elseif($NM > $EM) 
+			{
+				return FALSE;	
+			}
+			elseif($NM < $EM) 
+			{
+				return TRUE;
+			}
+	}
+
+
+	function checkDayStart($ST)
+	{
+		$ND = (int)date("d");
+		$SD = substr($ST,8,2);
+		if($ND ==$SD)
+		{
+			return TRUE;
+		}
+		elseif ($ND > $SD) {
+			return TRUE;
+		}
+		else {
+			return FALSE;		
+		}
+	}
+
+	function checkDayEnd($ET)
+	{
+		$ND = (int)date("d");
+		$ED = substr($ET,8,2);
+		if($ND == $ED)
+		{
+			return TRUE;
+		}
+		elseif ($ND > $ED) {
+			return FALSE;	
+		}
+		else {
+			return TRUE;	
+		}
+	}
+	
+	include($rootadminpath."include/footer.php");	
 ?>
