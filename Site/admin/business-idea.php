@@ -17,6 +17,8 @@ else{
 	}
 	//normal mode
 	else{
+		include($rootpath."lib/func_pagination.php");
+		include($rootadminpath."include/initial/pagination.php");
 		include($rootadminpath."include/top-bar.php");
 ?>
 		<!-- HEADER -->
@@ -59,9 +61,24 @@ else{
 							<tbody>
 <?php
 								$i=1;
+								if($_GET["page"] ==""){
+									$_GET["page"] = 1;
+								}
+								// $sql="
+									// SELECT * 
+									// FROM  `buildthedot_thaijobhd_job_idea`
+									// LIMIT ".($page_limit*($_GET["page"]-1)).",".$page_limit.";
+								// ";
 								$sql="
 									SELECT * 
-									FROM  `buildthedot_thaijobhd_job_idea` ;
+									FROM  `buildthedot_thaijobhd_job_idea`
+								";
+								$result=@mysql_query($sql);
+								$number_of_items=@mysql_num_rows($result);
+								$sql="
+									SELECT * 
+									FROM  `buildthedot_thaijobhd_job_idea` 
+								 	LIMIT {$start} , {$page_limit} ;
 								";
 								$result=@mysql_query($sql);
 								while($rs=@mysql_fetch_array($result)){
@@ -92,6 +109,39 @@ else{
 ?>
 							</tbody>
 						</table>
+<?php
+						//############ Paging ############
+						echo pagination($page_limit, $page, $rootadminpath."business-idea.php?page=", $number_of_items); //call function to show pagination
+						
+							/*
+							$sql="
+								SELECT * 
+								FROM  `buildthedot_thaijobhd_job_idea`
+								LIMIT ".($page_limit*($_GET["page"]-1)).",".$page_limit.";
+							";
+							$result = @mysql_query($sql);
+							$number_of_items = @mysql_num_rows($result);
+							$number_of_pages = ((int)(($number_of_items-1)/$page_limit))+1;
+?>
+								<ul class="pagination">
+									<li class="details">Page <?php echo $page; ?> of <?php echo $number_of_pages; ?></li>
+	<?php
+									for($i=1;$i<=$number_of_pages;$i++){	//Page Button
+	?>
+										<li><a href="main-knowledge.php?id=<?php echo $_GET["id"]; ?>&glvl=<?php echo $_GET["glvl"]; ?>&page=<?php echo $i; ?>" <?php if($page==$i){ ?>class="current" <?php } ?>><?php echo $i; ?></a></li>
+	<?php
+									}
+									if($_GET["page"]<$number_of_pages){	//Next Button
+	?>
+										<li><a href="main-knowledge.php?id=<?php echo $_GET["id"]; ?>&glvl=<?php echo $_GET["glvl"]; ?>&page=<?php echo ($_GET["page"]+1); ?>">Next</a></li>
+	<?php
+									}
+	?>
+								</ul>
+<?php
+							//########## End Paging ##########
+							*/
+?>
 					</div> <!-- end content-module-main -->
 				</div> <!-- end content-module -->
 		</div> <!-- end content -->
