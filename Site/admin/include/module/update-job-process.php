@@ -16,7 +16,7 @@
 	$date_end = $_POST['date_to'];
 	if(isset($_POST['recommend']))
 	{
-		$recomment = $_POST['recommend'];	
+		$recomment = 1;	
 	}
 	else {
 		$recomment = 0;
