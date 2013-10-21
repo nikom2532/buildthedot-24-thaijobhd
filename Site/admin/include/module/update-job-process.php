@@ -14,7 +14,7 @@
 	$property = $_POST['Property'];
 	$date_start = $_POST['date_from'];
 	$date_end = $_POST['date_to'];
-	$recomment = $_SESSION['recomment'];
+	$recomment = $_POST['recommend'];
 	if($recomment == "re")
 	{
 		$recommented = 1;
