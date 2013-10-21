@@ -11,7 +11,7 @@
 		<link href="<?php echo $rootadminpath; ?>css/table.css" rel="stylesheet" type="text/css">
 		<link href="<?php echo $rootpath; ?>css/pagination.css" rel="stylesheet" type="text/css">
 
-		<script src="<?php echo $rootadminpath; ?>js/jquery-1.7.1.min.js"></script>
+		<!-- script src="<?php echo $rootadminpath; ?>js/jquery-1.7.1.min.js"></script -->
 		<script src="<?php echo $rootadminpath; ?>js/script.js"></script>
 
 		<!--Date -picker -->
