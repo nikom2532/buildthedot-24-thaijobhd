@@ -29,8 +29,7 @@
 		 
 	});
 	
-</script>
-<script type="text/javascript">
+
 	function check_value_data()
 	{
 		var companyName = document.getElementById("CompanyName").value;

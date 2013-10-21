@@ -14,8 +14,13 @@
 	$property = $_POST['Property'];
 	$date_start = $_POST['date_from'];
 	$date_end = $_POST['date_to'];
-	$recomment = $_POST['recommend'];
-	
+	if(isset($_POST['recommend']))
+	{
+		$recomment = $_POST['recommend'];
+	}
+	else {
+		$recomment = 0;
+	}
 	if($recomment == "re")
 	{
 		$recommented = 1;
@@ -31,7 +36,7 @@
 	{
 			?>
 							<script language="javascript">
-									window.location="http://localhost/buildthedot-24-thaijobhd/Site/admin/edit-job.php?id=<?php echo $jid?>";
+									window.location="http://localhost/buildthedot-24-thaijobhd2/Site/admin/edit-job.php?id=<?php echo $jid?>";
 									alert("Ok");
 							</script>
 			<?php
@@ -40,7 +45,7 @@
 	{
 			?>
 							<script language="javascript">
-									window.location="http://localhost/buildthedot-24-thaijobhd/Site/admin/edit-job.php?id=<?php echo $jid?>";
+									window.location="http://localhost/buildthedot-24-thaijobhd2/Site/admin/edit-job.php?id=<?php echo $jid?>";
 									alert("No");
 							</script>
 			<?php
