@@ -17,6 +17,8 @@ else{
 	}
 	//normal mode
 	else{
+		include($rootpath."lib/func_pagination.php");
+		include($rootadminpath."include/initial/pagination.php");
 		include($rootadminpath."include/top-bar.php");
 ?>
 		<!-- HEADER -->
@@ -57,7 +59,14 @@ else{
 								$i=1;
 								$sql="
 									SELECT * 
-									FROM  `buildthedot_thaijobhd_ad` ;
+									FROM  `buildthedot_thaijobhd_ad`
+								";
+								$result=@mysql_query($sql);
+								$number_of_items=@mysql_num_rows($result);
+								$sql="
+									SELECT * 
+									FROM  `buildthedot_thaijobhd_ad` 
+								 	LIMIT {$start} , {$page_limit} ;
 								";
 								$result=@mysql_query($sql);
 								while($rs=@mysql_fetch_array($result)){
@@ -75,6 +84,10 @@ else{
 ?>
 							</tbody>
 					</table>
+<?php
+						//############ Paging ############
+						echo pagination($page_limit, $page, $rootadminpath."advertisement.php?page=", $number_of_items); //call function to show pagination
+?>
 				</div>
 				<!-- end content-module-main -->
 		
