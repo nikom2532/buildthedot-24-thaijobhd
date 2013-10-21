@@ -14,15 +14,17 @@
 	$property = $_POST['Property'];
 	$date_start = $_POST['date_from'];
 	$date_end = $_POST['date_to'];
-	if(isset($_POST['recommend']))
+	$recomment = $_SESSION['recomment'];
+	if($recomment == "re")
 	{
-		$recomment = 1;	
+		$recommented = 1;
 	}
-	else {
-		$recomment = 0;
+	else 
+	{
+		$recommented = 0;
 	}
 	$jid = $_SESSION['jid'];
-	$SQL = "UPDATE buildthedot_thaijobhd_job SET CompanyName = '$company_name' ,  PositionThai = '$position_thai_name',PositionEng = '$position_eng_name' ,  Place = '$place_name', Quantity = '$quantity', Saraly = '$saraly',  JobDescription = '$description',  Recomment = '$recomment', Property = '$property' , StartTime = '$date_start',  EndTime = '$date_end',  JobType = '$FP' WHERE JobID = '$jid' ";
+	$SQL = "UPDATE buildthedot_thaijobhd_job SET CompanyName = '$company_name' ,  PositionThai = '$position_thai_name',PositionEng = '$position_eng_name' ,  Place = '$place_name', Quantity = '$quantity', Saraly = '$saraly',  JobDescription = '$description',  Recomment = '$recommented', Property = '$property' , StartTime = '$date_start',  EndTime = '$date_end',  JobType = '$FP' WHERE JobID = '$jid' ";
 	$resultSQL = mysql_query($SQL);
 	if($resultSQL)
 	{

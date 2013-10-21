@@ -176,7 +176,7 @@
 		                                <h6 class="detail-title">งานแนะนำ - <?php if($recomment == 1){echo "Recomment";}else{echo "Non recomment";}?> </h6>   
 		                          </div>
 		                          <div class="grid_8">
-		                          		<p><input type="checkbox" id="recommend" value="1" />แนะนำ</p>
+		                          		<p><input type="checkbox" id="recommend" value="re" />แนะนำ</p>
 		                          </div><br class="clear"/>
 		
 		                          <br class="clear"/>
