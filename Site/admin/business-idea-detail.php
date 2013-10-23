@@ -23,8 +23,8 @@ else{
 		<div id="header-with-tabs">
 			<div class="page-full-width cf">
 				<ul id="tabs" class="left">
-					<li><a href="<?php echo $rootadminpath; ?>job.php"  class="active-tab">งาน</a></li>
-					<li><a href="<?php echo $rootadminpath; ?>business-idea.php">ไอเดียธุรกิจ</a></li>
+					<li><a href="<?php echo $rootadminpath; ?>job.php">งาน</a></li>
+					<li><a href="<?php echo $rootadminpath; ?>business-idea.php" class="active-tab">ไอเดียธุรกิจ</a></li>
 					<li><a href="<?php echo $rootadminpath; ?>advertisement.php">โฆษณา</a></li>
 					<li><a href="<?php echo $rootadminpath; ?>top-company.php">บริษัทชั้นนำ</a></li>
 				</ul> <!-- end tabs -->
@@ -41,7 +41,7 @@ else{
 					<div id="head-title">
 						<h1>ไอเดียธุรกิจ<span class="text-black">- Lorem Ipsum </span></h1>
 					</div>
-					<h2 class="right"><a href="#" class="button black round">แก้ไข</a></h2>
+					<h2 class="right"><a href="edit-recommend-idea.php?CompanyID=<?php echo $_GET["CompanyID"]; ?>" class="button black round">แก้ไข</a></h2>
 					<div id="content-detail" class="container_12">
 						<section>
 <?php

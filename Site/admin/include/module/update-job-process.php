@@ -16,19 +16,40 @@
 	$date_end = $_POST['date_to'];
 	if(isset($_POST['recommend']))
 	{
+<<<<<<< HEAD
 		$recomment = $_POST['recommend'];	
+=======
+		$recomment = $_POST['recommend'];
+>>>>>>> 0c67dceb2e06ae724bec53a5e37405d86cce0e5f
 	}
 	else {
 		$recomment = 0;
 	}
+<<<<<<< HEAD
 	$jid = $_SESSION['jid'];
 	$SQL = "UPDATE buildthedot_thaijobhd_job SET CompanyName = '$company_name' ,  PositionThai = '$position_thai_name',PositionEng = '$position_eng_name' ,  Place = '$place_name', Quantity = '$quantity', Saraly = '$saraly',  JobDescription = '$description',  Recomment = '$recomment', Property = '$property' , StartTime = '$date_start',  EndTime = '$date_end',  JobType = '$FP' WHERE JobID = '$jid' ";
+=======
+	if($recomment == "re")
+	{
+		$recommented = 1;
+	}
+	else 
+	{
+		$recommented = 0;
+	}
+	$jid = $_SESSION['jid'];
+	$SQL = "UPDATE buildthedot_thaijobhd_job SET CompanyName = '$company_name' ,  PositionThai = '$position_thai_name',PositionEng = '$position_eng_name' ,  Place = '$place_name', Quantity = '$quantity', Saraly = '$saraly',  JobDescription = '$description',  Recomment = '$recommented', Property = '$property' , StartTime = '$date_start',  EndTime = '$date_end',  JobType = '$FP' WHERE JobID = '$jid' ";
+>>>>>>> 0c67dceb2e06ae724bec53a5e37405d86cce0e5f
 	$resultSQL = mysql_query($SQL);
 	if($resultSQL)
 	{
 			?>
 							<script language="javascript">
+<<<<<<< HEAD
 									window.location="http://localhost/buildthedot-24-thaijobhd/Site/admin/edit-job.php?id=<?php echo $jid?>";
+=======
+									window.location="http://localhost/buildthedot-24-thaijobhd2/Site/admin/edit-job.php?id=<?php echo $jid?>";
+>>>>>>> 0c67dceb2e06ae724bec53a5e37405d86cce0e5f
 									alert("Ok");
 							</script>
 			<?php
@@ -37,7 +58,11 @@
 	{
 			?>
 							<script language="javascript">
+<<<<<<< HEAD
 									window.location="http://localhost/buildthedot-24-thaijobhd/Site/admin/edit-job.php?id=<?php echo $jid?>";
+=======
+									window.location="http://localhost/buildthedot-24-thaijobhd2/Site/admin/edit-job.php?id=<?php echo $jid?>";
+>>>>>>> 0c67dceb2e06ae724bec53a5e37405d86cce0e5f
 									alert("No");
 							</script>
 			<?php

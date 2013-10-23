@@ -14,29 +14,23 @@ else{
 	
 	$sql="
 		SELECT * 
-		FROM  `buildthedot_thaijobhd_job_idea` 
-		WHERE `CompanyID` = '{$CompanyID}' ;
+		FROM  `buildthedot_thaijobhd_top_company` 
+		WHERE `TopCompanyID` = '{$CompanyID}' ;
 	";
 	$result = @mysql_query($sql);
 	while ($rs = @mysql_fetch_array($result)) {
-		if($rs["Pic1"]!=""){
-			unlink($rootpath."images/business-idea/".$rs["Pic1"]);
-		}
-		if($rs["Pic2"]!=""){
-			unlink($rootpath."images/business-idea/".$rs["Pic2"]);
-		}
-		if($rs["Pic3"]!=""){
-			unlink($rootpath."images/business-idea/".$rs["Pic3"]);
+		if($rs["CompanyPic"]!=""){
+			unlink($rootpath."images/top_company/".$rs["CompanyPic"]);
 		}
 	}
 	
 	$sql="
-		DELETE FROM `buildthedot_thaijobhd_job_idea` 
-		WHERE `CompanyID` = '{$CompanyID}' ;
+		DELETE FROM `buildthedot_thaijobhd_top_company` 
+		WHERE `TopCompanyID` = '{$CompanyID}' ;
 	";
 	@mysql_query($sql);
-	// header("Location: {$rootadminpath}business-idea.php");
+	// header("Location: {$rootadminpath}top-company.php");
 	?><script type="text/javascript">
-		window.location="<?php echo $rootadminpath; ?>business-idea.php";
+		window.location="<?php echo $rootadminpath; ?>top-company.php";
 	</script><?php
 }

@@ -29,9 +29,102 @@
 		 
 	});
 	
+<<<<<<< HEAD
+=======
+
+	function check_value_data()
+	{
+		var companyName = document.getElementById("CompanyName").value;
+		if(companyName == "" || companyName == null)
+		{
+			alert("Company name is not valid");
+			return false;
+		}
+		
+		var positionThaiName = document.getElementById("PositionThaiName").value;
+		var positionEngName = document.getElementById("PositionEngName").value;		
+		if(positionThaiName == "" || positionThaiName == null || positionEngName == "" || positionEngName == null)
+		{
+			alert("Position is not valid");
+			return false;
+		}
+		
+		var placeName = document.getElementById("PlaceName").value;
+		if(placeName == "" || placeName == null) 
+		{
+			alert("Place is not valid");
+			return false;
+		}
+		
+		var Quantity = document.getElementById("Quantity").value;
+		if(Quantity == "" || Quantity == null) 
+		{
+			alert("Quantity is not valid");
+			return false;
+		}
+		
+		var Saraly = document.getElementById("Saraly").value;
+		if(Saraly == "" || Saraly == null) 
+		{
+			alert("Saraly is not valid");
+			return false;
+		}
+				
+		var Property = document.getElementById("Property").value;
+		if(Property == "" || Property == null) 
+		{
+			alert("Property is not valid");
+			return false;
+		}
+		
+		var date_from = document.getElementById("date_from").value;
+		if(date_from == "" || date_from == null) 
+		{
+			alert("Start date is not valid");
+			return false;
+		}
+		
+		var date_to = document.getElementById("date_to").value;
+		if(date_to == "" || date_to == null) 
+		{
+			alert("End date is not valid");
+			return false;
+		}
+		
+		var Description = document.getElementById("Description").value;
+		if(Description == "" || Description == null) 
+		{
+			alert("Description date is not valid");
+			return false;
+		}
+		
+		
+	}
+>>>>>>> 0c67dceb2e06ae724bec53a5e37405d86cce0e5f
 </script>
 
 <?php 
+
+$rootpath="../";
+$rootadminpath="./";
+include($rootadminpath."include/header.php");
+include("include/connect-to-database.php");
+
+//For Development mode(No need to login)
+$_SESSION["userid"] = "1";
+
+if ($_SESSION["userid"] == "") {
+	include ($rootadminpath . "include/login.php");
+	include ("include/footer.php");
+} 
+else {
+	//check for Logout mode
+	if($_GET["mode"]=="logout"){
+		include($rootadminpath."include/module/logout_process.php");
+	}
+	//normal mode
+	else{
+	
 	$Admin = "a@a.com";
 	$sql = "SELECT email, job_status FROM buildthedot_thaijobhd_user_account WHERE email = '$Admin'";
 	$result = mysql_query($sql);
@@ -104,6 +197,7 @@
 		                          </div><br class="clear"/>
 		                          <div class="grid_2">
 		                             <h6 class="detail-title">ตำแหน่ง(ไทย)</h6>
+<<<<<<< HEAD
 		                          </div>
 		                          <div class="grid_8">
 		                          		<p><input type="text" id="PositionThaiName" name ="PositionThaiName" class="round" value="<?php echo $postionThai ;?>"/></p>
@@ -112,6 +206,16 @@
 		                             <h6 class="detail-title">ตำแหน่ง(อังกฤษ)</h6>
 		                          </div>
 		                          <div class="grid_8">
+=======
+		                          </div>
+		                          <div class="grid_8">
+		                          		<p><input type="text" id="PositionThaiName" name ="PositionThaiName" class="round" value="<?php echo $postionThai ;?>"/></p>
+		                          </div><br class="clear"/>
+		                           <div class="grid_2">
+		                             <h6 class="detail-title">ตำแหน่ง(อังกฤษ)</h6>
+		                          </div>
+		                          <div class="grid_8">
+>>>>>>> 0c67dceb2e06ae724bec53a5e37405d86cce0e5f
 		                          		<p><input type="text" id="PositionEngName" name ="PositionEngName" class="round" value="<?php echo $postionEng;?>"/></p>
 		                          </div><br class="clear"/>
 		                          <div class="grid_2">
@@ -176,7 +280,11 @@
 		                                <h6 class="detail-title">งานแนะนำ - <?php if($recomment == 1){echo "Recomment";}else{echo "Non recomment";}?> </h6>   
 		                          </div>
 		                          <div class="grid_8">
+<<<<<<< HEAD
 		                          		<p><input type="checkbox" id="recommend" value="re" />แนะนำ</p>
+=======
+		                          		<p><input type="checkbox" id="recommend" value="re" name="recommend"/>แนะนำ</p>
+>>>>>>> 0c67dceb2e06ae724bec53a5e37405d86cce0e5f
 		                          </div><br class="clear"/>
 		
 		                          <br class="clear"/>
@@ -257,4 +365,12 @@
 	}
 	
 	?>
+<<<<<<< HEAD
 <?php include("include/footer.php");?>
+=======
+<?php include("include/footer.php");
+	}
+}
+?>
+	
+>>>>>>> 0c67dceb2e06ae724bec53a5e37405d86cce0e5f

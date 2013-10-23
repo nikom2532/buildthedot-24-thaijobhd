@@ -14,18 +14,15 @@ else{
 	$Description1 = $_POST["Description1"];
 	$Description2 = $_POST["Description2"];
 	$Description3 = $_POST["Description3"];
-	// $pic1 = $_POST["pic1"];
-	// $pic2 = $_POST["pic2"];
-	// $pic3 = $_POST["pic3"];
 	$IdeaRecomment = $_POST["IdeaRecomment"];
 	$time_now = strtotime("now");
 	$sql="
 		UPDATE `buildthedot_thaijobhd_job_idea` 
 		SET `MainIdea` = '".$MainIdea."',
-		SET `Description1` = '".$Description1."',
-		SET `Description2` = '".$Description2."',
-		SET `Description3` = '".$Description3."',
-		SET `IdeaRecomment` = '".$IdeaRecomment."'
+		 `Description1` = '".$Description1."',
+		 `Description2` = '".$Description2."',
+		 `Description3` = '".$Description3."',
+		 `IdeaRecomment` = '".$IdeaRecomment."'
 		WHERE `CompanyID` = '{$CompanyID}' ;
 	";
 	@mysql_query($sql);
@@ -43,5 +40,8 @@ else{
 		// echo $_FILES['pic1']['tmp_name'];
 		include($rootadminpath."include/module/edit-recommend-idea-process4.php");
 	}
-	header("Location: {$rootadminpath}business-idea.php");
+	// header("Location: {$rootadminpath}business-idea.php");
+	?><script type="text/javascript">
+		window.location="<?php echo $rootadminpath; ?>business-idea.php";
+	</script><?php
 }

@@ -1,14 +1,15 @@
 <div id="wrapper">
     <div id="header" class="container_12">
-        <div id="login-intro" class="grid_3">
-            <img src="images/logo.png" alt="ThaiJobHD" width="130" height="71">	
-        </div>
-        <div class="right">
+        <div class="right"  class="grid_12">
         	<ul id="my-profile">
             	<li><a href="login.php" class="text-blue">Sign in</a></li>
                 <li><a href="register.php" class="text-grey">Register</a></li>
             </ul>
         </div>
+        <div id="login-intro" class="grid_3">
+            <img src="images/logo.png" alt="ThaiJobHD" width="130" height="71">	
+        </div>
+        
         <div id="top-nav" class="grid_8 prefix_1">
             <ul>
                 <li><a href="index.php">หน้าหลัก<br/><span id="sub-memu">JobHD</span></a></li>

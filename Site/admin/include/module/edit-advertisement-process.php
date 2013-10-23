@@ -25,10 +25,23 @@ else{
 	";
 	@mysql_query($sql);
 	
-	
 	if(file_exists($_FILES['AdPic']['tmp_name']) && is_uploaded_file($_FILES['AdPic']['tmp_name'])){
-		// echo $_FILES['pic1']['tmp_name'];
-		include($rootadminpath."include/module/edit-recommend-idea-process2.php");
+		$sql="
+			SELECT `AdPic`
+			FROM  `buildthedot_thaijobhd_ad` 
+			WHERE `PictureID` = '{$adid}' ;
+		";
+		$result=@mysql_query($sql);
+		if($rs=@mysql_fetch_array($result)){
+			if($rs["AdPic"] != ""){
+				unlink($rootpath."images/ad/".$rs["AdPic"]);
+			}
+		}
+		include($rootadminpath."include/module/edit-advertisement-process2.php");
 	}
-	header("Location: {$rootadminpath}advertisement.php");
+	// header("Location:".$rootadminpath."advertisement.php");
+	?><script type="text/javascript">
+		window.location="<?php echo $rootadminpath; ?>advertisement.php";
+	</script><?php
 }
+?>
