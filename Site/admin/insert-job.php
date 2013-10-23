@@ -101,7 +101,7 @@
 	}
 </script>
 	
-<?php 
+<?php /*
 <<<<<<< HEAD
 	$Admin = "a@a.com";
 	$sql = "SELECT email, job_status FROM buildthedot_thaijobhd_user_account WHERE email = '$Admin'";
@@ -245,7 +245,7 @@
 		                                    </div>
 		                              </div>
 		                           </div>
-		                        */ ?>      
+		                        */  /* ?>      
 								
 		            		</section> 
 		                    <div class="grid_12 center"><input type="submit" id="" class="save-button blue round" value = "บันทึก"></div>
@@ -274,10 +274,10 @@
 				</script>	
 			<?php 
 	}
-	
+	*/
 	?>
-<?php include("include/footer.php");?>
-=======
+<?php //include("include/footer.php");?>
+<?php
 $rootpath="../";
 $rootadminpath="./";
 include($rootadminpath."include/header.php");
@@ -348,7 +348,7 @@ else {
 				                             <h6 class="detail-title">ตำแหน่ง(ไทย)</h6>
 				                          </div>
 				                          <div class="grid_8">
-				                          		<p><input type="text" id="PositionThaiName" name ="PositionThaiName" class="round" value="Lorem Ipsum is simply dummy text of the printing"/></p>
+				                          		<p><input type="text" id="PositionThaiName" name ="PositionThaiName" class="round" value=""/></p>
 				                          </div><br class="clear"/>
 				                           <div class="grid_2">
 				                             <h6 class="detail-title">ตำแหน่ง(อังกฤษ)</h6>
@@ -364,7 +364,7 @@ else {
 				                          </div><br class="clear"/>
 				                         
 				                         <div class="grid_2">
-				                                <h6 class="detail-title">]ลายละเอียดงาน</h6>   
+				                                <h6 class="detail-title">ลายละเอียดงาน</h6>   
 				                          </div>
 				                          <div class="grid_8">
 				                          		<p><textarea type="text" id="Description" name ="Description" class="round" value=""></textarea> </p>
@@ -455,7 +455,7 @@ else {
 				else 
 				{?>
 						<script language="text/JavaScript">
-							alert("Kakkkk");
+							alert("Error");
 						</script>	
 				<?php 
 				}
@@ -464,7 +464,7 @@ else {
 			{
 				?>
 						<script language="JavaScript">
-							alert("Kakkkk");
+							alert("Error");
 						</script>	
 					<?php 
 			}
