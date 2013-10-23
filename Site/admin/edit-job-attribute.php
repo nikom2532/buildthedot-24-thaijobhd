@@ -94,7 +94,7 @@
 														$attDes  = $show['AttribuetDescription'];
 													?>
 														<input type="text" id="edu" class="eduction" name="edu[]" value="<?php echo "$attDes";?>"/>
-														<a href="include/module/delete-job-process.php?id=<?php echo $attID;?>" class="table-actions-button-del" id="<?php echo $attID; ?>"><font color="red">ลบ</font></a>
+														<a href="#" class="table-actions-button-del" id="<?php echo $attID; ?>"><font color="red">ลบ</font></a>
 													<?php
 													}
 												}                     	  
@@ -111,7 +111,7 @@
 		                             
 								
 		            		</section> 
-		                    <div class="grid_12 center"><input type="submit" id="" class="save-button blue round" value = "บันทึก">
+		                    <div class="grid_12 center"><input type="submit" id="" class="save-button blue round" value = "กลับ">
 		                    	
 		                    </div>         
 		                   </form>
