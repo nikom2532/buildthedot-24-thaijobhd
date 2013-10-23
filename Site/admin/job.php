@@ -64,7 +64,8 @@ else {
 	}
 	//normal mode
 	else{
-		
+		include($rootpath."lib/func_pagination.php");
+		include($rootadminpath."include/initial/pagination.php");
 		include("include/top-bar.php");
 		$Admin = "a@a.com";
 		$sql = "SELECT email, job_status FROM buildthedot_thaijobhd_user_account WHERE email = '$Admin'";
