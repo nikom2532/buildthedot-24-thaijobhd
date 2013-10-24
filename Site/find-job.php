@@ -1,5 +1,43 @@
 <?php include("include/header.php");?>
 <?php include("include/top-menu.php");?>       
+<?php include("admin/include/connect-to-database.php");
+session_start();
+$rootpath="../";
+$rootadminpath="./";
+include("lib/func_pagination.php");
+include("admin/include/initial/pagination.php");
+?>     
+    <?php
+    	$i=1;
+		if($_GET["page"] =="")
+		{
+			$_GET["page"] = 1;
+		}
+		// $sql="
+		// SELECT * 
+		// FROM  `buildthedot_thaijobhd_job_idea`
+		// LIMIT ".($page_limit*($_GET["page"]-1)).",".$page_limit.";
+		// ";
+		$sql="
+		SELECT * 
+		FROM  `buildthedot_thaijobhd_job`
+		ORDER BY JobID DESC
+		";
+		$result=@mysql_query($sql);
+		$number_of_items=@mysql_num_rows($result);
+		$sql="
+		SELECT * 
+		FROM  `buildthedot_thaijobhd_job` 
+		ORDER BY JobID DESC
+		LIMIT {$start} , {$page_limit} ;
+		";
+		$result=@mysql_query($sql);
+		while($rs=@mysql_fetch_array($result)){
+				echo $rs['JobID']."<br>";
+		}
+    		echo pagination($page_limit, $page, $rootadminpath."find-job.php?page=", $number_of_items); //call function to show pagination
+		
+    ?>
     <div id="content" class="container_12">
         <div class="grid_12" id="main">
         	<div id="head-title">
@@ -24,7 +62,7 @@
         </div>        
         <div class="grid_12" id="page-num">
             <ul>
-            	<li><a href="#"><<</a></li>
+            	<li><a href="#"></a></li>
                 <li class="active-page"><a href="#">1</a></li>
                 <li><a href="#">2</a></li>
                 <li><a href="#">3</a></li>
