@@ -263,7 +263,7 @@ else {
 			{
 			?>
 				<script language="JavaScript">
-					alert("Kakkkk");
+					alert("Error");
 				</script>	
 			<?php 
 			}
@@ -272,7 +272,7 @@ else {
 		{
 ?>
 		<script language="JavaScript">
-			alert("Kakkkk");
+			alert("Error);
 		</script>	
 <?php 
 		} 
