@@ -2,10 +2,21 @@
 <?php include("include/top-menu.php");?>
 <script src="js/jquery-1.7.1.min.js"></script>
 <script>
-	$(document).blind("click", function(){
+	$(document).ready(function()
+	{
 		
+		$("#se").bind("click", function(){
+			var input = $("#keyword").attr('value');
+			$.post("search-process.php",
+			{
+				search : input
+			},function(data)
+			{
+				
+			});	
+			
 		
-		
+		});
 	});
 </script>
 
@@ -14,7 +25,7 @@
         <fieldset>
             <label for="keyword">ค้นหางาน</label>
             <input type="text" id="keyword" class="round" name="searh" placeholder="ค้นหาตำแหน่งงาน" />
-            <input type="submit" value="" class="round black ic-search" />
+            <input type="submit" value="" class="round black ic-search" id="se"/>
         </fieldset>
     </form>
 </div><!--end search-bar -->      
