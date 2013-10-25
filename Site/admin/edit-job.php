@@ -280,11 +280,11 @@ else {
 		                                <h6 class="detail-title">งานแนะนำ - <?php if($recomment == 1){echo "Recomment";}else{echo "Non recomment";}?> </h6>   
 		                          </div>
 		                          <div class="grid_8">
-<<<<<<< HEAD
-		                          		<p><input type="checkbox" id="recommend" value="re" />แนะนำ</p>
-=======
-		                          		<p><input type="checkbox" id="recommend" value="re" name="recommend"/>แนะนำ</p>
->>>>>>> 0c67dceb2e06ae724bec53a5e37405d86cce0e5f
+<?php //<<<<<<< HEAD ?>
+		                          		<!-- <p><input type="checkbox" id="recommend" value="re" />แนะนำ</p> -->
+<?php // ======= ?>
+		                          		<p><input type="checkbox" id="recommend" value="re" name="recomment"/>แนะนำ</p>
+<?php //>>>>>>> 0c67dceb2e06ae724bec53a5e37405d86cce0e5f ?>
 		                          </div><br class="clear"/>
 		
 		                          <br class="clear"/>

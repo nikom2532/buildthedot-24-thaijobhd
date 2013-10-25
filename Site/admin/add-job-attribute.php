@@ -20,10 +20,21 @@
 						$(".edu").append('<input type="text" id="<?php echo $count; ?>" class="education" name="edu[]"/>');
 						
 				});
-				
+				/*
 				$(".table-actions-button_text-red").live("click",function(){
 					
 					$(".education").empty();
+				});
+				*/
+				
+				$("#submit").blind("click", function(event){
+					var a = $(".education").attr("value");
+					if(a == null || a == "")
+					{
+						alert("Error");
+						event.preventDefault();
+					}
+					
 				});  
 		});
 </script>
@@ -40,12 +51,13 @@
 				$property = $_POST['Property'];
 				$date_start = $_POST['date_from'];
 				$date_end = $_POST['date_to'];
-				if(isset($_POST['recommend']))
+				 $a = $_POST['recomment'];
+				 if($a == 1 )
 				{
-					$recomment = $_POST['recommend'];	
+					$recomment = ":)";	
 				}
 				else {
-					$recomment = 0;
+					$recomment = ":(";
 				}
 			 		 
 				$_SESSION['company_name'] = $company_name;
@@ -181,7 +193,7 @@
 		                                <h6 class="detail-title">งานแนะนำ : </h6>   
 		                          </div>
 		                          <div class="grid_8">
-		                          		<h6 class="detail-title"> <?php if($recomment == "re"){echo "Recommended job";}else{echo "Not recommened job";}?></h6></p>
+		                          		<h6 class="detail-title"> <?php if(TRUE){echo $recomment;}else{echo "Not recommened job";}?></h6></p>
 		                          </div><br class="clear"/>
 		
 		                          <br class="clear"/>
@@ -196,7 +208,7 @@
 		                                    </div>
 		                                    <div class="grid_3">
 		                                    	<a href="#" class="table-actions-button_text-blue" id="<?php echo $count; ?>">เพิ่ม</a>
-		                                    	<a href="#" class="table-actions-button_text-red" id="<?php echo $count; ?>"><font color="red">ลบ</font></a>
+		                                    	<?php //<a href="#" class="table-actions-button_text-red" id="<?php echo $count; "><font color="red">ลบ</font></a> ?>
 		                                    </div><br class="clear"/>
 		                                   
 		                                  
@@ -205,7 +217,7 @@
 		                             
 								
 		            		</section> 
-		                    <div class="grid_12 center"><input type="submit" id="" class="save-button blue round" value = "บันทึก">
+		                    <div class="grid_12 center"><input type="submit" id="submit" class="save-button blue round" value = "บันทึก">
 		                    	
 		                    </div>         
 		                   </form>
@@ -219,7 +231,7 @@
 		else 
 		{?>
 				<script language="text/JavaScript">
-					alert("Kakkkk");
+					alert("Error");
 				</script>	
 		<?php 
 		}
@@ -228,7 +240,7 @@
 	{
 		?>
 				<script language="JavaScript">
-					alert("Kakkkk");
+					alert("Error");
 				</script>	
 			<?php 
 	}

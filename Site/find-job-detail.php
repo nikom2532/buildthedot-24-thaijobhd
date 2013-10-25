@@ -1,5 +1,6 @@
 <?php include("include/header.php");?>
-<?php include("include/top-menu.php");?>       
+<?php include("include/top-menu.php");?>     
+<?php include("admin/include/connect-to-database.php");?>  
     <div id="content" class="container_12">
         <div id="content-detail">
         	<div id="head-title">
@@ -7,24 +8,58 @@
     		</div>
             <section id="content-detail" class="grid_12">
                  <div class="grid_9">
-                     <h6 id="headline">Lorem Ipsum is simply dummy text of the printing</h6>
-                     <h5 class="date">10 กันยายน 2556</h5>
-                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                  	<?php 
+		    			$jobID = $_GET['id'];
+						
+						$sql="
+						SELECT * 
+						FROM  buildthedot_thaijobhd_job 
+						WHERE JobID = '$jobID'
+						LIMIT 0 , 1 ;
+						";
+						$result=@mysql_query($sql);
+						while($rs=@mysql_fetch_array($result))
+						{	
+							$name =  $rs['CompanyName'] . " : " . $rs['PositionThai'];
+							$description = $rs['JobDescription'];
+							$pl = $rs['Place'];
+							$s = $rs['Saraly'];
+							$q = $rs['Quantity'];
+						}
+    				?>
+                     <h6 id="headline"><?php echo $name; ?></h6>
+                     <h5 class="date"><?php echo date("D-M-Y"); ?></h5>
+                     <p><?php echo $description; ?>
                      </p>
                   <h6 class="detail-title">สถานที่ปฏิบัติงาน</h6>
-                 	 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                 	 <p><?php echo $pl; ?></p>
                   <h6 class="detail-title">เงินเดือน</h6>
-                  	<p>20,000 บาท</p>
+                  	<p><?php echo $s; ?> บาท</p>
                   <h6 class="detail-title">คุณสมบัติ</h6>
+                  <?php
+                  		$sql="
+						SELECT  AtrributDescription
+						FROM  buildthedot_thaijobhd_job_attribute 
+						WHERE JobID = '$jobID'
+					
+						";
+						$result=@mysql_query($sql);
+                  ?>
                   	<ul id="detail-bullet">
-                    	<li>Lorem Ipsum is simply dummy text of the printing</li>
-                        <li>Lorem Ipsum is simply dummy text of the printing</li>
-                        <li>Lorem Ipsum is simply dummy text of the printing</li>
+                  <?php	
+                  		while($rs=@mysql_fetch_array($result))
+						{	
+					?>
+                    	<li><?php echo $rs['AtrributDescription'];?></li>
+            		<?php
+						}
+            		?>
                     </ul>
             	</div><!--end grid_9 -->
                 <div class="grid_2 center" id="available-box">
-                    <b class="center">ว่าง 2 ตำแหน่ง</b>
+                    <b class="center"><?php echo "ว่าง ". $q . " ตำแหน่ง"; ?></b>
                     <b class="button blue" id="register-button">สมัครงาน</b>
+               			
                 </div>
                 </div>
             </section>           
