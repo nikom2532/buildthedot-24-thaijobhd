@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.10.1deb1
+-- version 3.5.8
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 22, 2013 at 12:52 AM
--- Server version: 5.5.32
--- PHP Version: 5.3.10-1ubuntu3.7
+-- Generation Time: Oct 25, 2013 at 01:00 AM
+-- Server version: 5.1.67
+-- PHP Version: 5.3.27
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -18,7 +18,6 @@ SET time_zone = "+00:00";
 
 --
 -- Database: `buildthe_ThaiJobHD`
-
 --
 
 -- --------------------------------------------------------
@@ -150,7 +149,7 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_account` (
 --
 
 INSERT INTO `buildthedot_thaijobhd_user_account` (`id`, `email`, `password`, `firstname`, `midname`, `lastname`, `job_id`, `job_status`, `admin_status`, `address`) VALUES
-(1, 'a@a.com', '77de54ccf56eb6f7dbf99e4d3be949ab6f9b0a55df8ac28564cb9f63a10be8af6ab3f7c2', 'a', 'a', 'a', 1, '1', 0, '');
+(1, 'a@a.com', '77de54ccf56eb6f7dbf99e4d3be949ab6f9b0a55df8ac28564cb9f63a10be8af6ab3f7c2', 'a', 'a', 'a', 1, '1', 1, '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

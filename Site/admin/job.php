@@ -1,4 +1,10 @@
-<script src="js/jquery-1.7.1.min.js"></script>
+<?php 
+session_start();
+$rootpath="../";
+$rootadminpath="./";
+include($rootadminpath."include/header.php");
+include("include/connect-to-database.php");
+?>
 <script language="JavaScript">
 	/*function deleteFunction()
 	{
@@ -15,8 +21,6 @@
   		}
 	}
 	*/
-</script>
-<script>
 	$(document).ready(function(){
   		$(".table-actions-button-del").live("click",function() 
   		{
@@ -41,17 +45,10 @@
     		}
 		});
 	});
-	
 </script>
-<?php 
-session_start();
-$rootpath="../";
-$rootadminpath="./";
-include($rootadminpath."include/header.php");
-include("include/connect-to-database.php");
-
+<?php
 //For Development mode(No need to login)
-$_SESSION["userid"] = "1";
+// $_SESSION["userid"] = "1";
 
 if ($_SESSION["userid"] == "") {
 	include ($rootadminpath . "include/login.php");
@@ -66,7 +63,10 @@ else {
 	else{
 		include($rootpath."lib/func_pagination.php");
 		include($rootadminpath."include/initial/pagination.php");
-		include("include/top-bar.php");
+		include($rootadminpath."include/top-bar.php");
+		
+		//Remove Ken's Login, Add Arming Huang's login
+		/*
 		$Admin = "a@a.com";
 		$sql = "SELECT email, job_status FROM buildthedot_thaijobhd_user_account WHERE email = '$Admin'";
 		$result = mysql_query($sql);
@@ -77,9 +77,9 @@ else {
 				$e_mail = $show['email'];
 				$Status = $show['job_status'];
 			}
-			
 			if($Status = 1)
 			{
+		*/
 				
 ?>
 				<!-- HEADER -->
@@ -104,90 +104,80 @@ else {
 							<h2>งาน<span class="right"><a href="insert-job.php" class="add-button blue round" vlaue="insert">เพิ่ม</a></span></h2>
 							<table>
 								
-									<thead>
+								<thead>
+							
+								<tr>
+									<th width="9%">ลำดับที่</th>
+									<th width="43%">ชื่องาน</th>
+									<th width="23%">บริษัท</th>
+	                                <th width="14%">สถานะ</th>
+									<th width="11%">Action</th>
+								</tr>
 								
-									<tr>
-										<th width="9%">ลำดับที่</th>
-										<th width="43%">ชื่องาน</th>
-										<th width="23%">บริษัท</th>
-		                                <th width="14%">สถานะ</th>
-										<th width="11%">Action</th>
-									</tr>
-									
-									</thead>
-			
-									<tfoot>
-									<tbody>
-		<?php
-										$i=1;
-										if($_GET["page"] ==""){
-											$_GET["page"] = 1;
-										}
-										// $sql="
-											// SELECT * 
-											// FROM  `buildthedot_thaijobhd_job_idea`
-											// LIMIT ".($page_limit*($_GET["page"]-1)).",".$page_limit.";
-										// ";
-										$sql="
-											SELECT * 
-											FROM  `buildthedot_thaijobhd_job`
-										";
-										$result=@mysql_query($sql);
-										$number_of_items=@mysql_num_rows($result);
-										$sql="
-											SELECT * 
-											FROM  `buildthedot_thaijobhd_job` 
-										 	LIMIT {$start} , {$page_limit} ;
-										";
-										$result=@mysql_query($sql);
-										while($rs=@mysql_fetch_array($result)){
-		?>
-											<tr>
-												<td><?php //echo $rs["CompanyID"]; ?><?php echo $i++; ?></td>
-												<td>
-													<a href="business-idea-detail.php?CompanyID=<?php echo $rs["JobID"]; ?>" class="text-black"><?php echo $rs["PositionThai"]; ?></a>
-												</td>
-												<td><?php echo $rs['CompanyName'];?></td>
-												<td id="status">
-													 <?php
-						                                if(checkTime($rs['StartTime'],$rs['EndTime']))
-													   	{
-						                                ?>
-						                                	<img src="images/icons/message-boxes/confirmation.png" alt="active">
-						                               	<?php
-														}
-														else
-														{ ?>
-															<img src="images/icons/message-boxes/error.png" alt="active">
-														<?php
-														}
-													?>
-												</td>
-												<td id="action" class="center">
-				                                		<a href="edit-job.php?id=<?php echo $rs["JobID"];?>" class="table-actions-button text-blue" id="<?php echo $rs["JobID"];?>">แก้ไข</a>
-				                                		<a href="#" class="table-actions-button-del" style="color: red" id="<?php echo $rs["JobID"];?>">ลบ</a> 
-				                                	</td>
-											</tr>
-		<?php
-										}
-		?>
-									</tbody>
-								</table>
-		<?php
+								</thead>
+		
+								<tfoot>
+								<tbody>
+	<?php
+									$i=1;
+									if($_GET["page"] ==""){
+										$_GET["page"] = 1;
+									}
+									// $sql="
+										// SELECT * 
+										// FROM  `buildthedot_thaijobhd_job_idea`
+										// LIMIT ".($page_limit*($_GET["page"]-1)).",".$page_limit.";
+									// ";
+									$sql="
+										SELECT * 
+										FROM  `buildthedot_thaijobhd_job`
+									";
+									$result=@mysql_query($sql);
+									$number_of_items=@mysql_num_rows($result);
+									$sql="
+										SELECT * 
+										FROM  `buildthedot_thaijobhd_job` 
+									 	LIMIT {$start} , {$page_limit} ;
+									";
+									$result=@mysql_query($sql);
+									while($rs=@mysql_fetch_array($result)){
+	?>
+										<tr>
+											<td><?php //echo $rs["CompanyID"]; ?><?php echo $i++; ?></td>
+											<td>
+												<a href="business-idea-detail.php?CompanyID=<?php echo $rs["JobID"]; ?>" class="text-black"><?php echo $rs["PositionThai"]; ?></a>
+											</td>
+											<td><?php echo $rs['CompanyName'];?></td>
+											<td id="status">
+												 <?php
+					                                if(checkTime($rs['StartTime'],$rs['EndTime']))
+												   	{
+					                                ?>
+					                                	<img src="images/icons/message-boxes/confirmation.png" alt="active">
+					                               	<?php
+													}
+													else
+													{ ?>
+														<img src="images/icons/message-boxes/error.png" alt="active">
+													<?php
+													}
+												?>
+											</td>
+											<td id="action" class="center">
+			                                		<a href="edit-job.php?id=<?php echo $rs["JobID"];?>" class="table-actions-button text-blue" id="<?php echo $rs["JobID"];?>">แก้ไข</a>
+			                                		<a href="#" class="table-actions-button-del" style="color: red" id="<?php echo $rs["JobID"];?>">ลบ</a> 
+			                                	</td>
+										</tr>
+	<?php
+									}
+	?>
+								</tbody>
+							</table>
+	<?php
 								//############ Paging ############
-								echo pagination($page_limit, $page, $rootadminpath."job.php?page=", $number_of_items); //call function to show pagination
-
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						 /*	<table id="tb-view">
+							echo pagination($page_limit, $page, $rootadminpath."job.php?page=", $number_of_items); //call function to show pagination
+								/*
+							<table id="tb-view">
 								<thead>
 									<tr>
 										<th width="9%">ลำดับที่</th>
@@ -258,6 +248,7 @@ else {
 					</div> <!-- end content-module -->
 				</div> <!-- end content -->		
 		<?php 
+			/*
 			}
 			else
 			{
@@ -276,6 +267,7 @@ else {
 		</script>	
 <?php 
 		} 
+		*/
 ?>
 
 <?php	
