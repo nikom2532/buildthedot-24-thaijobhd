@@ -1,7 +1,13 @@
 <?php include("include/header.php");?>
 <?php include("include/top-menu.php");?>
 <script src="js/jquery-1.7.1.min.js"></script>
-
+<script>
+	$(document).blind("click", function(){
+		
+		
+		
+	});
+</script>
 
 <div id="search-bar" class="container_12">       			
     <form action="#" method="POST" id="search-form" class="center"  class="grid_12">
