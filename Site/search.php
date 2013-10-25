@@ -4,7 +4,6 @@
 <script>
 	$(document).ready(function()
 	{
-		
 		$("#se").bind("click", function(){
 			var input = $("#keyword").attr('value');
 			
@@ -14,21 +13,24 @@
 			},function(data)
 			{
 				alert(data);
-			});	
-			
-		
+			});		
 		});
+		
 	});
 </script>
 
 <div id="search-bar" class="container_12">       			
-    <form action="#" method="POST" id="search-form" class="center"  class="grid_12">
-        <fieldset>
+   <!-- <form action="#" method="POST" id="search-form" class="center"  class="grid_12"> -->
+       <br>
+       <dev id="search-form" class="center"  class="grid_12">
+       <fieldset>
             <label for="keyword">ค้นหางาน</label>
             <input type="text" id="keyword" class="round" name="searh" placeholder="ค้นหาตำแหน่งงาน" />
+  	  
             <input type="submit" value="" class="round black ic-search" id="se"/>
         </fieldset>
-    </form>
+        </dev>
+  <!-- </form> -->
 </div><!--end search-bar -->      
     <div id="content" class="container_12">
     	<?php
