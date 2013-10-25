@@ -1,7 +1,22 @@
 <?php include("include/header.php");?>
 <?php include("include/top-menu.php");?>
-<?php include("include/search-bar.php");?>     
+<script src="js/jquery-1.7.1.min.js"></script>
+
+
+<div id="search-bar" class="container_12">       			
+    <form action="#" method="POST" id="search-form" class="center"  class="grid_12">
+        <fieldset>
+            <label for="keyword">ค้นหางาน</label>
+            <input type="text" id="keyword" class="round" name="searh" placeholder="ค้นหาตำแหน่งงาน" />
+            <input type="submit" value="" class="round black ic-search" />
+        </fieldset>
+    </form>
+</div><!--end search-bar -->      
     <div id="content" class="container_12">
+    	<?php
+    		$search = $_POST['search'];
+			echo $search;
+    	?>
         <div class="grid_12" id="search-list">
         	<h2 id="sub-title">Lorem Ipsum</h2>
             <h6 id="headline">Lorem Ipsum is simply dummy text of the printing</h6>
