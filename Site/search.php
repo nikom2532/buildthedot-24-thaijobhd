@@ -7,12 +7,13 @@
 		
 		$("#se").bind("click", function(){
 			var input = $("#keyword").attr('value');
+			
 			$.post("search-process.php",
 			{
 				search : input
 			},function(data)
 			{
-				
+				alert(data);
 			});	
 			
 		
@@ -31,8 +32,8 @@
 </div><!--end search-bar -->      
     <div id="content" class="container_12">
     	<?php
-    		$search = $_POST['search'];
-			echo $search;
+    	//	$search = $_POST['search'];
+			//echo $search;
     	?>
         <div class="grid_12" id="search-list">
         	<h2 id="sub-title">Lorem Ipsum</h2>
