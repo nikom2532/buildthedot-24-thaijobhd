@@ -63,7 +63,7 @@ else{
 												<h6>เลือกรูป</h6>
 											</div>
 											<div class="grid_5">
-												<a href="#"><?php echo $rs["AdPic"]; ?></a>
+												<a href="<?php echo $rootpath; ?>images/ad/<?php echo $rs["AdPic"]; ?>" target="_blank"><?php echo $rs["AdPic"]; ?></a>
 											</div>
 											<br class="clear"/>
 											<div class="prefix_1 grid_5">
