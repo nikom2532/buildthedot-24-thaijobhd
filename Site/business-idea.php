@@ -40,7 +40,7 @@ include ($rootpath . "include/top-menu.php");
 			$sql="
 				SELECT * 
 				FROM  `buildthedot_thaijobhd_job_idea`
-				WHERE `IdeaRecomment` = '1'
+				WHERE `IdeaRecomment` = 1
 				ORDER BY TIME(`IdeaTime`), `IdeaTime` DESC ;
 			";
 		}
