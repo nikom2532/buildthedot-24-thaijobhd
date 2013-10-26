@@ -55,7 +55,7 @@ include ($rootpath . "include/top-menu.php");
 				?>" width="150" alt="picture" />
 				</p>
 				<p class="grid_9">
-					<?php echo $rs["Description1"]; ?><span id="read-more"><a href="business-idea-detail.php">อ่านต่อ</a></span>
+					<?php echo $rs["Description1"]; ?><span id="read-more"><a href="<?php echo $rootpath; ?>business-idea-detail.php?id=<?php echo $rs["CompanyID"]; ?>">อ่านต่อ</a></span>
 				</p>
 			</section>
 <?php
