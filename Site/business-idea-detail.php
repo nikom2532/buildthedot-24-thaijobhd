@@ -51,7 +51,7 @@ include ($rootpath . "include/top-menu.php");
 								$path .= "business-idea/".$rs["Pic1"];
 							}
 ?>
-							<a src="<?php echo $path; ?>" target="_blank"><img src="<?php echo $path; ?>" width="150" alt="picture" /></a>
+							<a href="<?php echo $path; ?>" target="_blank"><img src="<?php echo $path; ?>" width="150" alt="picture" /></a>
 						</li>
 <?php 
 							$path = $rootpath."images/"; 
@@ -63,7 +63,7 @@ include ($rootpath . "include/top-menu.php");
 							}
 ?>
 						<li>
-							<a src="<?php echo $path; ?>" target="_blank"><img src="<?php echo $path; ?>" width="150" alt="picture" /></a>
+							<a href="<?php echo $path; ?>" target="_blank"><img src="<?php echo $path; ?>" width="150" alt="picture" /></a>
 						</li>
 <?php 
 							$path = $rootpath."images/"; 
@@ -75,7 +75,7 @@ include ($rootpath . "include/top-menu.php");
 							}
 ?>
 						<li>
-							<a src="<?php echo $path; ?>" target="_blank"><img src="<?php echo $path; ?>" width="150" alt="picture" /></a>
+							<a href="<?php echo $path; ?>" target="_blank"><img src="<?php echo $path; ?>" width="150" alt="picture" /></a>
 						</li>
 					</ul>
 				</div>
