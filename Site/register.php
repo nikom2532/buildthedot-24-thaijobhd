@@ -1,4 +1,6 @@
-<?php include("include/header.php");?>
+<?php
+include ("include/header.php");
+?>
 <div id="wrapper">
     <div id="header" class="container_12">
         <div id="login-intro" class="grid_3">
@@ -6,7 +8,7 @@
         </div>
         <div class="right">
         	<ul id="my-profile">
-            	<li><a href="signin.php" class="text-blue">Sign in</a></li>
+            	<li><a href="login.php" class="text-blue">Sign in</a></li>
                 <li><a href="register.php" class="text-grey">Register</a></li>
             </ul>
         </div>
@@ -166,4 +168,6 @@
             
       	</div>	
     </div><!--end content -->
-<?php include("include/footer.php");?>
+<?php
+include ("include/footer.php");
+?>
