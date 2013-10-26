@@ -42,34 +42,40 @@ include ($rootpath . "include/top-menu.php");
 				<div class="grid_2" id="image-detail">
 					<ul>
 						<li>
-							<img src="<?php echo $rootpath; ?>images/<?php
-								if($rs["Pic1"] == ""){
-									echo "banner-2.png";
-								}
-								else{
-									echo "business-idea/".$rs["Pic1"];
-								}
-							?>" width="150" alt="picture" />
+<?php 
+							$path = $rootpath."images/"; 
+							if($rs["Pic1"] == ""){
+								$path .= "banner-2.png";
+							}
+							else{
+								$path .= "business-idea/".$rs["Pic1"];
+							}
+?>
+							<a src="<?php echo $path; ?>" target="_blank"><img src="<?php echo $path; ?>" width="150" alt="picture" /></a>
 						</li>
+<?php 
+							$path = $rootpath."images/"; 
+							if($rs["Pic2"] == ""){
+								$path .= "banner-2.png";
+							}
+							else{
+								$path .= "business-idea/".$rs["Pic2"];
+							}
+?>
 						<li>
-							<img src="<?php echo $rootpath; ?>images/<?php
-								if($rs["Pic2"] == ""){
-									echo "banner-2.png";
-								}
-								else{
-									echo "business-idea/".$rs["Pic2"];
-								}
-							?>" width="150" alt="picture" />
+							<a src="<?php echo $path; ?>" target="_blank"><img src="<?php echo $path; ?>" width="150" alt="picture" /></a>
 						</li>
+<?php 
+							$path = $rootpath."images/"; 
+							if($rs["Pic3"] == ""){
+								$path .= "banner-2.png";
+							}
+							else{
+								$path .= "business-idea/".$rs["Pic3"];
+							}
+?>
 						<li>
-							<img src="<?php echo $rootpath; ?>images/<?php
-								if($rs["Pic3"] == ""){
-									echo "banner-2.png";
-								}
-								else{
-									echo "business-idea/".$rs["Pic3"];
-								}
-							?>" width="150" alt="picture" />
+							<a src="<?php echo $path; ?>" target="_blank"><img src="<?php echo $path; ?>" width="150" alt="picture" /></a>
 						</li>
 					</ul>
 				</div>
