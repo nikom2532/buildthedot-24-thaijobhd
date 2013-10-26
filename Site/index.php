@@ -183,7 +183,7 @@ include ($rootpath . "include/search-bar.php");
 		<div id="head-title">
 			<h1>ไอเดียธุรกิจแนะนำ </h1>
 		</div>
-		<div id="recommend-idea">
+		<div id="recommend-idea" class="grid_8">
 			<div class="grid_3">
 				<img src="images/banner-2.png" width="144" height="143">
 				<h3>Lorem Ipsum</h3>
@@ -212,14 +212,14 @@ include ($rootpath . "include/search-bar.php");
 					Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, <span class="right" id="read-more"><a href="#">อ่านต่อ</a></span>
 				</p>
 			</div>
-			<h2 class="right"><a href="#" class="button round black">ดูทั้งหมด</a></h2>
 		</div>
+		<h2 class="right"><a href="#" class="button round black">ดูทั้งหมด</a></h2>
 		<br class="clear seperator"/>
 	
-		<div class="grid_6">
+		<div class="grid_4 margin-left-5 margin-right-5">
 			<img src="images/banner-1.png" width="100%" <?php // width="458" height="175" ?> alt="Banner">
 		</div>
-		<div class="grid_6">
+		<div class="grid_4 margin-left-5 margin-right-5">
 			<img src="images/banner-1.png" width="100%" <?php // width="458" height="175" ?> alt="Banner">
 		</div>
 	</div><?php //End Center Content ?>

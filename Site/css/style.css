@@ -645,10 +645,13 @@ input[type="submit"]{
 	margin-top: 10px;
 }
 
-/*For index.php*/
+/*###### For index.php ######*/
 .margin-left-5{
 	margin-left:5px;
 }
 .margin-right-5{
 	margin-right:5px;
+}
+#recommend-idea .grid_3{
+	margin: 0 30px;
 }
