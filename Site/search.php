@@ -12,7 +12,14 @@
 				search : input
 			},function(data)
 			{
-				alert(data);
+/*				$.each({ name: "John", lang: "JS" }, function( k, v ) {
+  alert( "Key: " + k + ", Value: " + v );
+});*/			var obj = jQuery.parseJSON(data);
+			
+				$.each(obj, function(key, val){
+					
+					$("#search-list").append();
+				});
 			});		
 		});
 		
@@ -41,7 +48,8 @@
         	<h2 id="sub-title">Lorem Ipsum</h2>
             <h6 id="headline">Lorem Ipsum is simply dummy text of the printing</h6>
             <h5 class="date">10 กันยายน 2556</h5>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.<span id="read-more"><a href="#">อ่านต่อ</a></span></p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            <span id="read-more"><a href="#">อ่านต่อ</a></span></p>
             
             <h6 id="headline">Lorem Ipsum is simply dummy text of the printing</h6>
              <h5 class="date">10 กันยายน 2556</h5>
