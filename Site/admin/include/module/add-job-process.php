@@ -66,7 +66,7 @@ include($rootadminpath."include/connect-to-database.php");
 	VALUES ($company_name, $position_thai_name, $position_eng_name, $place_name, $saraly, $description, $recommented, $date_start,$date_end, $FPint)";
 	*/
 	
-	$SQL = "INSERT INTO  buildthedot_thaijobhd_job (  CompanyName ,  PositionThai ,  PositionEng ,  Place , Quantity , Saraly ,  JobDescription ,  Recomment, Property , StartTime ,  EndTime ,  JobType ) 
+	echo $SQL = "INSERT INTO  buildthedot_thaijobhd_job (  CompanyName ,  PositionThai ,  PositionEng ,  Place , Quantity , Saraly ,  JobDescription ,  Recomment, Property , StartTime ,  EndTime ,  JobType ) 
 			VALUES ( '$company_name',  '$position_thai_name',  '$position_eng_name',  '$place_name', '$quantity' ,'$saraly',  '$description',  '$recommented', '$property' , '$date_start',  '$date_end',  '$FPint')";
 	$resultSQL = mysql_query($SQL);
 	
@@ -95,7 +95,7 @@ include($rootadminpath."include/connect-to-database.php");
 						{
 							?>
 							<script language="javascript">
-									window.location="http://localhost/buildthedot-24-thaijobhd/Site/admin/insert-job.php";
+									window.location="<?php echo $rootadminpath; ?>insert-job.php";
 									alert("Ok");
 								</script>
 							<?php	
@@ -105,7 +105,7 @@ include($rootadminpath."include/connect-to-database.php");
 							?>
 							<script language="javascript">
 									window.location="insert-job.php";
-									alert("Error");
+									alert("Error1");
 								</script>
 							<?php
 						}
@@ -116,8 +116,8 @@ include($rootadminpath."include/connect-to-database.php");
 			{
 				?>
 							<script language="javascript">
-									window.location="http://localhost/buildthedot-24-thaijobhd/Site/admin/insert-job.php";
-									alert("Error");
+									window.location="<?php echo $rootadminpath; ?>insert-job.php";
+									alert("Error2");
 								</script>
 							<?php
 			}
@@ -127,8 +127,8 @@ include($rootadminpath."include/connect-to-database.php");
 		{
 			?>
 			<script language="javascript">
-					window.location="http://localhost/buildthedot-24-thaijobhd/Site/admin/insert-job.php";
-					alert("Error");
+					window.location="<?php echo $rootadminpath; ?>insert-job.php";
+					alert("Error3");
 				</script>
 			<?php
 		}
@@ -136,10 +136,10 @@ include($rootadminpath."include/connect-to-database.php");
 		
 	}
 	else 
-	{?>
+	{ ?>
 		<script language="javascript">
-					window.location="http://localhost/buildthedot-24-thaijobhd/Site/admin/insert-job.php";.location="insert-job.php";
-					alert("Error");
+					// window.location="<?php echo $rootadminpath; ?>insert-job.php";
+					alert("Error4");
 				</script>
 	<?php
 	}

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 25, 2013 at 01:00 AM
+-- Generation Time: Oct 26, 2013 at 10:02 PM
 -- Server version: 5.1.67
 -- PHP Version: 5.3.27
 
@@ -54,6 +54,7 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_job` (
   `PositionThai` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
   `PositionEng` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
   `Place` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
+  `Quantity` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `Saraly` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `JobDescription` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
   `Recomment` int(11) NOT NULL,
