@@ -1,12 +1,55 @@
 <?php include("include/header.php");?>
 <?php include("include/top-menu.php");?>
-<?php include("include/search-bar.php");?>     
+<script src="js/jquery-1.7.1.min.js"></script>
+<script>
+	$(document).ready(function()
+	{
+		$("#se").bind("click", function(){
+			var input = $("#keyword").attr('value');
+			
+			$.post("search-process.php",
+			{
+				search : input
+			},function(data)
+			{
+/*				$.each({ name: "John", lang: "JS" }, function( k, v ) {
+  alert( "Key: " + k + ", Value: " + v );
+});*/			var obj = jQuery.parseJSON(data);
+			
+				$.each(obj, function(key, val){
+					
+					$("#search-list").append();
+				});
+			});		
+		});
+		
+	});
+</script>
+
+<div id="search-bar" class="container_12">       			
+   <!-- <form action="#" method="POST" id="search-form" class="center"  class="grid_12"> -->
+       <br>
+       <dev id="search-form" class="center"  class="grid_12">
+       <fieldset>
+            <label for="keyword">ค้นหางาน</label>
+            <input type="text" id="keyword" class="round" name="searh" placeholder="ค้นหาตำแหน่งงาน" />
+  	  
+            <input type="submit" value="" class="round black ic-search" id="se"/>
+        </fieldset>
+        </dev>
+  <!-- </form> -->
+</div><!--end search-bar -->      
     <div id="content" class="container_12">
+    	<?php
+    	//	$search = $_POST['search'];
+			//echo $search;
+    	?>
         <div class="grid_12" id="search-list">
         	<h2 id="sub-title">Lorem Ipsum</h2>
             <h6 id="headline">Lorem Ipsum is simply dummy text of the printing</h6>
             <h5 class="date">10 กันยายน 2556</h5>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.<span id="read-more"><a href="#">อ่านต่อ</a></span></p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            <span id="read-more"><a href="#">อ่านต่อ</a></span></p>
             
             <h6 id="headline">Lorem Ipsum is simply dummy text of the printing</h6>
              <h5 class="date">10 กันยายน 2556</h5>
