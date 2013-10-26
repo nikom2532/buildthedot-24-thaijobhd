@@ -76,55 +76,16 @@ else{
 			
 					<h2 id="sub-title">ประวัติส่วนตัว <span class="right"><a href="#" class="button round black right">แก้ไข</a></span></h2>
 					<h3 class="text-grey"><?php echo $rs_user["firstname"]." ".$rs_user["midname"]." ".$rs_user["lastname"]; ?></h3>
-					<div><img src="images/banner-2.png" width="144" height="143">
+					<div>
+						<img src="images/<?php 
+							if($rs_user["profile_picture"] != ""){
+								echo "user_account/".$rs_user["picture_profile"];
+							}
+							else{
+								echo "banner-2.png";
+							}
+						?>" width="144" height="143" />
 					</div>
-					<br class="clear"/>
-					<p class="grid_2">
-						Lorem Ipsum
-					</p>
-					<p class="grid_8">
-						Lorem Ipsum
-					</p>
-					<br class="clear"/>
-			
-					<p class="grid_2">
-						Lorem Ipsum
-					</p>
-					<p class="grid_8">
-						Lorem Ipsum
-					</p>
-					<br class="clear"/>
-			
-					<p class="grid_2">
-						Lorem Ipsum
-					</p>
-					<p class="grid_8">
-						Lorem Ipsum
-					</p>
-					<br class="clear"/>
-			
-					<p class="grid_2">
-						Lorem Ipsum
-					</p>
-					<p class="grid_8">
-						Lorem Ipsum
-					</p>
-					<br class="clear"/>
-			
-					<p class="grid_2">
-						Lorem Ipsum
-					</p>
-					<p class="grid_8">
-						Lorem Ipsum
-					</p>
-					<br class="clear"/>
-			
-					<p class="grid_2">
-						Lorem Ipsum
-					</p>
-					<p class="grid_8">
-						Lorem Ipsum
-					</p>
 					<br class="clear"/>
 			
 					<p class="grid_2">
@@ -209,6 +170,7 @@ else{
 						Lorem Ipsum
 					</p>
 					<br class="clear"/>
+
 					<div class="prefix_2">
 						<div id="head-table1" class="grid_9">
 							<p class="grid_2 center">
@@ -226,41 +188,58 @@ else{
 						</div>
 					</div>
 					<br class="clear"/>
-					<div class="prefix_2">
-						<div class="grid_9" id="table-content">
-							<p class="grid_2 center">
-								Lorem Ipsum
-							</p>
-							<p class="grid_3 center">
-								มหาวิทยาลัยเกษตรศาสตร์
-							</p>
-							<p class="grid_1 center">
-								1111-1111
-							</p>
-							<p class="grid_2 center">
-								ปริญญาตรี
-							</p>
+<?php
+					$sql_edu="
+						SELECT * 
+						FROM  `buildthedot_thaijobhd_user_history_educations`
+						WHERE `user_account_id` = '".$_SESSION["userid"]."' ;
+					";
+					$result_edu = @mysql_query($sql_edu);
+					if(@mysql_num_rows($result_edu)==0){
+?>
+						<div class="prefix_2">
+							<div class="grid_9" id="table-content">
+								<p class="grid_2 center">
+									-
+								</p>
+								<p class="grid_3 center">
+									-
+								</p>
+								<p class="grid_1 center">
+									-
+								</p>
+								<p class="grid_2 center">
+									-
+								</p>
+							</div>
 						</div>
-					</div>
-					<br class="clear"/>
-					<div class="prefix_2">
-						<div class="grid_9" id="table-content">
-							<p class="grid_2 center">
-								Lorem Ipsum
-							</p>
-							<p class="grid_3 center">
-								จุฬาลงกรณ์มหาวิทยาลัย
-							</p>
-							<p class="grid_1 center">
-								1111-1111
-							</p>
-							<p class="grid_2 center">
-								ปริญญาตรี
-							</p>
-						</div>
-					</div>
-					<br class="clear"/>
-			
+						<br class="clear"/>
+<?php
+					}
+					else{
+						while($rs_edu = @mysql_fetch_array($result_edu)){
+?>
+							<div class="prefix_2">
+								<div class="grid_9" id="table-content">
+									<p class="grid_2 center">
+										<?php echo $rs_edu["education_level"]; ?>
+									</p>
+									<p class="grid_3 center">
+										<?php echo $rs_edu["Institution"]; ?>
+									</p>
+									<p class="grid_1 center">
+										<?php echo $rs_edu["year_start"]."-".$rs_edu["year_end"]; ?>
+									</p>
+									<p class="grid_2 center">
+										<?php echo $rs_edu["educational_background"]; ?>
+									</p>
+								</div>
+							</div>
+							<br class="clear"/>
+<?php
+						}
+					}
+?>
 					<h2 id="sub-title">การทำงาน<span class="right"><a href="#" class="button round black right">แก้ไข</a></span></h2>
 					<p class="grid_2">
 						Lorem Ipsum
@@ -283,42 +262,59 @@ else{
 						</div>
 					</div>
 					<br class="clear"/>
-					<div class="prefix_2">
-						<div class="grid_9" id="table-content">
-							<p class="grid_2 center">
-								Lorem Ipsum
-							</p>
-							<p class="grid_3 center">
-								มหาวิทยาลัยเกษตรศาสตร์
-							</p>
-							<p class="grid_1 center">
-								1111-1111
-							</p>
-							<p class="grid_2 center">
-								ปริญญาตรี
-							</p>
+<?php
+					$sql_works="
+						SELECT * 
+						FROM  `buildthedot_thaijobhd_user_history_works`
+						WHERE `user_account_id` = '".$_SESSION["userid"]."' ;
+					";
+					$result_works = @mysql_query($sql_works);
+					if(@mysql_num_rows($result_edu)==0){
+?>
+						<div class="prefix_2">
+							<div class="grid_9" id="table-content">
+								<p class="grid_2 center">
+									-
+								</p>
+								<p class="grid_3 center">
+									-
+								</p>
+								<p class="grid_1 center">
+									-
+								</p>
+								<p class="grid_2 center">
+									-
+								</p>
+							</div>
 						</div>
-					</div>
-					<br class="clear"/>
-					<div class="prefix_2">
-						<div class="grid_9" id="table-content">
-							<p class="grid_2 center">
-								Lorem Ipsum
-							</p>
-							<p class="grid_3 center">
-								จุฬาลงกรณ์มหาวิทยาลัย
-							</p>
-							<p class="grid_1 center">
-								1111-1111
-							</p>
-							<p class="grid_2 center">
-								ปริญญาตรี
-							</p>
-						</div>
-					</div>
-					<br class="clear"/>
-			
-					<h2 id="sub-title">ความสมารถพิเศษ<span class="right"><a href="#" class="button round black right">แก้ไข</a></span></h2>
+						<br class="clear"/>
+<?php
+					}
+					else{
+						while($rs_works = @mysql_fetch_array($result_works)){
+?>					
+							<div class="prefix_2">
+								<div class="grid_9" id="table-content">
+									<p class="grid_2 center">
+										<?php echo $rs_works["job_position"]; ?>
+									</p>
+									<p class="grid_3 center">
+										<?php echo $rs_works["company_name"]; ?>
+									</p>
+									<p class="grid_1 center">
+										<?php echo $rs_works["year_start"]."-".$rs_works["year_end"]; ?>
+									</p>
+									<p class="grid_2 center">
+										<?php echo $rs_works["department"]; ?>
+									</p>
+								</div>
+							</div>
+							<br class="clear"/>
+<?php
+						}
+					}
+?>
+					<h2 id="sub-title">ความสามารถพิเศษ<span class="right"><a href="#" class="button round black right">แก้ไข</a></span></h2>
 					<p class="grid_2">
 						ทักษะด้านภาษา
 					</p>
@@ -326,67 +322,155 @@ else{
 					<div class="prefix_2">
 						<div id="head-table1" class="grid_9">
 							<p class="grid_2 center">
-								Lorem Ipsum
+								Language
 							</p>
-							<p class="grid_2 center">
-								Lorem Ipsum
+							<p class="grid_1 center">
+								Starter
 							</p>
-							<p class="grid_2 center">
-								Lorem Ipsum
+							<p class="grid_1 center">
+								little
 							</p>
-							<p class="grid_2 center">
-								Lorem Ipsum
+							<p class="grid_1 center">
+								Mediam
 							</p>
-						</div>
-					</div>
-					<br class="clear"/>
-					<div class="prefix_2">
-						<div class="grid_9" id="table-content">
-							<p class="grid_2 center">
-								-
+							<p class="grid_1 center">
+								Good
 							</p>
-							<p class="grid_2 center">
-								-
+							<p class="grid_1 center">
+								Better
 							</p>
-							<p class="grid_2 center">
-								-
-							</p>
-							<p class="grid_2 center">
-								-
+							<p class="grid_1 center">
+								Best
 							</p>
 						</div>
 					</div>
 					<br class="clear"/>
-					<div class="prefix_2">
-						<div class="grid_9" id="table-content">
-							<p class="grid_2 center">
-								-
-							</p>
-							<p class="grid_2 center">
-								-
-							</p>
-							<p class="grid_2 center">
-								-
-							</p>
-							<p class="grid_2 center">
-								-
-							</p>
+<?php
+					$sql_history_talent_language="
+						SELECT * 
+						FROM  `buildthedot_thaijobhd_user_history_talent_language`
+						WHERE `user_account_id` = '".$_SESSION["userid"]."' ;
+					";
+					$result_history_talent_language = @mysql_query($sql_history_talent_language);
+					if(@mysql_num_rows($result_history_talent_language)==0){
+?>
+						<div class="prefix_2">
+							<div class="grid_9" id="table-content">
+								<p class="grid_2 center">
+									-
+								</p>
+								<p class="grid_1 center">
+									-
+								</p>
+								<p class="grid_1 center">
+									-
+								</p>
+								<p class="grid_1 center">
+									-
+								</p>
+								<p class="grid_1 center">
+									-
+								</p>
+								<p class="grid_1 center">
+									-
+								</p>
+								<p class="grid_1 center">
+									-
+								</p>
+							</div>
 						</div>
-					</div>
-					<br class="clear"/>
-			
+						<br class="clear"/> 
+<?php
+					}
+					else{
+						while ($rs_history_talent_language = @mysql_fetch_array($result_history_talent_language)) {
+?>
+							<div class="prefix_2">
+								<div class="grid_9" id="table-content">
+									<p class="grid_2 center">
+										<?php echo $rs_history_talent_language["language"]; ?>
+									</p>
+									<p class="grid_1 center"><?php
+										if($rs_history_talent_language["score"] == 1){
+											?><img src="images/green-tick-arrow.png" width="20" /><?php
+										}
+										else{
+											echo "-";
+										}
+									?></p>
+									<p class="grid_1 center"><?php
+										if($rs_history_talent_language["score"] == 2){
+											?><img src="images/green-tick-arrow.png" width="20" /><?php
+										}
+										else{
+											echo "-";
+										}
+									?></p>
+									<p class="grid_1 center"><?php
+										if($rs_history_talent_language["score"] == 3){
+											?><img src="images/green-tick-arrow.png" width="20" /><?php
+										}
+										else{
+											echo "-";
+										}
+									?></p>
+									<p class="grid_1 center"><?php
+										if($rs_history_talent_language["score"] == 4){
+											?><img src="images/green-tick-arrow.png" width="20" /><?php
+										}
+										else{
+											echo "-";
+										}
+									?></p>
+									<p class="grid_1 center"><?php
+										if($rs_history_talent_language["score"] == 5){
+											?><img src="images/green-tick-arrow.png" width="20" /><?php
+										}
+										else{
+											echo "-";
+										}
+									?></p>
+									<p class="grid_1 center"><?php
+										if($rs_history_talent_language["score"] == 6){
+											?><img src="images/green-tick-arrow.png" width="20" /><?php
+										}
+										else{
+											echo "-";
+										}
+									?></p>
+								</div>
+							</div>
+							<br class="clear"/> 
+<?php
+						}
+					}
+?>
 					<p class="grid_2">
 						ความสามารถพิเศษ
 					</p>
 					<br class="clear"/>
 					<div class="prefix_2">
-						<p class="grid_4">
-							Lorem Ipsum
-						</p>
-						<br class="clear"/>
-						<p class="grid_4">
-							Lorem Ipsum
-						</p>
+<?php
+					$sql_history_talent_others="
+						SELECT * 
+						FROM  `buildthedot_thaijobhd_user_history_talent_others`
+						WHERE `user_account_id` = '".$_SESSION["userid"]."' ;
+					";
+					$result_history_talent_others = @mysql_query($sql_history_talent_others);
+					if(@mysql_num_rows($result_history_talent_others)==0){
+						echo "-";
+					}
+					else{
+						while ($rs_history_talent_others = @mysql_fetch_array($result_history_talent_others)) {
+?>
+							<p class="grid_4">
+								<?php echo $rs_history_talent_others["topic"]; ?>
+							</p>
+							<br class="clear"/>
+<?php
+						}
+					}
+?>
 					</div>
 				</div>
 			</div><!--end content -->
