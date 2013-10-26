@@ -19,6 +19,7 @@
 			$data[$count]['thaiPosition'] = $rs['PositionThai'];
 			$data[$count]['engPosition'] = $rs['PositionEng'];
 			$data[$count]['Description'] = $rs['JobDescription'];
+			$data[$count]['time'] = date("D-M-Y");
 			$count++;
 		}
 	}	
