@@ -545,7 +545,7 @@ input[type="submit"]{
 #condition{
 	padding-bottom:90px;
 }
-#banner-1{
+/*#banner-1{
 	position:absolute;
 	top:12.5em;
 	left:0.8em;
@@ -594,7 +594,7 @@ input[type="submit"]{
 	position:absolute;
 	top:52.5em;
 	left:74.3em;
-}
+}*/
 #error{
 	margin-left:10px;
 }

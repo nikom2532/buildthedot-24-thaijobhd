@@ -24,7 +24,7 @@ include ($rootpath . "include/search-bar.php");
 <div id="banner-9">
 	<img src="admin/images/banner-2.png" width="144" height="143">
 </div>
-<div id="banner-1">
+<!-- <div id="banner-1">
 	<img src="admin/images/banner-2.png" width="144" height="143">
 </div>
 <div id="banner-2">
@@ -38,7 +38,7 @@ include ($rootpath . "include/search-bar.php");
 </div>
 <div id="banner-5">
 	<img src="admin/images/banner-2.png" width="144" height="143">
-</div>
+</div> -->
 <!--end banner side-left -->
 <div id="banner-2">
 	<img src="admin/images/banner-2.png" width="144" height="143">
@@ -62,7 +62,21 @@ include ($rootpath . "include/search-bar.php");
 </div><!--end slide-image-->
 <div id="content" class="container_12">
 	<div class="grid_2 margin-left-5 margin-right-5">
-		adsf
+		<div id="banner-1">
+			<img src="admin/images/banner-2.png" width="144" height="143">
+		</div>
+		<div id="banner-3">
+			<img src="admin/images/banner-2.png" width="144" height="143">
+		</div>
+		<div id="banner-5">
+			<img src="admin/images/banner-2.png" width="144" height="143">
+		</div>
+		<div id="banner-7">
+			<img src="admin/images/banner-2.png" width="144" height="143">
+		</div>
+		<div id="banner-9">
+			<img src="admin/images/banner-2.png" width="144" height="143">
+		</div>
 	</div>
 	<div class="grid_8"><?php //Center Content ?>
 		<div id="head-title">
@@ -224,7 +238,21 @@ include ($rootpath . "include/search-bar.php");
 		</div>
 	</div><?php //End Center Content ?>
 	<div class="grid_2 margin-left-5 margin-right-5">
-		adsf
+		<div id="banner-2">
+			<img src="admin/images/banner-2.png" width="144" height="143">
+		</div>
+		<div id="banner-4">
+			<img src="admin/images/banner-2.png" width="144" height="143">
+		</div>
+		<div id="banner-6">
+			<img src="admin/images/banner-2.png" width="144" height="143">
+		</div>
+		<div id="banner-8">
+			<img src="admin/images/banner-2.png" width="144" height="143">
+		</div>
+		<div id="banner-10">
+			<img src="admin/images/banner-2.png" width="144" height="143">
+		</div>
 	</div>
 </div><!--end content -->
 <?php
