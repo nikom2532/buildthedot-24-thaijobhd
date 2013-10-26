@@ -33,7 +33,7 @@ include ($rootpath . "include/top-menu.php");
 			$sql="
 				SELECT * 
 				FROM  `buildthedot_thaijobhd_job_idea`
-				ORDER BY TIME(date_time), date_time DESC;
+				ORDER BY TIME(`IdeaTime`), `IdeaTime` DESC;
 			";
 		}
 		elseif($menu == "suggest"){
@@ -41,7 +41,7 @@ include ($rootpath . "include/top-menu.php");
 				SELECT * 
 				FROM  `buildthedot_thaijobhd_job_idea`
 				WHERE `IdeaRecomment` = '1'
-				ORDER BY TIME(date_time), date_time DESC ;
+				ORDER BY TIME(`IdeaTime`), `IdeaTime` DESC ;
 			";
 		}
 		$result=@mysql_query($sql);
