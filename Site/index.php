@@ -227,6 +227,7 @@ include ($rootpath . "include/search-bar.php");
 				</p>
 			</div>
 		</div>
+		<h2 class="right"><a href="#" class="button round black">ดูทั้งหมด</a></h2>
 		
 		<br class="clear seperator"/>
 	
