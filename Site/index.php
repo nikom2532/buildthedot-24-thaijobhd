@@ -227,6 +227,43 @@ include ($rootpath . "include/search-bar.php");
 				</p>
 			</div>
 		</div>
+		
+		<br class="clear seperator"/>
+	
+		<div id="head-title">
+			<h1>ไอเดียธุรกิจมาใหม่ </h1>
+		</div>
+		<div id="recommend-idea" class="grid_8">
+			<div class="grid_3">
+				<img src="images/banner-2.png" width="144" height="143">
+				<h3>Lorem Ipsum</h3>
+				<p>
+					Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, <span class="right" id="read-more"><a href="#">อ่านต่อ</a></span>
+				</p>
+			</div>
+			<div class="grid_3">
+				<img src="images/banner-2.png" width="144" height="143">
+				<h3>Lorem Ipsum</h3>
+				<p>
+					Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, <span class="right" id="read-more"><a href="#">อ่านต่อ</a></span>
+				</p>
+			</div>
+			<div class="grid_3">
+				<img src="images/banner-2.png" width="144" height="143">
+				<h3>Lorem Ipsum</h3>
+				<p>
+					Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, <span class="right" id="read-more"><a href="#">อ่านต่อ</a></span>
+				</p>
+			</div>
+			<div class="grid_3">
+				<img src="images/banner-2.png" width="144" height="143">
+				<h3>Lorem Ipsum</h3>
+				<p>
+					Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, <span class="right" id="read-more"><a href="#">อ่านต่อ</a></span>
+				</p>
+			</div>
+		</div>
+		
 		<h2 class="right"><a href="#" class="button round black">ดูทั้งหมด</a></h2>
 		<br class="clear seperator"/>
 	
