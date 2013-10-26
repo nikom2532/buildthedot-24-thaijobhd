@@ -9,7 +9,15 @@ include ($rootpath . "include/top-menu.php");
 <div id="content" class="container_12">
 	<div id="">
 		<div id="head-title">
-			<h1>ไอเดียธุรกิจแนะนำ </h1>
+			<h1>ไอเดียธุรกิจ<?php 
+				$menu = $_GET["menu"];
+				if($menu == "new"){
+					echo "มาใหม่";
+				}
+				elseif($menu == "suggest"){
+					echo "แนะนำ";
+				}
+			?></h1>
 		</div>
 <?php
 		$i=1;
@@ -21,10 +29,21 @@ include ($rootpath . "include/top-menu.php");
 			// FROM  `buildthedot_thaijobhd_job_idea`
 			// LIMIT ".($page_limit*($_GET["page"]-1)).",".$page_limit.";
 		// ";
-		$sql="
-			SELECT * 
-			FROM  `buildthedot_thaijobhd_job_idea`
-		";
+		if($menu == "new" || $menu == ""){
+			$sql="
+				SELECT * 
+				FROM  `buildthedot_thaijobhd_job_idea`
+				ORDER BY TIME(date_time), date_time DESC;
+			";
+		}
+		elseif($menu == "suggest"){
+			$sql="
+				SELECT * 
+				FROM  `buildthedot_thaijobhd_job_idea`
+				WHERE `IdeaRecomment` = '1'
+				ORDER BY TIME(date_time), date_time DESC ;
+			";
+		}
 		$result=@mysql_query($sql);
 		$number_of_items=@mysql_num_rows($result);
 		 // $sql="
