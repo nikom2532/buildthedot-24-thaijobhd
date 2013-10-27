@@ -656,3 +656,8 @@ input[type="submit"]{
 #recommend-idea .grid_3{
 	margin: 0 30px;
 }
+
+/*For edit-education*/
+.width700{
+	width:700px;
+}

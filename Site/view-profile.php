@@ -5,6 +5,7 @@ $rootadminpath = "./admin/";
 include ($rootpath . "include/header.php");
 include ($rootadminpath . "include/connect-to-database.php");
 include ($rootpath . "include/top-menu.php");
+include ($rootpath . "include/search-bar.php");
 if($_SESSION["userid"] == "" || (!(isset($_SESSION["userid"])))) {
 	header("location: ".$rootpath."login.php");
 }
@@ -140,7 +141,7 @@ else{
 					<br class="clear"/>
 <?php
 					$sql_edu="
-						SELECT * 
+						SELECT *, YEAR(`year_start`) AS year_start_1, YEAR(`year_end`) AS year_end_1
 						FROM  `buildthedot_thaijobhd_user_history_educations`
 						WHERE `user_account_id` = '".$_SESSION["userid"]."' ;
 					";
@@ -178,7 +179,7 @@ else{
 										<?php echo $rs_edu["Institution"]; ?>
 									</p>
 									<p class="grid_1 center">
-										<?php echo $rs_edu["year_start"]."-".$rs_edu["year_end"]; ?>
+										<?php echo $rs_edu["year_start_1"]." - ".$rs_edu["year_end_1"]; ?>
 									</p>
 									<p class="grid_2 center">
 										<?php echo $rs_edu["educational_background"]; ?>

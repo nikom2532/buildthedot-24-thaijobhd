@@ -1,60 +1,45 @@
 <?php
-//### Edit Education ###
 session_start();
 $rootpath = "./";
 $rootadminpath = "./admin/";
 include ($rootpath . "include/header.php");
 include ($rootadminpath . "include/connect-to-database.php");
 include ($rootpath . "include/top-menu.php");
+include ($rootpath . "include/search-bar.php");
 ?>
-<div id="wrapper">
-    <div id="header" class="container_12">
-        <div id="login-intro" class="grid_3">
-            <img src="images/logo.png" alt="ThaiJobHD" width="130" height="71">	
-        </div>
-        <div class="right">
-        	<ul id="my-profile">
-            	<li><a href="view-profile.php" class="text-blue">Wc Fone</a></li>
-                <li><a href="#" class="text-grey">Logout</a></li>
-            </ul>
-        </div>
-        <div id="top-nav" class="grid_8 prefix_1">
-            <ul>
-                <li><a href="index.php">หน้าหลัก<br/><span id="sub-memu">JobHD</span></a></li>
-                <li><a href="find-job.php">หางาน<br/><span id="sub-memu">สมัครงาน</span></a></li>
-                <li><a href="business-idea.php">ไอเดียธุรกิจ<br/><span id="sub-memu">สมัครงาน</span></a></li>
-                <li><a href="advertisement-rate.php">อัตราโฆษณา<br/><span id="sub-memu">ประกาศ</span></a></li>
-                <li><a href="condition.php">เงื่อนไข<br/><span id="sub-memu">ข้อตกลง</span></a></li>
-                <li><a href="contact-us.php">ติดต่อทีมงาน<br/><span id="sub-memu">ติดต่อเรา</span></a></li>
-            </ul>	
-        </div>
-     </div><!--end header -->       
-    <div id="content" class="container_12">
-    	<div id="content-profile">
-        	<div id="head-title">
-    			<h1>ฝากประวัติ <span class="text-blue">-  แก้ไขประวัติการศึกษา</span></h1>
-    		</div> 
-           
-            <p class="grid_2">Lorem Ipsum</p>
-            <p class="grid_8"><input type="text" id="name" name ="name" class="round" /></p><br class="clear" />
-            
-            <p class="grid_2">Lorem Ipsum</p>
-            <p class="grid_8"><input type="text" id="name" name ="name" class="round" /></p><br class="clear"/>
-            
-            <p class="grid_2">Lorem Ipsum</p>
-            <p class="grid_8"><input type="text" id="name" name ="name" class="round" /></p><br class="clear"/>
-           
-            <p class="grid_2">Lorem Ipsum</p>
-            <p class="grid_8"><input type="text" id="name" name ="name" class="round" /></p><br class="clear" />
-            
-            <p class="grid_2">Lorem Ipsum</p>
-            <p class="grid_8"><input type="text" id="name" name ="name" class="round" /></p><br class="clear"/>
-            
-            <p class="grid_2">Lorem Ipsum</p>
-            <p class="grid_8"><input type="text" id="name" name ="name" class="round" /></p><br class="clear"/>
-             
-            <p class="grid_12 center"><a href="#" class="save-button blue round">บันทึก</a></p>
-        
-      	</div>	
-    </div><!--end content -->
+<div id="wrapper">   
+	<div id="content" class="container_12">
+		<div id="content-profile">
+			<div id="head-title">
+				<h1>ฝากประวัติ <span class="text-blue">-  แก้ไขประวัติการศึกษา</span></h1>
+			</div>
+			<form id="add_education_form" name="add_education_form" action="<?php echo $rootpath; ?>include/module/edit-education-process.php" method="POST" enctype="multipart/form-data">
+<?php
+				$sql_edu="
+					SELECT * 
+					FROM  `buildthedot_thaijobhd_user_history_educations`
+					WHERE `user_account_id` = '".$_SESSION["userid"]."' 
+					AND `user_history_educations_id` = '".$_GET["id"]."'
+					;
+				";
+				$result_edu = @mysql_query($sql_edu);
+				if($rs_edu = @mysql_fetch_array($result_edu)){
+?>
+					<p class="grid_2">ระดับการศึกษา</p>
+					<p class="grid_8"><input type="text" id="education_level" name ="education_level" class="round width700" value="<?php echo $rs_edu["education_level"]; ?>" onkeypress="return add_education_form_keypress(event)" /></p><br class="clear" />
+					<p class="grid_2">สถาบัน</p>
+					<p class="grid_8"><input type="text" id="Institution" name ="Institution" class="round width700" value="<?php echo $rs_edu["Institution"]; ?>" onkeypress="return add_education_form_keypress(event)" /></p><br class="clear"/>
+					<p class="grid_2">ปีเริ่ม</p>
+					<p class="grid_8"><input type="text" id="year_start" name ="year_start" class="round width700" value="<?php echo $rs_edu["year_start"]; ?>" onkeypress="return add_education_form_keypress(event)" /></p><br class="clear"/>
+					<p class="grid_2">ปีจบ</p>
+					<p class="grid_8"><input type="text" id="year_end" name ="year_end" class="round width700" value="<?php echo $rs_edu["year_end"]; ?>"  onkeypress="return add_education_form_keypress(event)" /></p><br class="clear"/>
+					<p class="grid_2">วุฒิการศึกษา</p>
+					<p class="grid_8"><input type="text" id="educational_background" name ="educational_background" class="round width700" value="<?php echo $rs_edu["educational_background"]; ?>" onkeypress="return add_education_form_keypress(event)" /></p><br class="clear" />
+					<p class="grid_12 center"><a href="#" class="save-button blue round" onclick="document.getElementById('add_education_form').submit(); ">บันทึก</a></p>
+<?php
+				}
+?>
+			</form>        
+		</div>	
+	</div><!--end content -->
 <?php include("include/footer.php");?>
