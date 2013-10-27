@@ -1,4 +1,5 @@
 <?php
+//### Add Education ###
 session_start();
 $rootpath = "./";
 $rootadminpath = "./admin/";
@@ -32,15 +33,16 @@ else{
 					<div id="head-title">
 						<h1>ฝากประวัติ <span class="text-blue">-  แก้ไขประวัติการศึกษา</span></h1>
 					</div>
-					<p class="grid_2">ระดับการศึกษา</p>
-					<p class="grid_8"><input type="text" id="name" name ="name" class="round" /></p><br class="clear" />
-					<p class="grid_2">สถาบัน</p>
-					<p class="grid_8"><input type="text" id="name" name ="name" class="round" /></p><br class="clear"/>
-					<p class="grid_2">ปี</p>
-					<p class="grid_8"><input type="text" id="name" name ="name" class="round" /></p><br class="clear"/>
-					<p class="grid_2">วุฒิการศึกษา</p>
-					<p class="grid_8"><input type="text" id="name" name ="name" class="round" /></p><br class="clear" />
-		      <h2 class="grid_3"><a href="#" class="add-button black round">เพิ่ม</a></h2>
+						<p class="grid_2">ระดับการศึกษา</p>
+						<p class="grid_8"><input type="text" id="name" name ="name" class="round" /></p><br class="clear" />
+						<p class="grid_2">สถาบัน</p>
+						<p class="grid_8"><input type="text" id="name" name ="name" class="round" /></p><br class="clear"/>
+						<p class="grid_2">ปี</p>
+						<p class="grid_8"><input type="text" id="name" name ="name" class="round" /></p><br class="clear"/>
+						<p class="grid_2">วุฒิการศึกษา</p>
+						<p class="grid_8"><input type="text" id="name" name ="name" class="round" /></p><br class="clear" />
+			      <h2 class="grid_3"><a href="#" class="add-button black round">เพิ่ม</a></h2>
+		      
 					<div id="content-profile-table">
 						<div id="head-table1" class="grid_10">
 							<p class="grid_2 center">ระดับการศึกษา</p>
