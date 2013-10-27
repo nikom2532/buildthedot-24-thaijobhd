@@ -24,19 +24,18 @@ include("admin/include/initial/pagination.php");
 			// LIMIT ".($page_limit*($_GET["page"]-1)).",".$page_limit.";
 			// ";
 			$sql="
-			SELECT * 
-			FROM  `buildthedot_thaijobhd_job`
-			WHERE JobType = '1'
-			ORDER BY JobID DESC
+				SELECT * 
+				FROM  buildthedot_thaijobhd_job
+				WHERE JobType = '1'
+				ORDER BY JobID DESC	
 			";
 			$result=@mysql_query($sql);
 			$number_of_items=@mysql_num_rows($result);
-			
 			$sql="
-			SELECT * 
-			FROM  `buildthedot_thaijobhd_job` 
-			WHERE JobType = '1'
-			ORDER BY JobID DESC
+				SELECT * 
+				FROM  buildthedot_thaijobhd_job
+				WHERE JobType = '1'
+				ORDER BY JobID DESC	
 			LIMIT {$start} , {$page_limit} ;
 			";
 			$result=@mysql_query($sql);
