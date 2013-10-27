@@ -26,5 +26,13 @@ $buildthedot_thaijobhd_job_idea = array(
 
 // `buildthe_ThaiJobHD`.`buildthedot_thaijobhd_user_account`
 $buildthedot_thaijobhd_user_account = array(
-  array('id' => '1','email' => 'a@a.com','password' => '77de54ccf56eb6f7dbf99e4d3be949ab6f9b0a55df8ac28564cb9f63a10be8af6ab3f7c2','firstname' => 'a','midname' => 'a','lastname' => 'a','job_id' => '1','job_status' => '1','admin_status' => '1','address' => '')
+  array('id' => '1','email' => 'a@a.com','password' => '77de54ccf56eb6f7dbf99e4d3be949ab6f9b0a55df8ac28564cb9f63a10be8af6ab3f7c2','firstname' => 'a','midname' => 'a','lastname' => 'a','profile_picture' => '','job_id' => '1','job_status' => '1','admin_status' => '1','address' => '')
+);
+
+);
+
+);
+
+);
+
 );
