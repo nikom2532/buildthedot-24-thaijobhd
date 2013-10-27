@@ -32,18 +32,14 @@ else{
 					<div id="head-title">
 						<h1>ฝากประวัติ <span class="text-blue">-  แก้ไขประวัติการศึกษา</span></h1>
 					</div>
-					<p class="grid_2">Lorem Ipsum</p>
+					<p class="grid_2">ระดับการศึกษา</p>
 					<p class="grid_8"><input type="text" id="name" name ="name" class="round" /></p><br class="clear" />
-					<p class="grid_2">Lorem Ipsum</p>
+					<p class="grid_2">สถาบัน</p>
 					<p class="grid_8"><input type="text" id="name" name ="name" class="round" /></p><br class="clear"/>
-					<p class="grid_2">Lorem Ipsum</p>
+					<p class="grid_2">ปี</p>
 					<p class="grid_8"><input type="text" id="name" name ="name" class="round" /></p><br class="clear"/>
-					<p class="grid_2">Lorem Ipsum</p>
+					<p class="grid_2">วุฒิการศึกษา</p>
 					<p class="grid_8"><input type="text" id="name" name ="name" class="round" /></p><br class="clear" />
-					<p class="grid_2">Lorem Ipsum</p>
-					<p class="grid_8"><input type="text" id="name" name ="name" class="round" /></p><br class="clear"/>
-					<p class="grid_2">Lorem Ipsum</p>
-					<p class="grid_8"><input type="text" id="name" name ="name" class="round" /></p><br class="clear"/>
 		      <h2 class="grid_3"><a href="#" class="add-button black round">เพิ่ม</a></h2>
 					<div id="content-profile-table">
 						<div id="head-table1" class="grid_10">
@@ -55,40 +51,45 @@ else{
 						</div>
 					</div>
 					<br class="clear"/>
-					<div id="content-profile-table">
-						<div id="table-content">
-							<p class="grid_2 center">Lorem Ipsum</p>
-							<p class="grid_3 center">มหาวิทยาลัยเกษตรศาสตร์</p>
-							<p class="grid_1 center">1111-1111</p>
-							<p class="grid_2 center">ปริญญาตรี</p>
-							<p class="grid_1 center"><a href="#" class="text-blue">แก้ไข</a></p>
-							<p class="grid_1 center"><a href="#" class="text-red">ลบ</a></p>
-		         </div>
-					</div>
-					<br class="clear"/>
-					<div id="content-profile-table">
-						<div id="table-content">
-							<p class="grid_2 center">Lorem Ipsum</p>
-							<p class="grid_3 center">มหาวิทยาลัยเกษตรศาสตร์</p>
-							<p class="grid_1 center">1111-1111</p>
-							<p class="grid_2 center">ปริญญาตรี</p>
-							<p class="grid_1 center"><a href="#" class="text-blue">แก้ไข</a></p>
-							<p class="grid_1 center"><a href="#" class="text-red">ลบ</a></p>
+<?php
+					$sql_edu="
+						SELECT * 
+						FROM  `buildthedot_thaijobhd_user_history_educations`
+						WHERE `user_account_id` = '".$_SESSION["userid"]."' ;
+					";
+					$result_edu = @mysql_query($sql_edu);
+					if(@mysql_num_rows($result_edu)==0){
+?>
+						<div id="content-profile-table">
+							<div id="table-content">
+								<p class="grid_2 center">-</p>
+								<p class="grid_3 center">-</p>
+								<p class="grid_1 center">-</p>
+								<p class="grid_2 center">-</p>
+			         </div>
 						</div>
-					</div>
-					<br class="clear"/>
-					<div id="content-profile-table">
-						<div id="table-content">
-							<p class="grid_2 center">Lorem Ipsum</p>
-							<p class="grid_3 center">มหาวิทยาลัยเกษตรศาสตร์</p>
-							<p class="grid_1 center">1111-1111</p>
-							<p class="grid_2 center">ปริญญาตรี</p>
-							<p class="grid_1 center"><a href="#" class="text-blue">แก้ไข</a></p>
-							<p class="grid_1 center"><a href="#" class="text-red">ลบ</a></p>
-						</div>
-					</div>
-					<br class="clear"/>
-					<p class="grid_12 center"><a href="#" class="save-button blue round">บันทึก</a></p>
+						<br class="clear"/>
+<?php
+					}
+					else{
+						while($rs_edu = @mysql_fetch_array($result_edu)){
+?>
+							<div id="content-profile-table">
+								<div id="table-content">
+									<p class="grid_2 center"><?php echo $rs_edu["education_level"]; ?></p>
+									<p class="grid_3 center"><?php echo $rs_edu["Institution"]; ?></p>
+									<p class="grid_1 center"><?php echo $rs_edu["year_start"]."-".$rs_edu["year_end"]; ?></p>
+									<p class="grid_2 center"><?php echo $rs_edu["educational_background"]; ?></p>
+									<p class="grid_1 center"><a href="#" class="text-blue">แก้ไข</a></p>
+									<p class="grid_1 center"><a href="#" class="text-red">ลบ</a></p>
+				         </div>
+							</div>
+							<br class="clear"/>
+<?php
+						}
+					}
+?>
+					<p class="grid_12 center"><a href="#" class="save-button blue round">ออก</a></p>
 				</div>
 			</div><!--end content -->
 <?php
