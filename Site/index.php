@@ -159,7 +159,7 @@ include ($rootpath . "include/search-bar.php");
 		</div>
 	
 		<div class="grid_4 margin-left-5 margin-right-5" id="content-reccommend">
-			<h2 id="sub-title">Full time<span class="right"><a href="#" class="button round black">ดูทั้งหมด</a></span></h2>
+			<h2 id="sub-title">Full time<span class="right"><a href="find-job-new-fulltime.php" class="button round black">ดูทั้งหมด</a></span></h2>
 			<?php
 				$sql="
 				SELECT * 
@@ -189,7 +189,7 @@ include ($rootpath . "include/search-bar.php");
 			</p-->
 		</div>
 		<div class="grid_4 margin-left-5 margin-right-5" id="content-reccommend">
-			<h2 id="sub-title">Part time<span class="right"><a href="#" class="button round black">ดูทั้งหมด</a></span></h2>
+			<h2 id="sub-title">Part time<span class="right"><a href="find-job-new-partime.php" class="button round black">ดูทั้งหมด</a></span></h2>
 			<?php
 				$sql="
 				SELECT * 

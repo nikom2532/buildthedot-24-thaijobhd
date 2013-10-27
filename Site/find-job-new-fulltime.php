@@ -14,7 +14,7 @@ include("admin/include/initial/pagination.php");
     		<h1>งานแนะนำ</h1>
     		
         </div>
-        <span id="job-type"><h2>Part Time</h2></span>
+        <span id="job-type"><h2>Full Time</h2></span>
         <?php
 	    	$i=1;
 			@get();
@@ -26,7 +26,7 @@ include("admin/include/initial/pagination.php");
 			$sql="
 			SELECT * 
 			FROM  `buildthedot_thaijobhd_job`
-			WHERE Recomment = '1' AND JobType != '1'
+			WHERE JobType = '1'
 			ORDER BY JobID DESC
 			";
 			$result=@mysql_query($sql);
@@ -34,7 +34,7 @@ include("admin/include/initial/pagination.php");
 			$sql="
 			SELECT * 
 			FROM  `buildthedot_thaijobhd_job` 
-			WHERE Recomment = '1' AND JobType != '1'
+			WHERE JobType = '1'
 			ORDER BY JobID DESC
 			LIMIT {$start} , {$page_limit} ;
 			";
@@ -53,7 +53,7 @@ include("admin/include/initial/pagination.php");
 	    ?>
         </div>        
        <?php
-       	echo pagination($page_limit, $page, $rootadminpath."find-job-recommend-parttime.php?page=", $number_of_items); 
+       	echo pagination($page_limit, $page, $rootadminpath."find-job-new-fulltime.php?page=", $number_of_items); 
         ?>
     </div><!--end content -->
     
