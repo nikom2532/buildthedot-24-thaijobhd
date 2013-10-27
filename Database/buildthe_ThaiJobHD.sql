@@ -164,7 +164,6 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_history_educations` (
   `year_end` date NOT NULL,
   `educational_background` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`user_history_educations_id`),
-  UNIQUE KEY `user_account_id` (`user_account_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -179,8 +178,6 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_history_talent_language` 
   `language` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `score` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`user_history_talent_id`),
-  UNIQUE KEY `user_account_id` (`user_account_id`),
-  UNIQUE KEY `language` (`language`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -194,7 +191,6 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_history_talent_others` (
   `user_account_id` int(11) NOT NULL,
   `topic` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `user_account_id` (`user_account_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -212,7 +208,6 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_history_experiences` (
   `year_end` date NOT NULL,
   `salary` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`user_history_experiences_id`),
-  UNIQUE KEY `user_accound_id` (`user_accound_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
