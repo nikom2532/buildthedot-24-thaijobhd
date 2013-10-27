@@ -85,18 +85,30 @@ include ($rootpath . "include/search-bar.php");
 		</div>
 		<div class="grid_4 margin-left-5 margin-right-5" id="content-reccommend">
 			<h2 id="sub-title">Full Time <span class="right"><a href="#" class="button round black">ดูทั้งหมด</a></span></h2>
-			<h6 id="headline">Lorem Ipsum is simply dummy text of the printing</h6>
-			<p>
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-			</p>
-			<h6 id="headline">Lorem Ipsum is simply dummy text of the printing</h6>
-			<p>
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-			</p>
-			<h6 id="headline">Lorem Ipsum is simply dummy text of the printing</h6>
-			<p class="border-none">
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-			</p>
+			<?php
+				$sql="
+				SELECT * 
+				FROM  buildthedot_thaijobhd_job
+				WHERE Recomment = '1' AND JobType = '1'
+				ORDER BY JobID DESC	
+				LIMIT 0,3				
+				";
+				$result=@mysql_query($sql);
+				if($result)
+				{	
+					$count = 0;
+					while($rs=@mysql_fetch_array($result))
+					{
+						?>
+			            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="red"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
+			            <p><?php echo $rs['JobDescription']; ?>
+			            <span id="read-more"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>">อ่านต่อ</a></span></p>
+			        <?php
+					
+					}
+				}
+			?>
+			
 			<div id="banner">
 				<img src="images/banner-1.png" width="100%" <?php // width="458" height="175" ?> alt="Banner">
 			</div>
@@ -104,18 +116,36 @@ include ($rootpath . "include/search-bar.php");
 	
 		<div class="grid_4 margin-left-5 margin-right-5" id="content-reccommend">
 			<h2 id="sub-title">Part Time <span class="right"><a href="#" class="button round black">ดูทั้งหมด</a></span></h2>
-			<h6 id="headline">Lorem Ipsum is simply dummy text of the printing</h6>
+			<?php
+				$sql="
+				SELECT * 
+				FROM  buildthedot_thaijobhd_job
+				WHERE Recomment = '1' AND JobType != '1'
+				ORDER BY JobID DESC	
+				LIMIT 0,3				
+				";
+				$result=@mysql_query($sql);
+				if($result)
+				{	
+					$count = 0;
+					while($rs=@mysql_fetch_array($result))
+					{
+						?>
+			            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="red"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
+			            <p><?php echo $rs['JobDescription']; ?>
+			            <span id="read-more"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>">อ่านต่อ</a></span></p>
+			        <?php
+					
+					}
+				}
+			?>
+
+			<!--h6 id="headline">Lorem Ipsum is simply dummy text of the printing</h6>
 			<p>
 				Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-			</p>
-			<h6 id="headline">Lorem Ipsum is simply dummy text of the printing</h6>
-			<p>
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-			</p>
-			<h6 id="headline">Lorem Ipsum is simply dummy text of the printing</h6>
-			<p>
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-			</p>
+			</p 
+			-->
+			
 			<div id="banner">
 				<img src="images/banner-1.png" width="100%" <?php // width="458" height="175" ?> alt="Banner">
 			</div>
