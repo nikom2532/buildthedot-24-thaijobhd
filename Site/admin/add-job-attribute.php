@@ -51,13 +51,21 @@
 				$property = $_POST['Property'];
 				$date_start = $_POST['date_from'];
 				$date_end = $_POST['date_to'];
-				 $a = $_POST['recomment'];
-				 if($a == 1 )
+				if(isset($_POST['recommend']))
 				{
-					$recomment = ":)";	
+					$a = $_POST['recommend'];
+					if($a == 1 )
+					{
+						$recomment = "Recommend";	
+					}
+					else 
+					{
+						$recomment = "Not Recommend";
+					}
 				}
-				else {
-					$recomment = ":(";
+				else 
+				{
+					$recomment = "Not Recommend";
 				}
 			 		 
 				$_SESSION['company_name'] = $company_name;

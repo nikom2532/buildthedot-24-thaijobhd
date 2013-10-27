@@ -418,7 +418,7 @@ else {
 				                                <h6 class="detail-title">งานแนะนำ</h6>   
 				                          </div>
 				                          <div class="grid_8">
-				                          		<p><input type="checkbox" id="recommend" value="re" />แนะนำ</p>
+				                          		<p><input type="checkbox" id="recommend" value="1" name="recommend" />แนะนำ</p>
 				                          </div><br class="clear"/>
 				
 				                          <br class="clear"/>

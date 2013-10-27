@@ -11,8 +11,10 @@ include("admin/include/initial/pagination.php");
     <div id="content" class="container_12">
         <div class="grid_12" id="main">
         	<div id="head-title">
-    		<h1>หางาน</h1>
+    		<h1>งานแนะนำ</h1>
+    		
         </div>
+        <span id="job-type"><h2>Full Time</h2></span>
         <?php
 	    	$i=1;
 			@get();
@@ -24,6 +26,7 @@ include("admin/include/initial/pagination.php");
 			$sql="
 			SELECT * 
 			FROM  `buildthedot_thaijobhd_job`
+			WHERE Recomment = '1' AND JobType = '1'
 			ORDER BY JobID DESC
 			";
 			$result=@mysql_query($sql);
@@ -31,6 +34,7 @@ include("admin/include/initial/pagination.php");
 			$sql="
 			SELECT * 
 			FROM  `buildthedot_thaijobhd_job` 
+			WHERE Recomment = '1' AND JobType = '1'
 			ORDER BY JobID DESC
 			LIMIT {$start} , {$page_limit} ;
 			";
@@ -39,8 +43,7 @@ include("admin/include/initial/pagination.php");
 			{
 			//	
 		?>
-            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="red"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a><span id="job-type">- 
-            <?php if((int)$rs['JobType'] == 0){ ?> Part Time  <?php }else{ ?>Full Time <?php } ?></span></h6>
+            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="red"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
             <h5 class="date"><?php echo date("D-M-Y"); ?></h5>
             <?php echo $rs['JobDescription']; ?>
             <p><span id="read-more"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>">อ่านต่อ</a></span></p>
