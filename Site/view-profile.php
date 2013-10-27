@@ -191,7 +191,7 @@ else{
 						}
 					}
 ?>
-					<h2 id="sub-title">การทำงาน<span class="right"><a href="#" class="button round black right">แก้ไข</a></span></h2>
+					<h2 id="sub-title">การทำงาน<span class="right"><a href="<?php echo $rootpath; ?>add-experience.php" class="button round black right">แก้ไข</a></span></h2>
 					<p class="grid_2">
 						Lorem Ipsum
 					</p>
@@ -214,13 +214,13 @@ else{
 					</div>
 					<br class="clear"/>
 <?php
-					$sql_works="
+					$sql_experiences="
 						SELECT * 
-						FROM  `buildthedot_thaijobhd_user_history_works`
+						FROM  `buildthedot_thaijobhd_user_history_experiences`
 						WHERE `user_account_id` = '".$_SESSION["userid"]."' ;
 					";
-					$result_works = @mysql_query($sql_works);
-					if(@mysql_num_rows($result_edu)==0){
+					$result_experiences = @mysql_query($sql_experiences);
+					if(@mysql_num_rows($result_experiences)==0){
 ?>
 						<div class="prefix_2">
 							<div class="grid_9" id="table-content">
@@ -242,21 +242,21 @@ else{
 <?php
 					}
 					else{
-						while($rs_works = @mysql_fetch_array($result_works)){
+						while($rs_experiences = @mysql_fetch_array($result_experiences)){
 ?>					
 							<div class="prefix_2">
 								<div class="grid_9" id="table-content">
 									<p class="grid_2 center">
-										<?php echo $rs_works["job_position"]; ?>
+										<?php echo $rs_experiences["job_position"]; ?>
 									</p>
 									<p class="grid_3 center">
-										<?php echo $rs_works["company_name"]; ?>
+										<?php echo $rs_experiences["company_name"]; ?>
 									</p>
 									<p class="grid_1 center">
-										<?php echo $rs_works["year_start"]." - ".$rs_works["year_end"]; ?>
+										<?php echo $rs_experiences["year_start"]." - ".$rs_experiences["year_end"]; ?>
 									</p>
 									<p class="grid_2 center">
-										<?php echo $rs_works["salary"]; ?>
+										<?php echo $rs_experiences["salary"]; ?>
 									</p>
 								</div>
 							</div>
