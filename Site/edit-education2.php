@@ -1,4 +1,12 @@
-<?php include("include/header.php");?>
+<?php
+//### Edit Education ###
+session_start();
+$rootpath = "./";
+$rootadminpath = "./admin/";
+include ($rootpath . "include/header.php");
+include ($rootadminpath . "include/connect-to-database.php");
+include ($rootpath . "include/top-menu.php");
+?>
 <div id="wrapper">
     <div id="header" class="container_12">
         <div id="login-intro" class="grid_3">
