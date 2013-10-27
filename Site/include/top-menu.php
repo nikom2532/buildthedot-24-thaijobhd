@@ -1,20 +1,19 @@
 <script>
-	$(document).ready(function(){
+/*	$(document).ready(function(){
 		
 		$("#logout").click(function()
 		{	alert("a");
 			$("#log-out").load("log-out.php");
 		});
 	});
-
+*/
 </script>
 <div id="wrapper">
 	<div id="header" class="container_12">
 		<div class="right"  class="grid_12">
 			<ul id="my-profile">
-				<div id="log-out"></div>
 				<font color="red"><?php
-					echo $_SESSION['userid'];
+	//			$_SESSION['userid'] = 1;
 					?>
 				</font>
 				
@@ -56,7 +55,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="#" class="text-blue" id="logout">
+						<a href="include/module/logout_process.php" class="text-blue" id="logout">
 							Log out
 						</a>
 					</li>
