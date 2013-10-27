@@ -2,8 +2,8 @@
 	$(document).ready(function(){
 		
 		$("#logout").click(function()
-		{
-			$("#my-profile").load("log-out.php");
+		{	alert("a");
+			$("#log-out").load("log-out.php");
 		});
 	});
 
@@ -12,6 +12,12 @@
 	<div id="header" class="container_12">
 		<div class="right"  class="grid_12">
 			<ul id="my-profile">
+				<div id="log-out"></div>
+				<font color="red"><?php
+					echo $_SESSION['userid'];
+					?>
+				</font>
+				
 <?php		
 				if(!isset($_SESSION['userid']) || empty($_SESSION['userid']) || $_SESSION['userid'] == ""){
 ?>
