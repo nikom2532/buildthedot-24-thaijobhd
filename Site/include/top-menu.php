@@ -3,6 +3,8 @@
 		<div class="right"  class="grid_12">
 			<ul id="my-profile">
 <?php
+include("admin/include/connect-to-database.php");
+
 				if($_SESSION["userid"] == ""){
 ?>
 					<li>
