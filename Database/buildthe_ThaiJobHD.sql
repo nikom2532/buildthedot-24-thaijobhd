@@ -39,8 +39,6 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_ad` (
 -- Dumping data for table `buildthedot_thaijobhd_ad`
 --
 
-INSERT INTO `buildthedot_thaijobhd_ad` (`PictureID`, `AdPic`, `AdLink`, `AdType`, `AdPosition`) VALUES
-(11, 'ad_1_Content_Ads_1_1381658798_Add New Patient - Google Chrome_034.png', 'asdf', 'Side_Ads', '5');
 
 -- --------------------------------------------------------
 
@@ -103,8 +101,6 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_job_idea` (
 -- Dumping data for table `buildthedot_thaijobhd_job_idea`
 --
 
-INSERT INTO `buildthedot_thaijobhd_job_idea` (`CompanyID`, `MainIdea`, `Description1`, `Description2`, `Description3`, `Pic1`, `Pic2`, `Pic3`, `IdeaRecomment`, `IdeaTime`, `Status`) VALUES
-(7, 'aa', 'aa', 'aa', 'aa', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 'bi_1_pic2_1381674410_Screenshotfrom2012-09-2719:08:11.png', 'bi_1_pic3_1381674410_Screenshotfrom2013-02-0915:51:37.png', 1, '0000-00-00 00:00:00', 0);
 
 -- --------------------------------------------------------
 
