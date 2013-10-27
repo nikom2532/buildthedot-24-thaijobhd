@@ -31,6 +31,7 @@ include("admin/include/initial/pagination.php");
 			";
 			$result=@mysql_query($sql);
 			$number_of_items=@mysql_num_rows($result);
+			
 			$sql="
 			SELECT * 
 			FROM  `buildthedot_thaijobhd_job` 
