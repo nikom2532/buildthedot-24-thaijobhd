@@ -14,7 +14,7 @@ include("admin/include/initial/pagination.php");
     		<h1>งานแนะนำ</h1>
     		
         </div>
-        <span id="job-type"><h2>Full Time</h2></span>
+        <span id="job-type"><h2>Part Time</h2></span>
         <?php
 	    	$i=1;
 			@get();
