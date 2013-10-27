@@ -1,11 +1,19 @@
+<script>
+	$(document).ready(function(){
+		
+		$("#logout").click(function()
+		{
+			$("#my-profile").load("log-out.php");
+		});
+	});
+
+</script>
 <div id="wrapper">
 	<div id="header" class="container_12">
 		<div class="right"  class="grid_12">
 			<ul id="my-profile">
-<?php
-include("admin/include/connect-to-database.php");
-
-				if($_SESSION["userid"] == ""){
+<?php		
+				if(!isset($_SESSION['userid']) || empty($_SESSION['userid']) || $_SESSION['userid'] == ""){
 ?>
 					<li>
 						<a href="login.php" class="text-blue">Sign in</a>
@@ -25,8 +33,14 @@ include("admin/include/connect-to-database.php");
 							WHERE `id` = '".$_SESSION["userid"]."' ;
 						";
 						$result_user = @mysql_query($sql_user);
-						if($rs_user = @mysql_fetch_array($result_user)){
-							echo "Hello, ".$rs_user["firstname"]." ".$rs_user["midname"]." ".$rs_user["lastname"];
+						if($result_user)
+						{
+							if($rs_user = @mysql_fetch_array($result_user)){
+								echo "Hello, ".$rs_user["firstname"]." ".$rs_user["midname"]." ".$rs_user["lastname"];
+							}
+						}
+						else {
+							echo "Error";
 						}
 ?>
 					</li>
@@ -36,7 +50,7 @@ include("admin/include/connect-to-database.php");
 						</a>
 					</li>
 					<li>
-						<a href="view-profile.php" class="text-blue">
+						<a href="#" class="text-blue" id="logout">
 							Log out
 						</a>
 					</li>

@@ -1,6 +1,11 @@
-<?php include("include/header.php");?>
-<?php include("include/top-menu.php");?>
-<?php include("admin/include/connect-to-database.php"); ?>
+<?php 
+session_start();
+$rootpath = "./";
+$rootadminpath = "./admin/";
+include ($rootpath . "include/header.php");
+include ($rootadminpath . "include/connect-to-database.php");
+include ($rootpath . "include/top-menu.php"); 
+?>
 <script src="js/jquery-1.7.1.min.js"></script>
 <script>
 	$(document).ready(function()

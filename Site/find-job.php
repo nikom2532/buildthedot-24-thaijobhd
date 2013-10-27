@@ -1,7 +1,8 @@
 <?php include("include/header.php");?>
-<?php include("include/top-menu.php");?>       
-<?php include("admin/include/connect-to-database.php");
-session_start();
+<?php
+session_start(); 
+include("admin/include/connect-to-database.php"); 
+include("include/top-menu.php");       
 $rootpath="../";
 $rootadminpath="./";
 include("lib/func_pagination.php");
