@@ -2,12 +2,45 @@
 	<div id="header" class="container_12">
 		<div class="right"  class="grid_12">
 			<ul id="my-profile">
-				<li>
-					<a href="login.php" class="text-blue">Sign in</a>
-				</li>
-				<li>
-					<a href="register.php" class="text-grey">Register</a>
-				</li>
+<?php
+				if($_SESSION["userid"] == ""){
+?>
+					<li>
+						<a href="login.php" class="text-blue">Sign in</a>
+					</li>
+					<li>
+						<a href="register.php" class="text-grey">Register</a>
+					</li>
+<?php
+				}
+				else{
+?>
+					<li class="text-blue">
+<?php
+						$sql_user = "
+							SELECT * 
+							FROM  `buildthedot_thaijobhd_user_account`
+							WHERE `id` = '".$_SESSION["userid"]."' ;
+						";
+						$result_user = @mysql_query($sql_user);
+						if($rs_user = @mysql_fetch_array($result_user)){
+							echo "Hello, ".$rs_user["firstname"]." ".$rs_user["midname"]." ".$rs_user["lastname"];
+						}
+?>
+					</li>
+					<li>
+						<a href="view-profile.php" class="text-blue">
+							My Profile
+						</a>
+					</li>
+					<li>
+						<a href="view-profile.php" class="text-blue">
+							Log out
+						</a>
+					</li>
+<?php
+				}
+?>	
 			</ul>
 		</div>
 		<div id="login-intro" class="grid_3">

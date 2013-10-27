@@ -4,7 +4,7 @@ $rootpath = "./";
 $rootadminpath = "./admin/";
 include ($rootpath . "include/header.php");
 include ($rootadminpath . "include/connect-to-database.php");
-// $_SESSIONS["userid"] = "";
+include ($rootpath . "include/top-menu.php");
 if($_SESSION["userid"] == "" || (!(isset($_SESSION["userid"])))) {
 	header("location: ".$rootpath."login.php");
 }
@@ -18,63 +18,13 @@ else{
 	if($rs_user = @mysql_fetch_array($result_user)){
 ?>
 		<div id="wrapper">
-			<div id="header" class="container_12">
-				<div id="login-intro" class="grid_3">
-					<img src="images/logo.png" alt="ThaiJobHD" width="130" height="71">	
-				</div>
-				<div class="right">
-					<ul id="my-profile">
-						<li><a href="#" class="text-blue">My Profile</a></li>
-						<li><a href="#" class="text-grey">Logout</a></li>
-					</ul>
-				</div>
-				<div id="top-nav" class="grid_8 prefix_1">
-					<ul>
-						<li>
-							<a href="index.php">หน้าหลัก
-							<br/>
-							<span id="sub-memu">JobHD</span></a>
-						</li>
-						<li>
-							<a href="find-job.php">หางาน
-							<br/>
-							<span id="sub-memu">สมัครงาน</span></a>
-						</li>
-						<li>
-							<a href="view-profile.php">ฝากประวัติ
-							<br/>
-							<span id="sub-memu">สมัครงาน</span></a>
-						</li>
-						<li>
-							<a href="business-idea.php">ไอเดียธุรกิจ
-							<br/>
-							<span id="sub-memu">สมัครงาน</span></a>
-						</li>
-						<li>
-							<a href="advertisement-rate.php">อัตราโฆษณา
-							<br/>
-							<span id="sub-memu">ประกาศ</span></a>
-						</li>
-						<li>
-							<a href="condition.php">เงื่อนไข
-							<br/>
-							<span id="sub-memu">ข้อตกลง</span></a>
-						</li>
-						<li>
-							<a href="contact-us.php">ติดต่อทีมงาน
-							<br/>
-							<span id="sub-memu">ติดต่อเรา</span></a>
-						</li>
-					</ul>
-				</div>
-			</div><!--end header -->   
 			<div id="content" class="container_12">
 				<div id="content-profile">
 					<div id="head-title">
 						<h1>ฝากประวัติ</h1>
 					</div>
 			
-					<h2 id="sub-title">ประวัติส่วนตัว <span class="right"><a href="#" class="button round black right">แก้ไข</a></span></h2>
+					<h2 id="sub-title">ประวัติส่วนตัว <span class="right"><a href="<?php echo $rootpath; ?>edit-profile.php" class="button round black right">แก้ไข</a></span></h2>
 					<h3 class="text-grey"><?php echo $rs_user["firstname"]." ".$rs_user["midname"]." ".$rs_user["lastname"]; ?></h3>
 					<div>
 						<img src="images/<?php 
@@ -165,7 +115,7 @@ else{
 					</p>
 					<br class="clear"/>
 			
-					<h2 id="sub-title">ประวติการศึกษา<span class="right"><a href="#" class="button round black right">แก้ไข</a></span></h2>
+					<h2 id="sub-title">ประวติการศึกษา<span class="right"><a href="<?php echo $rootpath; ?>edit-education.php" class="button round black right">แก้ไข</a></span></h2>
 					<p class="grid_2">
 						Lorem Ipsum
 					</p>
@@ -251,13 +201,13 @@ else{
 								ตำแหน่งงาน
 							</p>
 							<p class="grid_3 center">
-								บริษัท
+								สถานประกอบการ
 							</p>
 							<p class="grid_1 center">
 								ปี
 							</p>
 							<p class="grid_2 center">
-								แผนก
+								เงินเดือน
 							</p>
 						</div>
 					</div>
@@ -305,7 +255,7 @@ else{
 										<?php echo $rs_works["year_start"]."-".$rs_works["year_end"]; ?>
 									</p>
 									<p class="grid_2 center">
-										<?php echo $rs_works["department"]; ?>
+										<?php echo $rs_works["salary"]; ?>
 									</p>
 								</div>
 							</div>
