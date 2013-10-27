@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.8
+-- version 3.4.10.1deb1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 26, 2013 at 10:02 PM
--- Server version: 5.1.67
--- PHP Version: 5.3.27
+-- Generation Time: Oct 27, 2013 at 12:39 PM
+-- Server version: 5.5.32
+-- PHP Version: 5.3.10-1ubuntu3.7
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -137,6 +137,7 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_account` (
   `firstname` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `midname` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `lastname` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `profile_picture` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `job_id` int(40) NOT NULL,
   `job_status` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `admin_status` int(1) NOT NULL,
@@ -149,8 +150,74 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_account` (
 -- Dumping data for table `buildthedot_thaijobhd_user_account`
 --
 
-INSERT INTO `buildthedot_thaijobhd_user_account` (`id`, `email`, `password`, `firstname`, `midname`, `lastname`, `job_id`, `job_status`, `admin_status`, `address`) VALUES
-(1, 'a@a.com', '77de54ccf56eb6f7dbf99e4d3be949ab6f9b0a55df8ac28564cb9f63a10be8af6ab3f7c2', 'a', 'a', 'a', 1, '1', 1, '');
+INSERT INTO `buildthedot_thaijobhd_user_account` (`id`, `email`, `password`, `firstname`, `midname`, `lastname`, `profile_picture`, `job_id`, `job_status`, `admin_status`, `address`) VALUES
+(1, 'a@a.com', '77de54ccf56eb6f7dbf99e4d3be949ab6f9b0a55df8ac28564cb9f63a10be8af6ab3f7c2', 'a', 'a', 'a', '', 1, '1', 1, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `buildthedot_thaijobhd_user_history_educations`
+--
+
+CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_history_educations` (
+  `user_history_educations_id` int(50) NOT NULL AUTO_INCREMENT,
+  `user_account_id` int(50) NOT NULL,
+  `education_level` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `Institution` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `year_start` year(4) NOT NULL,
+  `year_end` year(4) NOT NULL,
+  `educational_background` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`user_history_educations_id`),
+  UNIQUE KEY `user_account_id` (`user_account_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `buildthedot_thaijobhd_user_history_talent_language`
+--
+
+CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_history_talent_language` (
+  `user_history_talent_id` int(50) NOT NULL AUTO_INCREMENT,
+  `user_account_id` int(11) NOT NULL,
+  `language` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `score` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`user_history_talent_id`),
+  UNIQUE KEY `user_account_id` (`user_account_id`),
+  UNIQUE KEY `language` (`language`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `buildthedot_thaijobhd_user_history_talent_others`
+--
+
+CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_history_talent_others` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_account_id` int(11) NOT NULL,
+  `topic` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `user_account_id` (`user_account_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `buildthedot_thaijobhd_user_history_works`
+--
+
+CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_history_works` (
+  `user_history_works_id` int(50) NOT NULL AUTO_INCREMENT,
+  `user_accound_id` int(11) NOT NULL,
+  `job_position` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `company_name` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `year_start` year(4) NOT NULL,
+  `year_end` year(4) NOT NULL,
+  `salary` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`user_history_works_id`),
+  UNIQUE KEY `user_accound_id` (`user_accound_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
