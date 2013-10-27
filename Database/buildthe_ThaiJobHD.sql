@@ -200,18 +200,18 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_history_talent_others` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `buildthedot_thaijobhd_user_history_works`
+-- Table structure for table `buildthedot_thaijobhd_user_history_experiences`
 --
 
-CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_history_works` (
-  `user_history_works_id` int(50) NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_history_experiences` (
+  `user_history_experiences_id` int(50) NOT NULL AUTO_INCREMENT,
   `user_accound_id` int(11) NOT NULL,
   `job_position` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `company_name` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `year_start` year(4) NOT NULL,
   `year_end` year(4) NOT NULL,
   `salary` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`user_history_works_id`),
+  PRIMARY KEY (`user_history_experiences_id`),
   UNIQUE KEY `user_accound_id` (`user_accound_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
