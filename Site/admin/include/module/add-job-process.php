@@ -89,14 +89,15 @@ include($rootadminpath."include/connect-to-database.php");
 					for($i = 0;$i < count($edu);$i++)
 					{
 						$education[$i] = $edu[$i];
-						$SQL = "INSERT INTO `buildthedot_thaijobhd_job_attribute` (`JobID`, `AttribuetDescription`) VALUES ('$job_id', '$education[$i]')";
+						$SQL = "INSERT INTO `buildthedot_thaijobhd_job_attribute` (`JobID`, `AtrributDescription`) VALUES ('$job_id', '$education[$i]')";
 						$resultSQL = mysql_query($SQL);
 						if($resultSQL)
 						{
 							?>
 							<script language="javascript">
-									window.location="<?php echo $rootadminpath; ?>insert-job.php";
 									alert("Ok");
+									window.location="<?php echo $rootadminpath; ?>"+"insert-job.php";
+									
 								</script>
 							<?php	
 						}
@@ -104,8 +105,9 @@ include($rootadminpath."include/connect-to-database.php");
 						{
 							?>
 							<script language="javascript">
-									window.location="insert-job.php";
-									alert("Error");
+									alert("Error"+<?php echo $job_id; ?>+":"+<?php echo $education[$i];?>);
+									window.location="<?php echo $rootadminpath; ?>"+"insert-job.php";
+									
 								</script>
 							<?php
 						}
@@ -116,8 +118,9 @@ include($rootadminpath."include/connect-to-database.php");
 			{
 				?>
 							<script language="javascript">
-									window.location="<?php echo $rootadminpath; ?>insert-job.php";
 									alert("Error");
+									window.location="<?php echo $rootadminpath; ?>"+"insert-job.php";
+									
 								</script>
 							<?php
 			}
@@ -127,8 +130,9 @@ include($rootadminpath."include/connect-to-database.php");
 		{
 			?>
 			<script language="javascript">
-					window.location="<?php echo $rootadminpath; ?>insert-job.php";
 					alert("Error");
+					window.location="<?php echo $rootadminpath; ?>"+"insert-job.php";
+					
 				</script>
 			<?php
 		}
@@ -138,9 +142,9 @@ include($rootadminpath."include/connect-to-database.php");
 	else 
 	{ ?>
 		<script language="javascript">
-					// window.location="<?php echo $rootadminpath; ?>insert-job.php";
 					alert("Error");
-				</script>
+					window.location="<?php echo $rootadminpath; ?>"+"insert-job.php";
+		</script>
 	<?php
 	}
 ?>

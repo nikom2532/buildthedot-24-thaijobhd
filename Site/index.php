@@ -84,7 +84,8 @@ include ($rootpath . "include/search-bar.php");
 			<h1>งานแนะนำ</h1>
 		</div>
 		<div class="grid_4 margin-left-5 margin-right-5" id="content-reccommend">
-			<h2 id="sub-title">Full Time <span class="right"><a href="#" class="button round black">ดูทั้งหมด</a></span></h2>
+			<h2 id="sub-title">Full Time <span class="right"><a href="find-job-recommend-fulltime.php" class="button round black">ดูทั้งหมด</a></span></h2>
+			
 			<?php
 				$sql="
 				SELECT * 
@@ -115,7 +116,7 @@ include ($rootpath . "include/search-bar.php");
 		</div>
 	
 		<div class="grid_4 margin-left-5 margin-right-5" id="content-reccommend">
-			<h2 id="sub-title">Part Time <span class="right"><a href="#" class="button round black">ดูทั้งหมด</a></span></h2>
+			<h2 id="sub-title">Part Time <span class="right"><a href="find-job-recommend-partime.php" class="button round black">ดูทั้งหมด</a></span></h2>
 			<?php
 				$sql="
 				SELECT * 

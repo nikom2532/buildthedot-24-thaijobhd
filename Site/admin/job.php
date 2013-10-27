@@ -50,7 +50,7 @@ include("include/connect-to-database.php");
 //For Development mode(No need to login)
 // $_SESSION["userid"] = "1";
 
-if ($_SESSION["userid"] == "") {
+if (FALSE /*$_SESSION["userid"] == ""*/) {
 	include ($rootadminpath . "include/login.php");
 	include ("include/footer.php");
 } 
