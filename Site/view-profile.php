@@ -115,7 +115,7 @@ else{
 					</p>
 					<br class="clear"/>
 			
-					<h2 id="sub-title">ประวัติการศึกษา<span class="right"><a href="<?php echo $rootpath; ?>edit-education.php" class="button round black right">แก้ไข</a></span></h2>
+					<h2 id="sub-title">ประวัติการศึกษา<span class="right"><a href="<?php echo $rootpath; ?>add-education.php" class="button round black right">แก้ไข</a></span></h2>
 					<p class="grid_2">
 						Lorem Ipsum
 					</p>
