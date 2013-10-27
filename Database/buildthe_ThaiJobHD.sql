@@ -205,7 +205,7 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_history_talent_others` (
 
 CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_history_experiences` (
   `user_history_experiences_id` int(50) NOT NULL AUTO_INCREMENT,
-  `user_accound_id` int(11) NOT NULL,
+  `user_account_id` int(11) NOT NULL,
   `job_position` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `company_name` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `year_start` year(4) NOT NULL,
