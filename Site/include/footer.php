@@ -31,7 +31,14 @@
 					</div>
 				</div>
 			</div>
-		
 		</div><!--end  wrapper-->
+		
+		<!--Date -picker -->
+		<script src="<?php echo $rootpath; ?>js/jquery-1.7.1.min.js"></script>
+		<script src="<?php echo $rootadminpath; ?>js/jquery-ui.min.js"></script>
+		<script src="<?php echo $rootadminpath; ?>js/date-picker/jquery.ui.core.js"></script>
+		<script src="<?php echo $rootadminpath; ?>js/date-picker/jquery.ui.widget.js"></script>
+		<script src="<?php echo $rootadminpath; ?>js/date-picker/jquery.ui.datepicker.js"></script>
+		<script src="<?php echo $rootpath; ?>js/script.js"></script>
 	</body>
 </html>

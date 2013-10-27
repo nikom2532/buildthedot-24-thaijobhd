@@ -33,16 +33,19 @@ else{
 					<div id="head-title">
 						<h1>ฝากประวัติ <span class="text-blue">-  แก้ไขประวัติการศึกษา</span></h1>
 					</div>
+					<form id="add_education_form" name="add_education_form" action="<?php echo $rootpath; ?>include/module/add-education-process.php" method="POST" enctype="multipart/form-data">
 						<p class="grid_2">ระดับการศึกษา</p>
-						<p class="grid_8"><input type="text" id="name" name ="name" class="round" /></p><br class="clear" />
+						<p class="grid_8"><input type="text" id="education_level" name ="education_level" class="round" onkeypress="return add_education_form_keypress(event)" /></p><br class="clear" />
 						<p class="grid_2">สถาบัน</p>
-						<p class="grid_8"><input type="text" id="name" name ="name" class="round" /></p><br class="clear"/>
-						<p class="grid_2">ปี</p>
-						<p class="grid_8"><input type="text" id="name" name ="name" class="round" /></p><br class="clear"/>
+						<p class="grid_8"><input type="text" id="Institution" name ="Institution" class="round" onkeypress="return add_education_form_keypress(event)" /></p><br class="clear"/>
+						<p class="grid_2">ปีเริ่ม</p>
+						<p class="grid_8"><input type="text" id="year_start" name ="year_start" class="round" onkeypress="return add_education_form_keypress(event)" /></p><br class="clear"/>
+						<p class="grid_2">ปีจบ</p>
+						<p class="grid_8"><input type="text" id="year_end" name ="year_start" class="round" onkeypress="return add_education_form_keypress(event)" /></p><br class="clear"/>
 						<p class="grid_2">วุฒิการศึกษา</p>
-						<p class="grid_8"><input type="text" id="name" name ="name" class="round" /></p><br class="clear" />
-			      <h2 class="grid_3"><a href="#" class="add-button black round">เพิ่ม</a></h2>
-		      
+						<p class="grid_8"><input type="text" id="educational_background" name ="educational_background" class="round" onkeypress="return add_education_form_keypress(event)" /></p><br class="clear" />
+			      <h2 class="grid_3"><a href="#" class="add-button black round" onclick="document.getElementById('add_education_form').submit(); ">เพิ่ม</a></h2>
+		      </form>
 					<div id="content-profile-table">
 						<div id="head-table1" class="grid_10">
 							<p class="grid_2 center">ระดับการศึกษา</p>
@@ -82,7 +85,7 @@ else{
 									<p class="grid_3 center"><?php echo $rs_edu["Institution"]; ?></p>
 									<p class="grid_1 center"><?php echo $rs_edu["year_start"]."-".$rs_edu["year_end"]; ?></p>
 									<p class="grid_2 center"><?php echo $rs_edu["educational_background"]; ?></p>
-									<p class="grid_1 center"><a href="#" class="text-blue">แก้ไข</a></p>
+									<p class="grid_1 center"><a href="<?php echo $rootpath; ?>edit-education.php" class="text-blue">แก้ไข</a></p>
 									<p class="grid_1 center"><a href="#" class="text-red">ลบ</a></p>
 				         </div>
 							</div>
