@@ -253,7 +253,7 @@ else{
 										<?php echo $rs_works["company_name"]; ?>
 									</p>
 									<p class="grid_1 center">
-										<?php echo $rs_works["year_start"]."-".$rs_works["year_end"]; ?>
+										<?php echo $rs_works["year_start"]." - ".$rs_works["year_end"]; ?>
 									</p>
 									<p class="grid_2 center">
 										<?php echo $rs_works["salary"]; ?>
