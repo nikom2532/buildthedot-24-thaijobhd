@@ -53,7 +53,7 @@ include("admin/include/initial/pagination.php");
 	    ?>
         </div>        
        <?php
-       	echo pagination($page_limit, $page, $rootadminpath."find-job.php?page=", $number_of_items); 
+       	echo pagination($page_limit, $page, $rootadminpath."find-job-recommend-fulltime.php?page=", $number_of_items); 
         ?>
     </div><!--end content -->
     
