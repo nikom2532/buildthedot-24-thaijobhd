@@ -1,12 +1,13 @@
-<?php include("include/header.php");?>
 <?php
-session_start(); 
-include("admin/include/connect-to-database.php"); 
-include("include/top-menu.php");       
-$rootpath="../";
-$rootadminpath="./";
-include("lib/func_pagination.php");
-include("admin/include/initial/pagination.php");
+session_start();
+$rootpath = "./";
+$rootadminpath = "./admin/";
+include ($rootpath . "include/header.php");
+include ($rootadminpath . "include/connect-to-database.php");
+include ($rootpath . "include/top-menu.php");       
+
+include($rootpath . "lib/func_pagination.php");
+include($rootadminpath . "include/initial/pagination.php");
 ?>     
     <div id="content" class="container_12">
         <div class="grid_12" id="main">

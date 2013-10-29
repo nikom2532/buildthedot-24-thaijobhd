@@ -10,25 +10,36 @@ include ($rootpath . "include/top-menu.php");
 	<div id="">
 		<div id="head-title">
 			<h1>ไอเดียธุรกิจ<?php 
-				$menu = $_GET["menu"];
+				
+				if(isset($_GET['menu']))
+				{
+					$menu = $_GET["menu"];
+				}
+				else {
+					$menu = "new";	
+				}
+				
 				if($menu == "new"){
 					echo "มาใหม่";
 				}
 				elseif($menu == "suggest"){
 					echo "แนะนำ";
 				}
+				
 			?></h1>
 		</div>
 <?php
 		$i=1;
-		if($_GET["page"] ==""){
+		@get();
+		  
+		/*if($_GET["page"] ==""){
 			$_GET["page"] = 1;
 		}
 		// $sql="
 			// SELECT * 
 			// FROM  `buildthedot_thaijobhd_job_idea`
 			// LIMIT ".($page_limit*($_GET["page"]-1)).",".$page_limit.";
-		// ";
+		// ";*/
 		if($menu == "new" || $menu == ""){
 			$sql="
 				SELECT * 
@@ -126,4 +137,13 @@ include ($rootpath . "include/top-menu.php");
 </div><!--end content -->
 <?php
 	include ("include/footer.php");
+
+	function get()
+	{
+		if($_GET["page"] =="")
+		{
+				$_GET["page"] = 1;
+		}
+	}
+?>
 ?>
