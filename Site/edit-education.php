@@ -19,12 +19,13 @@ include ($rootpath . "include/search-bar.php");
 					SELECT * 
 					FROM  `buildthedot_thaijobhd_user_history_educations`
 					WHERE `user_account_id` = '".$_SESSION["userid"]."' 
-					AND `user_history_educations_id` = '".$_GET["id"]."'
+					AND `user_history_educations_id` = '".$_GET["id"]."' ;
 					;
 				";
 				$result_edu = @mysql_query($sql_edu);
 				if($rs_edu = @mysql_fetch_array($result_edu)){
 ?>
+					<input type="hidden" name="user_history_educations_id" value="<?php echo $_GET["id"]; ?>" />
 					<p class="grid_2">ระดับการศึกษา</p>
 					<p class="grid_8"><input type="text" id="education_level" name ="education_level" class="round width700" value="<?php echo $rs_edu["education_level"]; ?>" onkeypress="return add_education_form_keypress(event)" /></p><br class="clear" />
 					<p class="grid_2">สถาบัน</p>

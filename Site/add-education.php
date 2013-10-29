@@ -85,7 +85,7 @@ else{
 						}
 					}
 ?>
-					<p class="grid_12 center"><a href="<?php echo $rootpath; ?>view-profile.php" class="save-button blue round">ออก</a></p>
+					<p class="grid_12 center"><a href="<?php echo $rootpath; ?>view-profile.php" class="save-button blue round">กลับหน้า ฝากประวัติ</a></p>
 				</div>
 			</div><!--end content -->
 <?php

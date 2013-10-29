@@ -215,7 +215,7 @@ else{
 					<br class="clear"/>
 <?php
 					$sql_experiences="
-						SELECT * 
+						SELECT *, YEAR(`year_start`) AS year_start_1, YEAR(`year_end`) AS year_end_1
 						FROM  `buildthedot_thaijobhd_user_history_experiences`
 						WHERE `user_account_id` = '".$_SESSION["userid"]."' ;
 					";
@@ -253,7 +253,7 @@ else{
 										<?php echo $rs_experiences["company_name"]; ?>
 									</p>
 									<p class="grid_1 center">
-										<?php echo $rs_experiences["year_start"]." - ".$rs_experiences["year_end"]; ?>
+										<?php echo $rs_experiences["year_start_1"]." - ".$rs_experiences["year_end_1"]; ?>
 									</p>
 									<p class="grid_2 center">
 										<?php echo $rs_experiences["salary"]; ?>
@@ -265,7 +265,7 @@ else{
 						}
 					}
 ?>
-					<h2 id="sub-title">ความสามารถพิเศษ<span class="right"><a href="#" class="button round black right">แก้ไข</a></span></h2>
+					<h2 id="sub-title">ความสามารถพิเศษ<span class="right"><a href="<?php echo $rootpath; ?>edit-talent.php" class="button round black right">แก้ไข</a></span></h2>
 					<p class="grid_2">
 						ทักษะด้านภาษา
 					</p>

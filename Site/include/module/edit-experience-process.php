@@ -2,19 +2,18 @@
 session_start();
 $rootpath ="../../";
 $rootadminpath ="../../admin/";
-// include ($rootpath . "include/header.php");
 include ($rootadminpath . "include/connect-to-database.php");
-// include ($rootpath . "include/top-menu.php");
+include ($rootpath . "include/top-menu.php");
 if($_SESSION["userid"] == "" || (!(isset($_SESSION["userid"])))) {
 	header("location: ".$rootpath."login.php");
 }
 else{
-	$user_history_educations_id = $_POST["user_history_educations_id"];
-	$education_level = $_POST["education_level"];
-	$Institution = $_POST["Institution"];
+	$user_history_experiences_id = $_POST["user_history_experiences_id"];
+	$job_position = $_POST["job_position"];
+	$company_name = $_POST["company_name"];
 	$year_start = $_POST["year_start"];
 	$year_end = $_POST["year_end"];
-	$educational_background = $_POST["educational_background"];
+	$salary = $_POST["salary"];
 	
 	$sql_user="
 		SELECT * 
@@ -25,18 +24,18 @@ else{
 	
 	if($rs_user = @mysql_fetch_array($result_user)){
 		$sql_edu="
-			UPDATE `buildthedot_thaijobhd_user_history_educations` 
+			UPDATE `buildthedot_thaijobhd_user_history_experiences` 
 			SET
-			`education_level` =  '{$education_level}' ,
-			`Institution` = '{$Institution}' ,
+			`job_position` =  '{$job_position}' ,
+			`company_name` = '{$company_name}' ,
 			`year_start` = '{$year_start}' ,
 			`year_end` = '{$year_end}' ,
-			`educational_background` = '{$educational_background}'
-			WHERE `user_account_id` = '".$_SESSION["userid"]."' 
-			AND `user_history_educations_id` = '{$user_history_educations_id}';
+			`salary` = '{$salary}'
+			WHERE `user_account_id` = '".$_SESSION["userid"]."'
+			AND `$user_history_experiences_id` = '{$user_history_experiences_id}' ;
 		";
 		@mysql_query($sql_edu);
-		?><form id="edit_education_message_form" action="<?php echo $rootpath; ?>add-education.php" method="POST">
+		?><form id="edit_education_message_form" action="<?php echo $rootpath; ?>add-experience.php" method="POST">
 			<input type="hidden" id="add_education_messaage" name="add_education_messaage" value="" />
 		</form>
 		<script>

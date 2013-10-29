@@ -3,9 +3,9 @@
 session_start();
 $rootpath ="../../";
 $rootadminpath ="../../admin/";
-include ($rootpath . "include/header.php");
+// include ($rootpath . "include/header.php");
 include ($rootadminpath . "include/connect-to-database.php");
-include ($rootpath . "include/top-menu.php");
+// include ($rootpath . "include/top-menu.php");
 if($_SESSION["userid"] == "" || (!(isset($_SESSION["userid"])))) {
 	header("location: ".$rootpath."login.php");
 }
