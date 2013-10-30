@@ -1,7 +1,7 @@
 <?php
 
 function pagination($per_page = 10, $page = 1, $url = '', $total) {
-
+echo "";
 	$adjacents = "2";
 
 	$page = ($page == 0 ? 1 : $page);
