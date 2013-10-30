@@ -19,8 +19,8 @@ else{
 		WHERE `id` = '".$_SESSION["userid"]."' ;
 	";
 	$result_user = @mysql_query($sql_user);
-	
 	if($rs_user = @mysql_fetch_array($result_user)){
+		@mysql_query("SET NAMES 'utf8'");
 		$sql_talent_language="
 			INSERT INTO `buildthedot_thaijobhd_user_history_talent_languages`
 			(`user_account_id`, `language`, `score_speaking`, `score_understanding`, `score_reading`, `score_writing`)
