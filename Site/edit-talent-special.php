@@ -44,7 +44,7 @@ else{
 							<p class="grid_12">
 								<textarea id="topic" name="topic" class="round"><?php 
 									if($rs_talent = @mysql_fetch_array($result_talent)){
-										echo $result_talent["topic"]; 
+										echo $rs_talent["topic"]; 
 									}
 								?></textarea>
 							</p>				

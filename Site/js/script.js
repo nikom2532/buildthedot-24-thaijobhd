@@ -28,3 +28,9 @@ $(function() {
 		}
 	});
 });	
+function delete_user_history_talent_languages(rootpath, ID){
+	if (confirm('Do you want to confirm to delete?')) {
+	    // Delete it!
+	    window.location = rootpath+"include/module/delete-talent-language-process.php?id="+ID;
+	}
+}
