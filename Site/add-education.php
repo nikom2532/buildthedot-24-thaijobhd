@@ -77,7 +77,7 @@ else{
 									<p class="grid_1 center"><?php echo $rs_edu["year_start_1"]." - ".$rs_edu["year_end_1"]; ?></p>
 									<p class="grid_2 center"><?php echo $rs_edu["educational_background"]; ?></p>
 									<p class="grid_1 center"><a href="<?php echo $rootpath; ?>edit-education.php?id=<?php echo $rs_edu["user_history_educations_id"]; ?>" class="text-blue">แก้ไข</a></p>
-									<p class="grid_1 center"><a href="#" class="text-red">ลบ</a></p>
+									<p class="grid_1 center"><a href="#" onclick="delete_user_history_education('<?php echo $rootpath; ?>', '<?php echo $rs_edu["user_history_educations_id"]; ?>'); " class="text-red">ลบ</a></p>
 				         </div>
 							</div>
 							<br class="clear"/>
