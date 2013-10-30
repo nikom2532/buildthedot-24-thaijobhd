@@ -31,17 +31,30 @@ else{
 						ความสามารถพิเศษ
 					</p>
 					<br class="clear"/>
-					<div class="prefix_2">
-						<p class="grid_12">
-							<textarea id="textarea" class="round"></textarea>
-						</p>				
-						<br class="clear"/>
-					</div>
-		
-					<p class="grid_12 center">
-						<a href="#" class="save-button blue round">บันทึก</a>
-					</p>
-		
+					<form id="edit_talent_form" name="edit_talent_form" action="<?php echo $rootpath; ?>include/module/add-talent-others-process.php" method="POST" enctype="multipart/form-data">
+<?php
+						$sql_talent="
+							SELECT * 
+							FROM  `buildthedot_thaijobhd_user_history_talent_others`
+							WHERE `user_account_id` = '".$_SESSION["userid"]."' ;
+						";
+						$result_talent = @mysql_query($sql_talent);
+?>		
+						<div class="prefix_2">
+							<p class="grid_12">
+								<textarea id="topic" name="topic" class="round"><?php 
+									if($rs_talent = @mysql_fetch_array($result_talent)){
+										echo $result_talent["topic"]; 
+									}
+								?></textarea>
+							</p>				
+							<br class="clear"/>
+						</div>
+						
+						<p class="grid_12 center">
+							<a href="#" class="save-button blue round" onclick="document.getElementById('edit_talent_form').submit(); ">บันทึก</a>
+						</p>
+					</form>
 				</div>
 			</div><!--end content -->
 <?php

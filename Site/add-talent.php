@@ -236,23 +236,29 @@ else{
 					}
 ?>
 					<br class="clear"/>
-					<p class="grid_12 space-top">
+					<div class="grid_4 space-top">
 						ความสามารถพิเศษ
-						<span class="right">
-							<a href="<?php echo $rootpath; ?>edit-talent-special.php" class="save-button black round right">แก้ไขความสามารถพิเศษ</a>
-						</span>
-					</p>
-					<br class="clear"/>
-					<div class="prefix_2">
+					</div>
+
+					<div class="grid_8 space-top">
 						<p class="grid_12">
 <?php
 							$sql_talent_special="
-							
+								SELECT * 
+								FROM  `buildthedot_thaijobhd_user_history_talent_others`
+								WHERE `user_account_id` = '".$_SESSION["userid"]."' ;
 							";
+							$result_talent_special = @mysql_query($sql_talent_special);
+							if($rs_talent_special = @mysql_fetch_array($result_talent_special)){
+								echo $rs_talent_special["topic"]; 
+							}
 ?>
 						</p>				
-						<br class="clear"/>
 					</div>
+					<br class="clear"/>
+					<span class="right">
+						<a href="<?php echo $rootpath; ?>edit-talent-special.php" class="save-button black round right">แก้ไขความสามารถพิเศษ</a>
+					</span>
 		
 					<p class="grid_12 center">
 						<a href="<?php echo $rootpath; ?>view-profile.php" class="save-button blue round">กลับหน้า ฝากประวัติ</a>
