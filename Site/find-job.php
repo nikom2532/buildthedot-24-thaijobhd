@@ -2,12 +2,11 @@
 session_start();
 $rootpath = "./";
 $rootadminpath = "./admin/";
-include ($rootpath . "include/header.php");
-include ($rootadminpath . "include/connect-to-database.php");
-include ($rootpath . "include/top-menu.php");       
-
-include($rootpath . "lib/func_pagination.php");
-include($rootadminpath . "include/initial/pagination.php");
+include ("include/header.php");
+include ("admin/include/connect-to-database.php");
+include ("include/top-menu.php");       
+include("lib/func_pagination.php");
+include("admin/include/initial/pagination.php");
 ?>     
     <div id="content" class="container_12">
         <div class="grid_12" id="main">
@@ -50,37 +49,16 @@ include($rootadminpath . "include/initial/pagination.php");
        		//call function to show pagination
 	    ?>
         </div>        
+      <font color="white"></font>
        <?php
-       	echo pagination($page_limit, $page, $rootadminpath."find-job.php?page=", $number_of_items); 
+      
+       	echo "<font color='white'>s</font>".pagination($page_limit, $page, "find-job.php?page=", $number_of_items); 
         ?>
     </div><!--end content -->
     
-    <div id="footer" class="container_12">
-    	<div class="grid_2">
-        	<img src="images/logo.png" width="128" height="71">
-        </div>
-        <div class="grid_3">
-        	<p>สอบถามการสมัครงาน <br/>(662)999-9999 </p>
-            <p>E-mail<br/>abc@mail.com </p>
-        </div>
-        <div class="grid_3 prefix_4">
-        	<div class="right">
-            	<ul>
-                	<li><img src="images/Facebook.png" width="52" height="52" alt="Facebook"></li>
-                    <li><img src="images/Twitter.png" width="52" height="52" alt="Twitter"></li>
-                    <li><img src="images/LinkedIn.png" width="52" height="52" alt="LinkedIn"></li>
-                </ul>
-            </div>
-            <br class="clear"/>
-            <div id="copyright" class="right">&copy; ThaiJobHD 2013. All rights reserved.</div>
-        </div>
-    </div>    
-
-</div><!--end  wrapper-->
-</body>
-</html>
 
 <?php
+	include ("include/footer.php");
 	function get()
 	{
 		if($_GET["page"] =="")

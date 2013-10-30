@@ -1,6 +1,10 @@
-<?php include("include/header.php");?>
-<?php include("include/top-menu.php");?>     
-<?php include("admin/include/connect-to-database.php");?>  
+<?php 
+$rootpath = "./";
+$rootadminpath = "./admin/";
+include ("include/header.php");
+include ("admin/include/connect-to-database.php");
+include ("include/top-menu.php");  
+?>  
     <div id="content" class="container_12">
         <div id="content-detail">
         	<div id="head-title">
