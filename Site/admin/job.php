@@ -56,9 +56,14 @@ if ($_SESSION["userid"] == "") {
 } 
 else {
 	//check for Logout mode
-	if($_GET["mode"]=="logout"){
-		include($rootadminpath."include/module/logout_process.php");
+	if(isset($_GET["mode"]))
+	{
+		if($_GET["mode"]=="logout")
+		{
+			include($rootadminpath."include/module/logout_process.php");
+		}
 	}
+	
 	//normal mode
 	else{
 		include($rootpath."lib/func_pagination.php");

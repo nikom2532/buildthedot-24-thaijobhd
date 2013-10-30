@@ -142,9 +142,9 @@
 	
 	?>
 <?php include("include/footer.php");?>
-=======
+
 <?php 
-$rootpath="../";
+/*$rootpath="../";
 $rootadminpath="./";
 include($rootadminpath."include/header.php");
 include("include/connect-to-database.php");
@@ -275,5 +275,6 @@ else {
 	}
 }?>
 >>>>>>> 0c67dceb2e06ae724bec53a5e37405d86cce0e5f
-
+*/
+?>
 

@@ -29,6 +29,7 @@
 				
 				$("#submit").blind("click", function(event){
 					var a = $(".education").attr("value");
+				alert("Error");
 					if(a == null || a == "")
 					{
 						alert("Error");

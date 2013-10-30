@@ -18,7 +18,7 @@ include($rootadminpath."include/connect-to-database.php");
 	$date_start = $_SESSION['date_start'];
 	$date_end = $_SESSION['date_end'];
 	$recomment = $_SESSION['recomment'];
-	if($recomment == "re")
+	if($recomment == "Recommend")
 	{
 		$recommented = 1;
 	}
@@ -48,7 +48,7 @@ include($rootadminpath."include/connect-to-database.php");
 	$date_end = "2013-12-12";
 	$recommented = "1";
 	$FPint = "1";
-	
+
 	echo $company_name."<br>";
 	echo $position_thai_name."<br>";
 	echo $position_eng_name."<br>";
@@ -89,6 +89,16 @@ include($rootadminpath."include/connect-to-database.php");
 					for($i = 0;$i < count($edu);$i++)
 					{
 						$education[$i] = $edu[$i];
+						if($education[$i] == null || $education[$i] == "")
+						{
+							?>
+							<script language="javascript">
+									alert("Error"+<?php echo $job_id; ?>+":"+<?php echo $education[$i];?>);
+									window.location="<?php echo $rootadminpath; ?>"+"insert-job.php";
+								</script>
+							<?php
+							break;
+						}
 						$SQL = "INSERT INTO `buildthedot_thaijobhd_job_attribute` (`JobID`, `AtrributDescription`) VALUES ('$job_id', '$education[$i]')";
 						$resultSQL = mysql_query($SQL);
 						if($resultSQL)
@@ -100,14 +110,13 @@ include($rootadminpath."include/connect-to-database.php");
 									
 								</script>
 							<?php	
-						}
+					}
 						else 
 						{
 							?>
 							<script language="javascript">
 									alert("Error"+<?php echo $job_id; ?>+":"+<?php echo $education[$i];?>);
 									window.location="<?php echo $rootadminpath; ?>"+"insert-job.php";
-									
 								</script>
 							<?php
 						}
