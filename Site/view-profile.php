@@ -270,132 +270,133 @@ else{
 						ทักษะด้านภาษา
 					</p>
 					<br class="clear"/>
-					<div class="prefix_2">
-						<div id="head-table1" class="grid_9">
-							<p class="grid_2 center">
-								Language
-							</p>
-							<p class="grid_1 center">
-								Starter
-							</p>
-							<p class="grid_1 center">
-								little
-							</p>
-							<p class="grid_1 center">
-								Mediam
-							</p>
-							<p class="grid_1 center">
-								Good
-							</p>
-							<p class="grid_1 center">
-								Better
-							</p>
-							<p class="grid_1 center">
-								Best
-							</p>
+					<div class="prefix_1">
+						<div id="content-profile-table">
+							<div id="head-table1" class="grid_11">
+								<p class="grid_2 center">
+									ภาษา
+								</p>
+								<p class="grid_2 center">
+									การพูด
+								</p>
+								<p class="grid_2 center">
+									ความเข้าใจ
+								</p>
+								<p class="grid_2 center">
+									การอ่าน
+								</p>
+								<p class="grid_2 center">
+									การเขียน
+								</p>
+								
+							</div>
 						</div>
 					</div>
 					<br class="clear"/>
 <?php
-					$sql_history_talent_language="
+					$sql_talent="
 						SELECT * 
-						FROM  `buildthedot_thaijobhd_user_history_talent_language`
+						FROM  `buildthedot_thaijobhd_user_history_talent_languages`
 						WHERE `user_account_id` = '".$_SESSION["userid"]."' ;
 					";
-					$result_history_talent_language = @mysql_query($sql_history_talent_language);
-					if(@mysql_num_rows($result_history_talent_language)==0){
+					$result_talent = @mysql_query($sql_talent);
+					if(@mysql_num_rows($result_talent)==0){
 ?>
-						<div class="prefix_2">
-							<div class="grid_9" id="table-content">
-								<p class="grid_2 center">
-									-
-								</p>
-								<p class="grid_1 center">
-									-
-								</p>
-								<p class="grid_1 center">
-									-
-								</p>
-								<p class="grid_1 center">
-									-
-								</p>
-								<p class="grid_1 center">
-									-
-								</p>
-								<p class="grid_1 center">
-									-
-								</p>
-								<p class="grid_1 center">
-									-
-								</p>
+						<div class="prefix_1">
+							<div id="content-profile-table">
+								<div id="table-content" class="grid_11">
+									<p class="grid_2 center">
+										-
+									</p>
+									<p class="grid_2 center">
+										-
+									</p>
+									<p class="grid_2 center">
+										-
+									</p>
+									<p class="grid_2 center">
+										-
+									</p>
+									<p class="grid_2 center">
+										-
+									</p>
+								</div>
 							</div>
 						</div>
-						<br class="clear"/> 
+						<br class="clear"/>
 <?php
 					}
 					else{
-						while ($rs_history_talent_language = @mysql_fetch_array($result_history_talent_language)) {
+						while($rs_talent = @mysql_fetch_array($result_talent)){
 ?>
-							<div class="prefix_2">
-								<div class="grid_9" id="table-content">
-									<p class="grid_2 center">
-										<?php echo $rs_history_talent_language["language"]; ?>
-									</p>
-									<p class="grid_1 center"><?php
-										if($rs_history_talent_language["score"] == 1){
-											?><img src="images/green-tick-arrow.png" width="20" /><?php
-										}
-										else{
-											echo "-";
-										}
-									?></p>
-									<p class="grid_1 center"><?php
-										if($rs_history_talent_language["score"] == 2){
-											?><img src="images/green-tick-arrow.png" width="20" /><?php
-										}
-										else{
-											echo "-";
-										}
-									?></p>
-									<p class="grid_1 center"><?php
-										if($rs_history_talent_language["score"] == 3){
-											?><img src="images/green-tick-arrow.png" width="20" /><?php
-										}
-										else{
-											echo "-";
-										}
-									?></p>
-									<p class="grid_1 center"><?php
-										if($rs_history_talent_language["score"] == 4){
-											?><img src="images/green-tick-arrow.png" width="20" /><?php
-										}
-										else{
-											echo "-";
-										}
-									?></p>
-									<p class="grid_1 center"><?php
-										if($rs_history_talent_language["score"] == 5){
-											?><img src="images/green-tick-arrow.png" width="20" /><?php
-										}
-										else{
-											echo "-";
-										}
-									?></p>
-									<p class="grid_1 center"><?php
-										if($rs_history_talent_language["score"] == 6){
-											?><img src="images/green-tick-arrow.png" width="20" /><?php
-										}
-										else{
-											echo "-";
-										}
-									?></p>
+							<div class="prefix_1">
+								<div id="content-profile-table">
+									<div id="table-content" class="grid_11">
+										<p class="grid_2 center">
+											<?php echo $rs_talent["language"]; ?>
+										</p>
+										<p class="grid_2 center">
+	<?php
+											if($rs_talent["score_speaking"]=="3"){
+												echo "ดีมาก";
+											}
+											elseif($rs_talent["score_speaking"]=="2"){
+												echo "ดี";
+											}
+											elseif($rs_talent["score_speaking"]=="1"){
+												echo "พอใช้";
+											}
+	?>
+										</p>
+										<p class="grid_2 center">
+	<?php
+											if($rs_talent["score_understanding"]=="3"){
+												echo "ดีมาก";
+											}
+											elseif($rs_talent["score_understanding"]=="2"){
+												echo "ดี";
+											}
+											elseif($rs_talent["score_understanding"]=="1"){
+												echo "พอใช้";
+											}
+	?>
+										</p>
+										<p class="grid_2 center">
+	<?php
+											if($rs_talent["score_reading"]=="3"){
+												echo "ดีมาก";
+											}
+											elseif($rs_talent["score_reading"]=="2"){
+												echo "ดี";
+											}
+											elseif($rs_talent["score_reading"]=="1"){
+												echo "พอใช้";
+											}
+	?>
+										</p>
+										<p class="grid_2 center">
+	<?php
+											if($rs_talent["score_writing"]=="3"){
+												echo "ดีมาก";
+											}
+											elseif($rs_talent["score_writing"]=="2"){
+												echo "ดี";
+											}
+											elseif($rs_talent["score_writing"]=="1"){
+												echo "พอใช้";
+											}
+	?>
+										</p>
+										
+									</div>
 								</div>
 							</div>
-							<br class="clear"/> 
+							<br class="clear"/>
 <?php
 						}
 					}
 ?>
+
 					<p class="grid_2">
 						ความสามารถพิเศษ
 					</p>
