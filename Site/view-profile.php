@@ -265,7 +265,7 @@ else{
 						}
 					}
 ?>
-					<h2 id="sub-title">ความสามารถพิเศษ<span class="right"><a href="<?php echo $rootpath; ?>edit-talent.php" class="button round black right">แก้ไข</a></span></h2>
+					<h2 id="sub-title">ความสามารถพิเศษ<span class="right"><a href="<?php echo $rootpath; ?>add-talent.php" class="button round black right">แก้ไข</a></span></h2>
 					<p class="grid_2">
 						ทักษะด้านภาษา
 					</p>
