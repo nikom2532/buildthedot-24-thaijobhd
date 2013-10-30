@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 30, 2013 at 03:57 PM
+-- Generation Time: Oct 30, 2013 at 03:59 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.3.10-1ubuntu3.7
 
@@ -226,14 +226,14 @@ INSERT INTO `buildthedot_thaijobhd_user_history_experiences` (`user_history_expe
 --
 
 CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_history_talent_language` (
-  `user_history_talent_id` int(50) NOT NULL AUTO_INCREMENT,
-  `user_account_id` int(11) NOT NULL,
+  `user_history_talent_language_id` int(50) NOT NULL AUTO_INCREMENT,
+  `user_account_id` int(50) NOT NULL,
   `language` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `score_speaking` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
   `score_understanding` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
   `score_reading` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
   `score_writing` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`user_history_talent_id`)
+  PRIMARY KEY (`user_history_talent_language_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -243,10 +243,10 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_history_talent_language` 
 --
 
 CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_history_talent_others` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_account_id` int(11) NOT NULL,
+  `user_history_talent_other_id` int(50) NOT NULL AUTO_INCREMENT,
+  `user_account_id` int(50) NOT NULL,
   `topic` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`user_history_talent_other_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
