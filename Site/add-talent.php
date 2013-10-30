@@ -226,7 +226,7 @@ else{
 										}
 ?>
 									</p>
-									<p class="grid_1 center"><a href="<?php echo $rootpath; ?>edit-experience.php?id=<?php echo $rs_experiences["user_history_experiences_id"]; ?>" class="text-blue">แก้ไข</a></p>
+									<p class="grid_1 center"><a href="<?php echo $rootpath; ?>edit-talent.php?id=<?php echo $rs_talent["user_history_talent_languages_id"]; ?>" class="text-blue">แก้ไข</a></p>
 									<p class="grid_1 center"><a href="#" class="text-red">ลบ</a></p>
 								</div>
 							</div>
