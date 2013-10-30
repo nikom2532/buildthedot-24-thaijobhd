@@ -32,7 +32,7 @@
 		});
 	});
 </script>		
-<<<<<<< HEAD
+
 	<?php 
 	$Admin = "a@a.com";
 	$sql = "SELECT email, job_status FROM buildthedot_thaijobhd_user_account WHERE email = '$Admin'";
@@ -92,7 +92,7 @@
 													while($show = mysql_fetch_array($resultSQL))
 													{
 														$attID = $show['AttributeID'];	
-														$attDes  = $show['AttribuetDescription'];
+														$attDes  = $show['AtrributDescription'];
 													?>
 														<input type="text" id="edu" class="eduction" name="edu[]" value="<?php echo "$attDes";?>"/>
 														<a href="#" class="table-actions-button-del" id="<?php echo $attID; ?>"><font color="red">ลบ</font></a>

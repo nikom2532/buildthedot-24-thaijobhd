@@ -50,7 +50,7 @@ include("include/connect-to-database.php");
 //For Development mode(No need to login)
 // $_SESSION["userid"] = "1";
 
-if (FALSE /*$_SESSION["userid"] == ""*/) {
+if ($_SESSION["userid"] == "") {
 	include ($rootadminpath . "include/login.php");
 	include ("include/footer.php");
 } 
@@ -120,9 +120,9 @@ else {
 								<tbody>
 	<?php
 									$i=1;
-									if($_GET["page"] ==""){
+								/*	if($_GET["page"] ==""){
 										$_GET["page"] = 1;
-									}
+									}*/
 									// $sql="
 										// SELECT * 
 										// FROM  `buildthedot_thaijobhd_job_idea`

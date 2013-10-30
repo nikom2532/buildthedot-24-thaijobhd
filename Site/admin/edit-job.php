@@ -3,7 +3,7 @@
 <?php include("include/connect-to-database.php");?>
 <?php session_start();?>
 <script type="text/javascript">
-<!--calendar -->
+//<!--calendar -->
 	$(function() {
 		$( "#date_from" ).datepicker({
 			inline:true,
@@ -28,9 +28,7 @@
 		});
 		 
 	});
-	
-<<<<<<< HEAD
-=======
+
 
 	function check_value_data()
 	{
@@ -100,7 +98,6 @@
 		
 		
 	}
->>>>>>> 0c67dceb2e06ae724bec53a5e37405d86cce0e5f
 </script>
 
 <?php 
@@ -119,8 +116,10 @@ if ($_SESSION["userid"] == "") {
 } 
 else {
 	//check for Logout mode
-	if($_GET["mode"]=="logout"){
-		include($rootadminpath."include/module/logout_process.php");
+	if(isset($_GET["mode"])){
+		if($_GET["mode"]=="logout"){
+			include($rootadminpath."include/module/logout_process.php");
+		}
 	}
 	//normal mode
 	else{
@@ -197,7 +196,6 @@ else {
 		                          </div><br class="clear"/>
 		                          <div class="grid_2">
 		                             <h6 class="detail-title">ตำแหน่ง(ไทย)</h6>
-<<<<<<< HEAD
 		                          </div>
 		                          <div class="grid_8">
 		                          		<p><input type="text" id="PositionThaiName" name ="PositionThaiName" class="round" value="<?php echo $postionThai ;?>"/></p>
@@ -206,7 +204,7 @@ else {
 		                             <h6 class="detail-title">ตำแหน่ง(อังกฤษ)</h6>
 		                          </div>
 		                          <div class="grid_8">
-=======
+
 		                          </div>
 		                          <div class="grid_8">
 		                          		<p><input type="text" id="PositionThaiName" name ="PositionThaiName" class="round" value="<?php echo $postionThai ;?>"/></p>
@@ -215,7 +213,6 @@ else {
 		                             <h6 class="detail-title">ตำแหน่ง(อังกฤษ)</h6>
 		                          </div>
 		                          <div class="grid_8">
->>>>>>> 0c67dceb2e06ae724bec53a5e37405d86cce0e5f
 		                          		<p><input type="text" id="PositionEngName" name ="PositionEngName" class="round" value="<?php echo $postionEng;?>"/></p>
 		                          </div><br class="clear"/>
 		                          <div class="grid_2">
@@ -280,11 +277,10 @@ else {
 		                                <h6 class="detail-title">งานแนะนำ - <?php if($recomment == 1){echo "Recomment";}else{echo "Non recomment";}?> </h6>   
 		                          </div>
 		                          <div class="grid_8">
-<?php //<<<<<<< HEAD ?>
-		                          		<!-- <p><input type="checkbox" id="recommend" value="re" />แนะนำ</p> -->
-<?php // ======= ?>
+
+		                          		<!-- <p><input type="checkbox" id="recommend" value="re" />แนะนำ</p> --><?php // ======= ?>
 		                          		<p><input type="checkbox" id="recommend" value="re" name="recomment"/>แนะนำ</p>
-<?php //>>>>>>> 0c67dceb2e06ae724bec53a5e37405d86cce0e5f ?>
+
 		                          </div><br class="clear"/>
 		
 		                          <br class="clear"/>
@@ -294,7 +290,7 @@ else {
 		                         	
 		                         	  <br class="clear"/>
 		                              <div class="grid_10">
-		                                   <?php 
+		                              <?php 
 		                         	  	$SQL = "SELECT * FROM buildthedot_thaijobhd_job_attribute WHERE JobId = '$jid' ";
 										$resultSQL = mysql_query($SQL);
 										$i = 0;
@@ -303,22 +299,21 @@ else {
 											while($show = mysql_fetch_array($resultSQL))
 											{
 												$attID = $show['AttributeID'];	
-												$attDes  = $show['AttribuetDescription'];
+												$attDes  = $show['AtrributDescription'];
 												$i = 1;
 											?>
-												 <div class="grid_5"><?php echo "$attDes"; ?></div>
-											<?php
+												 <div class="grid_5"><?php echo $attDes; ?></div>
+										<?php
 											}
 										}                     	  
 		                         	  
 		                         	  	if($i == 1)
 										{
-		                         	  ?>
-		                                   
+		                         	  ?>          
 		                                    <div class="grid_3">
 		                                    	<a href="edit-job-attribute.php" class="table-actions-button text-blue">แก้ไข</a>
 		                                    </div>
-		                               <?php } ?>  
+		                         <?php 	} ?>  
 		                                    <br class="clear"/>
 		                                    	<a href="add-job-attribute-two.php" class="table-actions-button text-red">เพิ่ม</a>
 		                              </div>
@@ -363,14 +358,9 @@ else {
 				</script>	
 			<?php 
 	}
-	
-	?>
-<<<<<<< HEAD
-<?php include("include/footer.php");?>
-=======
-<?php include("include/footer.php");
+
+	include("include/footer.php");
 	}
 }
 ?>
 	
->>>>>>> 0c67dceb2e06ae724bec53a5e37405d86cce0e5f

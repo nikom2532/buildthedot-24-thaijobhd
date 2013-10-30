@@ -1,10 +1,10 @@
 <?php include("include/header2.php");?>
 <?php include("include/top-bar.php");?>
 <?php include("include/connect-to-database.php");?>
-<?php session_start();
+<?php 
+	session_start();
 	$_SESSION['count'] = 1;
 	$count = $_SESSION['count'];
-
 ?>
 <script src="js/jquery-1.7.1.min.js"></script>
 <script>
@@ -29,7 +29,7 @@
 		});
 </script>
 <?php 
-<<<<<<< HEAD
+
 	$Admin = "a@a.com";
 	$sql = "SELECT email, job_status FROM buildthedot_thaijobhd_user_account WHERE email = '$Admin'";
 	$result = mysql_query($sql);
@@ -109,7 +109,7 @@
 											while($show = mysql_fetch_array($resultSQL))
 											{
 												$attID = $show['AttributeID'];	
-												$attDes  = $show['AttribuetDescription'];
+												$attDes  = $show['AtrributDescription'];
 												$i = 1;
 											?>
 												 <div class="grid_5"><?php echo "$attDes"; ?></div>
@@ -175,7 +175,8 @@
 	
 	?>
 <?php include("include/footer.php");?>
-=======
+<?php
+/*
 $rootpath="../";
 $rootadminpath="./";
 include($rootadminpath."include/header.php");
@@ -338,5 +339,6 @@ else {
 			include("include/footer.php");
 	}
 }
+ */
 ?>
->>>>>>> 0c67dceb2e06ae724bec53a5e37405d86cce0e5f
+
