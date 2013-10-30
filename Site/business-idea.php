@@ -31,7 +31,7 @@ include ($rootpath . "include/top-menu.php");
 <?php
 		$i=1;
 		@get();
-		  
+		 // echo $_GET['page'];
 		/*if($_GET["page"] ==""){
 			$_GET["page"] = 1;
 		}
@@ -109,31 +109,7 @@ include ($rootpath . "include/top-menu.php");
 		<?php */ ?>
 
 	</div>
-	<div class="grid_12" id="page-num">
-		<ul>
-			<li>
-				<a href="#"><<</a>
-			</li>
-			<li class="active-page">
-				<a href="#">1</a>
-			</li>
-			<li>
-				<a href="#">2</a>
-			</li>
-			<li>
-				<a href="#">3</a>
-			</li>
-			<li>
-				<a href="#">4</a>
-			</li>
-			<li>
-				<a href="#">5</a>
-			</li>
-			<li>
-				<a href="#">>></a>
-			</li>
-		</ul>
-	</div>
+	
 </div><!--end content -->
 <?php
 	include ("include/footer.php");
@@ -145,5 +121,4 @@ include ($rootpath . "include/top-menu.php");
 				$_GET["page"] = 1;
 		}
 	}
-?>
 ?>

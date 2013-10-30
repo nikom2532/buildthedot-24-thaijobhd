@@ -1,9 +1,11 @@
 <?php
+$rootpath = "./";
+$rootadminpath = "./admin/";
 include ("include/header.php");
+include ("admin/include/connect-to-database.php");
+include ("include/top-menu.php");  
 ?>
-<?php
-	include ("include/top-menu.php");
-?>
+
 <div id="content" class="container_12">
 	<div class="grid_12" id="condition">
 		<div id="head-title">

@@ -15,9 +15,10 @@ include ($rootpath . "include/top-menu.php");
 <?php
 			$CompanyID = $_GET["id"];
 			$i=1;
-			if($_GET["page"] ==""){
+			@get();
+			/*if($_GET["page"] ==""){
 				$_GET["page"] = 1;
-			}
+			}*/
 			// $sql="
 				// SELECT * 
 				// FROM  `buildthedot_thaijobhd_job_idea`
@@ -94,4 +95,11 @@ include ($rootpath . "include/top-menu.php");
 </div><!--end content -->
 <?php
 	include ("include/footer.php");
+	function get()
+	{
+		if($_GET["page"] =="")
+		{
+				$_GET["page"] = 1;
+		}
+	}
 ?>
