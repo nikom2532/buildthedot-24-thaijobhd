@@ -24,124 +24,37 @@ else{
 					<div id="head-title">
 						<h1>ฝากประวัติ <span class="text-blue">-  แก้ไขความสามารถพิเศษ</span></h1>
 					</div>
-					<p>
-						ทักษะด้านภาษา
-					</p>
-					<h4 class="text-blue">เลือกภาษา
-						<select class="text-blue" name="language">
-<?php
-							include($rootpath."include/initial/edit-talent-language-php.php");
-							for ($i=0; $i < count($language); $i++) { 
-?>
-								  <option value="volvo"><?php echo $language[$i]; ?></option>
-<?php
-							}
-?>
-						</select>
-					</h4>
-					<div id="content-profile-table">
-						<div id="head-table">
-							<p class="grid_3 center">
-								การพูด
-							</p>
-							<p class="grid_3 center">
-								ความเข้าใจ
-							</p>
-							<p class="grid_3 center">
-								การอ่าน
-							</p>
-							<p class="grid_3 center">
-								การเขียน
-							</p>
-						</div>
-					</div>
 					<br class="clear"/>
-					<div id="content-profile-table">
-						<div id="table-content">
-							<section class="grid_3 center">
-								<label for="read" class="alt-label">
-									<input type="radio" id="test" name="test" checked="checked" />
-									ดีมาก </label>
-								<label for="read" class="alt-label">
-									<input type="radio" id="test" name="test" />
-									ดี </label>
-								<label for="read" class="alt-label">
-									<input type="radio" id="test" name="test" />
-									พอใช้ </label>
-							</section>
-							<section class="grid_3 center">
-								<label for="" class="alt-label">
-									<input type="radio" id="test" name="test" checked="checked" />
-									ดีมาก </label>
-								<label for="" class="alt-label">
-									<input type="radio" id="test" name="test" />
-									ดี </label>
-								<label for="" class="alt-label">
-									<input type="radio" id="test" name="test" />
-									พอใช้ </label>
-							</section>
-							<section class="grid_3 center">
-								<label for="" class="alt-label">
-									<input type="radio" id="test" name="test" checked="checked" />
-									ดีมาก </label>
-								<label for="" class="alt-label">
-									<input type="radio" id="test" name="test" />
-									ดี </label>
-								<label for="" class="alt-label">
-									<input type="radio" id="test" name="test" />
-									พอใช้ </label>
-							</section>
-							<p class="grid_3 center">
-								<label for="" class="alt-label">
-									<input type="radio" id="test" name="test" checked="checked" />
-									ดีมาก </label>
-								<label for="" class="alt-label">
-									<input type="radio" id="test" name="test" />
-									ดี </label>
-								<label for="" class="alt-label">
-									<input type="radio" id="test" name="test" />
-									พอใช้ </label>
-								</section>
-						</div>
-					</div>
-					<br class="clear"/>
-					
-					<h2 class="grid_3"><a href="#" class="add-button black round" onclick="document.getElementById('add_education_form').submit(); ">เพิ่ม</a></h2>
-					
-					<div id="content-profile-table">
-						<div id="head-table1" class="grid_10">
-							<p class="grid_2 center">
-								ตำแหน่ง
-							</p>
-							<p class="grid_3 center">
-								สถานประกอบการ
-							</p>
-							<p class="grid_1 center">
-								ปี
-							</p>
-							<p class="grid_2 center">
-								เงินเดือน
-							</p>
-							<p class="grid_2 center"></p>
-						</div>
-					</div>
 					
 					<br class="clear"/>
 					<p class="grid_12 space-top">
 						ความสามารถพิเศษ
 					</p>
 					<br class="clear"/>
-					<div class="prefix_2">
-						<p class="grid_12">
-							<textarea id="textarea" class="round"></textarea>
-						</p>				
-						<br class="clear"/>
-					</div>
-		
-					<p class="grid_12 center">
-						<a href="#" class="save-button blue round">บันทึก</a>
-					</p>
-		
+					<form id="edit_talent_form" name="edit_talent_form" action="<?php echo $rootpath; ?>include/module/add-talent-others-process.php" method="POST" enctype="multipart/form-data">
+<?php
+						$sql_talent="
+							SELECT * 
+							FROM  `buildthedot_thaijobhd_user_history_talent_others`
+							WHERE `user_account_id` = '".$_SESSION["userid"]."' ;
+						";
+						$result_talent = @mysql_query($sql_talent);
+?>		
+						<div class="prefix_2">
+							<p class="grid_12">
+								<textarea id="topic" name="topic" class="round"><?php 
+									if($rs_talent = @mysql_fetch_array($result_talent)){
+										echo $result_talent["topic"]; 
+									}
+								?></textarea>
+							</p>				
+							<br class="clear"/>
+						</div>
+						
+						<p class="grid_12 center">
+							<a href="#" class="save-button blue round" onclick="document.getElementById('edit_talent_form').submit(); ">บันทึก</a>
+						</p>
+					</form>
 				</div>
 			</div><!--end content -->
 <?php
