@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 27, 2013 at 12:39 PM
+-- Generation Time: Oct 30, 2013 at 03:57 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.3.10-1ubuntu3.7
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `buildthe_ThaiJobHD`
+-- Database: `buildthedot_24ThaiJobHD`
 --
 
 -- --------------------------------------------------------
@@ -39,6 +39,8 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_ad` (
 -- Dumping data for table `buildthedot_thaijobhd_ad`
 --
 
+INSERT INTO `buildthedot_thaijobhd_ad` (`PictureID`, `AdPic`, `AdLink`, `AdType`, `AdPosition`) VALUES
+(11, 'ad_1_Content_Ads_1_1381658798_Add New Patient - Google Chrome_034.png', 'asdf', 'Side_Ads', '5');
 
 -- --------------------------------------------------------
 
@@ -101,6 +103,22 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_job_idea` (
 -- Dumping data for table `buildthedot_thaijobhd_job_idea`
 --
 
+INSERT INTO `buildthedot_thaijobhd_job_idea` (`CompanyID`, `MainIdea`, `Description1`, `Description2`, `Description3`, `Pic1`, `Pic2`, `Pic3`, `IdeaRecomment`, `IdeaTime`, `Status`) VALUES
+(7, 'aa', 'aa', 'aa', 'aa', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 'bi_1_pic2_1381674410_Screenshotfrom2012-09-2719:08:11.png', 'bi_1_pic3_1381674410_Screenshotfrom2013-02-0915:51:37.png', 1, '0000-00-00 00:00:00', 0),
+(8, 'a', 'aa', 'aa', 'aa', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 0, '0000-00-00 00:00:00', 0),
+(9, 'b', 'aa', 'aa', 'aa', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 1, '2013-10-21 00:00:00', 1),
+(10, 'c', 'aa', 'aa', 'aa', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 1, '2013-10-21 00:00:00', 1),
+(11, 'd', 'aa', 'aa', 'aa', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 1, '2013-10-21 00:00:00', 1),
+(12, 'e', 'aa', 'aa', 'aa', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 1, '2013-10-21 00:00:00', 1),
+(13, 'f', 'aa', 'aa', 'aa', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 1, '2013-10-21 00:00:00', 1),
+(14, 'g', 'aa', 'aa', 'aa', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 1, '2013-10-21 00:00:00', 1),
+(15, 'h', 'aa', 'aa', 'aa', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 1, '2013-10-21 00:00:00', 1),
+(16, 'i', 'aa', 'aa', 'aa', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 1, '2013-10-21 00:00:00', 1),
+(17, 'j', 'aa', 'aa', 'aa', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 1, '2013-10-21 00:00:00', 1),
+(18, 'k', 'aa', 'aa', 'aa', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 1, '2013-10-21 00:00:00', 1),
+(19, 'l', 'aa', 'aa', 'aa', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 1, '2013-10-21 00:00:00', 1),
+(20, 'm', 'aa', 'aa', 'aa', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 1, '2013-10-21 00:00:00', 1),
+(21, 'n', 'aa', 'aa', 'aa', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 'bi_1_pic1_1381674410_root@mingLaptop:-home-nikom2532_029.png', 1, '2013-10-21 00:00:00', 1);
 
 -- --------------------------------------------------------
 
@@ -163,35 +181,15 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_history_educations` (
   `year_start` date NOT NULL,
   `year_end` date NOT NULL,
   `educational_background` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`user_history_educations_id`),
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
+  PRIMARY KEY (`user_history_educations_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
 
 --
--- Table structure for table `buildthedot_thaijobhd_user_history_talent_language`
+-- Dumping data for table `buildthedot_thaijobhd_user_history_educations`
 --
 
-CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_history_talent_language` (
-  `user_history_talent_id` int(50) NOT NULL AUTO_INCREMENT,
-  `user_account_id` int(11) NOT NULL,
-  `language` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `score` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`user_history_talent_id`),
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `buildthedot_thaijobhd_user_history_talent_others`
---
-
-CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_history_talent_others` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_account_id` int(11) NOT NULL,
-  `topic` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`),
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+INSERT INTO `buildthedot_thaijobhd_user_history_educations` (`user_history_educations_id`, `user_account_id`, `education_level`, `Institution`, `year_start`, `year_end`, `educational_background`) VALUES
+(5, 1, 'aw213434', 'vsg234234', '2013-10-26', '2013-10-28', 'g234234');
 
 -- --------------------------------------------------------
 
@@ -207,7 +205,48 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_history_experiences` (
   `year_start` date NOT NULL,
   `year_end` date NOT NULL,
   `salary` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`user_history_experiences_id`),
+  PRIMARY KEY (`user_history_experiences_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=13 ;
+
+--
+-- Dumping data for table `buildthedot_thaijobhd_user_history_experiences`
+--
+
+INSERT INTO `buildthedot_thaijobhd_user_history_experiences` (`user_history_experiences_id`, `user_account_id`, `job_position`, `company_name`, `year_start`, `year_end`, `salary`) VALUES
+(8, 1, '3', '5', '2013-10-01', '2013-10-23', '6'),
+(9, 1, '6', '7', '2013-10-01', '2013-10-11', '8'),
+(10, 1, '3dfg', '5dfg', '2013-10-01', '2013-10-23', '6dfg'),
+(11, 1, 'a', 's', '2013-10-04', '2013-10-03', 'f'),
+(12, 1, '', '', '0000-00-00', '0000-00-00', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `buildthedot_thaijobhd_user_history_talent_language`
+--
+
+CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_history_talent_language` (
+  `user_history_talent_id` int(50) NOT NULL AUTO_INCREMENT,
+  `user_account_id` int(11) NOT NULL,
+  `language` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `score_speaking` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
+  `score_understanding` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
+  `score_reading` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
+  `score_writing` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`user_history_talent_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `buildthedot_thaijobhd_user_history_talent_others`
+--
+
+CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_history_talent_others` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_account_id` int(11) NOT NULL,
+  `topic` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
