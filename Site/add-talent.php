@@ -27,14 +27,14 @@ else{
 					<p>
 						ทักษะด้านภาษา
 					</p>
-					<form id="edit_talent_form" name="edit_talent_form" action="<?php echo $rootpath; ?>include/module/...-process.php" method="POST" enctype="multipart/form-data">
+					<form id="edit_talent_form" name="edit_talent_form" action="<?php echo $rootpath; ?>include/module/add-talent-language-process.php" method="POST" enctype="multipart/form-data">
 						<h4 class="text-blue">เลือกภาษา
 							<select class="text-blue" name="language">
 <?php
 								include($rootpath."include/initial/edit-talent-language-php.php");
-								for ($i=0; $i < count($language); $i++) { 
+								for ($i=0; $i < count($language); $i++) {
 ?>
-								  <option value="volvo"><?php echo $language[$i]; ?></option>
+								  <option value="<?php echo $language[$i]; ?>"><?php echo $language[$i]; ?></option>
 <?php
 								}
 ?>
@@ -60,47 +60,47 @@ else{
 						<div id="content-profile-table">
 							<div id="table-content">
 								<section class="grid_3 center">
-									<label for="read" class="alt-label">
-										<input type="radio" id="test" name="test" checked="checked" />
+									<label for="score_speaking1" class="alt-label">
+										<input type="radio" id="score_speaking1" name="score_speaking" value="3" checked="checked" />
 										ดีมาก </label>
-									<label for="read" class="alt-label">
-										<input type="radio" id="test" name="test" />
+									<label for="score_speaking2" class="alt-label">
+										<input type="radio" id="score_speaking2" name="score_speaking" value="2" />
 										ดี </label>
-									<label for="read" class="alt-label">
-										<input type="radio" id="test" name="test" />
+									<label for="score_speaking3" class="alt-label">
+										<input type="radio" id="score_speaking3" name="score_speaking" value="1" />
 										พอใช้ </label>
 								</section>
 								<section class="grid_3 center">
-									<label for="" class="alt-label">
-										<input type="radio" id="test" name="test" checked="checked" />
+									<label for="score_understanding1" class="alt-label">
+										<input type="radio" id="score_understanding1" name="score_understanding" value="3" checked="checked" />
 										ดีมาก </label>
-									<label for="" class="alt-label">
-										<input type="radio" id="test" name="test" />
+									<label for="score_understanding2" class="alt-label">
+										<input type="radio" id="score_understanding2" name="score_understanding" value="2" />
 										ดี </label>
-									<label for="" class="alt-label">
-										<input type="radio" id="test" name="test" />
+									<label for="score_understanding3" class="alt-label">
+										<input type="radio" id="score_understanding3" name="score_understanding" value="1" />
 										พอใช้ </label>
 								</section>
 								<section class="grid_3 center">
-									<label for="" class="alt-label">
-										<input type="radio" id="test" name="test" checked="checked" />
+									<label for="score_reading1" class="alt-label">
+										<input type="radio" id="score_reading1" name="score_reading" checked="checked" value="3" />
 										ดีมาก </label>
-									<label for="" class="alt-label">
-										<input type="radio" id="test" name="test" />
+									<label for="score_reading2" class="alt-label">
+										<input type="radio" id="score_reading2" name="score_reading" value="2" />
 										ดี </label>
-									<label for="" class="alt-label">
-										<input type="radio" id="test" name="test" />
+									<label for="score_reading3" class="alt-label">
+										<input type="radio" id="score_reading3" name="score_reading" value="1" />
 										พอใช้ </label>
 								</section>
 								<p class="grid_3 center">
-									<label for="" class="alt-label">
-										<input type="radio" id="test" name="test" checked="checked" />
+									<label for="score_writing1" class="alt-label">
+										<input type="radio" id="score_writing1" name="score_writing" value="3" checked="checked" />
 										ดีมาก </label>
-									<label for="" class="alt-label">
-										<input type="radio" id="test" name="test" />
+									<label for="score_writing2" class="alt-label">
+										<input type="radio" id="score_writing2" name="score_writing" value="2" />
 										ดี </label>
-									<label for="" class="alt-label">
-										<input type="radio" id="test" name="test" />
+									<label for="score_writing3" class="alt-label">
+										<input type="radio" id="score_writing3" name="score_writing" value="1" />
 										พอใช้ </label>
 									</section>
 							</div>
@@ -111,103 +111,151 @@ else{
 						
 						<br class="clear"/>
 					</form>
-					
-					
 					<div id="content-profile-table">
-						<div id="head-table1" class="grid_10">
+						<div id="head-table1" class="grid_12">
+							<p class="grid_2 center">
+								ภาษา
+							</p>
 							<p class="grid_2 center">
 								การพูด
 							</p>
-							<p class="grid_3 center">
+							<p class="grid_2 center">
 								ความเข้าใจ
 							</p>
-							<p class="grid_1 center">
+							<p class="grid_2 center">
 								การอ่าน
 							</p>
 							<p class="grid_2 center">
 								การเขียน
 							</p>
-							<p class="grid_2 center"></p>
+							<p class="grid_1 center"></p>
 						</div>
 					</div>
 					<br class="clear"/>
-					
 <?php
-						$sql_edu="
-							SELECT *, YEAR(`year_start`) AS year_start_1, YEAR(`year_end`) AS year_end_1
-							FROM  `buildthedot_thaijobhd_user_history_experiences`
-							WHERE `user_account_id` = '".$_SESSION["userid"]."' ;
-						";
-						$result_edu = @mysql_query($sql_edu);
-						if(@mysql_num_rows($result_edu)==0){
+					$sql_talent="
+						SELECT * 
+						FROM  `buildthedot_thaijobhd_user_history_talent_languages`
+						WHERE `user_account_id` = '".$_SESSION["userid"]."' ;
+					";
+					$result_talent = @mysql_query($sql_talent);
+					if(@mysql_num_rows($result_talent)==0){
+?>
+						<div id="content-profile-table">
+							<div id="table-content">
+								<p class="grid_2 center">
+									-
+								</p>
+								<p class="grid_2 center">
+									-
+								</p>
+								<p class="grid_2 center">
+									-
+								</p>
+								<p class="grid_2 center">
+									-
+								</p>
+								<p class="grid_2 center">
+									-
+								</p>
+								<p class="grid_2 center">
+									
+								</p>
+							</div>
+						</div>
+						<br class="clear"/>
+<?php
+					}
+					else{
+						while($rs_talent = @mysql_fetch_array($result_talent)){
 ?>
 							<div id="content-profile-table">
 								<div id="table-content">
 									<p class="grid_2 center">
-										-
-									</p>
-									<p class="grid_3 center">
-										-
-									</p>
-									<p class="grid_1 center">
-										-
+										<?php echo $rs_talent["language"]; ?>
 									</p>
 									<p class="grid_2 center">
-										-
+<?php
+										if($rs_talent["score_speaking"]=="3"){
+											echo "ดีมาก";
+										}
+										elseif($rs_talent["score_speaking"]=="2"){
+											echo "ดี";
+										}
+										elseif($rs_talent["score_speaking"]=="1"){
+											echo "พอใช้";
+										}
+?>
 									</p>
 									<p class="grid_2 center">
-										
+<?php
+										if($rs_talent["score_understanding"]=="3"){
+											echo "ดีมาก";
+										}
+										elseif($rs_talent["score_understanding"]=="2"){
+											echo "ดี";
+										}
+										elseif($rs_talent["score_understanding"]=="1"){
+											echo "พอใช้";
+										}
+?>
 									</p>
+									<p class="grid_2 center">
+<?php
+										if($rs_talent["score_reading"]=="3"){
+											echo "ดีมาก";
+										}
+										elseif($rs_talent["score_reading"]=="2"){
+											echo "ดี";
+										}
+										elseif($rs_talent["score_reading"]=="1"){
+											echo "พอใช้";
+										}
+?>
+									</p>
+									<p class="grid_2 center">
+<?php
+										if($rs_talent["score_writing"]=="3"){
+											echo "ดีมาก";
+										}
+										elseif($rs_talent["score_writing"]=="2"){
+											echo "ดี";
+										}
+										elseif($rs_talent["score_writing"]=="1"){
+											echo "พอใช้";
+										}
+?>
+									</p>
+									<p class="grid_1 center"><a href="<?php echo $rootpath; ?>edit-experience.php?id=<?php echo $rs_experiences["user_history_experiences_id"]; ?>" class="text-blue">แก้ไข</a></p>
+									<p class="grid_1 center"><a href="#" class="text-red">ลบ</a></p>
 								</div>
 							</div>
 							<br class="clear"/>
 <?php
 						}
-						else{
-							while($rs_experiences = @mysql_fetch_array($result_edu)){
+					}
 ?>
-								<div id="content-profile-table">
-									<div id="table-content">
-										<p class="grid_2 center">
-											<?php echo $rs_experiences["job_position"]; ?>
-										</p>
-										<p class="grid_3 center">
-											<?php echo $rs_experiences["company_name"]; ?>
-										</p>
-										<p class="grid_1 center">
-											<?php echo $rs_experiences["year_start_1"]." - ".$rs_experiences["year_end_1"]; ?>
-										</p>
-										<p class="grid_2 center">
-											<?php echo $rs_experiences["salary"]; ?>
-										</p>
-									<p class="grid_1 center"><a href="<?php echo $rootpath; ?>edit-experience.php?id=<?php echo $rs_experiences["user_history_experiences_id"]; ?>" class="text-blue">แก้ไข</a></p>
-									<p class="grid_1 center"><a href="#" class="text-red">ลบ</a></p>
-									</div>
-								</div>
-								<br class="clear"/>
-<?php
-							}
-						}
-?>
-					<p class="grid_12 center">
-						<a href="<?php echo $rootpath; ?>view-profile.php" class="save-button blue round">กลับหน้า ฝากประวัติ</a>
-					</p>
-					
-					
 					<br class="clear"/>
 					<p class="grid_12 space-top">
 						ความสามารถพิเศษ
+						<span class="right">
+							<a href="<?php echo $rootpath; ?>edit-talent-special.php" class="save-button black round right">แก้ไขความสามารถพิเศษ</a>
+						</span>
 					</p>
 					<br class="clear"/>
 					<div class="prefix_2">
 						<p class="grid_12">
-							<textarea id="textarea" class="round"></textarea>
+<?php
+							$sql_talent_special="
+							
+							";
+?>
 						</p>				
 						<br class="clear"/>
 					</div>
 		
 					<p class="grid_12 center">
-						<a href="#" class="save-button blue round">บันทึก</a>
+						<a href="<?php echo $rootpath; ?>view-profile.php" class="save-button blue round">กลับหน้า ฝากประวัติ</a>
 					</p>
 		
 				</div>
