@@ -117,13 +117,6 @@ else{
 					</p>
 					<br class="clear"/>
 					<p class="grid_2">
-						สถานะ
-					</p>
-					<p class="grid_8">
-						<input type="text" id="name" name ="name" class="round" />
-					</p>
-					<br class="clear"/>
-					<p class="grid_2">
 						ชื่อคู่สมรส
 					</p>
 					<p class="grid_8">
@@ -132,13 +125,6 @@ else{
 					<br class="clear"/>
 					<p class="grid_2">
 						จำนวนบุตร
-					</p>
-					<p class="grid_8">
-						<input type="text" id="name" name ="name" class="round" />
-					</p>
-					<br class="clear"/>
-					<p class="grid_2">
-						Lorem Ipsum
 					</p>
 					<p class="grid_8">
 						<input type="text" id="name" name ="name" class="round" />
