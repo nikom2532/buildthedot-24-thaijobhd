@@ -298,7 +298,15 @@ else{
 								ถึงแก่กรรม </label>
 						</p>
 						<br class="clear"/>
-			
+<?php
+						$rs_user_ref="
+							SELECT *
+							FROM  `buildthedot_thaijobhd_user_account_reference_contacts`
+							WHERE `user_account_id` = '".$_SESSION["userid"]."' ;
+						";
+						$result_user_ref = @mysql_query($rs_user_ref);
+						$rs_user_ref = @mysql_fetch_array($result_user_ref)
+?>
 						<p class="grid_4">
 							บุคคลอ้างอิงที่ติดต่อได้
 						</p>
@@ -308,7 +316,7 @@ else{
 							ชื่อ
 						</p>
 						<p class="grid_2">
-							<input type="text" id="name" name ="name" class="round" />
+							<input type="text" id="ref_name" name ="ref_name" class="round" value="<?php echo $$rs_user_ref["name"]; ?>" />
 						</p>
 						<br class="clear"/>
 			
@@ -316,7 +324,7 @@ else{
 							ความสัมพันธ์
 						</p>
 						<p class="grid_2">
-							<input type="text" id="name" name ="name" class="round" />
+							<input type="text" id="ref_relationship" name ="ref_relationship" class="round" value="<?php echo $$rs_user_ref["relationship"]; ?>" />
 						</p>
 						<br class="clear"/>
 			
@@ -324,7 +332,7 @@ else{
 							สถานที่ทำงาน
 						</p>
 						<p class="grid_2">
-							<input type="text" id="name" name ="name" class="round" />
+							<input type="text" id="ref_workplace" name ="ref_workplace" class="round" value="<?php echo $$rs_user_ref["workplace"]; ?>" />
 						</p>
 						<br class="clear"/>
 			
@@ -332,7 +340,7 @@ else{
 							ตำแหน่ง
 						</p>
 						<p class="grid_2">
-							<input type="text" id="name" name ="name" class="round" />
+							<input type="text" id="ref_position" name ="ref_position" class="round" value="<?php echo $$rs_user_ref["position"]; ?>" />
 						</p>
 						<br class="clear"/>
 			
@@ -340,12 +348,12 @@ else{
 							เบอร์โทรศัพท์
 						</p>
 						<p class="grid_2">
-							<input type="text" id="name" name ="name" class="round" />
+							<input type="text" id="ref_phone_number" name ="ref_phone_number" class="round" value="<?php echo $$rs_user_ref["phone_number"]; ?>" />
 						</p>
 						<br class="clear"/>
 			
 						<p class="grid_12 center">
-							<a href="#" class="save-button blue round">บันทึก</a>
+							<a href="#" onclick="document.getElementById('edit_profile_form').submit(); " class="save-button blue round">บันทึก</a>
 						</p>
 					</form>
 				</div>
