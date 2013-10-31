@@ -32,7 +32,57 @@ else{
 					<br class="clear"/>
 		
 					<p class="grid_2">
-						Lorem Ipsum
+						วันเกิด
+					</p>
+					<p class="grid_8">
+						<input type="text" id="name" name ="name" class="round" />
+					</p>
+					<br class="clear"/>
+					
+					<p class="grid_2">
+						สถาทที่เกิด
+					</p>
+					<p class="grid_8">
+						<input type="text" id="name" name ="name" class="round" />
+					</p>
+					<br class="clear"/>
+					<p class="grid_2">
+						อายุ
+					</p>
+					<p class="grid_8">
+						<input type="text" id="name" name ="name" class="round" />
+					</p>
+					<br class="clear"/>
+					<p class="grid_2">
+						สัญชาติ
+					</p>
+					<p class="grid_8">
+						<input type="text" id="name" name ="name" class="round" />
+					</p>
+					<br class="clear"/>
+					<p class="grid_2">
+						ศาสนา
+					</p>
+					<p class="grid_8">
+						<input type="text" id="name" name ="name" class="round" />
+					</p>
+					<br class="clear"/>
+					<p class="grid_2">
+						ส่วนสูง
+					</p>
+					<p class="grid_8">
+						<input type="text" id="name" name ="name" class="round" />
+					</p>
+					<br class="clear"/>
+					<p class="grid_2">
+						น้ำหนัก
+					</p>
+					<p class="grid_8">
+						<input type="text" id="name" name ="name" class="round" />
+					</p>
+					<br class="clear"/>
+					<p class="grid_2">
+						หมู่เลือด
 					</p>
 					<p class="grid_8">
 						<input type="text" id="name" name ="name" class="round" />
@@ -45,7 +95,98 @@ else{
 						<input type="text" id="name" name ="name" class="round" />
 					</p>
 					<br class="clear"/>
-		
+					<p class="grid_2">
+						ตำหนิ
+					</p>
+					<p class="grid_8">
+						<input type="text" id="name" name ="name" class="round" />
+					</p>
+					<br class="clear"/>
+					<p class="grid_2">
+						ที่อยู่ปัจจุบัน
+					</p>
+					<p class="grid_8">
+						<input type="text" id="name" name ="name" class="round" />
+					</p>
+					<br class="clear"/>
+					<p class="grid_2">
+						เบอร์โทรศัพท์
+					</p>
+					<p class="grid_8">
+						<input type="text" id="name" name ="name" class="round" />
+					</p>
+					<br class="clear"/>
+					<p class="grid_2">
+						E-mail
+					</p>
+					<p class="grid_8">
+						<input type="text" id="name" name ="name" class="round" />
+					</p>
+					<br class="clear"/>
+					<p class="grid_2">
+						สถานะที่อยู่
+					</p>
+					<p class="grid_8">
+						<input type="text" id="name" name ="name" class="round" />
+					</p>
+					<br class="clear"/>
+					<p class="grid_2">
+						สถานะ
+					</p>
+					<p class="grid_8">
+						<input type="text" id="name" name ="name" class="round" />
+					</p>
+					<br class="clear"/>
+					<p class="grid_2">
+						ชื่อคู่สมรส
+					</p>
+					<p class="grid_8">
+						<input type="text" id="name" name ="name" class="round" />
+					</p>
+					<br class="clear"/>
+					<p class="grid_2">
+						จำนวนบุตร
+					</p>
+					<p class="grid_8">
+						<input type="text" id="name" name ="name" class="round" />
+					</p>
+					<br class="clear"/>
+					<p class="grid_2">
+						ชื่อบิดา
+					</p>
+					<p class="grid_8">
+						<input type="text" id="name" name ="name" class="round" />
+					</p>
+					<br class="clear"/>
+					<p class="grid_2">
+						ชื่อมารดา
+					</p>
+					<p class="grid_8">
+						<input type="text" id="name" name ="name" class="round" />
+					</p>
+					<br class="clear"/>
+					<p class="grid_2">
+						สถานะทางทหาร
+					</p>
+					<p class="grid_8">
+						<input type="text" id="name" name ="name" class="round" />
+					</p>
+					<br class="clear"/>
+					<p class="grid_2">
+						บุคคลอ้างอิงที่ติดต่อได้
+					</p>
+					<p class="grid_8">
+						<input type="text" id="name" name ="name" class="round" />
+					</p>
+					<br class="clear"/>
+					<p class="grid_2">
+						Lorem Ipsum
+					</p>
+					<p class="grid_8">
+						<input type="text" id="name" name ="name" class="round" />
+					</p>
+					<br class="clear"/>
+					
 					<p class="grid_4 prefix_2">
 						<label for="" class="alt-label">
 							<input type="radio" id="test" name="test" checked="checked" />
