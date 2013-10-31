@@ -40,7 +40,7 @@ $buildthedot_thaijobhd_job_idea = array(
 
 // `buildthedot_24ThaiJobHD`.`buildthedot_thaijobhd_user_account`
 $buildthedot_thaijobhd_user_account = array(
-  array('id' => '1','email' => 'a@a.com','password' => '77de54ccf56eb6f7dbf99e4d3be949ab6f9b0a55df8ac28564cb9f63a10be8af6ab3f7c2','firstname' => 'a','midname' => 'a','lastname' => 'a','profile_picture' => '','job_id' => '1','job_status' => '1','admin_status' => '1','place_of_birth' => '','age' => '0','nationality' => '','religion' => '','height' => '0','weight' => '0','blood' => '','lesion' => '','address' => '','phone_number' => '','relationship_status' => '','pouse_name' => '','number_of_children' => '0','military_status' => '','current_address_status' => '','father_name' => '','father_age' => '0','father_career' => '','father_live_status' => '','mother_name' => '','mother_age' => '0','mother_career' => '','mother_live_status' => '')
+  array('id' => '1','email' => 'a@a.com','password' => '77de54ccf56eb6f7dbf99e4d3be949ab6f9b0a55df8ac28564cb9f63a10be8af6ab3f7c2','firstname' => 'a','midname' => 'a','lastname' => 'a','profile_picture' => '','job_id' => '1','job_status' => '1','admin_status' => '1','birthdate' => '0000-00-00','place_of_birth' => '','age' => '0','nationality' => '','religion' => '','height' => '0','weight' => '0','blood' => '','lesion' => '','address' => '','phone_number' => '','relationship_status' => '','pouse_name' => '','number_of_children' => '0','military_status' => '','current_address_status' => '','father_name' => '','father_age' => '0','father_career' => '','father_live_status' => '','mother_name' => '','mother_age' => '0','mother_career' => '','mother_live_status' => '')
 );
 
 );

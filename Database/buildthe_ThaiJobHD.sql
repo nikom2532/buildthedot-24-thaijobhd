@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 31, 2013 at 05:58 PM
+-- Generation Time: Oct 31, 2013 at 06:13 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.3.10-1ubuntu3.7
 
@@ -155,6 +155,7 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_account` (
   `job_id` int(40) NOT NULL,
   `job_status` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `admin_status` int(1) NOT NULL,
+  `birthdate` date NOT NULL,
   `place_of_birth` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `age` int(10) NOT NULL,
   `nationality` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
@@ -186,8 +187,8 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_account` (
 -- Dumping data for table `buildthedot_thaijobhd_user_account`
 --
 
-INSERT INTO `buildthedot_thaijobhd_user_account` (`id`, `email`, `password`, `firstname`, `midname`, `lastname`, `profile_picture`, `job_id`, `job_status`, `admin_status`, `place_of_birth`, `age`, `nationality`, `religion`, `height`, `weight`, `blood`, `lesion`, `address`, `phone_number`, `relationship_status`, `pouse_name`, `number_of_children`, `military_status`, `current_address_status`, `father_name`, `father_age`, `father_career`, `father_live_status`, `mother_name`, `mother_age`, `mother_career`, `mother_live_status`) VALUES
-(1, 'a@a.com', '77de54ccf56eb6f7dbf99e4d3be949ab6f9b0a55df8ac28564cb9f63a10be8af6ab3f7c2', 'a', 'a', 'a', '', 1, '1', 1, '', 0, '', '', 0, 0, '', '', '', '', '', '', 0, '', '', '', 0, '', '', '', 0, '', '');
+INSERT INTO `buildthedot_thaijobhd_user_account` (`id`, `email`, `password`, `firstname`, `midname`, `lastname`, `profile_picture`, `job_id`, `job_status`, `admin_status`, `birthdate`, `place_of_birth`, `age`, `nationality`, `religion`, `height`, `weight`, `blood`, `lesion`, `address`, `phone_number`, `relationship_status`, `pouse_name`, `number_of_children`, `military_status`, `current_address_status`, `father_name`, `father_age`, `father_career`, `father_live_status`, `mother_name`, `mother_age`, `mother_career`, `mother_live_status`) VALUES
+(1, 'a@a.com', '77de54ccf56eb6f7dbf99e4d3be949ab6f9b0a55df8ac28564cb9f63a10be8af6ab3f7c2', 'a', 'a', 'a', '', 1, '1', 1, '0000-00-00', '', 0, '', '', 0, 0, '', '', '', '', '', '', 0, '', '', '', 0, '', '', '', 0, '', '');
 
 -- --------------------------------------------------------
 
