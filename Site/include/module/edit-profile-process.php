@@ -47,7 +47,7 @@ else{
 	$result_user = @mysql_query($sql_user);
 	
 	if($rs_user = @mysql_fetch_array($result_user)){
-		$sql_edu="
+		$sql_user_edit="
 			UPDATE `buildthedot_thaijobhd_user_account` 
 			SET
 			`birthdate` =  '{$education_level}' ,
@@ -73,16 +73,38 @@ else{
 			`mother_name` = '{$mother_name}' ,
 			`mother_age` = '{$mother_age}' ,
 			`mother_career` = '{$mother_career}' ,
-			`mother_live_status` = '{$mother_live_status}' ,
-			`ref_name` = '{$ref_name}' ,
-			`ref_relationship` = '{$ref_relationship}' ,
-			`ref_workplace` = '{$ref_workplace}' ,
-			`ref_position` = '{$ref_position}' ,
-			`ref_phone_number` = '{$ref_phone_number}' 
-			WHERE `user_account_id` = '".$_SESSION["userid"]."' 
-			AND `user_history_educations_id` = '{$user_history_educations_id}';
+			`mother_live_status` = '{$mother_live_status}' 
+			WHERE `user_account_id` = '".$_SESSION["userid"]."' ;
 		";
-		@mysql_query($sql_edu);
+		@mysql_query($sql_user_edit);
+		$sql_user_ref="
+			SELECT * 
+			FROM  `buildthedot_thaijobhd_user_account_reference_contacts` 
+			WHERE `user_account_id` = '".$_SESSION["userid"]."' ;
+		";
+		$result_user_ref=@mysql_query($sql_user_ref);
+		if($rs_user_ref=@mysql_fetch_array($result_user_ref)) {
+			$sql_user_ref_update="
+				UPDATE `buildthedot_thaijobhd_user_account_reference_contacts` 
+				SET
+					`ref_name` = '{$ref_name}' ,
+					`ref_relationship` = '{$ref_relationship}' ,
+					`ref_workplace` = '{$ref_workplace}' ,
+					`ref_position` = '{$ref_position}' ,
+					`ref_phone_number` = '{$ref_phone_number}' 
+				WHERE `user_account_id` = '".$_SESSION["userid"]."' ;
+			";
+			@mysql_query($sql_user_ref_update);
+		}
+		else{
+			$sql_user_ref_update="
+				INSERT INTO `buildthedot_thaijobhd_user_account_reference_contacts` 
+				(`user_account_id`, `ref_name`, `ref_relationship`, `ref_workplace`, `ref_position`, `ref_phone_number`)
+				VALUE
+				('".$_SESSION["userid"]."', '{$ref_name}' , '{$ref_relationship}', '{$ref_workplace}', '{$ref_position}', '{$ref_phone_number}') 
+			";
+			@mysql_query($sql_user_ref_update);
+		}
 		?><form id="edit_education_message_form" action="<?php echo $rootpath; ?>view-profile.php" method="POST">
 			<input type="hidden" id="add_education_messaage" name="add_education_messaage" value="" />
 		</form>
