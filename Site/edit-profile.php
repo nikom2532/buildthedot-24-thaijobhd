@@ -35,7 +35,7 @@ else{
 							วันเกิด
 						</p>
 						<p class="grid_8">
-							<input type="text" id="name" name ="name" class="round" />
+							<input type="text" id="birthdate" name ="birthdate" class="round" />
 						</p>
 						<br class="clear"/>
 						
@@ -43,91 +43,91 @@ else{
 							สถาทที่เกิด
 						</p>
 						<p class="grid_8">
-							<input type="text" id="name" name ="name" class="round" />
+							<input type="text" id="place_of_birth" name ="place_of_birth" class="round" />
 						</p>
 						<br class="clear"/>
 						<p class="grid_2">
 							อายุ
 						</p>
 						<p class="grid_8">
-							<input type="text" id="name" name ="name" class="round" />
+							<input type="text" id="age" name ="age" class="round" />
 						</p>
 						<br class="clear"/>
 						<p class="grid_2">
 							สัญชาติ
 						</p>
 						<p class="grid_8">
-							<input type="text" id="name" name ="name" class="round" />
+							<input type="text" id="nationality" name ="nationality" class="round" />
 						</p>
 						<br class="clear"/>
 						<p class="grid_2">
 							ศาสนา
 						</p>
 						<p class="grid_8">
-							<input type="text" id="name" name ="name" class="round" />
+							<input type="text" id="religion" name ="religion" class="round" />
 						</p>
 						<br class="clear"/>
 						<p class="grid_2">
 							ส่วนสูง
 						</p>
 						<p class="grid_8">
-							<input type="text" id="name" name ="name" class="round" />
+							<input type="text" id="height" name ="height" class="round" />
 						</p>
 						<br class="clear"/>
 						<p class="grid_2">
 							น้ำหนัก
 						</p>
 						<p class="grid_8">
-							<input type="text" id="name" name ="name" class="round" />
+							<input type="text" id="weight" name ="weight" class="round" />
 						</p>
 						<br class="clear"/>
 						<p class="grid_2">
 							หมู่เลือด
 						</p>
 						<p class="grid_8">
-							<input type="text" id="name" name ="name" class="round" />
+							<input type="text" id="blood" name ="blood" class="round" />
 						</p>
 						<br class="clear"/>
 						<p class="grid_2">
 							ตำหนิ
 						</p>
 						<p class="grid_8">
-							<input type="text" id="name" name ="name" class="round" />
+							<input type="text" id="lesion" name ="lesion" class="round" />
 						</p>
 						<br class="clear"/>
 						<p class="grid_2">
 							ที่อยู่ปัจจุบัน
 						</p>
 						<p class="grid_8">
-							<input type="text" id="name" name ="name" class="round" />
+							<input type="text" id="current_address" name ="current_address" class="round" />
 						</p>
 						<br class="clear"/>
 						<p class="grid_2">
 							เบอร์โทรศัพท์
 						</p>
 						<p class="grid_8">
-							<input type="text" id="name" name ="name" class="round" />
+							<input type="text" id="phone_number" name ="phone_number" class="round" />
 						</p>
 						<br class="clear"/>
 						<p class="grid_2">
 							E-mail
 						</p>
 						<p class="grid_8">
-							<input type="text" id="name" name ="name" class="round" />
+							<input type="text" id="email" name ="email" class="round" />
 						</p>
 						<br class="clear"/>
 						<p class="grid_2">
 							ชื่อคู่สมรส
 						</p>
 						<p class="grid_8">
-							<input type="text" id="name" name ="name" class="round" />
+							<input type="text" id="pouse_name" name ="pouse_name" class="round" />
 						</p>
 						<br class="clear"/>
 						<p class="grid_2">
 							จำนวนบุตร
 						</p>
 						<p class="grid_8">
-							<input type="text" id="name" name ="name" class="round" />
+							<input type="text" id="number_of_children" name ="number_of_children" class="round" />
 						</p>
 						<br class="clear"/>
 						<p class="grid_2">
@@ -136,20 +136,20 @@ else{
 	
 						
 						<p class="grid_4 ">
-							<label for="" class="alt-label">
-								<input type="radio" id="test" name="test" checked="checked" />
+							<label for="military_status1" class="alt-label">
+								<input type="radio" id="military_status1" name="military_status" checked="checked" />
 								ผ่านการเกณฑ์ทหาร </label>
-							<label for="" class="alt-label">
-								<input type="radio" id="test" name="test" />
+							<label for="military_status2" class="alt-label">
+								<input type="radio" id="military_status2" name="military_status" />
 								ศึกษาวิชาการ </label>
 						</p>
 						<br class="clear"/>
 						<p class="grid_4 prefix_2">
-							<label for="" class="alt-label">
-								<input type="radio" id="test" name="test" checked="checked" />
+							<label for="military_status3" class="alt-label">
+								<input type="radio" id="military_status3" name="military_status" checked="checked" />
 								ได้รับการยกเว้น </label>
-							<label for="" class="alt-label">
-								<input type="radio" id="test" name="test" />
+							<label for="military_status4" class="alt-label">
+								<input type="radio" id="military_status4" name="military_status" />
 								อื่นๆ </label>
 						</p>
 						<br class="clear"/>
@@ -157,14 +157,14 @@ else{
 							สถานะที่อยู่
 						</p>
 						<p class="grid_8">
-							<label for="selected-radio" class="alt-label">
-								<input type="radio" id="test" name="test" checked="checked" />
+							<label for="current_address_status1" class="alt-label">
+								<input type="radio" id="current_address_status1" name="current_address_status" checked="checked" />
 								บ้านส่วนตัว </label>
-							<label for="unselected-radio" class="alt-label">
-								<input type="radio" id="test" name="test" />
+							<label for="current_address_status2" class="alt-label">
+								<input type="radio" id="current_address_status2" name="current_address_status" />
 								บ้านเช่า </label>
-							<label for="unselected-radio" class="alt-label">
-								<input type="radio" id="test" name="test" />
+							<label for="current_address_status3" class="alt-label">
+								<input type="radio" id="current_address_status3" name="current_address_status" />
 								อาศัยบิดามารดา </label>
 						</p>
 						<br class="clear"/>
@@ -173,57 +173,41 @@ else{
 							สถานะ
 						</p>
 						<p class="grid_8">
-							<label for="selected-radio" class="alt-label">
-								<input type="radio" id="test" name="test" checked="checked" />
+							<label for="relationship_status1" class="alt-label">
+								<input type="radio" id="relationship_status1" name="relationship_status" checked="checked" />
 								โสด </label>
-							<label for="unselected-radio" class="alt-label">
-								<input type="radio" id="test" name="test" />
+							<label for="relationship_status2" class="alt-label">
+								<input type="radio" id="relationship_status2" name="relationship_status" />
 								สมรส </label>
-							<label for="unselected-radio" class="alt-label">
-								<input type="radio" id="test" name="test" />
+							<label for="relationship_status3" class="alt-label">
+								<input type="radio" id="relationship_status3" name="relationship_status" />
 								หย่า </label>
-							<label for="unselected-radio" class="alt-label">
-								<input type="radio" id="test" name="test" />
+							<label for="relationship_status4" class="alt-label">
+								<input type="radio" id="relationship_status4" name="relationship_status" />
 								แยกกันอยู่ </label>
 						</p>
 						<br class="clear"/>
 						<p class="grid_2">
-							Lorem Ipsum
-						</p>
-						<p class="grid_8">
-							<input type="text" id="name" name ="name" class="round" />
-						</p>
-						<br class="clear"/>
-			
-						<p class="grid_2">
-							Lorem Ipsum
-						</p>
-						<p class="grid_8">
-							<input type="text" id="name" name ="name" class="round" />
-						</p>
-						<br class="clear"/>
-			
-						<p class="grid_2">
 							ชื่อบิดา
 						</p>
 						<p class="grid_2">
-							<input type="text" id="name" name ="name" class="round" />
+							<input type="text" id="father_name" name ="father_name" class="round" />
 						</p>
 						<br class="clear"/>
 						<p class="grid_2 prefix_2">
 							อายุ
-							<input type="text" id="name" name ="name" class="round input-small" />
+							<input type="text" id="father_age" name ="father_age" class="round input-small" />
 						</p>
 						<p class="grid_2">
 							อาชีพ
-							<input type="text" id="name" name ="name" class="round input-small" />
+							<input type="text" id="father_career" name ="father_career" class="round input-small" />
 						</p>
 						<p class="grid_4">
-							<label for="selected-radio" class="alt-label">
-								<input type="radio" id="test" name="test" checked="checked" />
+							<label for="father_live_status1" class="alt-label">
+								<input type="radio" id="father_live_status1" name="father_live_status" checked="checked" />
 								มีชีวิต </label>
-							<label for="unselected-radio" class="alt-label">
-								<input type="radio" id="test" name="test" />
+							<label for="father_live_status2" class="alt-label">
+								<input type="radio" id="father_live_status2" name="father_live_status" />
 								ถึงแก่กรรม </label>
 						</p>
 						<br class="clear"/>
@@ -232,23 +216,23 @@ else{
 							ชื่อมารดา
 						</p>
 						<p class="grid_2">
-							<input type="text" id="name" name ="name" class="round" />
+							<input type="text" id="mother_name" name ="mother_name" class="round" />
 						</p>
 						<br class="clear"/>
 						<p class="grid_2 prefix_2">
 							อายุ
-							<input type="text" id="name" name ="name" class="round input-small" />
+							<input type="text" id="mother_age" name ="mother_age" class="round input-small" />
 						</p>
 						<p class="grid_2">
 							อาชีพ
-							<input type="text" id="name" name ="name" class="round input-small" />
+							<input type="text" id="mother_career" name ="mother_career" class="round input-small" />
 						</p>
 						<p class="grid_4">
-							<label for="selected-radio" class="alt-label">
-								<input type="radio" id="test" name="test" checked="checked" />
+							<label for="mother_live_status1" class="alt-label">
+								<input type="radio" id="mother_live_status1" name="mother_live_status" checked="checked" />
 								มีชีวิต </label>
-							<label for="unselected-radio" class="alt-label">
-								<input type="radio" id="test" name="test" />
+							<label for="mother_live_status2" class="alt-label">
+								<input type="radio" id="mother_live_status2" name="mother_live_status" />
 								ถึงแก่กรรม </label>
 						</p>
 						<br class="clear"/>
