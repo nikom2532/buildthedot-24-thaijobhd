@@ -35,7 +35,7 @@ else{
 							วันเกิด
 						</p>
 						<p class="grid_8">
-							<input type="text" id="birthdate" name ="birthdate" class="round" />
+							<input type="text" id="birthdate" name ="birthdate" class="round" value="<?php echo $rs_user["birthdate"]; ?>" />
 						</p>
 						<br class="clear"/>
 						
@@ -43,91 +43,91 @@ else{
 							สถาทที่เกิด
 						</p>
 						<p class="grid_8">
-							<input type="text" id="place_of_birth" name ="place_of_birth" class="round" />
+							<input type="text" id="place_of_birth" name ="place_of_birth" class="round" value="<?php echo $rs_user[""]; ?>" />
 						</p>
 						<br class="clear"/>
 						<p class="grid_2">
 							อายุ
 						</p>
 						<p class="grid_8">
-							<input type="text" id="age" name ="age" class="round" />
+							<input type="text" id="age" name ="age" class="round" value="<?php echo $rs_user["birthdate"]; ?>" />
 						</p>
 						<br class="clear"/>
 						<p class="grid_2">
 							สัญชาติ
 						</p>
 						<p class="grid_8">
-							<input type="text" id="nationality" name ="nationality" class="round" />
+							<input type="text" id="nationality" name ="nationality" class="round" value="<?php echo $rs_user["birthdate"]; ?>" />
 						</p>
 						<br class="clear"/>
 						<p class="grid_2">
 							ศาสนา
 						</p>
 						<p class="grid_8">
-							<input type="text" id="religion" name ="religion" class="round" />
+							<input type="text" id="religion" name ="religion" class="round" value="<?php echo $rs_user["birthdate"]; ?>" />
 						</p>
 						<br class="clear"/>
 						<p class="grid_2">
 							ส่วนสูง
 						</p>
 						<p class="grid_8">
-							<input type="text" id="height" name ="height" class="round" />
+							<input type="text" id="height" name ="height" class="round" value="<?php echo $rs_user["birthdate"]; ?>" />
 						</p>
 						<br class="clear"/>
 						<p class="grid_2">
 							น้ำหนัก
 						</p>
 						<p class="grid_8">
-							<input type="text" id="weight" name ="weight" class="round" />
+							<input type="text" id="weight" name ="weight" class="round" value="<?php echo $rs_user["birthdate"]; ?>" />
 						</p>
 						<br class="clear"/>
 						<p class="grid_2">
 							หมู่เลือด
 						</p>
 						<p class="grid_8">
-							<input type="text" id="blood" name ="blood" class="round" />
+							<input type="text" id="blood" name ="blood" class="round" value="<?php echo $rs_user["birthdate"]; ?>" />
 						</p>
 						<br class="clear"/>
 						<p class="grid_2">
 							ตำหนิ
 						</p>
 						<p class="grid_8">
-							<input type="text" id="lesion" name ="lesion" class="round" />
+							<input type="text" id="lesion" name ="lesion" class="round" value="<?php echo $rs_user["birthdate"]; ?>" />
 						</p>
 						<br class="clear"/>
 						<p class="grid_2">
 							ที่อยู่ปัจจุบัน
 						</p>
 						<p class="grid_8">
-							<input type="text" id="current_address" name ="current_address" class="round" />
+							<input type="text" id="current_address" name ="current_address" class="round" value="<?php echo $rs_user["birthdate"]; ?>" />
 						</p>
 						<br class="clear"/>
 						<p class="grid_2">
 							เบอร์โทรศัพท์
 						</p>
 						<p class="grid_8">
-							<input type="text" id="phone_number" name ="phone_number" class="round" />
+							<input type="text" id="phone_number" name ="phone_number" class="round" value="<?php echo $rs_user["birthdate"]; ?>" />
 						</p>
 						<br class="clear"/>
 						<p class="grid_2">
 							E-mail
 						</p>
 						<p class="grid_8">
-							<input type="text" id="email" name ="email" class="round" />
+							<input type="text" id="email" name ="email" class="round" value="<?php echo $rs_user["birthdate"]; ?>" />
 						</p>
 						<br class="clear"/>
 						<p class="grid_2">
 							ชื่อคู่สมรส
 						</p>
 						<p class="grid_8">
-							<input type="text" id="pouse_name" name ="pouse_name" class="round" />
+							<input type="text" id="pouse_name" name ="pouse_name" class="round" value="<?php echo $rs_user["birthdate"]; ?>" />
 						</p>
 						<br class="clear"/>
 						<p class="grid_2">
 							จำนวนบุตร
 						</p>
 						<p class="grid_8">
-							<input type="text" id="number_of_children" name ="number_of_children" class="round" />
+							<input type="text" id="number_of_children" name ="number_of_children" class="round" value="<?php echo $rs_user["birthdate"]; ?>" />
 						</p>
 						<br class="clear"/>
 						<p class="grid_2">
@@ -285,7 +285,7 @@ else{
 						<p class="grid_12 center">
 							<a href="#" class="save-button blue round">บันทึก</a>
 						</p>
-		
+					</form>
 				</div>
 			</div><!--end content -->
 <?php
