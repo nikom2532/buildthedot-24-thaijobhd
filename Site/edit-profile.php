@@ -89,13 +89,6 @@ else{
 					</p>
 					<br class="clear"/>
 					<p class="grid_2">
-						Lorem Ipsum
-					</p>
-					<p class="grid_8">
-						<input type="text" id="name" name ="name" class="round" />
-					</p>
-					<br class="clear"/>
-					<p class="grid_2">
 						ตำหนิ
 					</p>
 					<p class="grid_8">
@@ -124,13 +117,6 @@ else{
 					</p>
 					<br class="clear"/>
 					<p class="grid_2">
-						สถานะที่อยู่
-					</p>
-					<p class="grid_8">
-						<input type="text" id="name" name ="name" class="round" />
-					</p>
-					<br class="clear"/>
-					<p class="grid_2">
 						สถานะ
 					</p>
 					<p class="grid_8">
@@ -152,14 +138,7 @@ else{
 					</p>
 					<br class="clear"/>
 					<p class="grid_2">
-						ชื่อบิดา
-					</p>
-					<p class="grid_8">
-						<input type="text" id="name" name ="name" class="round" />
-					</p>
-					<br class="clear"/>
-					<p class="grid_2">
-						ชื่อมารดา
+						Lorem Ipsum
 					</p>
 					<p class="grid_8">
 						<input type="text" id="name" name ="name" class="round" />
@@ -168,26 +147,9 @@ else{
 					<p class="grid_2">
 						สถานะทางทหาร
 					</p>
-					<p class="grid_8">
-						<input type="text" id="name" name ="name" class="round" />
-					</p>
-					<br class="clear"/>
-					<p class="grid_2">
-						บุคคลอ้างอิงที่ติดต่อได้
-					</p>
-					<p class="grid_8">
-						<input type="text" id="name" name ="name" class="round" />
-					</p>
-					<br class="clear"/>
-					<p class="grid_2">
-						Lorem Ipsum
-					</p>
-					<p class="grid_8">
-						<input type="text" id="name" name ="name" class="round" />
-					</p>
-					<br class="clear"/>
+
 					
-					<p class="grid_4 prefix_2">
+					<p class="grid_4 ">
 						<label for="" class="alt-label">
 							<input type="radio" id="test" name="test" checked="checked" />
 							ผ่านการเกณฑ์ทหาร </label>
