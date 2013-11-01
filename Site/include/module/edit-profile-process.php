@@ -105,11 +105,18 @@ else{
 			";
 			@mysql_query($sql_user_ref_update);
 		}
-		?><form id="edit_education_message_form" action="<?php echo $rootpath; ?>view-profile.php" method="POST">
-			<input type="hidden" id="add_education_messaage" name="add_education_messaage" value="" />
+		
+		//For add the profile picture
+		if(file_exists($_FILES['profile_picture']['tmp_name']) && is_uploaded_file($_FILES['profile_picture']['tmp_name'])){
+			// echo $_FILES['profile_picture']['tmp_name'];
+			include($rootpath."include/module/edit-profile-process2.php");
+		}
+		
+		?><form id="edit_profile_message_form" action="<?php echo $rootpath; ?>view-profile.php" method="POST">
+			<input type="hidden" id="add_profile_messaage" name="add_profile_messaage" value="" />
 		</form>
 		<script>
-			document.getElementById("edit_education_message_form").submit();
+			document.getElementById("edit_profile_message_form").submit();
 		</script> 
 <?php
 	}
