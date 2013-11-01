@@ -47,7 +47,7 @@ else{
 	}
 	
 	if(file_exists($_FILES['AdPic']['tmp_name']) && is_uploaded_file($_FILES['AdPic']['tmp_name'])){
-		echo $_FILES['pic1']['tmp_name'];
+		//echo $_FILES['pic1']['tmp_name'];
 		include($rootadminpath."include/module/edit-advertisement-process2.php");
 	}
 	// header("Location: {$rootadminpath}advertisement.php");
