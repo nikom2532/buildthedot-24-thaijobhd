@@ -10,7 +10,6 @@ include ($rootpath . "include/top-menu.php");
 	<div id="">
 		<div id="head-title">
 			<h1>ไอเดียธุรกิจ<?php 
-				
 				if(isset($_GET['menu']))
 				{
 					$menu = $_GET["menu"];
@@ -29,8 +28,13 @@ include ($rootpath . "include/top-menu.php");
 			?></h1>
 		</div>
 <?php
+		include($rootpath."lib/func_pagination.php");
 		$i=1;
-		@get();
+		get();
+		$page_limit=10;//Records per page
+		$start=0;//starts displaying records from 0
+		$page=$_GET["page"];
+		$start=($page-1)*$page_limit;
 		 // echo $_GET['page'];
 		/*if($_GET["page"] ==""){
 			$_GET["page"] = 1;
@@ -44,7 +48,7 @@ include ($rootpath . "include/top-menu.php");
 			$sql="
 				SELECT * 
 				FROM  `buildthedot_thaijobhd_job_idea`
-				ORDER BY TIME(`IdeaTime`), `IdeaTime` DESC;
+				ORDER BY TIME(`IdeaTime`), `IdeaTime` DESC
 			";
 		}
 		elseif($menu == "suggest"){
@@ -52,11 +56,31 @@ include ($rootpath . "include/top-menu.php");
 				SELECT * 
 				FROM  `buildthedot_thaijobhd_job_idea`
 				WHERE `IdeaRecomment` = 1
-				ORDER BY TIME(`IdeaTime`), `IdeaTime` DESC ;
+				ORDER BY TIME(`IdeaTime`), `IdeaTime` DESC 
 			";
 		}
 		$result=@mysql_query($sql);
-		$number_of_items=@mysql_num_rows($result);
+		$number_of_items=@mysql_num_rows($result);	//find the sql num row
+		
+		if($menu == "new" || $menu == ""){
+			$sql="
+				SELECT * 
+				FROM  `buildthedot_thaijobhd_job_idea`
+				ORDER BY TIME(`IdeaTime`), `IdeaTime` DESC
+			";
+		}
+		elseif($menu == "suggest"){
+			$sql="
+				SELECT * 
+				FROM  `buildthedot_thaijobhd_job_idea`
+				WHERE `IdeaRecomment` = 1
+				ORDER BY TIME(`IdeaTime`), `IdeaTime` DESC 
+			";
+		}
+		$sql .= "
+			LIMIT ".($page_limit*($_GET["page"]-1)).",".$page_limit." ;
+		";
+		$result=@mysql_query($sql);
 		 // $sql="
 			// SELECT * 
 			// FROM  `buildthedot_thaijobhd_job_idea` 
@@ -91,23 +115,12 @@ include ($rootpath . "include/top-menu.php");
 <?php
 		}
 ?>
-		<?php /* ?>
-		<section id="content-list" class="grid_12">
-			<p class="grid_2"><img src="images/banner-2.png" alt="pictur">
-			</p>
-			<p class="grid_9">
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.<span id="read-more"><a href="business-idea-detail.php">อ่านต่อ</a></span>
-			</p>
-		</section>
-		<section id="content-list" class="grid_12">
-			<p class="grid_2"><img src="images/banner-2.png" alt="pictur">
-			</p>
-			<p class="grid_9">
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.<span id="read-more"><a href="business-idea-detail.php">อ่านต่อ</a></span>
-			</p>
-		</section>
-		<?php */ ?>
-
+		<div class="grid_12">
+<?php
+			//############ Paging ############
+			echo pagination($page_limit, $page, $rootpath."business-idea.php?page=", $number_of_items); //call function to show pagination
+?>
+		</div>
 	</div>
 	
 </div><!--end content -->
@@ -116,6 +129,7 @@ include ($rootpath . "include/top-menu.php");
 
 	function get()
 	{
+		/*---------Paging------------*/
 		if($_GET["page"] =="")
 		{
 				$_GET["page"] = 1;

@@ -47,7 +47,7 @@ else{
 	$result_user = @mysql_query($sql_user);
 	
 	if($rs_user = @mysql_fetch_array($result_user)){
-	echo	$sql_user_edit="
+		$sql_user_edit="
 			UPDATE `buildthedot_thaijobhd_user_account` 
 			SET
 			`birthdate` =  '{$birthdate}' ,
