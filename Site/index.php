@@ -175,7 +175,7 @@ include ($rootpath . "include/search-bar.php");
 					while($rs=@mysql_fetch_array($result))
 					{
 						?>
-			            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="red"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
+			            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="red" ><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
 			            <p><?php echo $rs['JobDescription']; ?>
 			            <span id="read-more"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>">อ่านต่อ</a></span></p>
 			        <?php
