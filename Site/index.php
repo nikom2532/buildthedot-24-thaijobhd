@@ -63,21 +63,31 @@ include ($rootpath . "include/search-bar.php");
 </div><!--end slide-image-->
 <div id="content" class="container_12">
 	<div class="grid_2 margin-left-5 margin-right-5">
-		<div id="banner-1">
-			<img src="admin/images/banner-2.png" width="144" height="143">
-		</div>
-		<div id="banner-3">
-			<img src="admin/images/banner-2.png" width="144" height="143">
-		</div>
-		<div id="banner-5">
-			<img src="admin/images/banner-2.png" width="144" height="143">
-		</div>
-		<div id="banner-7">
-			<img src="admin/images/banner-2.png" width="144" height="143">
-		</div>
-		<div id="banner-9">
-			<img src="admin/images/banner-2.png" width="144" height="143">
-		</div>
+<?php
+	for($i_advertisement=1;$i_advertisement<=9;$i_advertisement=$i_advertisement+2){
+		$sql_advertisement="
+			SELECT * 
+			FROM  `buildthedot_thaijobhd_ad`
+			WHERE `AdType` = 'Side_Ads'
+			AND `AdPosition` = '{$i_advertisement}' ;
+		";
+		$result_advertisement=@mysql_query($sql_advertisement);
+		if($rs_advertisement=@mysql_fetch_array($result_advertisement)){
+?>
+			<div id="banner-<?php echo $i_advertisement; ?>">
+				<a href="http://<?php echo $rs_advertisement["AdLink"]; ?>" target="_block"><img src="<?php echo $rootpath; ?>images/ad/<?php echo $rs_advertisement["AdPic"]; ?>" width="144" height="143"></a>
+			</div>
+<?php
+		}
+		else{
+?>
+			<div id="banner-<?php echo $i_advertisement; ?>">
+				<img src="<?php echo $rootpath; ?>admin/images/banner-2.png" width="144" height="143">
+			</div>
+<?php
+		}
+	}
+?>
 	</div>
 	<div class="grid_8"><?php //Center Content ?>
 		<div id="head-title">
@@ -339,21 +349,31 @@ include ($rootpath . "include/search-bar.php");
 		</div>
 	</div><?php //End Center Content ?>
 	<div class="grid_2 margin-left-5 margin-right-5">
-		<div id="banner-2">
-			<img src="admin/images/banner-2.png" width="144" height="143">
-		</div>
-		<div id="banner-4">
-			<img src="admin/images/banner-2.png" width="144" height="143">
-		</div>
-		<div id="banner-6">
-			<img src="admin/images/banner-2.png" width="144" height="143">
-		</div>
-		<div id="banner-8">
-			<img src="admin/images/banner-2.png" width="144" height="143">
-		</div>
-		<div id="banner-10">
-			<img src="admin/images/banner-2.png" width="144" height="143">
-		</div>
+<?php
+	for($i_advertisement=2;$i_advertisement<=10;$i_advertisement=$i_advertisement+2){
+		$sql_advertisement="
+			SELECT * 
+			FROM  `buildthedot_thaijobhd_ad`
+			WHERE `AdType` = 'Side_Ads'
+			AND `AdPosition` = '{$i_advertisement}' ;
+		";
+		$result_advertisement=@mysql_query($sql_advertisement);
+		if($rs_advertisement=@mysql_fetch_array($result_advertisement)){
+?>
+			<div id="banner-<?php echo $i_advertisement; ?>">
+				<a href="http://<?php echo $rs_advertisement["AdLink"]; ?>" target="_block"><img src="<?php echo $rootpath; ?>images/ad/<?php echo $rs_advertisement["AdPic"]; ?>" width="144" height="143"></a>
+			</div>
+<?php
+		}
+		else{
+?>
+			<div id="banner-<?php echo $i_advertisement; ?>">
+				<img src="<?php echo $rootpath; ?>admin/images/banner-2.png" width="144" height="143">
+			</div>
+<?php
+		}
+	}
+?>
 	</div>
 </div><!--end content -->
 <?php
