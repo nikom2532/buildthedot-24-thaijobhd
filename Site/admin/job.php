@@ -5,7 +5,9 @@ $rootadminpath="./";
 include($rootadminpath."include/header.php");
 include("include/connect-to-database.php");
 ?>
-<script language="JavaScript">
+<script src="./js/jquery-1.7.1.min.js"></script>
+
+<script>
 	/*function deleteFunction()
 	{
 		var con = confirm("Delete");
@@ -23,7 +25,7 @@ include("include/connect-to-database.php");
 	*/
 	$(document).ready(function(){
   		$(".table-actions-button-del").live("click",function() 
-  		{
+  		{ 
 			if (confirm("Do you want to delete")){
      	 		id = $(this).attr('id');
      	 		$.post("include/module/delete-job-process.php",{JID : id},function(data){
@@ -52,7 +54,7 @@ include("include/connect-to-database.php");
 
 if ($_SESSION["userid"] == "") {
 	include ($rootadminpath . "include/login.php");
-	include ("include/footer.php");
+	//include ("include/footer.php");
 } 
 else {
 	//check for Logout mode
@@ -398,5 +400,5 @@ else {
 		}
 	}
 	
-	include($rootadminpath."include/footer.php");	
+	//include($rootadminpath."include/footer.php");	
 ?>

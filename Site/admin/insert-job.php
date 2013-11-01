@@ -56,14 +56,14 @@
 		}
 		
 		var Quantity = document.getElementById("Quantity").value;
-		if(Quantity == "" || Quantity == null) 
+		if(Quantity == "" || Quantity == null || isNaN(Quantity)) 
 		{
-			alert("Quantity is not valid");
+			alert("Quantity is not valid"+Quantity);
 			return false;
 		}
 		
 		var Saraly = document.getElementById("Saraly").value;
-		if(Saraly == "" || Saraly == null) 
+		if(Saraly == "" || Saraly == null|| isNaN(Saraly)) 
 		{
 			alert("Saraly is not valid");
 			return false;

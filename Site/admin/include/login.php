@@ -39,12 +39,16 @@
 				</p>
 				<p>
 <?php 
+			@login();
+			function login()
+			{
 					if($_GET["login_messaage"]=="login_false"){
 						echo "login_false";
 					}
 					elseif($_GET["login_messaage"]=="forget_formdata_login"){
 						echo "forget_formdata_login";
 					}
+			}
 ?>
 				</p>
 				<a href="#" class="button round blue image-right login-btn" onclick="document.getElementById('login-form').submit();">LOG IN</a>
