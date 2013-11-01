@@ -47,10 +47,10 @@ else{
 	$result_user = @mysql_query($sql_user);
 	
 	if($rs_user = @mysql_fetch_array($result_user)){
-		$sql_user_edit="
+	echo	$sql_user_edit="
 			UPDATE `buildthedot_thaijobhd_user_account` 
 			SET
-			`birthdate` =  '{$education_level}' ,
+			`birthdate` =  '{$birthdate}' ,
 			`place_of_birth` = '{$place_of_birth}' ,
 			`age` = '{$age}' ,
 			`nationality` = '{$nationality}' ,
@@ -74,7 +74,7 @@ else{
 			`mother_age` = '{$mother_age}' ,
 			`mother_career` = '{$mother_career}' ,
 			`mother_live_status` = '{$mother_live_status}' 
-			WHERE `user_account_id` = '".$_SESSION["userid"]."' ;
+			WHERE `id` = '".$_SESSION["userid"]."' ;
 		";
 		@mysql_query($sql_user_edit);
 		$sql_user_ref="
@@ -87,11 +87,11 @@ else{
 			$sql_user_ref_update="
 				UPDATE `buildthedot_thaijobhd_user_account_reference_contacts` 
 				SET
-					`ref_name` = '{$ref_name}' ,
-					`ref_relationship` = '{$ref_relationship}' ,
-					`ref_workplace` = '{$ref_workplace}' ,
-					`ref_position` = '{$ref_position}' ,
-					`ref_phone_number` = '{$ref_phone_number}' 
+					`name` = '{$ref_name}' ,
+					`relationship` = '{$ref_relationship}' ,
+					`workplace` = '{$ref_workplace}' ,
+					`position` = '{$ref_position}' ,
+					`phone_number` = '{$ref_phone_number}' 
 				WHERE `user_account_id` = '".$_SESSION["userid"]."' ;
 			";
 			@mysql_query($sql_user_ref_update);
@@ -99,9 +99,9 @@ else{
 		else{
 			$sql_user_ref_update="
 				INSERT INTO `buildthedot_thaijobhd_user_account_reference_contacts` 
-				(`user_account_id`, `ref_name`, `ref_relationship`, `ref_workplace`, `ref_position`, `ref_phone_number`)
+				(`user_account_id`, `name`, `relationship`, `workplace`, `position`, `phone_number`)
 				VALUE
-				('".$_SESSION["userid"]."', '{$ref_name}' , '{$ref_relationship}', '{$ref_workplace}', '{$ref_position}', '{$ref_phone_number}') 
+				('".$_SESSION["userid"]."', '{$ref_name}' , '{$ref_relationship}', '{$ref_workplace}', '{$ref_position}', '{$ref_phone_number}') ;
 			";
 			@mysql_query($sql_user_ref_update);
 		}
