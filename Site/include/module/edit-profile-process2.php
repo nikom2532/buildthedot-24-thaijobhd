@@ -13,7 +13,11 @@ if($rs=@mysql_fetch_array($result)){
 }
 
 $target_path = $rootpath."images/user_account/";
-$filename = "user_".$_SESSION["userid"]."_".$time_now."_".basename($_FILES["profile_picture"]['name']);
+
+$filename = trim(basename($_FILES["profile_picture"]['name']));
+$filename = str_replace(' ','-',$filename);
+$filename = preg_replace( '/\s+/', ' ', $filename );
+$filename = "user_".$_SESSION["userid"]."_".$time_now."_".$filename;
 $target_path = $target_path . $filename;
 
 $allowedExts = array("gif", "jpeg", "jpg", "png");

@@ -39,6 +39,9 @@ else{
 	$ref_position=$_POST["ref_position"];
 	$ref_phone_number=$_POST["ref_phone_number"];	
 	
+	//create time now
+	$time_now = strtotime("now");
+	
 	$sql_user="
 		SELECT * 
 		FROM  `buildthedot_thaijobhd_user_account`
