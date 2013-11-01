@@ -13,8 +13,14 @@ $buildthedot_thaijobhd_ad = array(
   array('PictureID' => '11','AdPic' => 'ad_1_Content_Ads_1_1381658798_Add New Patient - Google Chrome_034.png','AdLink' => 'asdf','AdType' => 'Side_Ads','AdPosition' => '5')
 );
 
+// `buildthedot_24ThaiJobHD`.`buildthedot_thaijobhd_job`
+$buildthedot_thaijobhd_job = array(
+  array('JobID' => '1','CompanyName' => 'a','PositionThai' => 'a','PositionEng' => 'a','Place' => 'a','Quantity' => 'a','property' => 'aa','Saraly' => '1','JobDescription' => 'a','Recomment' => '0','StartTime' => '2013-11-01','EndTime' => '2013-11-30','JobType' => '1')
 );
 
+// `buildthedot_24ThaiJobHD`.`buildthedot_thaijobhd_job_attribute`
+$buildthedot_thaijobhd_job_attribute = array(
+  array('AttributeID' => '1','JobID' => '1','AtrributDescription' => 'x')
 );
 
 // `buildthedot_24ThaiJobHD`.`buildthedot_thaijobhd_job_idea`
@@ -40,9 +46,12 @@ $buildthedot_thaijobhd_job_idea = array(
 
 // `buildthedot_24ThaiJobHD`.`buildthedot_thaijobhd_user_account`
 $buildthedot_thaijobhd_user_account = array(
-  array('id' => '1','email' => 'a@a.com','password' => '77de54ccf56eb6f7dbf99e4d3be949ab6f9b0a55df8ac28564cb9f63a10be8af6ab3f7c2','firstname' => 'a','midname' => 'a','lastname' => 'a','profile_picture' => '','job_id' => '1','job_status' => '1','admin_status' => '1','birthdate' => '0000-00-00','place_of_birth' => '','age' => '0','nationality' => '','religion' => '','height' => '0','weight' => '0','blood' => '','lesion' => '','address' => '','phone_number' => '','relationship_status' => '','pouse_name' => '','number_of_children' => '0','military_status' => '','current_address_status' => '','father_name' => '','father_age' => '0','father_career' => '','father_live_status' => '','mother_name' => '','mother_age' => '0','mother_career' => '','mother_live_status' => '')
+  array('id' => '1','email' => 'a@a.com','password' => '77de54ccf56eb6f7dbf99e4d3be949ab6f9b0a55df8ac28564cb9f63a10be8af6ab3f7c2','firstname' => 'a','midname' => 'a','lastname' => 'a','profile_picture' => 'user_1__CN5:-Sensory-and-Motor-Mastication---Google-Chrome_052.png','job_id' => '1','job_status' => '1','admin_status' => '1','birthdate' => '2013-11-07','place_of_birth' => '','age' => '0','nationality' => '','religion' => '','height' => '0','weight' => '0','blood' => '','lesion' => '','current_address' => '','phone_number' => '','relationship_status' => '','pouse_name' => '','number_of_children' => '0','military_status' => '','current_address_status' => 'home','father_name' => '1','father_age' => '0','father_career' => '','father_live_status' => '','mother_name' => '','mother_age' => '0','mother_career' => '','mother_live_status' => '')
 );
 
+// `buildthedot_24ThaiJobHD`.`buildthedot_thaijobhd_user_account_reference_contacts`
+$buildthedot_thaijobhd_user_account_reference_contacts = array(
+  array('user_account_reference_contacts_id' => '1','user_account_id' => '1','name' => '','relationship' => '','workplace' => '','position' => '','phone_number' => '')
 );
 
 );
