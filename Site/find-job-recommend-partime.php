@@ -1,12 +1,14 @@
 <?php include("include/header.php");?>
 <?php
-session_start(); 
-include("admin/include/connect-to-database.php"); 
-include("include/top-menu.php");       
-$rootpath="../";
-$rootadminpath="./";
+session_start();
+$rootpath = "./";
+$rootadminpath = "./admin/";
+include ("include/header.php");
+include ("admin/include/connect-to-database.php");
+include ("include/top-menu.php");       
 include("lib/func_pagination.php");
 include("admin/include/initial/pagination.php");
+
 ?>     
     <div id="content" class="container_12">
         <div class="grid_12" id="main">
@@ -53,7 +55,7 @@ include("admin/include/initial/pagination.php");
 	    ?>
         </div>        
        <?php
-       	echo pagination($page_limit, $page, $rootadminpath."find-job-recommend-parttime.php?page=", $number_of_items); 
+       	echo "<font color='white'>s</font>".pagination($page_limit, $page, $rootadminpath."find-job-recommend-parttime.php?page=", $number_of_items); 
         ?>
     </div><!--end content -->
     
