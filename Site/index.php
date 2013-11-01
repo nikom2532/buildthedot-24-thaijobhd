@@ -260,34 +260,41 @@ include ($rootpath . "include/search-bar.php");
 			<h1>ไอเดียธุรกิจแนะนำ </h1>
 		</div>
 		<div id="recommend-idea" class="grid_8">
-			<div class="grid_3">
-				<img src="images/banner-2.png" width="144" height="143">
-				<h3>Lorem Ipsum</h3>
-				<p>
-					Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, <span class="right" id="read-more"><a href="#">อ่านต่อ</a></span>
-				</p>
-			</div>
-			<div class="grid_3">
-				<img src="images/banner-2.png" width="144" height="143">
-				<h3>Lorem Ipsum</h3>
-				<p>
-					Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, <span class="right" id="read-more"><a href="#">อ่านต่อ</a></span>
-				</p>
-			</div>
-			<div class="grid_3">
-				<img src="images/banner-2.png" width="144" height="143">
-				<h3>Lorem Ipsum</h3>
-				<p>
-					Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, <span class="right" id="read-more"><a href="#">อ่านต่อ</a></span>
-				</p>
-			</div>
-			<div class="grid_3">
-				<img src="images/banner-2.png" width="144" height="143">
-				<h3>Lorem Ipsum</h3>
-				<p>
-					Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, <span class="right" id="read-more"><a href="#">อ่านต่อ</a></span>
-				</p>
-			</div>
+<?php
+			$sql_business_ieda_suggest="
+				SELECT * 
+				FROM  `buildthedot_thaijobhd_job_idea`
+				WHERE `IdeaRecomment` = 1
+				ORDER BY TIME(`IdeaTime`), `IdeaTime` DESC 
+				LIMIT 0, 4 ;
+			";
+			$result_business_ieda_suggest=@mysql_query($sql_business_ieda_suggest);
+			while($rs=@mysql_fetch_array($result)){
+?>
+				<div class="grid_3">
+					<img src="<?php echo $rootpath; ?>images/<?php
+						if(($rs["Pic1"] == "")&&($rs["Pic2"] == "")&&($rs["Pic3"] == "")){
+							echo "banner-2.png";
+						}
+						else{
+							echo "business-idea/";
+							if($rs["Pic1"] != ""){
+								echo $rs["Pic1"];
+							}
+							elseif($rs["Pic2"] != ""){
+								echo $rs["Pic2"];
+							}
+							elseif($rs["Pic3"] != ""){
+								echo $rs["Pic3"];
+							}
+						}
+					?>" width="144" height="143">
+					<h3><?php echo $rs["MainIdea"]; ?></h3>
+					<p><?php echo $rs["Description1"]; ?><span class="right" id="read-more"><a href="#">อ่านต่อ</a></span></p>
+				</div>
+<?php
+			}
+?>
 		</div>
 		<h2 class="right"><a href="#" class="button round black">ดูทั้งหมด</a></h2>
 		
@@ -297,34 +304,40 @@ include ($rootpath . "include/search-bar.php");
 			<h1>ไอเดียธุรกิจมาใหม่ </h1>
 		</div>
 		<div id="recommend-idea" class="grid_8">
-			<div class="grid_3">
-				<img src="images/banner-2.png" width="144" height="143">
-				<h3>Lorem Ipsum</h3>
-				<p>
-					Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, <span class="right" id="read-more"><a href="#">อ่านต่อ</a></span>
-				</p>
-			</div>
-			<div class="grid_3">
-				<img src="images/banner-2.png" width="144" height="143">
-				<h3>Lorem Ipsum</h3>
-				<p>
-					Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, <span class="right" id="read-more"><a href="#">อ่านต่อ</a></span>
-				</p>
-			</div>
-			<div class="grid_3">
-				<img src="images/banner-2.png" width="144" height="143">
-				<h3>Lorem Ipsum</h3>
-				<p>
-					Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, <span class="right" id="read-more"><a href="#">อ่านต่อ</a></span>
-				</p>
-			</div>
-			<div class="grid_3">
-				<img src="images/banner-2.png" width="144" height="143">
-				<h3>Lorem Ipsum</h3>
-				<p>
-					Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, <span class="right" id="read-more"><a href="#">อ่านต่อ</a></span>
-				</p>
-			</div>
+<?php
+			$sql_business_ieda_suggest="
+				SELECT * 
+				FROM  `buildthedot_thaijobhd_job_idea`
+				ORDER BY TIME(`IdeaTime`), `IdeaTime` DESC
+				LIMIT 0, 4 ;
+			";
+			$result_business_ieda_suggest=@mysql_query($sql_business_ieda_suggest);
+			while($rs=@mysql_fetch_array($result)){
+?>
+				<div class="grid_3">
+					<img src="<?php echo $rootpath; ?>images/<?php
+						if(($rs["Pic1"] == "")&&($rs["Pic2"] == "")&&($rs["Pic3"] == "")){
+							echo "banner-2.png";
+						}
+						else{
+							echo "business-idea/";
+							if($rs["Pic1"] != ""){
+								echo $rs["Pic1"];
+							}
+							elseif($rs["Pic2"] != ""){
+								echo $rs["Pic2"];
+							}
+							elseif($rs["Pic3"] != ""){
+								echo $rs["Pic3"];
+							}
+						}
+					?>" width="144" height="143">
+					<h3><?php echo $rs["MainIdea"]; ?></h3>
+					<p><?php echo $rs["Description1"]; ?><span class="right" id="read-more"><a href="#">อ่านต่อ</a></span></p>
+				</div>
+<?php
+			}
+?>
 		</div>
 		
 		<h2 class="right"><a href="#" class="button round black">ดูทั้งหมด</a></h2>
