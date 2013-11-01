@@ -181,20 +181,15 @@ else{
 						<?php echo $rs_user["father_career"]; ?>
 					</p>
 					<p class="grid_4">
-						<label for="father_live_status1" class="alt-label">
-							<input type="radio" id="father_live_status1" name="father_live_status" value="live" <?php 
+<?php 
 								if($rs_user["father_live_status"]=="live"){
-									?>checked="checked"<?php
+									?>มีชีวิต<?php
 								}
-							?> />
-							มีชีวิต </label>
-						<label for="father_live_status2" class="alt-label">
-							<input type="radio" id="father_live_status2" name="father_live_status" value="died" <?php 
-								if($rs_user["father_live_status"]=="died"){
-									?>checked="checked"<?php
+								elseif($rs_user["father_live_status"]=="died"){
+									?>ถึงแก่กรรม<?php
 								}
-							?> />
-							ถึงแก่กรรม </label>
+?>
+							
 					</p>
 					<br class="clear"/>
 		
@@ -202,32 +197,27 @@ else{
 						ชื่อมารดา
 					</p>
 					<p class="grid_2">
-						<input type="text" id="mother_name" name ="mother_name" class="round" value="<?php echo $rs_user["mother_name"]; ?>" />
+						<?php echo $rs_user["mother_name"]; ?>
 					</p>
 					<br class="clear"/>
 					<p class="grid_2 prefix_2">
-						อายุ
-						<input type="text" id="mother_age" name ="mother_age" class="round input-small" onkeypress="validate_number(event);" value="<?php echo $rs_user["mother_age"]; ?>" />
+						อายุ : 
+						<?php echo $rs_user["mother_age"]; ?>
 					</p>
 					<p class="grid_2">
 						อาชีพ
-						<input type="text" id="mother_career" name ="mother_career" class="round input-small" value="<?php echo $rs_user["mother_career"]; ?>" />
+						<?php echo $rs_user["mother_career"]; ?>
 					</p>
 					<p class="grid_4">
 						<label for="mother_live_status1" class="alt-label">
-							<input type="radio" id="mother_live_status1" name="mother_live_status" value="live" <?php 
+							<?php 
 								if($rs_user["mother_live_status"]=="live"){
-									?>checked="checked"<?php
+									?>มีชีวิต<?php
 								}
-							?> />
-							มีชีวิต </label>
-						<label for="mother_live_status2" class="alt-label">
-							<input type="radio" id="mother_live_status2" name="mother_live_status" value="died" <?php 
-								if($rs_user["mother_live_status"]=="died"){
-									?>checked="checked"<?php
+								elseif($rs_user["mother_live_status"]=="died"){
+									?>ถึงแก่กรรม<?php
 								}
-							?> />
-							ถึงแก่กรรม </label>
+							?>
 					</p>
 					<br class="clear"/>
 <?php
