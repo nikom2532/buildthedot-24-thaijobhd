@@ -29,13 +29,9 @@ include ($rootpath . "include/top-menu.php");
 		</div>
 <?php
 		include($rootpath."lib/func_pagination.php");
+		include($rootpath."include/initial/pagination.php");
 		$i=1;
-		get();
-		$page_limit=10;//Records per page
-		$start=0;//starts displaying records from 0
-		$page=$_GET["page"];
-		$start=($page-1)*$page_limit;
-		 // echo $_GET['page'];
+		// echo $_GET['page'];
 		/*if($_GET["page"] ==""){
 			$_GET["page"] = 1;
 		}
@@ -125,14 +121,5 @@ include ($rootpath . "include/top-menu.php");
 	
 </div><!--end content -->
 <?php
-	include ("include/footer.php");
-
-	function get()
-	{
-		/*---------Paging------------*/
-		if($_GET["page"] =="")
-		{
-				$_GET["page"] = 1;
-		}
-	}
+include ("include/footer.php");
 ?>
