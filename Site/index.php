@@ -162,15 +162,15 @@ include ($rootpath . "include/search-bar.php");
 			<h2 id="sub-title">Full time<span class="right"><a href="find-job-new-fulltime.php" class="button round black">ดูทั้งหมด</a></span></h2>
 			<?php
 				$sql="
-				SELECT * 
+				SELECT *
 				FROM  buildthedot_thaijobhd_job
 				WHERE JobType = '1'
 				ORDER BY JobID DESC	
-				LIMIT 0,3				
+				LIMIT 0,3
 				";
 				$result=@mysql_query($sql);
 				if($result)
-				{	
+				{
 					$count = 0;
 					while($rs=@mysql_fetch_array($result))
 					{
@@ -225,35 +225,23 @@ include ($rootpath . "include/search-bar.php");
 			<h1>บริษัทชั้นนำ</h1>
 		</div>
 		<div id="top-company">
-			<div class="grid_2 margin-left-5 margin-right-5"><img src="images/banner-2.png" width="144" height="143">
+<?php
+		$sql_top_company="
+			SELECT * 
+			FROM  `buildthedot_thaijobhd_top_company`
+			LIMIT 0, 12 ;
+		";
+		$result_top_company=@mysql_query($sql_top_company);
+		while($rs_top_company=@mysql_fetch_array($result_top_company)){
+?>
+			<div class="grid_2 margin-left-5 margin-right-5"><a href="<?php echo $rs_top_company["LinkAddress"]; ?>" target="_blank"><img src="images/top_company/<?php echo $rs_top_company["CompanyPic"]; ?>" width="144" height="143" /></a>
 			</div>
-			<div class="grid_2 margin-left-5 margin-right-5"><img src="images/banner-2.png" width="144" height="143">
-			</div>
-			<div class="grid_2 margin-left-5 margin-right-5"><img src="images/banner-2.png" width="144" height="143">
-			</div>
-			<div class="grid_2 margin-left-5 margin-right-5"><img src="images/banner-2.png" width="144" height="143">
-			</div>
-			<div class="grid_2 margin-left-5 margin-right-5"><img src="images/banner-2.png" width="144" height="143">
-			</div>
-			<div class="grid_2 margin-left-5 margin-right-5"><img src="images/banner-2.png" width="144" height="143">
-			</div>
+<?php
+		}
+?>
+			<h2 class="right"><a href="<?php echo $rootpath; ?>top-company.php" class="button round black">ดูทั้งหมด</a></h2>
 		</div>
-		<div id="top-company">
-			<div class="grid_2 margin-left-5 margin-right-5"><img src="images/banner-2.png" width="144" height="143">
-			</div>
-			<div class="grid_2 margin-left-5 margin-right-5"><img src="images/banner-2.png" width="144" height="143">
-			</div>
-			<div class="grid_2 margin-left-5 margin-right-5"><img src="images/banner-2.png" width="144" height="143">
-			</div>
-			<div class="grid_2 margin-left-5 margin-right-5"><img src="images/banner-2.png" width="144" height="143">
-			</div>
-			<div class="grid_2 margin-left-5 margin-right-5"><img src="images/banner-2.png" width="144" height="143">
-			</div>
-			<div class="grid_2 margin-left-5 margin-right-5"><img src="images/banner-2.png" width="144" height="143">
-			</div>
-			<h2 class="right"><a href="#" class="button round black">ดูทั้งหมด</a></h2>
-		</div>
-	
+		
 		<br class="clear seperator"/>
 	
 		<div id="head-title">
@@ -290,13 +278,13 @@ include ($rootpath . "include/search-bar.php");
 						}
 					?>" width="144" height="143">
 					<h3><?php echo $rs["MainIdea"]; ?></h3>
-					<p><?php echo $rs["Description1"]; ?><span class="right" id="read-more"><a href="#">อ่านต่อ</a></span></p>
+					<p><?php echo $rs["Description1"]; ?><span class="right" id="read-more"><a href="<?php echo $rootpath; ?>business-idea-detail.php?id=<?php echo $rs["CompanyID"]; ?>">อ่านต่อ</a></span></p>
 				</div>
 <?php
 			}
 ?>
 		</div>
-		<h2 class="right"><a href="#" class="button round black">ดูทั้งหมด</a></h2>
+		<h2 class="right"><a href="<?php echo $rootpath; ?>business-idea.php?menu=suggest" class="button round black">ดูทั้งหมด</a></h2>
 		
 		<br class="clear seperator"/>
 	
@@ -333,14 +321,14 @@ include ($rootpath . "include/search-bar.php");
 						}
 					?>" width="144" height="143">
 					<h3><?php echo $rs["MainIdea"]; ?></h3>
-					<p><?php echo $rs["Description1"]; ?><span class="right" id="read-more"><a href="#">อ่านต่อ</a></span></p>
+					<p><?php echo $rs["Description1"]; ?><span class="right" id="read-more"><a href="<?php echo $rootpath; ?>business-idea-detail.php?id=<?php echo $rs["CompanyID"]; ?>">อ่านต่อ</a></span></p>
 				</div>
 <?php
 			}
 ?>
 		</div>
 		
-		<h2 class="right"><a href="#" class="button round black">ดูทั้งหมด</a></h2>
+		<h2 class="right"><a href="<?php echo $rootpath; ?>business-idea.php" class="button round black">ดูทั้งหมด</a></h2>
 		<br class="clear seperator"/>
 	
 		<div class="grid_4 margin-left-5 margin-right-5">
