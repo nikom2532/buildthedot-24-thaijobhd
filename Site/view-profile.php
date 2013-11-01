@@ -283,6 +283,29 @@ else{
 						<input type="text" id="ref_phone_number" name ="ref_phone_number" class="round" value="<?php echo $$rs_user_ref["phone_number"]; ?>" />
 					</p>
 					<br class="clear"/>
+					
+					<h2 id="sub-title">ประวัติการศึกษา<span class="right"><a href="<?php echo $rootpath; ?>add-education.php" class="button round black right">แก้ไข</a></span></h2>
+ 					<p class="grid_2">
+						Lorem Ipsum
+					</p>
+					<br class="clear"/>
+					<div class="prefix_2">
+						<div id="head-table1" class="grid_9">
+							<p class="grid_2 center">
+								ระดับการศึกษา
+							</p>
+							<p class="grid_3 center">
+								สถาบัน
+							</p>
+							<p class="grid_1 center">
+								ปี
+							</p>
+							<p class="grid_2 center">
+								วุฒิการศึกษา
+							</p>
+						</div>
+					</div>
+					<br class="clear"/>
 <?php
 					$sql_edu="
 						SELECT *, YEAR(`year_start`) AS year_start_1, YEAR(`year_end`) AS year_end_1
