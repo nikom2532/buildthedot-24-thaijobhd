@@ -156,10 +156,29 @@ include ($rootpath . "include/search-bar.php");
 				Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
 			</p 
 			-->
-			
-			<div id="banner">
-				<img src="images/banner-1.png" width="100%" <?php // width="458" height="175" ?> alt="Banner">
-			</div>
+<?php
+			$sql_advertisement="
+				SELECT * 
+				FROM  `buildthedot_thaijobhd_ad`
+				WHERE `AdType` = 'Content_Ads'
+				AND `AdPosition` = '2' ;
+			";
+			$result_advertisement=@mysql_query($sql_advertisement);
+			if($rs_advertisement=@mysql_fetch_array($result_advertisement)){
+?>
+				<div id="banner">
+					<a href="<?php echo $rs["AdLink"]; ?>" target="_block"><img src="images/ad/<?php echo $rs_advertisement["Content_Ads"]; ?>" width="100%" <?php // width="458" height="175" ?> alt="Banner"></a>
+				</div>
+<?php
+			}
+			else{
+?>
+				<div id="banner">
+					<img src="images/banner-1.png" width="100%" <?php // width="458" height="175" ?> alt="Banner">
+				</div>
+<?php
+			}
+?>
 		</div>
 	
 		<br class="clear seperator"/>
@@ -340,13 +359,28 @@ include ($rootpath . "include/search-bar.php");
 		
 		<h2 class="right"><a href="<?php echo $rootpath; ?>business-idea.php" class="button round black">ดูทั้งหมด</a></h2>
 		<br class="clear seperator"/>
-	
-		<div class="grid_4 margin-left-5 margin-right-5">
-			<img src="images/banner-1.png" width="100%" <?php // width="458" height="175" ?> alt="Banner">
-		</div>
-		<div class="grid_4 margin-left-5 margin-right-5">
-			<img src="images/banner-1.png" width="100%" <?php // width="458" height="175" ?> alt="Banner">
-		</div>
+<?php
+		for($i_advertisement=1;$i_advertisement<=2;$i_advertisement++){
+			$sql_advertisement="
+				SELECT * 
+				FROM  `buildthedot_thaijobhd_ad`
+				WHERE `AdType` = 'Content_Ads'
+				AND `AdPosition` = '{$i_advertisement}' ;
+			";
+			$result_advertisement=@mysql_query($sql_advertisement);
+			if($rs_advertisement=@mysql_fetch_array($result_advertisement)){
+?>
+				<div class="grid_4 margin-left-5 margin-right-5">
+					<img src="images/banner-1.png" width="100%" <?php // width="458" height="175" ?> alt="Banner">
+				</div>
+<?php
+			}
+			else{
+				
+			}
+		}
+?>
+				
 	</div><?php //End Center Content ?>
 	<div class="grid_2 margin-left-5 margin-right-5">
 <?php
