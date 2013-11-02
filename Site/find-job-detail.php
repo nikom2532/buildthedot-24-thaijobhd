@@ -21,6 +21,7 @@ include ("include/top-menu.php");
 	$(document).ready(function(){
 		$("#register-button").click(function(){
 			
+			var job_id = <?php echo $_GET['id'];?>; 
 			var user_id = $(this).attr("title");
 			//<?php //echo $id;?>
 			if(user_id == null || user_id == "")
@@ -33,8 +34,15 @@ include ("include/top-menu.php");
 			}
 			else
 			{
-				$.post("include/module/send-resume-process.php",{ id : user_id}, function(data){
-					
+				$.post("include/module/send-resume-process.php",{ user_id : user_id, job_id : job_id} , function(data){
+					if(data)
+					{
+						alert(data);
+					}
+					else
+					{
+						alert(data);
+					}
 					
 				});
 			}
