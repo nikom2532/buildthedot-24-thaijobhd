@@ -102,9 +102,11 @@ include ($rootpath . "include/top-menu.php");
 							echo $rs["Pic3"];
 						}
 					}
-				?>" width="150" alt="picture" />
+				?>" width="150" alt="business idea" />
 				</p>
 				<p class="grid_9">
+					<?php echo $rs["MainIdea"]; ?>
+					<br class="clear" />
 					<?php echo $rs["Description1"]; ?><span id="read-more"><a href="<?php echo $rootpath; ?>business-idea-detail.php?id=<?php echo $rs["CompanyID"]; ?>">อ่านต่อ</a></span>
 				</p>
 			</section>

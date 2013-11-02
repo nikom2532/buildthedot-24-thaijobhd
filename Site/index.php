@@ -63,21 +63,31 @@ include ($rootpath . "include/search-bar.php");
 </div><!--end slide-image-->
 <div id="content" class="container_12">
 	<div class="grid_2 margin-left-5 margin-right-5">
-		<div id="banner-1">
-			<img src="admin/images/banner-2.png" width="144" height="143">
-		</div>
-		<div id="banner-3">
-			<img src="admin/images/banner-2.png" width="144" height="143">
-		</div>
-		<div id="banner-5">
-			<img src="admin/images/banner-2.png" width="144" height="143">
-		</div>
-		<div id="banner-7">
-			<img src="admin/images/banner-2.png" width="144" height="143">
-		</div>
-		<div id="banner-9">
-			<img src="admin/images/banner-2.png" width="144" height="143">
-		</div>
+<?php
+	for($i_advertisement=1;$i_advertisement<=9;$i_advertisement=$i_advertisement+2){
+		$sql_advertisement="
+			SELECT * 
+			FROM  `buildthedot_thaijobhd_ad`
+			WHERE `AdType` = 'Side_Ads'
+			AND `AdPosition` = '{$i_advertisement}' ;
+		";
+		$result_advertisement=@mysql_query($sql_advertisement);
+		if($rs_advertisement=@mysql_fetch_array($result_advertisement)){
+?>
+			<div id="banner-<?php echo $i_advertisement; ?>">
+				<a href="http://<?php echo $rs_advertisement["AdLink"]; ?>" target="_block"><img src="<?php echo $rootpath; ?>images/ad/<?php echo $rs_advertisement["AdPic"]; ?>" width="144" height="143"></a>
+			</div>
+<?php
+		}
+		else{
+?>
+			<div id="banner-<?php echo $i_advertisement; ?>">
+				<img src="<?php echo $rootpath; ?>admin/images/banner-2.png" width="144" height="143">
+			</div>
+<?php
+		}
+	}
+?>
 	</div>
 	<div class="grid_8"><?php //Center Content ?>
 		<div id="head-title">
@@ -146,10 +156,29 @@ include ($rootpath . "include/search-bar.php");
 				Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
 			</p 
 			-->
-			
-			<div id="banner">
-				<img src="images/banner-1.png" width="100%" <?php // width="458" height="175" ?> alt="Banner">
-			</div>
+<?php
+			$sql_advertisement="
+				SELECT * 
+				FROM  `buildthedot_thaijobhd_ad`
+				WHERE `AdType` = 'Content_Ads'
+				AND `AdPosition` = '2' ;
+			";
+			$result_advertisement=@mysql_query($sql_advertisement);
+			if($rs_advertisement=@mysql_fetch_array($result_advertisement)){
+?>
+				<div id="banner">
+					<a href="<?php echo $rs["AdLink"]; ?>" target="_block"><img src="images/ad/<?php echo $rs_advertisement["Content_Ads"]; ?>" width="100%" <?php // width="458" height="175" ?> alt="Banner"></a>
+				</div>
+<?php
+			}
+			else{
+?>
+				<div id="banner">
+					<img src="images/banner-1.png" width="100%" <?php // width="458" height="175" ?> alt="Banner">
+				</div>
+<?php
+			}
+?>
 		</div>
 	
 		<br class="clear seperator"/>
@@ -162,15 +191,15 @@ include ($rootpath . "include/search-bar.php");
 			<h2 id="sub-title">Full time<span class="right"><a href="find-job-new-fulltime.php" class="button round black">ดูทั้งหมด</a></span></h2>
 			<?php
 				$sql="
-				SELECT * 
+				SELECT *
 				FROM  buildthedot_thaijobhd_job
 				WHERE JobType = '1'
 				ORDER BY JobID DESC	
-				LIMIT 0,3				
+				LIMIT 0,3
 				";
 				$result=@mysql_query($sql);
 				if($result)
-				{	
+				{
 					$count = 0;
 					while($rs=@mysql_fetch_array($result))
 					{
@@ -225,71 +254,66 @@ include ($rootpath . "include/search-bar.php");
 			<h1>บริษัทชั้นนำ</h1>
 		</div>
 		<div id="top-company">
-			<div class="grid_2 margin-left-5 margin-right-5"><img src="images/banner-2.png" width="144" height="143">
+<?php
+		$sql_top_company="
+			SELECT * 
+			FROM  `buildthedot_thaijobhd_top_company`
+			LIMIT 0, 12 ;
+		";
+		$result_top_company=@mysql_query($sql_top_company);
+		while($rs_top_company=@mysql_fetch_array($result_top_company)){
+?>
+			<div class="grid_2 margin-left-5 margin-right-5"><a href="<?php echo $rs_top_company["LinkAddress"]; ?>" target="_blank"><img src="images/top_company/<?php echo $rs_top_company["CompanyPic"]; ?>" width="144" height="143" /></a>
 			</div>
-			<div class="grid_2 margin-left-5 margin-right-5"><img src="images/banner-2.png" width="144" height="143">
-			</div>
-			<div class="grid_2 margin-left-5 margin-right-5"><img src="images/banner-2.png" width="144" height="143">
-			</div>
-			<div class="grid_2 margin-left-5 margin-right-5"><img src="images/banner-2.png" width="144" height="143">
-			</div>
-			<div class="grid_2 margin-left-5 margin-right-5"><img src="images/banner-2.png" width="144" height="143">
-			</div>
-			<div class="grid_2 margin-left-5 margin-right-5"><img src="images/banner-2.png" width="144" height="143">
-			</div>
+<?php
+		}
+?>
+			<h2 class="right"><a href="<?php echo $rootpath; ?>top-company.php" class="button round black">ดูทั้งหมด</a></h2>
 		</div>
-		<div id="top-company">
-			<div class="grid_2 margin-left-5 margin-right-5"><img src="images/banner-2.png" width="144" height="143">
-			</div>
-			<div class="grid_2 margin-left-5 margin-right-5"><img src="images/banner-2.png" width="144" height="143">
-			</div>
-			<div class="grid_2 margin-left-5 margin-right-5"><img src="images/banner-2.png" width="144" height="143">
-			</div>
-			<div class="grid_2 margin-left-5 margin-right-5"><img src="images/banner-2.png" width="144" height="143">
-			</div>
-			<div class="grid_2 margin-left-5 margin-right-5"><img src="images/banner-2.png" width="144" height="143">
-			</div>
-			<div class="grid_2 margin-left-5 margin-right-5"><img src="images/banner-2.png" width="144" height="143">
-			</div>
-			<h2 class="right"><a href="#" class="button round black">ดูทั้งหมด</a></h2>
-		</div>
-	
+		
 		<br class="clear seperator"/>
 	
 		<div id="head-title">
 			<h1>ไอเดียธุรกิจแนะนำ </h1>
 		</div>
 		<div id="recommend-idea" class="grid_8">
-			<div class="grid_3">
-				<img src="images/banner-2.png" width="144" height="143">
-				<h3>Lorem Ipsum</h3>
-				<p>
-					Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, <span class="right" id="read-more"><a href="#">อ่านต่อ</a></span>
-				</p>
-			</div>
-			<div class="grid_3">
-				<img src="images/banner-2.png" width="144" height="143">
-				<h3>Lorem Ipsum</h3>
-				<p>
-					Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, <span class="right" id="read-more"><a href="#">อ่านต่อ</a></span>
-				</p>
-			</div>
-			<div class="grid_3">
-				<img src="images/banner-2.png" width="144" height="143">
-				<h3>Lorem Ipsum</h3>
-				<p>
-					Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, <span class="right" id="read-more"><a href="#">อ่านต่อ</a></span>
-				</p>
-			</div>
-			<div class="grid_3">
-				<img src="images/banner-2.png" width="144" height="143">
-				<h3>Lorem Ipsum</h3>
-				<p>
-					Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, <span class="right" id="read-more"><a href="#">อ่านต่อ</a></span>
-				</p>
-			</div>
+<?php
+			$sql_business_ieda_suggest="
+				SELECT * 
+				FROM  `buildthedot_thaijobhd_job_idea`
+				WHERE `IdeaRecomment` = 1
+				ORDER BY TIME(`IdeaTime`), `IdeaTime` DESC 
+				LIMIT 0, 4 ;
+			";
+			$result_business_ieda_suggest=@mysql_query($sql_business_ieda_suggest);
+			while($rs=@mysql_fetch_array($result)){
+?>
+				<div class="grid_3">
+					<img src="<?php echo $rootpath; ?>images/<?php
+						if(($rs["Pic1"] == "")&&($rs["Pic2"] == "")&&($rs["Pic3"] == "")){
+							echo "banner-2.png";
+						}
+						else{
+							echo "business-idea/";
+							if($rs["Pic1"] != ""){
+								echo $rs["Pic1"];
+							}
+							elseif($rs["Pic2"] != ""){
+								echo $rs["Pic2"];
+							}
+							elseif($rs["Pic3"] != ""){
+								echo $rs["Pic3"];
+							}
+						}
+					?>" width="144" height="143">
+					<h3><?php echo $rs["MainIdea"]; ?></h3>
+					<p><?php echo $rs["Description1"]; ?><span class="right" id="read-more"><a href="<?php echo $rootpath; ?>business-idea-detail.php?id=<?php echo $rs["CompanyID"]; ?>">อ่านต่อ</a></span></p>
+				</div>
+<?php
+			}
+?>
 		</div>
-		<h2 class="right"><a href="#" class="button round black">ดูทั้งหมด</a></h2>
+		<h2 class="right"><a href="<?php echo $rootpath; ?>business-idea.php?menu=suggest" class="button round black">ดูทั้งหมด</a></h2>
 		
 		<br class="clear seperator"/>
 	
@@ -297,62 +321,93 @@ include ($rootpath . "include/search-bar.php");
 			<h1>ไอเดียธุรกิจมาใหม่ </h1>
 		</div>
 		<div id="recommend-idea" class="grid_8">
-			<div class="grid_3">
-				<img src="images/banner-2.png" width="144" height="143">
-				<h3>Lorem Ipsum</h3>
-				<p>
-					Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, <span class="right" id="read-more"><a href="#">อ่านต่อ</a></span>
-				</p>
-			</div>
-			<div class="grid_3">
-				<img src="images/banner-2.png" width="144" height="143">
-				<h3>Lorem Ipsum</h3>
-				<p>
-					Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, <span class="right" id="read-more"><a href="#">อ่านต่อ</a></span>
-				</p>
-			</div>
-			<div class="grid_3">
-				<img src="images/banner-2.png" width="144" height="143">
-				<h3>Lorem Ipsum</h3>
-				<p>
-					Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, <span class="right" id="read-more"><a href="#">อ่านต่อ</a></span>
-				</p>
-			</div>
-			<div class="grid_3">
-				<img src="images/banner-2.png" width="144" height="143">
-				<h3>Lorem Ipsum</h3>
-				<p>
-					Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, <span class="right" id="read-more"><a href="#">อ่านต่อ</a></span>
-				</p>
-			</div>
+<?php
+			$sql_business_ieda_suggest="
+				SELECT * 
+				FROM  `buildthedot_thaijobhd_job_idea`
+				ORDER BY TIME(`IdeaTime`), `IdeaTime` DESC
+				LIMIT 0, 4 ;
+			";
+			$result_business_ieda_suggest=@mysql_query($sql_business_ieda_suggest);
+			while($rs=@mysql_fetch_array($result)){
+?>
+				<div class="grid_3">
+					<img src="<?php echo $rootpath; ?>images/<?php
+						if(($rs["Pic1"] == "")&&($rs["Pic2"] == "")&&($rs["Pic3"] == "")){
+							echo "banner-2.png";
+						}
+						else{
+							echo "business-idea/";
+							if($rs["Pic1"] != ""){
+								echo $rs["Pic1"];
+							}
+							elseif($rs["Pic2"] != ""){
+								echo $rs["Pic2"];
+							}
+							elseif($rs["Pic3"] != ""){
+								echo $rs["Pic3"];
+							}
+						}
+					?>" width="144" height="143">
+					<h3><?php echo $rs["MainIdea"]; ?></h3>
+					<p><?php echo $rs["Description1"]; ?><span class="right" id="read-more"><a href="<?php echo $rootpath; ?>business-idea-detail.php?id=<?php echo $rs["CompanyID"]; ?>">อ่านต่อ</a></span></p>
+				</div>
+<?php
+			}
+?>
 		</div>
 		
-		<h2 class="right"><a href="#" class="button round black">ดูทั้งหมด</a></h2>
+		<h2 class="right"><a href="<?php echo $rootpath; ?>business-idea.php" class="button round black">ดูทั้งหมด</a></h2>
 		<br class="clear seperator"/>
-	
-		<div class="grid_4 margin-left-5 margin-right-5">
-			<img src="images/banner-1.png" width="100%" <?php // width="458" height="175" ?> alt="Banner">
-		</div>
-		<div class="grid_4 margin-left-5 margin-right-5">
-			<img src="images/banner-1.png" width="100%" <?php // width="458" height="175" ?> alt="Banner">
-		</div>
+<?php
+		for($i_advertisement=1;$i_advertisement<=2;$i_advertisement++){
+			$sql_advertisement="
+				SELECT * 
+				FROM  `buildthedot_thaijobhd_ad`
+				WHERE `AdType` = 'Content_Ads'
+				AND `AdPosition` = '{$i_advertisement}' ;
+			";
+			$result_advertisement=@mysql_query($sql_advertisement);
+			if($rs_advertisement=@mysql_fetch_array($result_advertisement)){
+?>
+				<div class="grid_4 margin-left-5 margin-right-5">
+					<img src="images/banner-1.png" width="100%" <?php // width="458" height="175" ?> alt="Banner">
+				</div>
+<?php
+			}
+			else{
+				
+			}
+		}
+?>
+				
 	</div><?php //End Center Content ?>
 	<div class="grid_2 margin-left-5 margin-right-5">
-		<div id="banner-2">
-			<img src="admin/images/banner-2.png" width="144" height="143">
-		</div>
-		<div id="banner-4">
-			<img src="admin/images/banner-2.png" width="144" height="143">
-		</div>
-		<div id="banner-6">
-			<img src="admin/images/banner-2.png" width="144" height="143">
-		</div>
-		<div id="banner-8">
-			<img src="admin/images/banner-2.png" width="144" height="143">
-		</div>
-		<div id="banner-10">
-			<img src="admin/images/banner-2.png" width="144" height="143">
-		</div>
+<?php
+	for($i_advertisement=2;$i_advertisement<=10;$i_advertisement=$i_advertisement+2){
+		$sql_advertisement="
+			SELECT * 
+			FROM  `buildthedot_thaijobhd_ad`
+			WHERE `AdType` = 'Side_Ads'
+			AND `AdPosition` = '{$i_advertisement}' ;
+		";
+		$result_advertisement=@mysql_query($sql_advertisement);
+		if($rs_advertisement=@mysql_fetch_array($result_advertisement)){
+?>
+			<div id="banner-<?php echo $i_advertisement; ?>">
+				<a href="http://<?php echo $rs_advertisement["AdLink"]; ?>" target="_block"><img src="<?php echo $rootpath; ?>images/ad/<?php echo $rs_advertisement["AdPic"]; ?>" width="144" height="143"></a>
+			</div>
+<?php
+		}
+		else{
+?>
+			<div id="banner-<?php echo $i_advertisement; ?>">
+				<img src="<?php echo $rootpath; ?>admin/images/banner-2.png" width="144" height="143">
+			</div>
+<?php
+		}
+	}
+?>
 	</div>
 </div><!--end content -->
 <?php
