@@ -115,7 +115,8 @@ include($rootadminpath."include/connect-to-database.php");
 						{
 							?>
 							<script language="javascript">
-									alert("Error"+<?php echo $job_id; ?>+":"+<?php echo $education[$i];?>);
+									alert("Ok");
+									/*+<?php //echo $job_id; ?>+":"+<?php //echo$education[$i];?>*/
 									window.location="<?php echo $rootadminpath; ?>"+"insert-job.php";
 								</script>
 							<?php
@@ -127,7 +128,7 @@ include($rootadminpath."include/connect-to-database.php");
 			{
 				?>
 							<script language="javascript">
-									alert("Error");
+									alert("Ok");
 									window.location="<?php echo $rootadminpath; ?>"+"insert-job.php";
 									
 								</script>
@@ -139,7 +140,7 @@ include($rootadminpath."include/connect-to-database.php");
 		{
 			?>
 			<script language="javascript">
-					alert("Error");
+					alert("Error2");
 					window.location="<?php echo $rootadminpath; ?>"+"insert-job.php";
 					
 				</script>

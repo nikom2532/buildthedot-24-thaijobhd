@@ -1,10 +1,59 @@
 <?php 
+session_start();
 $rootpath = "./";
 $rootadminpath = "./admin/";
 include ("include/header.php");
 include ("admin/include/connect-to-database.php");
 include ("include/top-menu.php");  
-?>  
+?> 
+<?php
+				if(isset($_SESSION['userid']))
+				{
+					$id = $_SESSION['userid'];
+				}
+				else {
+					$id = "";
+				}
+			
+			?>
+<script src="js/jquery-1.7.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$("#register-button").click(function(){
+			
+			var user_id = $(this).attr("title");
+			//<?php //echo $id;?>
+			if(user_id == null || user_id == "")
+			{
+			//		alert("Please Sing in.");
+			}
+			
+			if(user_id == null || user_id == ""){
+				alert("Please Sing in.");
+			}
+			else
+			{
+				$.post("include/module/send-resume-process.php",{ id : user_id}, function(data){
+					
+					
+				});
+			}
+			/*
+			/*$.post("search-process.php",
+			{
+				
+			},function(data)
+			{
+				
+			}
+			*/
+		});
+		
+	});
+	
+	
+</script> 
+
     <div id="content" class="container_12">
         <div id="content-detail">
         	<div id="head-title">
@@ -62,7 +111,7 @@ include ("include/top-menu.php");
             	</div><!--end grid_9 -->
                 <div class="grid_2 center" id="available-box">
                     <b class="center"><?php echo "ว่าง ". $q . " ตำแหน่ง"; ?></b>
-                    <b class="button blue" id="register-button">สมัครงาน</b>
+                    <b class="button blue" id="register-button" title="<?php echo $id;?>">สมัครงาน</b>
                			
                 </div>
                 </div>

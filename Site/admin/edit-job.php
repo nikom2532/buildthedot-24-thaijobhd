@@ -172,7 +172,7 @@ else {
 					$saraly = $show['Saraly'];
 					$description = $show['JobDescription'];
 					$recomment = $show['Recomment'];
-					$property = $show['Property'];
+					$property = $show['property'];
 					$st = $show['StartTime'];
 					$et = $show['EndTime'];
 					$type = $show['JobType'];			
