@@ -291,7 +291,7 @@ include ($rootpath . "include/top-menu.php");
 		$result_top_company=@mysql_query($sql_top_company);
 		while($rs_top_company=@mysql_fetch_array($result_top_company)){
 ?>
-			<div class="grid_2 margin-left-5 margin-right-5"><a href="<?php echo "../../../".$rs_top_company["LinkAddress"]; ?>" target="_blank"><img src="images/top_company/<?php echo $rs_top_company["CompanyPic"]; ?>" width="144" height="143" /></a>
+			<div class="grid_2 margin-left-5 margin-right-5"><a href="<?php echo "../../".$rs_top_company["LinkAddress"]; ?>" target="_blank"><img src="images/top_company/<?php echo $rs_top_company["CompanyPic"]; ?>" width="144" height="143" /></a>
 			</div>
 <?php
 		}
