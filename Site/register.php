@@ -13,10 +13,16 @@ include ($rootpath . "include/top-menu.php");
 			<div id="head-title">
 				<h1>ฝากประวัติ <span class="text-blue">-  แก้ไขประวัติส่วนตัว</span></h1>
 			</div>
-			<form id="register_profile_form" name="edit_profile_form" action="<?php echo $rootpath; ?>include/module/register-profile-process.php" method="POST" enctype="multipart/form-data">
-				<p class="grid_10">
-					<input type="text" id="email" name ="register_profile_messaage" class="round" value="<?php echo $_GET["register_profile_messaage"]; ?>" />
-				</p>
+			<form id="register_profile_form" name="register_profile_form" action="<?php echo $rootpath; ?>include/module/register-profile-process.php" method="POST" enctype="multipart/form-data">
+<?php
+				if($_GET["register_profile_messaage"]!=""){
+?>
+					<p class="grid_10">
+						<?php echo $_GET["register_profile_messaage"]; ?>
+					</p>
+<?php
+				}
+?>
 				<br class="clear"/>
 				<p class="grid_2">
 					E-mail
@@ -29,14 +35,14 @@ include ($rootpath . "include/top-menu.php");
 					Password
 				</p>
 				<p class="grid_8">
-					<input type="text" id="passsword1" name ="passsword1" class="round" value="<?php echo $rs_user["email"]; ?>" />
+					<input type="password" id="passsword1" name ="passsword1" class="round" value="<?php echo $rs_user["password1"]; ?>" />
 				</p>
 				<br class="clear"/>
 				<p class="grid_2">
 					Retry Password
 				</p>
 				<p class="grid_8">
-					<input type="text" id="passsword2" name ="passsword2" class="round" value="<?php echo $rs_user["email"]; ?>" />
+					<input type="password" id="passsword2" name ="passsword2" class="round" value="<?php echo $rs_user["password2"]; ?>" />
 				</p>
 				<br class="clear"/>
 				<h2 class="grid_">เพิ่มรูป </h2>
@@ -126,13 +132,6 @@ include ($rootpath . "include/top-menu.php");
 				</p>
 				<p class="grid_8">
 					<input type="text" id="phone_number" name ="phone_number" class="round" value="<?php echo $rs_user["phone_number"]; ?>" onkeypress="validate_phone_number(event); " />
-				</p>
-				<br class="clear"/>
-				<p class="grid_2">
-					E-mail
-				</p>
-				<p class="grid_8">
-					<input type="text" id="email" name ="email" class="round" value="<?php echo $rs_user["email"]; ?>" />
 				</p>
 				<br class="clear"/>
 				<p class="grid_2">
@@ -372,7 +371,7 @@ include ($rootpath . "include/top-menu.php");
 				<br class="clear"/>
 	
 				<p class="grid_12 center">
-					<a href="#" onclick="document.getElementById('edit_profile_form').submit(); " class="save-button blue round">บันทึก</a>
+					<a href="#" onclick="document.getElementById('register_profile_form').submit(); " class="save-button blue round">บันทึก</a>
 				</p>
 			</form>
 		</div>

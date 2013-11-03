@@ -42,7 +42,15 @@ $ref_phone_number=$_POST["ref_phone_number"];
 //create time now
 $time_now = strtotime("now");
 
-if($passsword1!=$passsword2){
+if($mail="" && $passsword1=="" && $passsword2==""){
+	?><form id="register_profile_message_form" action="<?php echo $rootpath; ?>register.php" method="POST">
+		<input type="hidden" id="register_profile_messaage" name="register_profile_messaage" value="forgot to enter E-mail and/or Passwords" />
+	</form>
+	<script>
+		document.getElementById("register_profile_message_form").submit();
+	</script><?php
+}
+elseif($passsword1!=$passsword2){
 	?><form id="register_profile_message_form" action="<?php echo $rootpath; ?>register.php" method="POST">
 		<input type="hidden" id="register_profile_messaage" name="register_profile_messaage" value="You type the password not to similar" />
 	</form>
@@ -66,6 +74,10 @@ else{
 		</script><?php
 	}
 	else{
+		$email = htmlspecialchars(trim($email),ENT_QUOTES);
+		$password_source = htmlspecialchars(trim($password1),ENT_QUOTES);
+		$password = md5(sha1($password_source)).sha1(md5($password_source));
+		unset($password_source);
 		$sql_user_edit="
 			INSERT INTO `buildthedot_thaijobhd_user_account` 
 			(
@@ -77,6 +89,8 @@ else{
 			VALUE
 			(
 			'".$_SESSION["userid"]."' ,
+			 '{$email}' ,
+			 '{$password}',
 				'{$birthdate}', '{$place_of_birth}', '{$age}', '{$nationality}', 
 			'{$religion}' ,
 			'{$height}' ,
@@ -85,7 +99,6 @@ else{
 			 '{$lesion}' ,
 			 '{$current_address}' ,
 			 '{$phone_number}' ,
-			 '{$email}' ,
 			 '{$pouse_name}' ,
 			 '{$military_status}' ,
 			 '{$current_address_status}' ,
