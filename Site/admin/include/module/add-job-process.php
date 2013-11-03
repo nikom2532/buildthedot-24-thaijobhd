@@ -104,8 +104,8 @@ include($rootadminpath."include/connect-to-database.php");
 						{
 							?>
 							<script language="javascript">
-									alert("Ok");
-									window.location="<?php echo $rootadminpath; ?>"+"insert-job.php";
+									alert("Success");
+									window.location="<?php echo $rootadminpath; ?>"+"job.php";
 									
 								</script>
 							<?php	
@@ -114,7 +114,7 @@ include($rootadminpath."include/connect-to-database.php");
 						{
 							?>
 							<script language="javascript">
-									alert("Sucess");
+									alert("Success");
 									/*+<?php //echo $job_id; ?>+":"+<?php //echo$education[$i];?>*/
 									window.location="<?php echo $rootadminpath; ?>"+"job.php";
 								</script>

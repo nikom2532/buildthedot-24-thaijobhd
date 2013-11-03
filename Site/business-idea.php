@@ -107,7 +107,7 @@ include ($rootpath . "include/top-menu.php");
 				<p class="grid_9">
 					<?php echo $rs["MainIdea"]; ?>
 					<br class="clear" />
-					<?php echo $rs["Description1"]; ?><span id="read-more"><a href="<?php echo $rootpath; ?>business-idea-detail.php?id=<?php echo $rs["CompanyID"]; ?>">อ่านต่อ</a></span>
+					<?php echo substr($rs["Description1"],0,250)."..."; ?><span id="read-more"><a href="<?php echo $rootpath; ?>business-idea-detail.php?id=<?php echo $rs["CompanyID"]; ?>">อ่านต่อ</a></span>
 				</p>
 			</section>
 <?php
@@ -116,7 +116,7 @@ include ($rootpath . "include/top-menu.php");
 		<div class="grid_12">
 <?php
 			//############ Paging ############
-			echo "a".pagination($page_limit, $page, $rootpath."business-idea.php?page=", $number_of_items); //call function to show pagination
+			echo "<font color = 'white'>s</font>".pagination($page_limit, $page, $rootpath."business-idea.php?page=", $number_of_items); //call function to show pagination
 ?>
 		</div>
 	</div>
