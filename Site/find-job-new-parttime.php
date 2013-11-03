@@ -1,10 +1,11 @@
 <?php include("include/header.php");?>
 <?php
-session_start(); 
-include("admin/include/connect-to-database.php"); 
-include("include/top-menu.php");       
-$rootpath="../";
-$rootadminpath="./";
+session_start();
+$rootpath = "./";
+$rootadminpath = "./admin/";
+include ("include/header.php");
+include ("admin/include/connect-to-database.php");
+include ("include/top-menu.php");       
 include("lib/func_pagination.php");
 include("admin/include/initial/pagination.php");
 ?>     
