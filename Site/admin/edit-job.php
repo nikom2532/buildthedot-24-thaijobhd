@@ -310,9 +310,9 @@ else {
 		                         	  	if($i == 1)
 										{
 		                         	  ?>          
-		                                    <div class="grid_3">
+		                                    
 		                                    	<a href="edit-job-attribute.php" class="table-actions-button text-blue">แก้ไข</a>
-		                                    </div>
+		                                    
 		                         <?php 	} ?>  
 		                                    <br class="clear"/>
 		                                    	<a href="add-job-attribute-two.php" class="table-actions-button text-red">เพิ่ม</a>

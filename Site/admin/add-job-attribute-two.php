@@ -141,15 +141,16 @@ else {
 		                         	  	if($i == 1)
 										{
 		                         	  ?>
-		                                    <div class="grid_3">
+		                                 
 		                                    	<a href="edit-job-attribute.php" class="table-actions-button text-blue">แก้ไข</a>
-		                                    </div>
-		                               <?php } ?> 
+		                                   
+		                               <?php } ?>
+		                               <p>
 		                                  <div class="edu">
 		                                    <input type="text" id="edu" class="eduction" name="edu[]"/>
 		                                    </div> 
 		                                    <br class="clear"/>
-		                                    	<a href="#" class="table-actions-button_text-blue">เพิ่ม</a>
+		                                    	<a href="#" class="table-actions-button_text-blue text-red">เพิ่ม</a>
 		                              </div>
 		                           </div>
 		                         

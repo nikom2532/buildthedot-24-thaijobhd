@@ -9,6 +9,10 @@ $Att = $_POST['edu'];
 $sucess = 0;
 for($i= 0; $i < count($Att);$i++)
 {
+	if($Att[$i] == null || $Att[$i] == "")
+	{
+		break;
+	}
 	$SQL = "INSERT INTO buildthedot_thaijobhd_job_attribute (JobID, AtrributDescription) VALUES ('$jid', '$Att[$i]')";
 	$resultSQL = mysql_query($SQL);
 	if($resultSQL)
