@@ -88,6 +88,7 @@ include ("include/top-menu.php");
 							$pl = $rs['Place'];
 							$s = $rs['Saraly'];
 							$q = $rs['Quantity'];
+							$p = $rs['property'];
 						}
     				?>
                      <h6 id="headline"><?php echo $name; ?></h6>
@@ -98,7 +99,9 @@ include ("include/top-menu.php");
                  	 <p><?php echo $pl; ?></p>
                   <h6 class="detail-title">เงินเดือน</h6>
                   	<p><?php echo $s; ?> บาท</p>
-                  <h6 class="detail-title">คุณสมบัติ</h6>
+                  <h6 class="detail-title">คุณสมบัติพิเศษ</h6>
+                  	<p><?php echo $p; ?> </p>
+                  <h6 class="detail-title">ระดับการศึกษา</h6>
                   <?php
                   		$sql="
 						SELECT  AtrributDescription
