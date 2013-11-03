@@ -116,7 +116,7 @@ include ($rootpath . "include/top-menu.php");
 		<div class="grid_12">
 <?php
 			//############ Paging ############
-			echo pagination($page_limit, $page, $rootpath."business-idea.php?page=", $number_of_items); //call function to show pagination
+			echo "a".pagination($page_limit, $page, $rootpath."business-idea.php?page=", $number_of_items); //call function to show pagination
 ?>
 		</div>
 	</div>
