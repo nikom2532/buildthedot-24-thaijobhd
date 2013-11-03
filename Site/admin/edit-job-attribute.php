@@ -34,7 +34,29 @@
 </script>		
 
 	<?php 
-	$Admin = "a@a.com";
+	
+
+$rootpath="../";
+$rootadminpath="./";
+include($rootadminpath."include/header.php");
+include("include/connect-to-database.php");
+
+//For Development mode(No need to login)
+$_SESSION["userid"] = "1";
+
+if ($_SESSION["userid"] == "") {
+	include ($rootadminpath . "include/login.php");
+	include ("include/footer.php");
+} 
+else {
+	//check for Logout mode
+	if(isset($_GET["mode"])){
+		if($_GET["mode"]=="logout"){
+			include($rootadminpath."include/module/logout_process.php");
+		}
+	}
+	//normal mode
+	else{$Admin = "a@a.com";
 	$sql = "SELECT email, job_status FROM buildthedot_thaijobhd_user_account WHERE email = '$Admin'";
 	$result = mysql_query($sql);
 	$jid = $_SESSION['jid'];
@@ -70,7 +92,7 @@
 						
 						<div class="content-module-main">
 		                    <div id="head-title">
-		                    	<h1>งาน <span class="text-black">- เพิ่ม </span></h1>
+		                    	<h1>ระดับการศึกษา <span class="text-black">- เพิ่ม </span></h1>
 		                	</div>
 							<div id="content-detail" class="container_12">
 		                    <section>
@@ -126,7 +148,7 @@
 		else 
 		{?>
 				<script language="text/JavaScript">
-					alert("Kakkkk");
+					alert("Error");
 				</script>	
 		<?php 
 		}
@@ -135,15 +157,22 @@
 	{
 		?>
 				<script language="JavaScript">
-					alert("Kakkkk");
+					alert("Error");
 				</script>	
 			<?php 
 	}
 	
 	?>
-<?php include("include/footer.php");?>
+<?php include("include/footer.php");
+				
+			
+		
+	}	
+}	
+	
+	
+	
 
-<?php 
 /*$rootpath="../";
 $rootadminpath="./";
 include($rootadminpath."include/header.php");

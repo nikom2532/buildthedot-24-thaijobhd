@@ -274,7 +274,7 @@ else {
 		                          		<p><input name="date_to" type="text" id="date_to" class="round" value="<?php echo $et;?>"/></p>
 		                          </div><br class="clear"/>
 		                          <div class="grid_2">
-		                                <h6 class="detail-title">งานแนะนำ - <?php if($recomment == 1){echo "Recomment";}else{echo "Non recomment";}?> </h6>   
+		                                <h6 class="detail-title">งานแนะนำ - <?php if($recomment == 1){echo "Recommend";}else{echo "No recommend";}?> </h6>   
 		                          </div>
 		                          <div class="grid_8">
 
@@ -284,7 +284,7 @@ else {
 		                          </div><br class="clear"/>
 		
 		                          <br class="clear"/>
-		                      
+								  <h6 class="detail-title">การศึกษา</h6>		                      
 								  <div class="prefix_2" id="prefix_2">
 		                          	  <p class="center head-table grid_5">ระดับการศึกษา</p>
 		                         	
@@ -302,7 +302,7 @@ else {
 												$attDes  = $show['AtrributDescription'];
 												$i = 1;
 											?>
-												 <div class="grid_5"><?php echo $attDes; ?></div>
+										<div class="grid_5"><?php echo $attDes; ?></div>
 										<?php
 											}
 										}                     	  
