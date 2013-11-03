@@ -285,6 +285,7 @@ include ($rootpath . "include/top-menu.php");
 		$sql_top_company="
 			SELECT * 
 			FROM  `buildthedot_thaijobhd_top_company`
+			WHERE Status = 1
 			LIMIT 0, 12 ;
 		";
 		$result_top_company=@mysql_query($sql_top_company);
