@@ -81,29 +81,19 @@ else{
 		$sql_user_edit="
 			INSERT INTO `buildthedot_thaijobhd_user_account` 
 			(
-				`id`, `birthdate`, `place_of_birth`, `age`, `nationality`, `religion`, `height`, `weight`, `blood`
-				, `lesion`, `current_address`, `phone_number`, `email`, `pouse_name`, `military_status`
+				`email`, `password`, `birthdate`, `place_of_birth`, `age`, `nationality`, `religion`, `height`, `weight`, `blood`
+				, `lesion`, `current_address`, `phone_number`, `pouse_name`, `military_status`
 				, `current_address_status`, `relationship_status`, `father_name`, `father_age`, `father_career`
 				, `father_live_status`, `mother_name`, `mother_age`, `mother_career`, `mother_live_status` 
 			)
 			VALUE
 			(
-			'".$_SESSION["userid"]."' ,
 			 '{$email}' ,
 			 '{$password}',
 				'{$birthdate}', '{$place_of_birth}', '{$age}', '{$nationality}', 
-			'{$religion}' ,
-			'{$height}' ,
-			'{$weight}' ,
-			 '{$blood}' ,
-			 '{$lesion}' ,
-			 '{$current_address}' ,
-			 '{$phone_number}' ,
-			 '{$pouse_name}' ,
-			 '{$military_status}' ,
-			 '{$current_address_status}' ,
-			 '{$relationship_status}' ,
-			 '{$father_name}' ,
+			'{$religion}' ,	'{$height}' ,	'{$weight}' ,	 '{$blood}' ,	 '{$lesion}' ,
+			 '{$current_address}' ,	 '{$phone_number}' , '{$pouse_name}' , '{$military_status}' ,
+			 '{$current_address_status}' , '{$relationship_status}' ,	 '{$father_name}' ,
 			 '{$father_age}' ,
 			 '{$father_career}' ,
 			 '{$father_live_status}' ,
@@ -114,6 +104,7 @@ else{
 			);
 		";
 		@mysql_query($sql_user_edit);
+		$_SESSION["userid"] = mysql_insert_id();
 		$sql_user_ref="
 			SELECT * 
 			FROM  `buildthedot_thaijobhd_user_account_reference_contacts` 
