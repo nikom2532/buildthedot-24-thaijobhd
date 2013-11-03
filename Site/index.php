@@ -123,7 +123,7 @@ include ($rootpath . "include/top-menu.php");
 				            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="black"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
 				            <p>
 				            <?php 
-				            	$des = substr($rs['JobDescription'], 0 , 200);
+				            	$des = substr($rs['JobDescription'], 0 , 125);
 				            	echo $des."..."; 
 				            ?>
 				            <span id="read-more"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>">อ่านต่อ</a></span></p>
@@ -158,7 +158,7 @@ include ($rootpath . "include/top-menu.php");
 						{?>
 			            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="black"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
 			            <p><?php
-			            	$des = substr($rs['JobDescription'], 0 , 200);
+			            	$des = substr($rs['JobDescription'], 0 , 125);
 			            	echo $des."...";
 			            	?>
 			            <span id="read-more"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>">อ่านต่อ</a></span></p>
@@ -225,7 +225,7 @@ include ($rootpath . "include/top-menu.php");
 						?>
 			            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="black" ><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
 			            <p><?php
-			            	$des = substr($rs['JobDescription'], 0 , 200);
+			            	$des = substr($rs['JobDescription'], 0 , 125);
 			            	echo $des."...";
 			            	?>
 			            <span id="read-more"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>">อ่านต่อ</a></span></p>
@@ -260,7 +260,7 @@ include ($rootpath . "include/top-menu.php");
 						?>
 			            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="black"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
 			            <p><?php
-			            	$des = substr($rs['JobDescription'], 0 , 200);
+			            	$des = substr($rs['JobDescription'], 0 , 125);
 			            	echo $des."...";
 			            	?>
 			            <span id="read-more"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>">อ่านต่อ</a></span></p>
@@ -334,7 +334,7 @@ include ($rootpath . "include/top-menu.php");
 						}
 					?>" width="144" height="143">
 					<h3><?php echo $rs["MainIdea"]; ?></h3>
-					<p><?php echo $rs["Description1"]; ?><span class="right" id="read-more"><a href="<?php echo $rootpath; ?>business-idea-detail.php?id=<?php echo $rs["CompanyID"]; ?>">อ่านต่อ</a></span></p>
+					<p><?php echo substr($rs["Description1"], 0 , 125); ?><span class="right" id="read-more"><a href="<?php echo $rootpath; ?>business-idea-detail.php?id=<?php echo $rs["CompanyID"]; ?>">อ่านต่อ</a></span></p>
 				</div>
 <?php
 			}
@@ -377,7 +377,7 @@ include ($rootpath . "include/top-menu.php");
 						}
 					?>" width="144" height="143">
 					<h3><?php echo $rs["MainIdea"]; ?></h3>
-					<p><?php echo $rs["Description1"]; ?><span class="right" id="read-more"><a href="<?php echo $rootpath; ?>business-idea-detail.php?id=<?php echo $rs["CompanyID"]; ?>">อ่านต่อ</a></span></p>
+					<p><?php echo substr($rs["Description1"], 0 , 125); ?><span class="right" id="read-more"><a href="<?php echo $rootpath; ?>business-idea-detail.php?id=<?php echo $rs["CompanyID"]; ?>">อ่านต่อ</a></span></p>
 				</div>
 <?php
 			}
