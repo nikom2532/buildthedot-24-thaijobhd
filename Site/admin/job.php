@@ -152,7 +152,7 @@ else {
 										<tr>
 											<td><?php //echo $rs["CompanyID"]; ?><?php echo $i++; ?></td>
 											<td>
-												<a href="business-idea-detail.php?CompanyID=<?php echo $rs["JobID"]; ?>" class="text-black"><?php echo $rs["PositionThai"]; ?></a>
+												<a href="edit-job.php?id=<?php echo $rs["JobID"]; ?>" class="text-black"><?php echo $rs["PositionThai"]; ?></a>
 											</td>
 											<td><?php echo $rs['CompanyName'];?></td>
 											<td id="status">

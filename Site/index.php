@@ -313,7 +313,7 @@ include ($rootpath . "include/top-menu.php");
 				LIMIT 0, 4 ;
 			";
 			$result_business_ieda_suggest=@mysql_query($sql_business_ieda_suggest);
-			while($rs=@mysql_fetch_array($result)){
+			while($rs=@mysql_fetch_array($result_business_ieda_suggest)){
 ?>
 				<div class="grid_3">
 					<img src="<?php echo $rootpath; ?>images/<?php
@@ -356,7 +356,7 @@ include ($rootpath . "include/top-menu.php");
 				LIMIT 0, 4 ;
 			";
 			$result_business_ieda_suggest=@mysql_query($sql_business_ieda_suggest);
-			while($rs=@mysql_fetch_array($result)){
+			while($rs=@mysql_fetch_array($result_business_ieda_suggest)){
 ?>
 				<div class="grid_3">
 					<img src="<?php echo $rootpath; ?>images/<?php
