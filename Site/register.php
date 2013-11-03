@@ -25,24 +25,24 @@ include ($rootpath . "include/top-menu.php");
 ?>
 				<br class="clear"/>
 				<p class="grid_2">
-					E-mail
+					E-mail*
 				</p>
 				<p class="grid_8">
-					<input type="text" id="email" name ="email" class="round" value="<?php echo $rs_user["email"]; ?>" />
+					<input type="text" id="email" name ="email" class="round required" value="<?php echo $rs_user["email"]; ?>" required />
 				</p>
 				<br class="clear"/>
 				<p class="grid_2">
-					Password
+					Password*
 				</p>
 				<p class="grid_8">
-					<input type="password" id="passsword1" name ="passsword1" class="round" value="<?php echo $rs_user["password1"]; ?>" />
+					<input type="password" id="passsword1" name ="passsword1 required" class="round" value="<?php echo $rs_user["password1"]; ?>" required />
 				</p>
 				<br class="clear"/>
 				<p class="grid_2">
-					Retry Password
+					Retry Password *
 				</p>
 				<p class="grid_8">
-					<input type="password" id="passsword2" name ="passsword2" class="round" value="<?php echo $rs_user["password2"]; ?>" />
+					<input type="password" id="passsword2" name ="passsword2 required" class="round" value="<?php echo $rs_user["password2"]; ?>" required />
 				</p>
 				<br class="clear"/>
 				<h2 class="grid_">เพิ่มรูป </h2>
@@ -57,7 +57,7 @@ include ($rootpath . "include/top-menu.php");
 				<br class="clear"/>
 				
 				<p class="grid_2">
-					วันเกิด
+					วันเกิด *
 				</p>
 				<p class="grid_8">
 					<input type="text" id="birthdate" name ="birthdate" class="round required" value="<?php echo $rs_user["birthdate"]; ?>" required />
@@ -371,8 +371,9 @@ include ($rootpath . "include/top-menu.php");
 				<br class="clear"/>
 	
 				<p class="grid_12 center">
-					<a href="#" onclick="document.getElementById('register_profile_form').submit(); " class="save-button blue round">บันทึก</a>
-					<!-- <input type="submit" class="save-button blue round" value="บันทึก" /> -->
+					<!-- <a href="#" onclick="document.getElementById('register_profile_form').submit(); " class="save-button blue round">บันทึก</a> -->
+					<!-- <a href="#" onclick="register_profile_form_submit(); " class="save-button blue round">บันทึก</a> -->
+					<input type="submit" class="save-button blue round" value="บันทึก" />
 				</p>
 			</form>
 		</div>

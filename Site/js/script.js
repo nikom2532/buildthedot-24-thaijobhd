@@ -78,3 +78,6 @@ function validate_phone_number(evt) {
     if(theEvent.preventDefault) theEvent.preventDefault();
   }
 }
+function register_profile_form_submit(){
+	document.getElementById('register_profile_form').submit(); 
+}
