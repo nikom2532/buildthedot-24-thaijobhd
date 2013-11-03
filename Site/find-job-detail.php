@@ -37,11 +37,13 @@ include ("include/top-menu.php");
 				$.post("include/module/send-resume-process.php",{ user_id : user_id, job_id : job_id} , function(data){
 					if(data)
 					{
-						alert(data);
+						//alert(data);
+						//$(location).attr("");
+						window.location="find-job-success.php";
 					}
 					else
 					{
-						alert(data);
+						window.location="find-job-fail.php";
 					}
 					
 				});
