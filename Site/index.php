@@ -123,7 +123,7 @@ include ($rootpath . "include/top-menu.php");
 				            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="black"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
 				            <p>
 				            <?php 
-				            	$des = substr($rs['JobDescription'], 0 , 50);
+				            	$des = substr($rs['JobDescription'], 0 , 200);
 				            	echo $des."..."; 
 				            ?>
 				            <span id="read-more"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>">อ่านต่อ</a></span></p>
@@ -158,7 +158,7 @@ include ($rootpath . "include/top-menu.php");
 						{?>
 			            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="black"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
 			            <p><?php
-			            	$des = substr($rs['JobDescription'], 0 , 50);
+			            	$des = substr($rs['JobDescription'], 0 , 200);
 			            	echo $des."...";
 			            	?>
 			            <span id="read-more"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>">อ่านต่อ</a></span></p>
@@ -225,7 +225,7 @@ include ($rootpath . "include/top-menu.php");
 						?>
 			            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="black" ><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
 			            <p><?php
-			            	$des = substr($rs['JobDescription'], 0 , 50);
+			            	$des = substr($rs['JobDescription'], 0 , 200);
 			            	echo $des."...";
 			            	?>
 			            <span id="read-more"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>">อ่านต่อ</a></span></p>
@@ -260,7 +260,7 @@ include ($rootpath . "include/top-menu.php");
 						?>
 			            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="black"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
 			            <p><?php
-			            	$des = substr($rs['JobDescription'], 0 , 50);
+			            	$des = substr($rs['JobDescription'], 0 , 200);
 			            	echo $des."...";
 			            	?>
 			            <span id="read-more"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>">อ่านต่อ</a></span></p>
