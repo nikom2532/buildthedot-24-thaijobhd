@@ -46,7 +46,7 @@
 			?>
 							<script language="javascript">
 
-									window.location="http://localhost/buildthedot-24-thaijobhd/Site/admin/edit-job.php?id=<?php echo $jid?>";
+									window.location="<?php echo $rootadminpath; ?>"+"job.php";
 
 									//window.location="http://localhost/buildthedot-24-thaijobhd2/Site/admin/edit-job.php?id=<?php //echo $jid ?> //";
 
@@ -59,7 +59,7 @@
 			?>
 							<script language="javascript">
 
-									window.location="http://localhost/buildthedot-24-thaijobhd/Site/admin/edit-job.php?id=<?php echo $jid?>";
+									window.location="<?php echo $rootadminpath; ?>"+"job.php";
 
 									//window.location="http://localhost/buildthedot-24-thaijobhd/Site/admin/edit-job.php?id=<?php //echo $jid?>//";
 

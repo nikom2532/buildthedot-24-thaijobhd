@@ -9,6 +9,10 @@ $Att = $_POST['edu'];
 $sucess = 0;
 for($i= 0; $i < count($Att);$i++)
 {
+	if($Att[$i] == null || $Att[$i] == "")
+	{
+		break;
+	}
 	$SQL = "INSERT INTO buildthedot_thaijobhd_job_attribute (JobID, AtrributDescription) VALUES ('$jid', '$Att[$i]')";
 	$resultSQL = mysql_query($SQL);
 	if($resultSQL)
@@ -20,7 +24,7 @@ if($sucess > 0)
 {
 	?>
 							<script language="javascript">
-									window.location="http://localhost/buildthedot-24-thaijobhd/Site/admin/edit-job.php?id=<?php echo $jid;?>";
+									window.location="<?php echo $rootadminpath; ?>"+"job.php";
 									alert("Success");
 								</script>
 	<?php	
@@ -29,7 +33,7 @@ else
 {
 	?>
 							<script language="javascript">
-									window.location="http://localhost/buildthedot-24-thaijobhd/Site/admin/edit-job.php?id=<?php echo $jid;?>";
+									window.location="<?php echo $rootadminpath; ?>"+"job.php";
 									alert("Error");
 								</script>
 	<?php	

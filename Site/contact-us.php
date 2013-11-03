@@ -1,4 +1,5 @@
 <?php
+session_start();
 $rootpath = "./";
 $rootadminpath = "./admin/";
 include ("include/header.php");

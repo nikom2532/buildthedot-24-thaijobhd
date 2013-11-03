@@ -1,5 +1,5 @@
 <?php include("include/header2.php");?>
-<?php include("include/top-bar.php");?>
+
 <?php include("include/connect-to-database.php");?>
 <?php @session_start();?>
 <script type="text/javascript">
@@ -108,11 +108,11 @@ include($rootadminpath."include/header.php");
 include("include/connect-to-database.php");
 
 //For Development mode(No need to login)
-$_SESSION["userid"] = "1";
+
 
 if ($_SESSION["userid"] == "") {
 	include ($rootadminpath . "include/login.php");
-	include ("include/footer.php");
+	//include ("include/footer.php");
 } 
 else {
 	//check for Logout mode
@@ -123,8 +123,8 @@ else {
 	}
 	//normal mode
 	else{
-	
-	$Admin = "a@a.com";
+	include("include/top-bar.php");
+	$Admin = $_SESSION["userid"];
 	$sql = "SELECT email, job_status FROM buildthedot_thaijobhd_user_account WHERE email = '$Admin'";
 	$result = mysql_query($sql);
 	if($result)
@@ -310,9 +310,9 @@ else {
 		                         	  	if($i == 1)
 										{
 		                         	  ?>          
-		                                    <div class="grid_3">
+		                                    
 		                                    	<a href="edit-job-attribute.php" class="table-actions-button text-blue">แก้ไข</a>
-		                                    </div>
+		                                    
 		                         <?php 	} ?>  
 		                                    <br class="clear"/>
 		                                    	<a href="add-job-attribute-two.php" class="table-actions-button text-red">เพิ่ม</a>
