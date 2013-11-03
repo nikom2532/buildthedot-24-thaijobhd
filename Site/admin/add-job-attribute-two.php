@@ -159,7 +159,7 @@
 		else 
 		{?>
 				<script language="text/JavaScript">
-					alert("Kakkkk");
+					alert("Error");
 				</script>	
 		<?php 
 		}
@@ -168,7 +168,7 @@
 	{
 		?>
 				<script language="JavaScript">
-					alert("Kakkkk");
+					alert("Error");
 				</script>	
 			<?php 
 	}

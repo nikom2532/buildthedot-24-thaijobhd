@@ -50,7 +50,7 @@
 
 									//window.location="http://localhost/buildthedot-24-thaijobhd2/Site/admin/edit-job.php?id=<?php //echo $jid ?> //";
 
-									alert("Ok");
+									alert("Success");
 							</script>
 			<?php
 	}
@@ -63,7 +63,7 @@
 
 									//window.location="http://localhost/buildthedot-24-thaijobhd/Site/admin/edit-job.php?id=<?php //echo $jid?>//";
 
-									alert("No");
+									alert("Error");
 							</script>
 			<?php
 	}

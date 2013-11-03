@@ -21,7 +21,7 @@ if($sucess > 0)
 	?>
 							<script language="javascript">
 									window.location="http://localhost/buildthedot-24-thaijobhd/Site/admin/edit-job.php?id=<?php echo $jid;?>";
-									alert("<?php echo $sucess;?>");
+									alert("Success");
 								</script>
 	<?php	
 }
@@ -30,7 +30,7 @@ else
 	?>
 							<script language="javascript">
 									window.location="http://localhost/buildthedot-24-thaijobhd/Site/admin/edit-job.php?id=<?php echo $jid;?>";
-									alert("<?php echo $sucess;?>");
+									alert("Error");
 								</script>
 	<?php	
 }
