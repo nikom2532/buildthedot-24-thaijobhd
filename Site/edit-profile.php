@@ -118,7 +118,7 @@ else{
 							E-mail
 						</p>
 						<p class="grid_8">
-							<input type="text" id="email" name ="email" class="round" value="<?php echo $rs_user["email"]; ?>" />
+							<input type="text" id="email" name ="email" class="round" value="<?php echo $rs_user["email"]; ?>" disable="disable" />
 						</p>
 						<br class="clear"/>
 						<p class="grid_2">

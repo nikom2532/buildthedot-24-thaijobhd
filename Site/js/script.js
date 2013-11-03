@@ -27,7 +27,7 @@ $(function() {
 			$( "#year_end" ).datepicker( "option", "minDate", selectedDate );
 		}
 	});
-	$( "#edit_profile_form #birthdate" ).datepicker({
+	$( "#birthdate" ).datepicker({
 		inline:true,
 		showOtherMonths:true,
 		changeMonth: true,

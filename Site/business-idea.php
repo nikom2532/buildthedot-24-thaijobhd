@@ -123,5 +123,9 @@ include ($rootpath . "include/top-menu.php");
 	
 </div><!--end content -->
 <?php
+if($_GET["page"] =="")
+	{
+			$_GET["page"] = 1;
+	}
 include ("include/footer.php");
 ?>

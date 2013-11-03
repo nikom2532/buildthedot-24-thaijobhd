@@ -20,7 +20,7 @@ else{
 	$lesion=$_POST["lesion"];
 	$current_address=$_POST["current_address"];
 	$phone_number=$_POST["phone_number"];
-	$email=$_POST["email"];
+	// $email=$_POST["email"];
 	$pouse_name=$_POST["pouse_name"];
 	$military_status=$_POST["military_status"];
 	$current_address_status=$_POST["current_address_status"];
@@ -64,7 +64,6 @@ else{
 			`lesion` = '{$lesion}' ,
 			`current_address` = '{$current_address}' ,
 			`phone_number` = '{$phone_number}' ,
-			`email` = '{$email}' ,
 			`pouse_name` = '{$pouse_name}' ,
 			`military_status` = '{$military_status}' ,
 			`current_address_status` = '{$current_address_status}' ,
