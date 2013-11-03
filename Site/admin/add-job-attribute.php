@@ -39,9 +39,39 @@
 				});  
 		});
 </script>
-		<?php   
-		
-				$company_name = $_POST['CompanyName'];
+<?php   
+$rootpath="../";
+$rootadminpath="./";
+include($rootadminpath."include/header.php");
+include("include/connect-to-database.php");
+
+//For Development mode(No need to login)
+$_SESSION["userid"] = "1";
+
+if ($_SESSION["userid"] == "") {
+	include ($rootadminpath . "include/login.php");
+	include ("include/footer.php");
+} 
+else {
+	//check for Logout mode
+	if(FALSE){
+		include($rootadminpath."include/module/logout_process.php");
+	}
+	//normal mode
+	else{
+			$Admin = "a@a.com";
+			$sql = "SELECT email, job_status FROM buildthedot_thaijobhd_user_account WHERE email = '$Admin'";
+			$result = mysql_query($sql);
+			if($result)
+			{ 
+				while($show = mysql_fetch_array($result))
+				{
+					$e_mail = $show['email'];
+					$Status = $show['job_status'];
+				}
+				if($Status = 1)
+				{
+										$company_name = $_POST['CompanyName'];
 				$position_thai_name = $_POST['PositionThaiName'];
 				$position_eng_name = $_POST['PositionEngName'];
 				$place_name = $_POST['PlaceName'];
@@ -255,6 +285,12 @@
 	}
 	
 	?>
-<?php include("include/footer.php");?>
+<?php include("include/footer.php");
 
-
+										
+				}
+			}
+	}		
+}				
+?>
+				
