@@ -6,7 +6,7 @@ $rootadminpath = "./admin/";
 include ($rootpath . "include/header.php");
 include ($rootadminpath . "include/connect-to-database.php");
 include ($rootpath . "include/top-menu.php");
-include ($rootpath . "include/search-bar.php");
+//include ($rootpath . "include/search-bar.php");
 include($rootpath."lib/func_pagination.php");
 include($rootpath."include/initial/pagination.php");
 ?>
