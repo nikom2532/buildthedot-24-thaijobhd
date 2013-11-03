@@ -120,7 +120,7 @@ include ($rootpath . "include/top-menu.php");
 					{
 						if(checkTime($rs['StartTime'],$rs['EndTime']))
 						{?>
-				            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="red"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
+				            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="black"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
 				            <p>
 				            <?php 
 				            	$des = substr($rs['JobDescription'], 0 , 50);
@@ -156,7 +156,7 @@ include ($rootpath . "include/top-menu.php");
 					{
 						if(checkTime($rs['StartTime'],$rs['EndTime']))
 						{?>
-			            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="red"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
+			            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="black"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
 			            <p><?php
 			            	$des = substr($rs['JobDescription'], 0 , 50);
 			            	echo $des."...";
@@ -223,7 +223,7 @@ include ($rootpath . "include/top-menu.php");
 						if(checkTime($rs['StartTime'],$rs['EndTime']))
 						{
 						?>
-			            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="red" ><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
+			            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="black" ><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
 			            <p><?php
 			            	$des = substr($rs['JobDescription'], 0 , 50);
 			            	echo $des."...";
@@ -258,7 +258,7 @@ include ($rootpath . "include/top-menu.php");
 						if(checkTime($rs['StartTime'],$rs['EndTime']))
 						{
 						?>
-			            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="red"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
+			            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="black"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
 			            <p><?php
 			            	$des = substr($rs['JobDescription'], 0 , 50);
 			            	echo $des."...";
