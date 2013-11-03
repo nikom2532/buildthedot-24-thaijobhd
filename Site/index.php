@@ -1,4 +1,3 @@
-<script src="js/jquery-1.7.1.min.js"></script>
 <?php
 session_start();
 $rootpath = "./";
@@ -6,7 +5,7 @@ $rootadminpath = "./admin/";
 include ($rootpath . "include/header.php");
 include ($rootadminpath . "include/connect-to-database.php");
 include ($rootpath . "include/top-menu.php");
-include ($rootpath . "include/search-bar.php");
+//include ($rootpath . "include/search-bar.php");
 ?>
 <?php /* ?>
 <!--start banner -->
@@ -58,6 +57,15 @@ include ($rootpath . "include/search-bar.php");
 </div>
 <!--end banner side-right -->
 <?php */ ?>
+<div id="search-bar" class="container_12">
+	<form action="search.php" method="POST" id="search-form" class="center"  class="grid_12">
+		<fieldset>
+			<label for="keyword">ค้นหางาน</label>
+			<input type="text" id="keyword" class="round" name="search" placeholder="ค้นหาตำแหน่งงาน"/>
+			<input type="submit" value="" class="round black ic-search" />
+		</fieldset>
+	</form>
+</div><!--end search-bar -->
 <div  id="slide-image" class="container_12">
 	<img src="images/slide-image.jpg" width="1000" height="280" alt="images">
 </div><!--end slide-image-->
@@ -110,12 +118,17 @@ include ($rootpath . "include/search-bar.php");
 					$count = 0;
 					while($rs=@mysql_fetch_array($result))
 					{
-						?>
-			            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="red"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
-			            <p><?php echo $rs['JobDescription']; ?>
-			            <span id="read-more"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>">อ่านต่อ</a></span></p>
-			        <?php
-					
+						if(checkTime($rs['StartTime'],$rs['EndTime']))
+						{?>
+				            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="black"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
+				            <p>
+				            <?php 
+				            	$des = substr($rs['JobDescription'], 0 , 50);
+				            	echo $des."..."; 
+				            ?>
+				            <span id="read-more"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>">อ่านต่อ</a></span></p>
+				        <?php	
+			        	}
 					}
 				}
 			?>
@@ -141,12 +154,16 @@ include ($rootpath . "include/search-bar.php");
 					$count = 0;
 					while($rs=@mysql_fetch_array($result))
 					{
-						?>
-			            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="red"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
-			            <p><?php echo $rs['JobDescription']; ?>
+						if(checkTime($rs['StartTime'],$rs['EndTime']))
+						{?>
+			            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="black"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
+			            <p><?php
+			            	$des = substr($rs['JobDescription'], 0 , 50);
+			            	echo $des."...";
+			            	?>
 			            <span id="read-more"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>">อ่านต่อ</a></span></p>
 			        <?php
-					
+			        	}
 					}
 				}
 			?>
@@ -203,12 +220,17 @@ include ($rootpath . "include/search-bar.php");
 					$count = 0;
 					while($rs=@mysql_fetch_array($result))
 					{
+						if(checkTime($rs['StartTime'],$rs['EndTime']))
+						{
 						?>
-			            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="red" ><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
-			            <p><?php echo $rs['JobDescription']; ?>
+			            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="black" ><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
+			            <p><?php
+			            	$des = substr($rs['JobDescription'], 0 , 50);
+			            	echo $des."...";
+			            	?>
 			            <span id="read-more"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>">อ่านต่อ</a></span></p>
 			        <?php
-					
+			        	}
 					}
 				}
 			?>
@@ -233,12 +255,17 @@ include ($rootpath . "include/search-bar.php");
 					$count = 0;
 					while($rs=@mysql_fetch_array($result))
 					{
+						if(checkTime($rs['StartTime'],$rs['EndTime']))
+						{
 						?>
-			            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="red"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
-			            <p><?php echo $rs['JobDescription']; ?>
+			            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="black"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
+			            <p><?php
+			            	$des = substr($rs['JobDescription'], 0 , 50);
+			            	echo $des."...";
+			            	?>
 			            <span id="read-more"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>">อ่านต่อ</a></span></p>
 			        <?php
-					
+						}
 					}
 				}
 			?>
@@ -412,4 +439,109 @@ include ($rootpath . "include/search-bar.php");
 </div><!--end content -->
 <?php
 	include ("include/footer.php");
+	
+	
+
+	function checkTime($ST,$ET)
+	{
+		$NY = (int)date("Y");
+		$SY = substr($ST,0,4);
+		$EY = substr($ET,0,4);
+		//echo $SY."-".$NY."-".$EY;
+		if($NY < $SY || $NY > $EY) 
+		{	//echo "^_^";
+			return FALSE;
+		}
+		elseif($NY > $SY && $NY < $EY)
+		{	//echo "^.^";
+			return TRUE;	
+		}
+		elseif($NY == $SY && $NY == $EY) 
+		{	//echo "^8^";
+			if(checkStartMonth($ST) && checkEndMonth($ET))
+			{
+				return TRUE;
+			}
+		}
+		elseif($NY == $SY && $NY < $EY)
+		{	//echo "^U^";
+			return checkEndMonth($ET);	
+		}
+		elseif ($NY > $SY && $NY == $EY) 
+		{	//echo "^3^";
+			return checkEndMonth($ET);
+		}
+	}
+	
+	
+	function checkStartMonth($ST)
+	{
+			$NM = (int)date("m");
+			$SM = substr($ST,5,2);
+			//echo $NM."--".$SM;
+			if($NM == $SM)
+			{
+				return checkDayStart($ST);
+			}
+			elseif($NM > $SM) 
+			{
+				return TRUE;	
+			}
+			elseif($NM < $SM) {
+				return FALSE;
+			}
+	}	
+
+	function checkEndMonth($ET)
+	{
+			$NM = (int)date("m");
+			$EM = substr($ET,5,2);
+			//echo $NM."-".$EM;
+			if($NM == $EM)
+			{
+				return checkDayEnd($ET);
+			}
+			elseif($NM > $EM) 
+			{
+				return FALSE;	
+			}
+			elseif($NM < $EM) 
+			{
+				return TRUE;
+			}
+	}
+
+
+	function checkDayStart($ST)
+	{
+		$ND = (int)date("d");
+		$SD = substr($ST,8,2);
+		if($ND ==$SD)
+		{
+			return TRUE;
+		}
+		elseif ($ND > $SD) {
+			return TRUE;
+		}
+		else {
+			return FALSE;		
+		}
+	}
+
+	function checkDayEnd($ET)
+	{
+		$ND = (int)date("d");
+		$ED = substr($ET,8,2);
+		if($ND == $ED)
+		{
+			return TRUE;
+		}
+		elseif ($ND > $ED) {
+			return FALSE;	
+		}
+		else {
+			return TRUE;	
+		}
+	}
+	
 ?>

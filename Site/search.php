@@ -25,7 +25,9 @@ include ($rootpath . "include/top-menu.php");
 		
 				$.each(obj, function(key, val){
 					
-					$("#search-result").append("<h6 id='headline'><a href='find-job-detail.php?id=" + val['id'] + "'><font color='blue'>"+val['company']+" : "+ val['thaiPosition'] +"</font></a><h5 class='date'>"+ val['time']+"</h5></h6> <p>" + val['Description'] + "<span id='read-mor'><a href='find-job-detail.php?id="+val['id']+"'><font color='blue'> อ่านต่อ</font></a></span></p>");
+					$("#search-result").append("<h6 id='headline'><a href='find-job-detail.php?id=" + val['id'] + "'><font color='black'>"+val['company']+" : "+ val['thaiPosition'] +"</font></a><span id='job-type'>"+"-"+val['type']+"</span></h6><h5 class='date'>"+ val['time']
+					+"</h5> <p>"
+					 + val['Description']+ "..." + "<span id='read-more'><a href='find-job-detail.php?id="+val['id']+"'> อ่านต่อ</a></span></p>");
 				});
 			});	
 		});
@@ -78,10 +80,10 @@ include ($rootpath . "include/top-menu.php");
 					$count++;
 			
 	?>
-        	<h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="red"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a><span id="job-type">- 
+        	<h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="black"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a><span id="job-type">- 
             <?php if((int)$rs['JobType'] == 0){ ?> Part Time  <?php }else{ ?>Full Time <?php } ?></span></h6>
             <h5 class="date"><?php echo date("D-M-Y"); ?></h5>
-            <p><?php echo $rs['JobDescription']; ?><span id="read-more"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>">อ่านต่อ</a></span></p>
+            <p><?php echo substr($rs['JobDescription'],0,50)."..."; ?><span id="read-more"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>">อ่านต่อ</a></span></p>
         	<?php
 				}
 			}

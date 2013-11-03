@@ -64,8 +64,7 @@ include($rootadminpath."include/connect-to-database.php");
 	
 	/*$SQL = "INSERT INTO buildthedot_thaijobhd_job ('CompanyName', 'PositionThai','PositionEng','Place','Saraly','JobDescription', 'Recomment', 'StartTime', 'EndTime', 'JobType') 
 	VALUES ($company_name, $position_thai_name, $position_eng_name, $place_name, $saraly, $description, $recommented, $date_start,$date_end, $FPint)";
-	*/
-	
+	*/	
 	$SQL = "INSERT INTO  buildthedot_thaijobhd_job (  CompanyName ,  PositionThai ,  PositionEng ,  Place , Quantity , Saraly ,  JobDescription ,  Recomment, Property , StartTime ,  EndTime ,  JobType ) 
 			VALUES ( '$company_name',  '$position_thai_name',  '$position_eng_name',  '$place_name', '$quantity' ,'$saraly',  '$description',  '$recommented', '$property' , '$date_start',  '$date_end',  '$FPint')";
 	$resultSQL = mysql_query($SQL);
@@ -115,9 +114,9 @@ include($rootadminpath."include/connect-to-database.php");
 						{
 							?>
 							<script language="javascript">
-									alert("Ok");
+									alert("Sucess");
 									/*+<?php //echo $job_id; ?>+":"+<?php //echo$education[$i];?>*/
-									window.location="<?php echo $rootadminpath; ?>"+"insert-job.php";
+									window.location="<?php echo $rootadminpath; ?>"+"job.php";
 								</script>
 							<?php
 						}
@@ -128,8 +127,8 @@ include($rootadminpath."include/connect-to-database.php");
 			{
 				?>
 							<script language="javascript">
-									alert("Ok");
-									window.location="<?php echo $rootadminpath; ?>"+"insert-job.php";
+									alert("Sucess");
+									window.location="<?php echo $rootadminpath; ?>"+"job.php";
 									
 								</script>
 							<?php
@@ -140,7 +139,7 @@ include($rootadminpath."include/connect-to-database.php");
 		{
 			?>
 			<script language="javascript">
-					alert("Error2");
+					alert("Error");
 					window.location="<?php echo $rootadminpath; ?>"+"insert-job.php";
 					
 				</script>
