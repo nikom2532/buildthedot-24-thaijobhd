@@ -5,11 +5,8 @@ $rootadminpath = "./admin/";
 include ($rootpath . "include/header.php");
 include ($rootadminpath . "include/connect-to-database.php");
 // if($_SESSION["userid"] == "" || (!(isset($_SESSION["userid"])))) 
-if(isset($_SESSION["userid"])) {
-	if($_SESSION["userid"] == "" )
-	{
-		header("location: ".$rootpath."view-profile.php");
-	}
+if($_SESSION["userid"] == "" ) {
+	header("location: ".$rootpath."login.php");
 }
 else{
 	include ($rootpath . "include/top-menu.php");
