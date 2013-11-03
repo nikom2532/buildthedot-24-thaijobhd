@@ -1,5 +1,3 @@
-<script src="js/jquery-1.7.1.min.js"></script>
-
 <?php
 session_start();
 $rootpath = "./";
@@ -7,7 +5,7 @@ $rootadminpath = "./admin/";
 include ($rootpath . "include/header.php");
 include ($rootadminpath . "include/connect-to-database.php");
 include ($rootpath . "include/top-menu.php");
-include ($rootpath . "include/search-bar.php");
+//include ($rootpath . "include/search-bar.php");
 ?>
 <?php /* ?>
 <!--start banner -->
@@ -59,6 +57,15 @@ include ($rootpath . "include/search-bar.php");
 </div>
 <!--end banner side-right -->
 <?php */ ?>
+<div id="search-bar" class="container_12">
+	<form action="search.php" method="POST" id="search-form" class="center"  class="grid_12">
+		<fieldset>
+			<label for="keyword">ค้นหางาน</label>
+			<input type="text" id="keyword" class="round" name="search" placeholder="ค้นหาตำแหน่งงาน"/>
+			<input type="submit" value="" class="round black ic-search" />
+		</fieldset>
+	</form>
+</div><!--end search-bar -->
 <div  id="slide-image" class="container_12">
 	<img src="images/slide-image.jpg" width="1000" height="280" alt="images">
 </div><!--end slide-image-->

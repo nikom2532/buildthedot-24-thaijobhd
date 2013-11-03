@@ -28,8 +28,8 @@ include ($rootpath . "include/top-menu.php");
 			?></h1>
 		</div>
 <?php
-		include($rootpath."lib/func_pagination.php");
-		include($rootpath."include/initial/pagination.php");
+		include("lib/func_pagination.php");
+		include("include/initial/pagination.php");
 		$i=1;
 		// echo $_GET['page'];
 		/*if($_GET["page"] ==""){
