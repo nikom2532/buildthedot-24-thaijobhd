@@ -20,7 +20,7 @@ if($sucess > 0)
 {
 	?>
 							<script language="javascript">
-									window.location="http://localhost/buildthedot-24-thaijobhd/Site/admin/edit-job.php?id=<?php echo $jid;?>";
+									window.location="<?php echo $rootadminpath; ?>"+"job.php";
 									alert("Success");
 								</script>
 	<?php	
@@ -29,7 +29,7 @@ else
 {
 	?>
 							<script language="javascript">
-									window.location="http://localhost/buildthedot-24-thaijobhd/Site/admin/edit-job.php?id=<?php echo $jid;?>";
+									window.location="<?php echo $rootadminpath; ?>"+"job.php";
 									alert("Error");
 								</script>
 	<?php	
