@@ -18,7 +18,7 @@
 			$data[$count]['company'] = $rs['CompanyName'];
 			$data[$count]['thaiPosition'] = $rs['PositionThai'];
 			$data[$count]['engPosition'] = $rs['PositionEng'];
-			$data[$count]['Description'] = substr($rs['JobDescription'],0,50);
+			$data[$count]['Description'] = substr($rs['JobDescription'],0,250);
 			$data[$count]['time'] = date("D-M-Y");
 			if($rs['JobType'] == 1)
 			{		

@@ -44,9 +44,9 @@ include("admin/include/initial/pagination.php");
 			{
 			//	
 		?>
-            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="red"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
+            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="black"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
             <h5 class="date"><?php echo date("D-M-Y"); ?></h5>
-            <?php echo $rs['JobDescription']; ?>
+            <?php echo substr($rs['JobDescription'],0,250)."..."; ?>
             <p><span id="read-more"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>">อ่านต่อ</a></span></p>
         <?php
        	 	}
