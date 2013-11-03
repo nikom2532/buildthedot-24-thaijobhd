@@ -1,4 +1,5 @@
 <script src="js/jquery-1.7.1.min.js"></script>
+
 <?php
 session_start();
 $rootpath = "./";
@@ -112,7 +113,11 @@ include ($rootpath . "include/search-bar.php");
 					{
 						?>
 			            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="red"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
-			            <p><?php echo $rs['JobDescription']; ?>
+			            <p>
+			            <?php 
+			            	$des = substr($rs['JobDescription'], 0 , 50);
+			            	echo $des; 
+			            ?>
 			            <span id="read-more"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>">อ่านต่อ</a></span></p>
 			        <?php
 					
@@ -143,7 +148,10 @@ include ($rootpath . "include/search-bar.php");
 					{
 						?>
 			            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="red"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
-			            <p><?php echo $rs['JobDescription']; ?>
+			            <p><?php
+			            	$des = substr($rs['JobDescription'], 0 , 50);
+			            	echo $des;
+			            	?>
 			            <span id="read-more"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>">อ่านต่อ</a></span></p>
 			        <?php
 					
@@ -205,7 +213,10 @@ include ($rootpath . "include/search-bar.php");
 					{
 						?>
 			            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="red" ><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
-			            <p><?php echo $rs['JobDescription']; ?>
+			            <p><?php
+			            	$des = substr($rs['JobDescription'], 0 , 50);
+			            	echo $des;
+			            	?>
 			            <span id="read-more"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>">อ่านต่อ</a></span></p>
 			        <?php
 					
@@ -235,7 +246,10 @@ include ($rootpath . "include/search-bar.php");
 					{
 						?>
 			            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="red"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
-			            <p><?php echo $rs['JobDescription']; ?>
+			            <p><?php
+			            	$des = substr($rs['JobDescription'], 0 , 50);
+			            	echo $des;
+			            	?>
 			            <span id="read-more"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>">อ่านต่อ</a></span></p>
 			        <?php
 					
