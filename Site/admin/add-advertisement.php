@@ -1,3 +1,15 @@
+<script type="text/javascript">
+	function check_value_data()
+	{
+		var AdLink = document.getElementById("AdLink").value;
+		if(AdLink == "" || AdLink == null)
+		{
+			alert("Link idea name is not valid");
+			return false;
+		}
+
+	}
+</script>
 <?php 
 session_start();
 $rootpath="../";
@@ -46,7 +58,7 @@ else{
 						<h2>Side Ads</h2>
 						<h6>** ขนาด 350*200 px. | ชื่อรูปขึ้นต้นด้วย sideAds ตามด้วยหมายเลข 1-4 </h6>
 						<div id="content-detail" class="container_12">
-							<form id="form-advertisement" action="<?php echo $rootadminpath; ?>include/module/add-advertisement-process.php" method="POST" enctype="multipart/form-data">
+							<form id="form-advertisement" action="<?php echo $rootadminpath; ?>include/module/add-advertisement-process.php" method="POST" enctype="multipart/form-data" onsubmit="return check_value_data()">
 								<!-- <input type="hidden" name="adid" value="<?php echo $_GET["adid"]; ?>" /> -->
 									<div class="grid_7">
 										<section class="grid_7">
@@ -90,17 +102,32 @@ else{
 												<input type="text" id="AdLink" name ="AdLink" class="round" value=""/>
 											</div><br class="clear"/>
 											<div class="grid_6 center">
-												<a href="#" onclick="document.getElementById('form-advertisement').submit();" class="save-button blue round">บันทึก</a>
+												<!--a href="#" onclick="document.getElementById('form-advertisement').submit();" class="save-button blue round">บันทึก</a-->
+												
 											</div>
 										</section>
+										
 										<br class="clear"/>
 									</div>
 								<section class="grid_4">
 									<img src="images/banner-1.png" width="600" height="175">   
 								</section>
-							
+								<br class="clear"/>
+						
+											
+						</div>
+						<!-- เอามาสร้างบรรทัดเฉยๆ ไม่มีอะไร -->
+						<div class="grid_2"><h6 class="detail-title"></h6></div><label for="Status2" class="alt-label"></label>
+						<div class="grid_2"><h6 class="detail-title"></h6></div><label for="Status2" class="alt-label"></label>
+						<div class="grid_2"><h6 class="detail-title"></h6></div><label for="Status2" class="alt-label"></label>
+						<div class="grid_2"><h6 class="detail-title"></h6></div><label for="Status2" class="alt-label"></label>
+						<div class="grid_2"><h6 class="detail-title"></h6></div><label for="Status2" class="alt-label"></label>
+						<div class="grid_2"><h6 class="detail-title"></h6></div><label for="Status2" class="alt-label"></label>
+						<!-- ถึงตรงนี้นะครับ  -->
+						<input type="submit" id="" class="save-button blue round" value = "บันทึก">
+					
 							</form>
-						</div>         
+						      
 				</div> <!-- end content-module-main -->
 			</div> <!-- end content-module -->
 		</div> <!-- end content -->
