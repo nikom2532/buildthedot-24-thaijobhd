@@ -1,3 +1,22 @@
+<script type="text/javascript">
+	function check_value_data()
+	{	
+		var title = document.getElementById("title").value;
+		if(title == "" || title == "")
+		{
+			alert("Company name is not valid");
+			return false;
+		}
+		
+		var LinkAddress = document.getElementById("LinkAddress").value;
+		if(LinkAddress == "" || LinkAddress == null) 
+		{
+			alert("Link is not valid");
+			return false;
+		}
+	}
+</script>
+
 <?php 
 session_start();
 $rootpath="../";
@@ -45,7 +64,8 @@ else{
 				</div>
 				<div id="content-detail" class="container_12">
 					<section>
-						<form id="form-add-company" action="<?php echo $rootadminpath; ?>include/module/add-company-process.php" method="POST" enctype="multipart/form-data">
+						<form id="form-add-company" action="<?php echo $rootadminpath; ?>include/module/add-company-process.php" method="POST" enctype="multipart/form-data"  onsubmit="return check_value_data()">
+							
 							<div class="grid_2">
 								<h6 class="detail-title"> ชื่อบริษัท</h6>
 							</div>
@@ -89,12 +109,15 @@ else{
 								</p>
 							</div>
 							<br class="clear"/>
-						</form>
+						
 					</section>
+				<input type="submit" id="" class="save-button blue round" value = "บันทึก" />
+					<div class="grid_2"><h6 class="detail-title"></h6></div><label for="Status2" class="alt-label"></label>
 				</div>
-				<div class="center">
+				</form>
+				<!--div class="center">
 					<a href="#" onclick="document.getElementById('form-add-company').submit();" class="save-button blue round">บันทึก</a>
-				</div>
+				</div-->
 			</div>
 			<!-- end content-module-main -->
 	
