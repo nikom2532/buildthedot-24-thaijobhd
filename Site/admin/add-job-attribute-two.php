@@ -2,7 +2,7 @@
 <?php include("include/top-bar.php");?>
 <?php include("include/connect-to-database.php");?>
 <?php 
-	session_start();
+	@session_start();
 	$_SESSION['count'] = 1;
 	$count = $_SESSION['count'];
 ?>

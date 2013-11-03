@@ -1,6 +1,6 @@
 <script src="js/jquery-1.7.1.min.js"></script>
 <?php
-session_start();
+@session_start();
 $rootpath = "./";
 $rootadminpath = "./admin/";
 include ($rootpath . "include/header.php");

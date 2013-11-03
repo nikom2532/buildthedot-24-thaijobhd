@@ -1,6 +1,6 @@
 <?php
 //### Add Education ###
-session_start();
+@session_start();
 $rootpath ="../../";
 $rootadminpath ="../../admin/";
 // include ($rootpath . "include/header.php");

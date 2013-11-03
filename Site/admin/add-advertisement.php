@@ -11,7 +11,7 @@
 	}
 </script>
 <?php 
-session_start();
+@session_start();
 $rootpath="../";
 $rootadminpath="./";
 include($rootadminpath."include/header.php");

@@ -4,7 +4,7 @@ $rootadminpath ="../../";
 include($rootadminpath."include/connect-to-database.php");
 ?>
 <?php
-	session_start();
+	@session_start();
 		
 	$company_name = $_SESSION['company_name'];
 	$position_thai_name = $_SESSION['position_thai_name'];

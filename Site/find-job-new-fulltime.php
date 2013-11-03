@@ -1,6 +1,6 @@
 <?php include("include/header.php");?>
 <?php
-session_start();
+@session_start();
 $rootpath = "./";
 $rootadminpath = "./admin/";
 include ("include/header.php");

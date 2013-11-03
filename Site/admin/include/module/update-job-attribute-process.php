@@ -2,7 +2,7 @@
 $rootpath ="../../../";
 $rootadminpath ="../../"; 
 include($rootadminpath."include/connect-to-database.php");
-session_start();
+@session_start();
 $jid = $_SESSION['jid'];
 $Att = array();
 $Att = $_POST['edu'];

@@ -1,8 +1,8 @@
 <?php
-// session_start();
+// @session_start();
 // $rootpath ="../../../";
  $rootadminpath ="../../";
-session_start();
+@session_start();
 unset($_SESSION["userid"]);
 // header("location: {$rootadminpath}job.php");
 ?>

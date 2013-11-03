@@ -2,7 +2,7 @@
 	$rootpath ="../../../";
 	$rootadminpath ="../../"; 
 	include($rootadminpath."include/connect-to-database.php");
-	session_start();
+	@session_start();
 	$company_name = $_POST['CompanyName'];
 	$position_thai_name = $_POST['PositionThaiName'];
 	$position_eng_name = $_POST['PositionEngName'];
