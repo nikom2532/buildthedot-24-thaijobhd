@@ -1,5 +1,5 @@
 <?php include("include/header2.php");?>
-<?php include("include/top-bar.php");?>
+
 <?php include("include/connect-to-database.php");?>
 <?php session_start();
 	$_SESSION['count'] = 1;
@@ -42,11 +42,11 @@ include($rootadminpath."include/header.php");
 include("include/connect-to-database.php");
 
 //For Development mode(No need to login)
-$_SESSION["userid"] = "1";
+//$_SESSION["userid"] = "1";
 
 if ($_SESSION["userid"] == "") {
 	include ($rootadminpath . "include/login.php");
-	include ("include/footer.php");
+	//include ("include/footer.php");
 } 
 else {
 	//check for Logout mode
@@ -56,7 +56,10 @@ else {
 		}
 	}
 	//normal mode
-	else{$Admin = "a@a.com";
+	else{
+		
+	include("include/top-bar.php");
+		$Admin = $_SESSION["userid"] ;
 	$sql = "SELECT email, job_status FROM buildthedot_thaijobhd_user_account WHERE email = '$Admin'";
 	$result = mysql_query($sql);
 	$jid = $_SESSION['jid'];

@@ -1,5 +1,5 @@
 <?php include("include/header2.php");?>
-<?php include("include/top-bar.php");?>
+
 <?php include("include/connect-to-database.php");?>
 <?php session_start();?>
 <script type="text/javascript">
@@ -112,7 +112,7 @@ include("include/connect-to-database.php");
 
 if ($_SESSION["userid"] == "") {
 	include ($rootadminpath . "include/login.php");
-	include ("include/footer.php");
+	//include ("include/footer.php");
 } 
 else {
 	//check for Logout mode
@@ -123,8 +123,8 @@ else {
 	}
 	//normal mode
 	else{
-	
-	$Admin = "a@a.com";
+	include("include/top-bar.php");
+	$Admin = $_SESSION["userid"];
 	$sql = "SELECT email, job_status FROM buildthedot_thaijobhd_user_account WHERE email = '$Admin'";
 	$result = mysql_query($sql);
 	if($result)

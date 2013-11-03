@@ -9,6 +9,7 @@
             
                 <li>
                 	<!-- <a href="<?php echo $rootadminpath; ?>include/module/logout_process.php" class="round button dark menu-logoff image-left">Log out</a> -->
+                <?php $rootadminpath="./"; ?>
                 	<a href="<?php echo $rootadminpath; ?>job.php?mode=logout" class="round button dark menu-logoff image-left">Log out</a>
                 </li>
             </ul> <!-- end nav -->
