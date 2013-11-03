@@ -60,7 +60,7 @@ include ($rootpath . "include/top-menu.php");
 					วันเกิด
 				</p>
 				<p class="grid_8">
-					<input type="text" id="birthdate" name ="birthdate" class="round" value="<?php echo $rs_user["birthdate"]; ?>" />
+					<input type="text" id="birthdate" name ="birthdate" class="round required" value="<?php echo $rs_user["birthdate"]; ?>" required />
 				</p>
 				<br class="clear"/>
 				
@@ -372,6 +372,7 @@ include ($rootpath . "include/top-menu.php");
 	
 				<p class="grid_12 center">
 					<a href="#" onclick="document.getElementById('register_profile_form').submit(); " class="save-button blue round">บันทึก</a>
+					<!-- <input type="submit" class="save-button blue round" value="บันทึก" /> -->
 				</p>
 			</form>
 		</div>
