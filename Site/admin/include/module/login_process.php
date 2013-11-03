@@ -13,7 +13,7 @@ if(($email!="")&&($password!="")) {
 	$password = md5(sha1($password_source)).sha1(md5($password_source));
 	unset($password_source);
 
-	echo $SQL="
+	$SQL="
 		SELECT `id`, `email`, `password`
 		FROM  `buildthedot_thaijobhd_user_account` 
 		WHERE  `email` =  \"{$email}\"
