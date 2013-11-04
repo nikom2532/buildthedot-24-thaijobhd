@@ -42,9 +42,9 @@ else{
 							<h1>โฆษณา </h1>
 						</div>
 						<h2>Content Ads</h2>
-						<h6>** ขนาด 200*200 px. | ชื่อรูปขึ้นต้นด้วย contentAds ตามด้วยหมายเลข 1-4 </h6>
+						<h6>** ขนาด 200*200 px. </h6>
 						<h2>Side Ads</h2>
-						<h6>** ขนาด 350*200 px. | ชื่อรูปขึ้นต้นด้วย sideAds ตามด้วยหมายเลข 1-4 </h6>
+						<h6>** ขนาด 350*200 px. </h6>
 						<div id="content-detail" class="container_12">
 							<form id="form-advertisement" action="<?php echo $rootadminpath; ?>include/module/edit-advertisement-process.php" method="POST" enctype="multipart/form-data">
 								<input type="hidden" name="adid" value="<?php echo $_GET["adid"]; ?>" />
@@ -117,7 +117,7 @@ else{
 								}
 ?>
 								<section class="grid_4">
-									<img src="images/banner-1.png" width="600" height="175">   
+									<img src="<?php echo $rootadminpath; ?>images/bannerChart.png" >   
 								</section>
 							
 							</form>
