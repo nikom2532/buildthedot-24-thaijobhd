@@ -66,7 +66,7 @@ else{
 												<h6>เลือกรูป</h6>
 											</div>
 											<div class="grid_5">
-												<a href="#">New image</a>
+												<a href="#">Image name</a>
 											</div>
 											<br class="clear"/>
 											<div class="prefix_1 grid_5">
