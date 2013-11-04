@@ -76,7 +76,7 @@ else{
 							</div>
 							<br class="clear"/>
 							<div class="grid_2">
-								<h6 class="detail-title">เลือกรูป</h6>
+								<h6 class="detail-title">เลือกรูป (ขนาด 144 x 144)</h6>
 							</div>
 							<div class="grid_8">
 								<p>
