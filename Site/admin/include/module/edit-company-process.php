@@ -13,7 +13,7 @@ else{
 	// $AdPic = $_POST["AdPic"];
 	$company_id  =$_POST["company_id"];
 	$title = $_POST["title"];
-	$LinkAddress = $_POST["LinkAddress"];
+	$LinkAddress = "http:\\".$_POST["LinkAddress"];
 	$Status = $_POST["Status"];
 	$time_now = strtotime("now");	//.date('Y-m-d H:i:s', $time_now)
 	
