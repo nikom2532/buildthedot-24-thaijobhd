@@ -19,8 +19,8 @@ else{
 	
 	$sql="
 		INSERT INTO `buildthedot_thaijobhd_job_idea`
-		(`MainIdea`, `Description1`, `Description2`, `Description3`, `IdeaRecomment`) 
-		VALUE('{$MainIdea}', '{$Description1}', '{$Description2}', '{$Description3}', '{$IdeaRecomment}');
+		(`MainIdea`, `Description1`, `Description2`, `Description3`, `IdeaRecomment`, `IdeaTime`) 
+		VALUE('{$MainIdea}', '{$Description1}', '{$Description2}', '{$Description3}', '{$IdeaRecomment}', '{$time_now}');
 	";
 	@mysql_query($sql);
 	$CompanyID = @mysql_insert_id();
