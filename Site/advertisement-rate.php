@@ -13,6 +13,7 @@ include ("include/top-menu.php");
 		</div>
 		<div class="grid_5">
 			<h2 class="text-grey">ตำแหน่งโฆษณา</h2>
+			<div><img src="admin/images/bannerChart.png" /></div>
 			<p>
 				Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
 			</p>
