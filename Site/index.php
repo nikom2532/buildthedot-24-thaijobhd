@@ -399,7 +399,7 @@ include ($rootpath . "include/top-menu.php");
 			if($rs_advertisement=@mysql_fetch_array($result_advertisement)){
 ?>
 				<div class="grid_4 margin-left-5 margin-right-5">
-					<img src="images/banner-1.png" width="100%" <?php // width="458" height="175" ?> alt="Banner">
+					<a href="http://<?php echo $rs_advertisement["AdLink"]; ?>" target="_block"><img src="<?php echo $rootpath; ?>images/ad/<?php echo $rs_advertisement["AdPic"]; ?>" width="144" height="143"></a>
 				</div>
 <?php
 			}
@@ -407,7 +407,7 @@ include ($rootpath . "include/top-menu.php");
 ?>
 				<div class="grid_4 margin-left-5 margin-right-5">
 					<img src="images/banner-1.png" width="100%" <?php // width="458" height="175" ?> alt="Banner">
-					<a href="http://<?php echo $rs_advertisement["AdLink"]; ?>" target="_block"><img src="<?php echo $rootpath; ?>images/ad/<?php echo $rs_advertisement["AdPic"]; ?>" width="144" height="143"></a>
+					
 				</div>
 <?php
 			}
