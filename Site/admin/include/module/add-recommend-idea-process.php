@@ -15,7 +15,7 @@ else{
 	$Description2 = $_POST["Description2"];
 	$Description3 = $_POST["Description3"];
 	$IdeaRecomment = $_POST["IdeaRecomment"];
-	$time_now = strtotime("now");//date('Y-m-d H:i:s', $time_now)
+	$time_now = date('Y-m-d H:i:s', strtotime("now"));//date('Y-m-d H:i:s', $time_now)
 	
 	$sql="
 		INSERT INTO `buildthedot_thaijobhd_job_idea`

@@ -82,7 +82,7 @@ include ($rootpath . "include/top-menu.php");
 				</div>
 				<div class="grid_9">
 					<h6 id="headline"><?php echo $rs["MainIdea"]; ?></h6>
-					<h5 class="date"><?php echo $rs["IdeaTime"]; ?></h5>
+					<h5 class="date"><?php echo date("l, F jS, Y",strtotime($rs["IdeaTime"])); ?></h5>
 					<p><?php echo $rs["Description1"]; ?></p>
 					<p><?php echo $rs["Description2"]; ?></p>
 					<p><?php echo $rs["Description3"]; ?></p>
