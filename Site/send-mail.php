@@ -4,10 +4,10 @@
 	$tel = $_POST['tel'];
 	$des = $_POST['text'];
 	
-	$subject = "การติดต่อจาก คุณ".$name;
-	$to = "swort_k@hotmail.com";
-	$message = "เนื้อหา \n".$des."\n เบอติดต่อกลับ  : ".$tel ."\n e-mail ติดต่อกลับ : ".$mail;
-	$from = "swort_k@hotmail.com";
+	$subject = "เธ�เธฒเธฃเธ•เธดเธ”เธ•เน�เธญเธ�เธฒเธ� เธ�เธธเธ“".$name;
+	$to = "team@buildthedot.com";
+	$message = "เน€เธ�เธทเน�เธญเธซเธฒ \n".$des."\n เน€เธ�เธญเธ•เธดเธ”เธ•เน�เธญเธ�เธฅเธฑเธ�  : ".$tel ."\n e-mail เธ•เธดเธ”เธ•เน�เธญเธ�เธฅเธฑเธ� : ".$mail;
+	$from = "ThaiJobHD";
 	$headers = "From:" . $from;
 	mail($to,$subject,$message,$headers);
 ?>
