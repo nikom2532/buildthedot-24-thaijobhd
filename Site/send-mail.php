@@ -4,11 +4,13 @@
 	$tel = $_POST['tel'];
 	$des = $_POST['text'];
 	
-	$subject = "เธ�เธฒเธฃเธ•เธดเธ”เธ•เน�เธญเธ�เธฒเธ� เธ�เธธเธ“".$name;
-	$to = "team@buildthedot.com";
-	$message = "เน€เธ�เธทเน�เธญเธซเธฒ \n".$des."\n เน€เธ�เธญเธ•เธดเธ”เธ•เน�เธญเธ�เธฅเธฑเธ�  : ".$tel ."\n e-mail เธ•เธดเธ”เธ•เน�เธญเธ�เธฅเธฑเธ� : ".$mail;
+	$subject = "=?UTF-8?B?" . base64_encode('คุณได้รับการติดต่อจากคุณ '.$name)."?=";
+	$to = "swort_k@hotmail.com";
+	$message = "เนื้อหา : \n<br>".$des."\n<br> เบอติดต่อกลับ  : ".$tel ."\n <br> e-mail : ".$mail;
 	$from = "ThaiJobHD";
-	$headers = "From:" . $from;
+	$headers = "MIME-Version: 1.0' . \r\n";
+	$headers .= "Content-type: text/html; charset=utf-8\r\n"; 
+	$headers .= "From:" . $from;
 	mail($to,$subject,$message,$headers);
 ?>
 	<script type="text/javascript">
@@ -17,5 +19,7 @@
 	</script>
 
 <?php
-
+	$strHeader .= "MIME-Version: 1.0' . \r\n";
+	$strHeader .= "Content-type: text/html; charset=utf-8\r\n"; 
+	$strHeader .= "From: Mr.Weerachai Nukitram<webmaster@thaicreate.com>\r\nReply-To: thaicreate@hotmail.com";
 ?>
