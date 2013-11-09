@@ -418,12 +418,16 @@ else {
 				                          <div class="grid_2">
 				                                <h6 class="detail-title">งานแนะนำ</h6>   
 				                          </div>
+				                          
 				                          <div class="grid_8">
-				                          		<p><input type="checkbox" id="recommend" value="1" name="recommend" />แนะนำ</p>
+				                          		<p><label for="rec" class="alt-label"><input type="radio" id="rec" name="rec" value="1" checked="checked"/>
+				            					Recommend
+				            				</label>
+											<label for="rec" class="alt-label"><input type="radio" id="nrec" name="rec" value="0" />
+				           						Not Recommeded
+				            				</label> </p>
 				                          </div><br class="clear"/>
-				
-				                          <br class="clear"/>
-				                       <?php /*
+				                      <?php /*
 										  <div class="prefix_2" id="prefix_2">
 				                          	  <p class="center head-table grid_5">ระดับการศึกษา</p>
 				                         	  <br class="clear"/>

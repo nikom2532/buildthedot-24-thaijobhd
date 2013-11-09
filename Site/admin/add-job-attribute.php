@@ -83,9 +83,9 @@ else {
 				$property = $_POST['Property'];
 				$date_start = $_POST['date_from'];
 				$date_end = $_POST['date_to'];
-				if(isset($_POST['recommend']))
+				if(isset($_POST['rec']))
 				{
-					$a = $_POST['recommend'];
+					$a = $_POST['rec'];
 					if($a == 1 )
 					{
 						$recomment = "Recommend";	

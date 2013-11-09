@@ -274,14 +274,44 @@ else {
 		                          		<p><input name="date_to" type="text" id="date_to" class="round" value="<?php echo $et;?>"/></p>
 		                          </div><br class="clear"/>
 		                          <div class="grid_2">
-		                                <h6 class="detail-title">งานแนะนำ - <?php if($recomment == 1){echo "Recommend";}else{echo "No recommend";}?> </h6>   
+		                                <h6 class="detail-title">งานแนะนำ  <?php //if($recomment == 1){echo "Recommend";}else{echo "No recommend";}?> </h6>   
 		                          </div>
-		                          <div class="grid_8">
+		                          <?php 
+		                          	if($recomment == 1){
+		                          		?> 
+		                          		<div class="grid_8">
+				                          		<p><label for="rec" class="alt-label"><input type="radio" id="rec" name="rec" value="1" checked="checked"/>
+				            					Recommend
+				            				</label>
+											<label for="rec" class="alt-label"><input type="radio" id="nrec" name="rec" value="0" />
+				           						Not Recommeded
+				            				</label> </p>
+				                          </div>
+		                          		<?php
+		                          	}else{
+		                          		?>
+		                          		<div class="grid_8">
+				                          		<p><label for="rec" class="alt-label"><input type="radio" id="rec" name="rec" value="1" />
+				            					Recommend
+				            				</label>
+											<label for="rec" class="alt-label"><input type="radio" id="nrec" name="rec" value="0" checked="checked"/>
+				           						Not Recommeded
+				            				</label> </p>
+				                          </div>
+		                          		<?php
+		                          	}
+		                          ?>
+		                           
+		                          
+		                          
+		                          
+		                          <!--div class="grid_8">
 
 		                          		<!-- <p><input type="checkbox" id="recommend" value="re" />แนะนำ</p> --><?php // ======= ?>
-		                          		<p><input type="checkbox" id="recommend" value="re" name="recomment"/>แนะนำ</p>
+		                          		<!--p><input type="checkbox" id="recommend" value="re" name="recomment"/>แนะนำ</p>
 
-		                          </div><br class="clear"/>
+		                          </div-->
+		                          <br class="clear"/>
 		
 		                          <br class="clear"/>
 								  <h6 class="detail-title">การศึกษา</h6>		                      
