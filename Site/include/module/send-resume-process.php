@@ -47,7 +47,7 @@ function send_email(){
 				$current_address = $rs['current_address'];
 				$phone_number = $rs['phone_number'];	
 			}
-			$text_subject = $firstname . " " . $midname . " " . $lastname . " เธชเธกเธฑเธ�เธฃเธ�เธฒเธ� เธ�เธฃเธดเธฉเธฑเธ— : " . $Company . "เธ•เธณเน�เธซเธ�เน�เธ�  :" . $positionThai . "(". $positionEng. ")" ;		
+			$text_subject = "=?UTF-8?B?" . base64_encode($firstname . " " . $midname . " " . $lastname . ' สมัครงาน บริษัท : ' . $Company . "ตำแหน่ง  :" . $positionThai . "(". $positionEng. ")")."?="; ;		
 			$text_message .= "\tเธ�เธนเน�เธชเธกเธฑเธ�เธฃ  \n\t\tเธ�เธทเน�เธญ : " . $firstname . "\n\t\tเธ�เธทเน�เธญเธ�เธฅเธฒเธ� : " . $midname . "\n\t\tเธ�เธฒเธกเธชเธ�เธธเธฅ :  " . $lastname . " \n";	
 			$text_message .= "\t\tเธงเธฑเธ�เน€เธ�เธดเธ” :  " . $birthdate . "\n\t\tเธชเธฑเธ“เธ�เธฒเธ•เธด  : " . $nationality . "\n\t\tเธจเธฒเธชเธ�เธฒ : ". $religion . "\n";
 			$text_message .= "\tเธ—เธตเน�เธญเธขเธนเน�เธ�เธฑเธ�เธ�เธธเธ�เธฑเธ� : \n\t\t ". $current_address . "\n\t\tเน€เธ�เธญเธ•เธดเธ”เธ•เน�เธญ : " . $phone_number . "\t\te-mail : " . $email . "\n";
