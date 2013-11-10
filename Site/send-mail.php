@@ -19,7 +19,8 @@
 	</script>
 
 <?php
-	$strHeader .= "MIME-Version: 1.0' . \r\n";
+	/*$strHeader .= "MIME-Version: 1.0' . \r\n";
 	$strHeader .= "Content-type: text/html; charset=utf-8\r\n"; 
 	$strHeader .= "From: Mr.Weerachai Nukitram<webmaster@thaicreate.com>\r\nReply-To: thaicreate@hotmail.com";
+	*/
 ?>

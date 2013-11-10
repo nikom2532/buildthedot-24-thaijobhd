@@ -24,8 +24,9 @@ function send_email(){
 			$positionThai = $rs['PositionThai'];
 			$positionEng = $rs['PositionEng'];
 		}
-		$text_message .= "เธ–เธถเธ�เธ—เธตเธกเธ�เธฒเธ� \n\tเธชเธกเธฑเธ�เธฃเธ�เธฒเธ� เธ�เธฃเธดเธฉเธฑเธ— : " . $Company . " เธ•เธณเน�เธซเธ�เน�เธ�  : " . $positionThai . "(". $positionEng. ") \n";
+		//$text_message = "ถึงผู้ดูแลระบบ <br><p> : " . $Company . " เธ•เธณเน�เธซเธ�เน�เธ�  : " . $positionThai . "(". $positionEng. ") </p><br>\n";
 		//user	
+		$text_message = "ถึงผู้ดูแลระบบ <br>		มีผู้ประสงคืจะสมัครงานกับบริษัท : " . $Company . "<br>		ตำแหน่ง  : " . $positionThai . "(". $positionEng. ") </p><br>\n";
 		$sql="	SELECT *
 			FROM  buildthedot_thaijobhd_user_account
 			WHERE id = '$user_id'	
@@ -48,9 +49,9 @@ function send_email(){
 				$phone_number = $rs['phone_number'];	
 			}
 			$text_subject = "=?UTF-8?B?" . base64_encode($firstname . " " . $midname . " " . $lastname . ' สมัครงาน บริษัท : ' . $Company . "ตำแหน่ง  :" . $positionThai . "(". $positionEng. ")")."?="; ;		
-			$text_message .= "\tเธ�เธนเน�เธชเธกเธฑเธ�เธฃ  \n\t\tเธ�เธทเน�เธญ : " . $firstname . "\n\t\tเธ�เธทเน�เธญเธ�เธฅเธฒเธ� : " . $midname . "\n\t\tเธ�เธฒเธกเธชเธ�เธธเธฅ :  " . $lastname . " \n";	
-			$text_message .= "\t\tเธงเธฑเธ�เน€เธ�เธดเธ” :  " . $birthdate . "\n\t\tเธชเธฑเธ“เธ�เธฒเธ•เธด  : " . $nationality . "\n\t\tเธจเธฒเธชเธ�เธฒ : ". $religion . "\n";
-			$text_message .= "\tเธ—เธตเน�เธญเธขเธนเน�เธ�เธฑเธ�เธ�เธธเธ�เธฑเธ� : \n\t\t ". $current_address . "\n\t\tเน€เธ�เธญเธ•เธดเธ”เธ•เน�เธญ : " . $phone_number . "\t\te-mail : " . $email . "\n";
+			$text_message .= "ประวัติส่วนตัว  <br>	ชื่อจริง : " . $firstname . "<br>		ชื่อกลาง : " . $midname . "<br>		นามสกุล :  " . $lastname . "<br>";	
+			$text_message .= "	วันเกิด   : " . $birthdate . "<br>	เชื้อชาติ  : " . $nationality . "<br>	ศาสนา  : ". $religion . "<br>";
+			$text_message .= "<p>	ที่อยู่ปัจจุบัน  : ". $current_address . "<br>		เบอติดต่อ : " . $phone_number . "<br>	e-mail : " . $email . "<br>";
 			//education
 			$sql="	SELECT *
 			FROM buildthedot_thaijobhd_user_history_educations
@@ -61,14 +62,14 @@ function send_email(){
 			if($result)
 			{	
 				$count = 0;
-				$text_message .= "\t\tเธ�เธฃเธฐเธงเธฑเธ•เธดเธ�เธฒเธฃเธจเธถเธ�เธฉเธฒ : \n"; 
+				$text_message .= "	ระดับการศึกษา <br>"; 
 				while($rs=@mysql_fetch_array($result))
 				{
 					$education_level = $rs['education_level'];
 					$Institution = $rs['Institution'];
 					$year_start = $rs['year_start'];
 					$year_end = $rs['year_end'];
-					$text_message .= "\t\t\tเธฃเธฐเธ”เธฑเธ�เธ�เธฒเธฃเธจเธถเธ�เธฉเธฒ :". $education_level ." \n \t\t\tเธชเธ–เธฒเธ�เธฑเธ�  : ". $Institution ."\n \t\t\tเธ�เธตเธ�เธฒเธฃเธจเธถเธ�เธฉเธฒ  : " .$year_start . " เธ–เธถเธ� " . $year_end . "\n";
+					$text_message .= "		ระดับชั้น  : ". $education_level ." <br>		สถานศึกษา  : ". $Institution ."		ปีการศึกษา  : " .$year_start . " ถึง   " . $year_end . "<br>";
 				}			
 				//experiences
 				$sql="	SELECT *
@@ -78,7 +79,7 @@ function send_email(){
 				";
 				$result=@mysql_query($sql);
 				if($result)
-				{	$text_message .= "\t\tเธ�เธฃเธฐเธชเธ�เธ�เธฒเธฃเธ“เน�เธ�เธฒเธฃเธ—เธณเธ�เธฒเธ� : \n";
+				{	$text_message .= "	ประวัติการทำงาน<br>";
 					$count = 0;
 					while($rs=@mysql_fetch_array($result))
 					{
@@ -86,7 +87,7 @@ function send_email(){
 						$company_name = $rs['company_name'];
 						$year_start = $rs['year_start'];
 						$year_end = $rs['year_end'];
-						$text_message .= "\t\t\tเธ�เธฃเธดเธฉเธฑเธ—  :". $company_name ." \n \t\t\tเธ•เธณเน�เธซเธ�เน�เธ�  : ". $job_position ."\n \t\t\tเธ�เธต  : " . $year_start . " เธ–เธถเธ�  " . $year_end . "\n";
+						$text_message .= "		บริษัท  : ". $company_name ."<br>		ตำแหน่ง  : ". $job_position ."<br>		ตั้งแต่  : " . $year_start . " ถึง  " . $year_end . "<br>";
 					}			
 					//talent_languages
 					$sql="	SELECT *
@@ -97,7 +98,7 @@ function send_email(){
 					$result=@mysql_query($sql);
 					if($result)
 					{
-						$text_message .= "\t\tเธฃเธฐเธ”เธฑเธ�เธ เธฒเธฉเธฒ : \n";
+						$text_message .= "	ความสามารถทางภาษา<br>";
 						$count = 0;
 						while($rs=@mysql_fetch_array($result))
 						{
@@ -106,11 +107,11 @@ function send_email(){
 							$score_understanding = $rs['score_understanding'];
 							$score_reading = $rs['score_reading'];
 							$score_writing = $rs['score_writing'];
-							$text_message .= "\t\t\tเธ เธฒเธฉเธฒ  :". $language ." \n ";
-							$text_message .= "\t\t\tเธฃเธฐเธ”เธฑเธ�เธ�เธฒเธฃเธ�เธนเธ” : " . $score_speaking . "\n";
-							$text_message .= "\t\t\tเธฃเธฐเธ”เธฑเธ�เธ�เธฒเธฃเธ�เธฑเธ� : " . $score_understanding  . "\n";
-							$text_message .= "\t\t\tเธฃเธฐเธ”เธฑเธ�เธ�เธฒเธฃเธญเน�เธฒเธ� : " . $score_reading . "\n";
-							$text_message .= "\t\t\tเธฃเธฐเธ”เธฑเธ�เธ�เธฒเธฃเน€เธ�เธตเธขเธ� : " . $score_writing . "\n";
+							$text_message .= "	ภาษา  :". $language ."<br>";
+							$text_message .= "		พูด : " . $score_speaking . "<br>";
+							$text_message .= "		ฟัง : " . $score_understanding  . "<br>";
+							$text_message .= "		อ่าน : " . $score_reading . "<br>";
+							$text_message .= "		เขียน : " . $score_writing . "<br>";
 						}			
 						
 						//talent other
@@ -121,20 +122,21 @@ function send_email(){
 						$result=@mysql_query($sql);
 						if($result)
 						{
-							$text_message .= "\t\tเธ�เธงเธฒเธกเธชเธฒเธกเธฒเธฃเธ–เธ�เธดเน€เธจเธฉ : \n";	
+							$text_message .= "	ความสามารถพิเศษ<br>";	
 							$count = 0;
 							while($rs=@mysql_fetch_array($result))
 							{
 								$topic = $rs['topic'];
-								$text_message .= "\t\t\t-" .  $topic ."\n";
+								$text_message .= "		-" .  $topic ."<br>";
 							}			
 							
 							$subject = $text_subject;
 							$to = "team@buildthedot.com";
 							$message = $text_message;
 							$from = "ThaiJobHD";
-							$headers = "";
-							
+							$headers = "MIME-Version: 1.0' . \r\n";
+							$headers .= "Content-type: text/html; charset=utf-8\r\n"; 
+						
 							$send_mail = mail($to,$subject,$message,$headers);
 							if($send_mail)
 							{
