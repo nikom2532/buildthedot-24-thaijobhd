@@ -30,7 +30,7 @@ if(($email!="")&&($password!="")) {
 	else{
 ?>
 		<form id="login_false_message" action="<?php echo $rootpath; ?>login.php" method="POST">
-			<input type="hidden" id="login_messaage" name="login_messaage" value="login_false" />
+			<input type="hidden" id="login_messaage" name="login_messaage" value="Incorrect E-mail or password" />
 		</form>
 		<script>
 			document.getElementById("login_false_message").submit();
@@ -41,7 +41,7 @@ if(($email!="")&&($password!="")) {
 else{
 ?>
 	<form id="login_false_message" action="<?php echo $rootpath; ?>login.php" method="POST">
-		<input type="hidden" id="login_messaage" name="login_messaage" value="forget_formdata_login" />
+		<input type="hidden" id="login_messaage" name="login_messaage" value="forget to form data login" />
 	</form>
 	<script>
 		document.getElementById("login_false_message").submit();

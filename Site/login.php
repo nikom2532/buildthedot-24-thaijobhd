@@ -28,8 +28,8 @@ else{
 					<h1>เข้าสู่ระบบ</h1>
 	  		</div> 
 				<form action="<?php echo $rootpath; ?>include/module/login_process.php" method="POST" id="login-form"  autocomplete="off" enctype="multipart/form-data">
-					<p class="grid_2 prefix_3 uppercase">ชื่อผู้ใช้</p>
-					<p class="grid_5"><input type="text" id="login-username" name ="login-username" class="round" /></p><br class="clear" />
+					<p class="grid_2 prefix_3 uppercase">E-mail ผู้ใช้</p>
+					<p class="grid_5"><input type="text" id="login-username" name ="login-username" class="round" /><span><?php echo $_POST["login_messaage"]; ?></span></p><br class="clear" />
 					<p class="grid_2 prefix_3 uppercase">รหัสผ่าน</p>
 					<p class="grid_5"><input type="password" id="login-password" name ="login-password" class="round" /></p><br class="clear" />
 					
