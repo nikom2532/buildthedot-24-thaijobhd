@@ -2,7 +2,7 @@
 	<div id="header">
 		
 		<div class="page-full-width cf">
-			<img src="../images/logo.png" width="128" height="71" alt="ThaiJobHD">
+			<a href="<?php echo $rootadminpath; ?>"><img src="../images/logo.png" width="128" height="71" alt="ThaiJobHD"></a>
             <ul id="nav" class="right">
                 <li class="v-sep text-blue" id="admin-ic"><strong>Logged in as admin</strong>
                 </li>

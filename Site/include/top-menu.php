@@ -65,7 +65,7 @@
 			</ul>
 		</div>
 		<div id="login-intro" class="grid_3">
-			<img src="images/logo.png" alt="ThaiJobHD" width="130" height="71">
+			<a href="<?php echo $rootpath; ?>"><img src="images/logo.png" alt="ThaiJobHD" width="130" height="71"></a>
 		</div>
 
 		<div id="top-nav" class="grid_8 prefix_1">
