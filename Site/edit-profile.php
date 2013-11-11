@@ -45,7 +45,7 @@ else{
 						<br class="clear"/>
 						
 						<p class="grid_2">
-							สถาทที่เกิด
+							สถานที่เกิด
 						</p>
 						<p class="grid_8">
 							<input type="text" id="place_of_birth" name ="place_of_birth" class="round" value="<?php echo $rs_user["place_of_birth"]; ?>" />
