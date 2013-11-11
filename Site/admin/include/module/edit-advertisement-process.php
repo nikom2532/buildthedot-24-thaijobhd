@@ -11,7 +11,20 @@ if($_SESSION["userid"] == "") {
 else{
 	$adid = $_POST["adid"];
 	// $AdPic = $_POST["AdPic"];
-	$AdLink = $_POST["AdLink"];
+	
+	function startsWith($haystack, $needle){
+	    return $needle === "" || strpos($haystack, $needle) === 0;
+	}
+	function endsWith($haystack, $needle){
+	    return $needle === "" || substr($haystack, -strlen($needle)) === $needle;
+	}
+	if(startsWith($_POST["AdLink"], "http://") ){
+		$AdLink = $_POST["AdLink"];
+	}
+	else{
+		$AdLink = "http://".$_POST["AdLink"];
+	}
+	// $AdLink = $_POST["AdLink"];
 	$ad_type = $_POST["ad_type"];
 	$ad_position = $_POST["ad_position"];
 	$time_now = strtotime("now");

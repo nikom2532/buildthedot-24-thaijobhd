@@ -75,7 +75,7 @@ else{
 									<td><?php echo $i++; ?></td>
 									<td><?php echo $rs["TopCompanyName"]; ?></td>
 									<td><a href="<?php echo $rootpath; ?>images/top_company/<?php echo $rs["CompanyPic"]; ?>" target="_blank"><?php echo $rs["CompanyPic"]; ?></a></td>
-									<td><a href="http://<?php echo $rs["LinkAddress"]; ?>" target="_blank"><?php echo $rs["LinkAddress"]; ?></a></td>
+									<td><a href="<?php echo $rs["LinkAddress"]; ?>" target="_blank"><?php echo $rs["LinkAddress"]; ?></a></td>
 									<td id="status"><img src="images/icons/message-boxes/<?php 
 										if($rs["Status"]==1){
 											echo "confirmation.png";
