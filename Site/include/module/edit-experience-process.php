@@ -3,7 +3,7 @@
 $rootpath ="../../";
 $rootadminpath ="../../admin/";
 include ($rootadminpath . "include/connect-to-database.php");
-include ($rootpath . "include/top-menu.php");
+// include ($rootpath . "include/top-menu.php");
 if($_SESSION["userid"] == "" || (!(isset($_SESSION["userid"])))) {
 	header("location: ".$rootpath."login.php");
 }
@@ -32,7 +32,7 @@ else{
 			`year_end` = '{$year_end}' ,
 			`salary` = '{$salary}'
 			WHERE `user_account_id` = '".$_SESSION["userid"]."'
-			AND `$user_history_experiences_id` = '{$user_history_experiences_id}' ;
+			AND `user_history_experiences_id` = '{$user_history_experiences_id}' ;
 		";
 		@mysql_query($sql_edu);
 		?><form id="edit_education_message_form" action="<?php echo $rootpath; ?>add-experience.php" method="POST">
