@@ -22,7 +22,7 @@ else{
 			<div id="content" class="container_12">
 				<div id="content-profile">
 					<div id="head-title">
-						<h1>ฝากประวัติ <span class="text-blue">- เพิ่มประสบการณ์ทำงาน</span></h1>
+						<h1>ฝากประวัติ <span class="text-blue">- แก้ไขประสบการณ์ทำงาน</span></h1>
 					</div>
 					<form id="add_education_form" name="add_education_form" action="<?php echo $rootpath; ?>include/module/edit-experience-process.php" method="POST" enctype="multipart/form-data">
 <?php
