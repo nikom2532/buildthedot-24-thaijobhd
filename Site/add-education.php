@@ -32,7 +32,7 @@ else{
 						<p class="grid_2">ปีเริ่ม</p>
 						<p class="grid_8"><input type="text" id="year_start" name ="year_start" class="round width700" onkeypress="return add_education_form_keypress(event)" /></p><br class="clear"/>
 						<p class="grid_2">ปีจบ</p>
-						<p class="grid_8"><input type="text" id="year_end" name ="year_start" class="round width700" onkeypress="return add_education_form_keypress(event)" /></p><br class="clear"/>
+						<p class="grid_8"><input type="text" id="year_end" name ="year_end" class="round width700" onkeypress="return add_education_form_keypress(event)" /></p><br class="clear"/>
 						<p class="grid_2">วุฒิการศึกษา</p>
 						<p class="grid_8"><input type="text" id="educational_background" name ="educational_background" class="round width700" onkeypress="return add_education_form_keypress(event)" /></p><br class="clear" />
 			      <h2 class="grid_3"><a href="#" class="add-button black round" onclick="document.getElementById('add_education_form').submit(); ">เพิ่ม</a></h2>
