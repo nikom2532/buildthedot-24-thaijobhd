@@ -28,8 +28,8 @@ else{
 						ทักษะด้านภาษา
 					</p>
 					<form id="edit_talent_form" name="edit_talent_form" action="<?php echo $rootpath; ?>include/module/add-talent-language-process.php" method="POST" enctype="multipart/form-data">
-						<h4 class="text-blue">เลือกภาษา
-							<select class="text-blue" name="language">
+						<h4 class="">เลือกภาษา
+							<select class="" name="language">
 <?php
 								include($rootpath."include/initial/edit-talent-language-php.php");
 								for ($i=0; $i < count($language); $i++) {
