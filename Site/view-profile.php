@@ -234,7 +234,7 @@ else{
 						ชื่อ
 					</p>
 					<p class="grid_2">
-						<?php echo $$rs_user_ref["name"]; ?>
+						<?php echo $rs_user_ref["name"]; ?>
 					</p>
 					<br class="clear"/>
 		
@@ -242,7 +242,7 @@ else{
 						ความสัมพันธ์
 					</p>
 					<p class="grid_2">
-						<?php echo $$rs_user_ref["relationship"]; ?>
+						<?php echo $rs_user_ref["relationship"]; ?>
 					</p>
 					<br class="clear"/>
 		
@@ -250,7 +250,7 @@ else{
 						สถานที่ทำงาน
 					</p>
 					<p class="grid_2">
-						<?php echo $$rs_user_ref["workplace"]; ?>
+						<?php echo $rs_user_ref["workplace"]; ?>
 					</p>
 					<br class="clear"/>
 		
@@ -258,7 +258,7 @@ else{
 						ตำแหน่ง
 					</p>
 					<p class="grid_2">
-						<?php echo $$rs_user_ref["position"]; ?>
+						<?php echo $rs_user_ref["position"]; ?>
 					</p>
 					<br class="clear"/>
 		
@@ -266,7 +266,7 @@ else{
 						เบอร์โทรศัพท์
 					</p>
 					<p class="grid_2">
-						<?php echo $$rs_user_ref["phone_number"]; ?>
+						<?php echo $rs_user_ref["phone_number"]; ?>
 					</p>
 					<br class="clear"/>
 					
