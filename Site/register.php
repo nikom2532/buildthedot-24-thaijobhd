@@ -153,11 +153,7 @@ include ($rootpath . "include/top-menu.php");
 				</p>
 				<p class="grid_4 ">
 					<label for="military_status1" class="alt-label">
-						<input type="radio" id="military_status1" name="military_status" value="pass_commandeering_soldier" <?php 
-							if($rs_user["military_status"]=="pass_commandeering_soldier"){
-								?>checked="checked"<?php
-							}
-						?> />
+						<input type="radio" id="military_status1" name="military_status" value="pass_commandeering_soldier" checked="checked"/>
 						ผ่านการเกณฑ์ทหาร 
 					</label>
 					<label for="military_status2" class="alt-label">
