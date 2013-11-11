@@ -13,7 +13,19 @@ else{
 	// $AdPic = $_POST["AdPic"];
 	$company_id  =$_POST["company_id"];
 	$title = $_POST["title"];
-	$LinkAddress = "http:\\\\".$_POST["LinkAddress"];
+	
+	function startsWith($haystack, $needle){
+	    return $needle === "" || strpos($haystack, $needle) === 0;
+	}
+	function endsWith($haystack, $needle){
+	    return $needle === "" || substr($haystack, -strlen($needle)) === $needle;
+	}
+	if(startsWith($_POST["LinkAddress"], "http://") ){
+		$LinkAddress = $_POST["LinkAddress"];
+	}
+	else{
+		$LinkAddress = "http://".$_POST["LinkAddress"];
+	}
 	$Status = $_POST["Status"];
 	$time_now = strtotime("now");	//.date('Y-m-d H:i:s', $time_now)
 	
