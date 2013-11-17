@@ -57,6 +57,7 @@ include ($rootpath . "include/top-menu.php");
 </div>
 <!--end banner side-right -->
 <?php */ ?>
+	
 <div id="search-bar" class="container_12">
 	<form action="search.php" method="POST" id="search-form" class="center"  class="grid_12">
 		<fieldset>
@@ -65,11 +66,9 @@ include ($rootpath . "include/top-menu.php");
 			<input type="submit" value="" class="round black ic-search" />
 		</fieldset>
 	</form>
-</div><!--end search-bar -->
-<div  id="slide-image" class="container_12">
-	<img src="images/slide-image.jpg" width="1000" height="280" alt="images">
-</div><!--end slide-image-->
-<div id="content" class="container_12">
+</div>
+<!--end search-bar -->
+<div id = "banner-left">
 	<div class="grid_2 margin-left-5 margin-right-5">
 <?php
 	for($i_advertisement=1;$i_advertisement<=9;$i_advertisement=$i_advertisement+2){
@@ -105,6 +104,55 @@ include ($rootpath . "include/top-menu.php");
 	}
 ?>
 	</div>
+</div>
+	<!-- end left bander -->
+<div id = "banner-right">		
+<div class="grid_2 margin-left-5 margin-right-5">
+<?php
+	for($i_advertisement=2;$i_advertisement<=10;$i_advertisement=$i_advertisement+2){
+		$sql_advertisement="
+			SELECT * 
+			FROM  `buildthedot_thaijobhd_ad`
+			WHERE `AdType` = 'Side_Ads'
+			AND `AdPosition` = '{$i_advertisement}' ;
+		";
+		$result_advertisement=@mysql_query($sql_advertisement);
+		if($rs_advertisement=@mysql_fetch_array($result_advertisement)){
+?>
+			<div id="banner-<?php echo $i_advertisement; ?>">
+				<a href="http://<?php echo $rs_advertisement["AdLink"]; ?>" target="_block"><img src="<?php
+						echo $rootpath; 
+						if($rs_advertisement["AdPic"]!=""){
+							?>images/ad/<?php echo $rs_advertisement["AdPic"]; ?>" <?php
+						}
+						else{
+							?>images/banner-2.png"<?php
+						}
+					?> width="144" height="143"></a>
+			</div>
+<?php
+		}
+		else{
+?>
+			<div id="banner-<?php echo $i_advertisement; ?>">
+				<img src="<?php echo $rootpath; ?>admin/images/banner-2.png" width="144" height="143">
+			</div>
+<?php
+		}
+	}
+?>
+	</div>
+</div>	
+	
+	<!-- end right bander -->
+	
+	
+	
+<div  id="slide-image" class="container_12">
+	<img src="images/slide-image.jpg" width="1000" height="280" alt="images">
+</div><!--end slide-image-->
+<div id="content" class="container_12">
+
 	<div class="grid_8"><?php //Center Content ?>
 		<div id="head-title">
 			<h1>งานแนะนำ</h1>
@@ -446,41 +494,7 @@ include ($rootpath . "include/top-menu.php");
 ?>
 				
 	</div><?php //End Center Content ?>
-	<div class="grid_2 margin-left-5 margin-right-5">
-<?php
-	for($i_advertisement=2;$i_advertisement<=10;$i_advertisement=$i_advertisement+2){
-		$sql_advertisement="
-			SELECT * 
-			FROM  `buildthedot_thaijobhd_ad`
-			WHERE `AdType` = 'Side_Ads'
-			AND `AdPosition` = '{$i_advertisement}' ;
-		";
-		$result_advertisement=@mysql_query($sql_advertisement);
-		if($rs_advertisement=@mysql_fetch_array($result_advertisement)){
-?>
-			<div id="banner-<?php echo $i_advertisement; ?>">
-				<a href="http://<?php echo $rs_advertisement["AdLink"]; ?>" target="_block"><img src="<?php
-						echo $rootpath; 
-						if($rs_advertisement["AdPic"]!=""){
-							?>images/ad/<?php echo $rs_advertisement["AdPic"]; ?>" <?php
-						}
-						else{
-							?>images/banner-2.png"<?php
-						}
-					?> width="144" height="143"></a>
-			</div>
-<?php
-		}
-		else{
-?>
-			<div id="banner-<?php echo $i_advertisement; ?>">
-				<img src="<?php echo $rootpath; ?>admin/images/banner-2.png" width="144" height="143">
-			</div>
-<?php
-		}
-	}
-?>
-	</div>
+
 </div><!--end content -->
 <?php
 	include ("include/footer.php");
