@@ -57,7 +57,13 @@ include ($rootpath . "include/top-menu.php");
 </div>
 <!--end banner side-right -->
 <?php */ ?>
+<style>
+	#content_body{
+		width:auto;
+	}
 	
+	
+</style>
 <div id="search-bar" class="container_12">
 	<form action="search.php" method="POST" id="search-form" class="center"  class="grid_12">
 		<fieldset>
@@ -152,12 +158,12 @@ include ($rootpath . "include/top-menu.php");
 	<img src="images/slide-image.jpg" width="1000" height="280" alt="images">
 </div><!--end slide-image-->
 <div id="content" class="container_12">
-
-	<div class="grid_8"><?php //Center Content ?>
+<div id="content_body">
+	<!--div class="grid_8"--><?php //Center Content ?>
 		<div id="head-title">
 			<h1>งานแนะนำ</h1>
 		</div>
-		<div class="grid_4 margin-left-5 margin-right-5" id="content-reccommend">
+		<div class="grid_6 margin-left-5 margin-right-5" id="content-reccommend">
 			<h2 id="sub-title">Full Time <span class="right"><a href="find-job-recommend-fulltime.php" class="button round black">ดูทั้งหมด</a></span></h2>
 			
 			<?php
@@ -194,7 +200,7 @@ include ($rootpath . "include/top-menu.php");
 			</div>
 		</div>
 	
-		<div class="grid_4 margin-left-5 margin-right-5" id="content-reccommend">
+		<div class="grid_6 margin-left-5 margin-right-5" id="content-reccommend">
 			<h2 id="sub-title">Part Time <span class="right"><a href="find-job-recommend-partime.php" class="button round black">ดูทั้งหมด</a></span></h2>
 			<?php
 				$sql="
@@ -268,7 +274,7 @@ include ($rootpath . "include/top-menu.php");
 			<h1>งานใหม่ล่าสุด </h1>
 		</div>
 	
-		<div class="grid_4 margin-left-5 margin-right-5" id="content-reccommend">
+		<div class="grid_6 margin-left-5 margin-right-5" id="content-reccommend">
 			<h2 id="sub-title">Full time<span class="right"><a href="find-job-new-fulltime.php" class="button round black">ดูทั้งหมด</a></span></h2>
 			<?php
 				$sql="
@@ -303,7 +309,7 @@ include ($rootpath . "include/top-menu.php");
 				Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
 			</p-->
 		</div>
-		<div class="grid_4 margin-left-5 margin-right-5" id="content-reccommend">
+		<div class="grid_6 margin-left-5 margin-right-5" id="content-reccommend">
 			<h2 id="sub-title">Part time<span class="right"><a href="find-job-new-parttime.php" class="button round black">ดูทั้งหมด</a></span></h2>
 			<?php
 				$sql="
@@ -362,8 +368,9 @@ include ($rootpath . "include/top-menu.php");
 				else{
 					?>top_company/<?php echo $rs_top_company["CompanyPic"]; 
 				}
-				?>" width="144" height="143" /></a>
+				?>" width="170" height="143" /></a>
 			</div>
+			
 <?php
 		}
 ?>
@@ -469,7 +476,7 @@ include ($rootpath . "include/top-menu.php");
 			$result_advertisement=@mysql_query($sql_advertisement);
 			if($rs_advertisement=@mysql_fetch_array($result_advertisement)){
 ?>
-				<div class="grid_4 margin-left-5 margin-right-5">
+				<div class="grid_6 margin-left-5 margin-right-5">
 					<a href="http://<?php echo $rs_advertisement["AdLink"]; ?>" target="_block"><img src="<?php
 						echo $rootpath; 
 						if($rs_advertisement["AdPic"]!=""){
@@ -484,7 +491,7 @@ include ($rootpath . "include/top-menu.php");
 			}
 			else{
 ?>
-				<div class="grid_4 margin-left-5 margin-right-5">
+				<div class="grid_6 margin-left-5 margin-right-5">
 					<img src="images/banner-1.png" width="100%" <?php // width="458" height="175" ?> alt="Banner">
 					
 				</div>
