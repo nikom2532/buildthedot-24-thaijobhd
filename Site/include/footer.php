@@ -14,7 +14,7 @@
 						abc@mail.com
 					</p>
 				</div>
-				<div class="grid_3 prefix_4">
+				<div class="grid_3 prefix_3">
 					<div class="right">
 						<ul>
 							<li><img src="images/Facebook.png" width="52" height="52" alt="Facebook">
