@@ -14,6 +14,13 @@ else{
 	$Description1 = $_POST["Description1"];
 	$Description2 = $_POST["Description2"];
 	$Description3 = $_POST["Description3"];
+	$Description4 = $_POST["Description4"];
+	$Description5 = $_POST["Description5"];
+	$Description6 = $_POST["Description6"];
+	$Description7 = $_POST["Description7"];
+	$Description8 = $_POST["Description8"];
+	$Description9 = $_POST["Description9"];
+	$Description10 = $_POST["Description10"];
 	$IdeaRecomment = $_POST["IdeaRecomment"];
 	$time_now = date("Y-m-d H:i:s", strtotime("now"));
 	$sql="
@@ -22,6 +29,13 @@ else{
 		 `Description1` = '".$Description1."',
 		 `Description2` = '".$Description2."',
 		 `Description3` = '".$Description3."',
+		 `Description4` = '".$Description4."',
+		 `Description5` = '".$Description5."',
+		 `Description6` = '".$Description6."',
+		 `Description7` = '".$Description7."',
+		 `Description8` = '".$Description8."',
+		 `Description9` = '".$Description9."',
+		 `Description10` = '".$Description10."',
 		 `IdeaRecomment` = '".$IdeaRecomment."',
 		 `IdeaTime` = '".$time_now."'
 		WHERE `CompanyID` = '{$CompanyID}' ;

@@ -92,6 +92,69 @@ else{
 									</div>
 									<br class="clear"/>
 									<div class="grid_2">
+										<h6 class="detail-title">ย่อหน้าที่ 4</h6>
+									</div>
+									<div class="grid_8">
+										<p>
+											<textarea type="text" id="name" name ="Description4" class="round"><?php echo $rs["Description3"]; ?></textarea>
+										</p>
+									</div>
+									<br class="clear"/>
+									<div class="grid_2">
+										<h6 class="detail-title">ย่อหน้าที่ 5</h6>
+									</div>
+									<div class="grid_8">
+										<p>
+											<textarea type="text" id="name" name ="Description5" class="round"><?php echo $rs["Description3"]; ?></textarea>
+										</p>
+									</div>
+									<br class="clear"/>
+									<div class="grid_2">
+										<h6 class="detail-title">ย่อหน้าที่ 6</h6>
+									</div>
+									<div class="grid_8">
+										<p>
+											<textarea type="text" id="name" name ="Description6" class="round"><?php echo $rs["Description3"]; ?></textarea>
+										</p>
+									</div>
+									<br class="clear"/>
+									<div class="grid_2">
+										<h6 class="detail-title">ย่อหน้าที่ 7</h6>
+									</div>
+									<div class="grid_8">
+										<p>
+											<textarea type="text" id="name" name ="Description7" class="round"><?php echo $rs["Description3"]; ?></textarea>
+										</p>
+									</div>
+									<br class="clear"/>
+									<div class="grid_2">
+										<h6 class="detail-title">ย่อหน้าที่ 8</h6>
+									</div>
+									<div class="grid_8">
+										<p>
+											<textarea type="text" id="name" name ="Description8" class="round"><?php echo $rs["Description3"]; ?></textarea>
+										</p>
+									</div>
+									<br class="clear"/>
+									<div class="grid_2">
+										<h6 class="detail-title">ย่อหน้าที่ 9</h6>
+									</div>
+									<div class="grid_8">
+										<p>
+											<textarea type="text" id="name" name ="Description9" class="round"><?php echo $rs["Description3"]; ?></textarea>
+										</p>
+									</div>
+									<br class="clear"/>
+									<div class="grid_2">
+										<h6 class="detail-title">ย่อหน้าที่ 10</h6>
+									</div>
+									<div class="grid_8">
+										<p>
+											<textarea type="text" id="name" name ="Description10" class="round"><?php echo $rs["Description3"]; ?></textarea>
+										</p>
+									</div>
+									<br class="clear"/>
+									<div class="grid_2">
 										<h6 class="detail-title pic-post">รูปที่ 1 </h6>
 									</div>
 									<div class="prefix_2" id="prefix_2">

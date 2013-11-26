@@ -85,6 +85,69 @@ else{
 									</div>
 									<br class="clear"/>
 									<div class="grid_2">
+										<h6 class="detail-title">ย่อหน้าที่ 4</h6>
+									</div>
+									<div class="grid_8">
+										<p>
+											<textarea type="text" id="Description4" name ="Description4" class="round" value=""></textarea>
+										</p>
+									</div>
+									<br class="clear"/>
+									<div class="grid_2">
+										<h6 class="detail-title">ย่อหน้าที่ 5</h6>
+									</div>
+									<div class="grid_8">
+										<p>
+											<textarea type="text" id="Description5" name ="Description5" class="round" value=""></textarea>
+										</p>
+									</div>
+									<br class="clear"/>
+									<div class="grid_2">
+										<h6 class="detail-title">ย่อหน้าที่ 6</h6>
+									</div>
+									<div class="grid_8">
+										<p>
+											<textarea type="text" id="Description6" name ="Description6" class="round" value=""></textarea>
+										</p>
+									</div>
+									<br class="clear"/>
+									<div class="grid_2">
+										<h6 class="detail-title">ย่อหน้าที่ 7</h6>
+									</div>
+									<div class="grid_8">
+										<p>
+											<textarea type="text" id="Description7" name ="Description7" class="round" value=""></textarea>
+										</p>
+									</div>
+									<br class="clear"/>
+									<div class="grid_2">
+										<h6 class="detail-title">ย่อหน้าที่ 8</h6>
+									</div>
+									<div class="grid_8">
+										<p>
+											<textarea type="text" id="Description8" name ="Description8" class="round" value=""></textarea>
+										</p>
+									</div>
+									<br class="clear"/>
+									<div class="grid_2">
+										<h6 class="detail-title">ย่อหน้าที่ 9</h6>
+									</div>
+									<div class="grid_8">
+										<p>
+											<textarea type="text" id="Description9" name ="Description9" class="round" value=""></textarea>
+										</p>
+									</div>
+									<br class="clear"/>
+									<div class="grid_2">
+										<h6 class="detail-title">ย่อหน้าที่ 10</h6>
+									</div>
+									<div class="grid_8">
+										<p>
+											<textarea type="text" id="Description10" name ="Description10" class="round" value=""></textarea>
+										</p>
+									</div>
+									<br class="clear"/>
+									<div class="grid_2">
 										<h6 class="detail-title pic-post">รูปที่ 1 </h6>
 									</div>
 									<div class="prefix_2" id="prefix_2">
