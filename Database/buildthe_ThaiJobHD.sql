@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 01, 2013 at 09:12 PM
+-- Generation Time: Nov 26, 2013 at 05:17 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.3.10-1ubuntu3.7
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `buildthedot_24ThaiJobHD`
+-- Database: `buildthe_ThaiJobHD`
 --
 
 -- --------------------------------------------------------
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_ad` (
   `AdType` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
   `AdPosition` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`PictureID`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_job` (
   `EndTime` date NOT NULL,
   `JobType` int(11) NOT NULL,
   PRIMARY KEY (`JobID`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_job_attribute` (
   `JobID` int(11) NOT NULL,
   `AtrributDescription` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`AttributeID`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -83,6 +83,13 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_job_idea` (
   `Description1` text COLLATE utf8_unicode_ci NOT NULL,
   `Description2` text COLLATE utf8_unicode_ci NOT NULL,
   `Description3` text COLLATE utf8_unicode_ci NOT NULL,
+  `Description4` text COLLATE utf8_unicode_ci NOT NULL,
+  `Description5` text COLLATE utf8_unicode_ci NOT NULL,
+  `Description6` text COLLATE utf8_unicode_ci NOT NULL,
+  `Description7` text COLLATE utf8_unicode_ci NOT NULL,
+  `Description8` text COLLATE utf8_unicode_ci NOT NULL,
+  `Description9` text COLLATE utf8_unicode_ci NOT NULL,
+  `Description10` text COLLATE utf8_unicode_ci NOT NULL,
   `Pic1` text COLLATE utf8_unicode_ci NOT NULL,
   `Pic2` text COLLATE utf8_unicode_ci NOT NULL,
   `Pic3` text COLLATE utf8_unicode_ci NOT NULL,
@@ -91,7 +98,7 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_job_idea` (
   `Status` int(11) NOT NULL,
   PRIMARY KEY (`CompanyID`),
   UNIQUE KEY `MainIdea` (`MainIdea`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -109,7 +116,7 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_top_company` (
   `TopCompanyRecomment` int(11) NOT NULL,
   PRIMARY KEY (`TopCompanyID`),
   UNIQUE KEY `TopCompanyName` (`TopCompanyName`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -178,7 +185,7 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_account_reference_contact
   `position` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `phone_number` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`user_account_reference_contacts_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -212,7 +219,7 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_history_experiences` (
   `year_end` date NOT NULL,
   `salary` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`user_history_experiences_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -242,7 +249,7 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_history_talent_others` (
   `user_account_id` int(50) NOT NULL,
   `topic` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`user_history_talent_others_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
