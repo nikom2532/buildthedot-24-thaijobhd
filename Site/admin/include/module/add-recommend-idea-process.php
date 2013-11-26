@@ -24,9 +24,9 @@ else{
 	$IdeaRecomment = $_POST["IdeaRecomment"];
 	$time_now = date('Y-m-d H:i:s', strtotime("now"));//date('Y-m-d H:i:s', $time_now)
 	
-	$sql="
+ 	$sql="
 		INSERT INTO `buildthedot_thaijobhd_job_idea`
-		(`MainIdea`, `Description1`, `Description2`, `Description3`, `Description4`, `Description5`, `Description6`, `Description7`, `Description8`, `Description9`, `Description10` `IdeaRecomment`, `IdeaTime`) 
+		(`MainIdea`, `Description1`, `Description2`, `Description3`, `Description4`, `Description5`, `Description6`, `Description7`, `Description8`, `Description9`, `Description10`, `IdeaRecomment`, `IdeaTime`) 
 		VALUE('{$MainIdea}', '{$Description1}', '{$Description2}', '{$Description3}', '{$Description4}', '{$Description5}', '{$Description6}', '{$Description7}', '{$Description8}', '{$Description9}', '{$Description10}', '{$IdeaRecomment}', '{$time_now}');
 	";
 	@mysql_query($sql);
