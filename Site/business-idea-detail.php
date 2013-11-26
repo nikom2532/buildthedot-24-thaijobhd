@@ -86,6 +86,13 @@ include ($rootpath . "include/top-menu.php");
 					<p><?php echo $rs["Description1"]; ?></p>
 					<p><?php echo $rs["Description2"]; ?></p>
 					<p><?php echo $rs["Description3"]; ?></p>
+					<p><?php echo $rs["Description4"]; ?></p>
+					<p><?php echo $rs["Description5"]; ?></p>
+					<p><?php echo $rs["Description6"]; ?></p>
+					<p><?php echo $rs["Description7"]; ?></p>
+					<p><?php echo $rs["Description8"]; ?></p>
+					<p><?php echo $rs["Description9"]; ?></p>
+					<p><?php echo $rs["Description10"]; ?></p>
 				</div>
 <?php
 			}
