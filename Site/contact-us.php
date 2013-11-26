@@ -17,7 +17,7 @@ include ("include/top-menu.php");
 			return false;
 		}
 		
-		var mail = document.getElementById("mail").value;ss
+		var mail = document.getElementById("mail").value;
 		if(mail == "" || mail == null)
 		{
 			alert("E-mail is not valid");
