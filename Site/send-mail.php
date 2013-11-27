@@ -5,7 +5,7 @@
 	$des = $_POST['text'];
 	
 	$subject = "=?UTF-8?B?" . base64_encode('คุณได้รับการติดต่อจากคุณ '.$name)."?=";
-	$to = "team@buildthedot.com";
+	$to = "admin@thaijobhd.com";
 	$message = "เนื้อหา : \n<br>".$des."\n<br> เบอติดต่อกลับ  : ".$tel ."\n <br> e-mail : ".$mail;
 	$from = "ThaiJobHD";
 	$headers = "MIME-Version: 1.0' . \r\n";
