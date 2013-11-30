@@ -11,6 +11,14 @@ if($_SESSION["userid"] == "") {
 	include ("include/footer.php");
 }
 else{
+?>
+	<script type="text/javascript" src="<?php echo $rootpath; ?>js/tinymce/tinymce.min.js"></script>
+	<script type="text/javascript">
+		tinymce.init({
+			selector: "textarea"
+		});
+	</script>
+<?php
 	//check for Logout mode
 	if($_GET["mode"]=="logout"){
 		include($rootadminpath."include/module/logout_process.php");
