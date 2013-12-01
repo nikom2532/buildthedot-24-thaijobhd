@@ -15,7 +15,7 @@ else{
 	<script type="text/javascript" src="<?php echo $rootpath; ?>js/tinymce/tinymce.min.js"></script>
 	<script type="text/javascript">
 		tinymce.init({
-			selector: "textarea"
+			selector: "form#form-edit textarea#Description"
 		});
 	</script>
 <?php
@@ -66,92 +66,11 @@ else{
 									</div>
 									<br class="clear"/>
 									<div class="grid_2">
-										<h6 class="detail-title">ย่อหน้าที่ 1</h6>
+										<h6 class="detail-title">ย่อหน้า</h6>
 									</div>
 									<div class="grid_8">
 										<p>
-											<textarea type="text" id="Description1" name ="Description1" class="round" value=""></textarea>
-										</p>
-									</div>
-									<br class="clear"/>
-									<div class="grid_2">
-										<h6 class="detail-title">ย่อหน้าที่ 2</h6>
-									</div>
-									<div class="grid_8">
-										<p>
-											<textarea type="text" id="Description2" name ="Description2" class="round" value=""></textarea>
-										</p>
-									</div>
-									<br class="clear"/>
-									<div class="grid_2">
-										<h6 class="detail-title">ย่อหน้าที่ 3</h6>
-									</div>
-									<div class="grid_8">
-										<p>
-											<textarea type="text" id="Description3" name ="Description3" class="round" value=""></textarea>
-										</p>
-									</div>
-									<br class="clear"/>
-									<div class="grid_2">
-										<h6 class="detail-title">ย่อหน้าที่ 4</h6>
-									</div>
-									<div class="grid_8">
-										<p>
-											<textarea type="text" id="Description4" name ="Description4" class="round" value=""></textarea>
-										</p>
-									</div>
-									<br class="clear"/>
-									<div class="grid_2">
-										<h6 class="detail-title">ย่อหน้าที่ 5</h6>
-									</div>
-									<div class="grid_8">
-										<p>
-											<textarea type="text" id="Description5" name ="Description5" class="round" value=""></textarea>
-										</p>
-									</div>
-									<br class="clear"/>
-									<div class="grid_2">
-										<h6 class="detail-title">ย่อหน้าที่ 6</h6>
-									</div>
-									<div class="grid_8">
-										<p>
-											<textarea type="text" id="Description6" name ="Description6" class="round" value=""></textarea>
-										</p>
-									</div>
-									<br class="clear"/>
-									<div class="grid_2">
-										<h6 class="detail-title">ย่อหน้าที่ 7</h6>
-									</div>
-									<div class="grid_8">
-										<p>
-											<textarea type="text" id="Description7" name ="Description7" class="round" value=""></textarea>
-										</p>
-									</div>
-									<br class="clear"/>
-									<div class="grid_2">
-										<h6 class="detail-title">ย่อหน้าที่ 8</h6>
-									</div>
-									<div class="grid_8">
-										<p>
-											<textarea type="text" id="Description8" name ="Description8" class="round" value=""></textarea>
-										</p>
-									</div>
-									<br class="clear"/>
-									<div class="grid_2">
-										<h6 class="detail-title">ย่อหน้าที่ 9</h6>
-									</div>
-									<div class="grid_8">
-										<p>
-											<textarea type="text" id="Description9" name ="Description9" class="round" value=""></textarea>
-										</p>
-									</div>
-									<br class="clear"/>
-									<div class="grid_2">
-										<h6 class="detail-title">ย่อหน้าที่ 10</h6>
-									</div>
-									<div class="grid_8">
-										<p>
-											<textarea type="text" id="Description10" name ="Description10" class="round" value=""></textarea>
+											<textarea type="text" id="Description" name ="Description" class="round" value=""></textarea>
 										</p>
 									</div>
 									<br class="clear"/>
@@ -161,7 +80,7 @@ else{
 									<div class="prefix_2" id="prefix_2">
 										<div class="grid_12">
 											<p>
-												<!-- <a href="#" class="button round black right">แก้ไข</a> --><input type="file" name="pic1" class="button round black right" />
+												<!-- <a href="#" class="button round black right">แก้ไข</a> --><input type="file" name="pic1" class="button round black " />
 											</p>
 										</div>
 										<br class="clear"/>
@@ -172,7 +91,7 @@ else{
 									<div class="prefix_2" id="prefix_2">
 										<div class="grid_12">
 											<p>
-												<!-- <a href="#" class="button round black right">แก้ไข</a> --><input type="file" name="pic2" class="button round black right" />
+												<!-- <a href="#" class="button round black right">แก้ไข</a> --><input type="file" name="pic2" class="button round black " />
 											</p>
 										</div>
 										<br class="clear"/>
@@ -183,7 +102,7 @@ else{
 									<div class="prefix_2" id="prefix_2">
 										<div class="grid_12">
 											<p>
-												<!-- <a href="#" class="button round black right">แก้ไข</a> --><input type="file" name="pic3" class="button round black right" />
+												<!-- <a href="#" class="button round black right">แก้ไข</a> --><input type="file" name="pic3" class="button round black " />
 											</p>
 										</div>
 										<br class="clear"/>

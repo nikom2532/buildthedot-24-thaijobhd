@@ -14,7 +14,7 @@ else{
 	<script type="text/javascript" src="<?php echo $rootpath; ?>js/tinymce/tinymce.min.js"></script>
 	<script type="text/javascript">
 		tinymce.init({
-			selector: "textarea"
+			selector: "form#form-edit textarea#Description"
 		});
 	</script>
 <?php
@@ -73,92 +73,11 @@ else{
 									</div>
 									<br class="clear"/>
 									<div class="grid_2">
-										<h6 class="detail-title">ย่อหน้าที่ 1</h6>
+										<h6 class="detail-title">ย่อหน้า</h6>
 									</div>
 									<div class="grid_8">
 										<p>
-											<textarea type="text" id="name" name ="Description1" class="round"><?php echo $rs["Description1"]; ?></textarea>
-										</p>
-									</div>
-									<br class="clear"/>
-									<div class="grid_2">
-										<h6 class="detail-title">ย่อหน้าที่ 2</h6>
-									</div>
-									<div class="grid_8">
-										<p>
-											<textarea type="text" id="name" name ="Description2" class="round"><?php echo $rs["Description2"]; ?></textarea>
-										</p>
-									</div>
-									<br class="clear"/>
-									<div class="grid_2">
-										<h6 class="detail-title">ย่อหน้าที่ 3</h6>
-									</div>
-									<div class="grid_8">
-										<p>
-											<textarea type="text" id="name" name ="Description3" class="round"><?php echo $rs["Description3"]; ?></textarea>
-										</p>
-									</div>
-									<br class="clear"/>
-									<div class="grid_2">
-										<h6 class="detail-title">ย่อหน้าที่ 4</h6>
-									</div>
-									<div class="grid_8">
-										<p>
-											<textarea type="text" id="name" name ="Description4" class="round"><?php echo $rs["Description3"]; ?></textarea>
-										</p>
-									</div>
-									<br class="clear"/>
-									<div class="grid_2">
-										<h6 class="detail-title">ย่อหน้าที่ 5</h6>
-									</div>
-									<div class="grid_8">
-										<p>
-											<textarea type="text" id="name" name ="Description5" class="round"><?php echo $rs["Description3"]; ?></textarea>
-										</p>
-									</div>
-									<br class="clear"/>
-									<div class="grid_2">
-										<h6 class="detail-title">ย่อหน้าที่ 6</h6>
-									</div>
-									<div class="grid_8">
-										<p>
-											<textarea type="text" id="name" name ="Description6" class="round"><?php echo $rs["Description3"]; ?></textarea>
-										</p>
-									</div>
-									<br class="clear"/>
-									<div class="grid_2">
-										<h6 class="detail-title">ย่อหน้าที่ 7</h6>
-									</div>
-									<div class="grid_8">
-										<p>
-											<textarea type="text" id="name" name ="Description7" class="round"><?php echo $rs["Description3"]; ?></textarea>
-										</p>
-									</div>
-									<br class="clear"/>
-									<div class="grid_2">
-										<h6 class="detail-title">ย่อหน้าที่ 8</h6>
-									</div>
-									<div class="grid_8">
-										<p>
-											<textarea type="text" id="name" name ="Description8" class="round"><?php echo $rs["Description3"]; ?></textarea>
-										</p>
-									</div>
-									<br class="clear"/>
-									<div class="grid_2">
-										<h6 class="detail-title">ย่อหน้าที่ 9</h6>
-									</div>
-									<div class="grid_8">
-										<p>
-											<textarea type="text" id="name" name ="Description9" class="round"><?php echo $rs["Description3"]; ?></textarea>
-										</p>
-									</div>
-									<br class="clear"/>
-									<div class="grid_2">
-										<h6 class="detail-title">ย่อหน้าที่ 10</h6>
-									</div>
-									<div class="grid_8">
-										<p>
-											<textarea type="text" id="name" name ="Description10" class="round"><?php echo $rs["Description3"]; ?></textarea>
+											<textarea type="text" id="Description" name ="Description" class="round"><?php echo $rs["Description"]; ?></textarea>
 										</p>
 									</div>
 									<br class="clear"/>
