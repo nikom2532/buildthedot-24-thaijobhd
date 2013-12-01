@@ -107,7 +107,7 @@ include ($rootpath . "include/top-menu.php");
 				<p class="grid_9">
 					<?php echo $rs["MainIdea"]; ?>
 					<br class="clear" />
-					<?php echo substr($rs["Description1"],0,250)."..."; ?><span id="read-more"><a href="<?php echo $rootpath; ?>business-idea-detail.php?id=<?php echo $rs["CompanyID"]; ?>">อ่านต่อ</a></span>
+					<?php echo substr($rs["Description"],0,250)."..."; ?><span id="read-more"><a href="<?php echo $rootpath; ?>business-idea-detail.php?id=<?php echo $rs["CompanyID"]; ?>">อ่านต่อ</a></span>
 				</p>
 			</section>
 <?php
