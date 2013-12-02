@@ -10,6 +10,7 @@ if($_SESSION["userid"] == "") {
 	include ("include/footer.php");
 }
 else{
+/*
 ?>
 	<script type="text/javascript" src="<?php echo $rootpath; ?>js/tinymce/tinymce.min.js"></script>
 	<script type="text/javascript">
@@ -17,6 +18,10 @@ else{
 			selector: "form#form-edit textarea#Description"
 		});
 	</script>
+<?php
+*/
+?>
+	<script type="text/javascript" src="<?php echo $rootpath; ?>js/ckeditor/ckeditor.js"></script>
 <?php
 	//check for Logout mode
 	if($_GET["mode"]=="logout"){
@@ -77,7 +82,7 @@ else{
 									</div>
 									<div class="grid_8">
 										<p>
-											<textarea type="text" id="Description" name ="Description" class="round"><?php echo $rs["Description"]; ?></textarea>
+											<textarea type="text" id="Description" name ="Description" class="round ckeditor"><?php echo $rs["Description"]; ?></textarea>
 										</p>
 									</div>
 									<br class="clear"/>

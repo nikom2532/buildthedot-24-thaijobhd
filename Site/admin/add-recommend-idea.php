@@ -11,6 +11,7 @@ if($_SESSION["userid"] == "") {
 	include ("include/footer.php");
 }
 else{
+	/*
 ?>
 	<script type="text/javascript" src="<?php echo $rootpath; ?>js/tinymce/tinymce.min.js"></script>
 	<script type="text/javascript">
@@ -18,6 +19,10 @@ else{
 			selector: "form#form-edit textarea#Description"
 		});
 	</script>
+<?php
+	 */
+?>
+	<script type="text/javascript" src="<?php echo $rootpath; ?>js/ckeditor/ckeditor.js"></script>	 
 <?php
 	//check for Logout mode
 	if($_GET["mode"]=="logout"){
@@ -49,7 +54,7 @@ else{
 		
 				<div class="content-module-main">
 					<div id="head-title">
-						<h1>ไอเดียธุรกิจ <span>- Lorem Ipsum </span><span class="text-black">- แก้ไข </span></h1>
+						<h1>ไอเดียธุรกิจ <span>- Lorem Ipsum </span><span class="text-black">- เพิ่ม </span></h1>
 					</div>
 					<div id="" class="container_12">
 						<section>
@@ -70,7 +75,7 @@ else{
 									</div>
 									<div class="grid_8">
 										<p>
-											<textarea type="text" id="Description" name ="Description" class="round" value=""></textarea>
+											<textarea type="text" id="Description" name ="Description" class="round ckeditor" value=""></textarea>
 										</p>
 									</div>
 									<br class="clear"/>
