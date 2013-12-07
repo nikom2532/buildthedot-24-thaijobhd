@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 26, 2013 at 05:17 PM
+-- Generation Time: Dec 1, 2013 at 02:37 AM
 -- Server version: 5.5.32
 -- PHP Version: 5.3.10-1ubuntu3.7
 
@@ -80,16 +80,7 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_job_attribute` (
 CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_job_idea` (
   `CompanyID` int(11) NOT NULL AUTO_INCREMENT,
   `MainIdea` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
-  `Description1` text COLLATE utf8_unicode_ci NOT NULL,
-  `Description2` text COLLATE utf8_unicode_ci NOT NULL,
-  `Description3` text COLLATE utf8_unicode_ci NOT NULL,
-  `Description4` text COLLATE utf8_unicode_ci NOT NULL,
-  `Description5` text COLLATE utf8_unicode_ci NOT NULL,
-  `Description6` text COLLATE utf8_unicode_ci NOT NULL,
-  `Description7` text COLLATE utf8_unicode_ci NOT NULL,
-  `Description8` text COLLATE utf8_unicode_ci NOT NULL,
-  `Description9` text COLLATE utf8_unicode_ci NOT NULL,
-  `Description10` text COLLATE utf8_unicode_ci NOT NULL,
+  `Description` text COLLATE utf8_unicode_ci NOT NULL,
   `Pic1` text COLLATE utf8_unicode_ci NOT NULL,
   `Pic2` text COLLATE utf8_unicode_ci NOT NULL,
   `Pic3` text COLLATE utf8_unicode_ci NOT NULL,
