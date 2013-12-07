@@ -83,7 +83,7 @@
 				<li>
 					<a href="business-idea.php">ไอเดียธุรกิจ
 					<br/>
-					<span id="sub-memu">สมัครงาน</span></a>
+					<span id="sub-memu">ไอเดียแนะนำ</span></a>
 				</li>
 				<li>
 					<a href="advertisement-rate.php">อัตราโฆษณา
