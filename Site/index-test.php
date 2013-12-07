@@ -3,7 +3,7 @@ session_start();
 $rootpath = "./";
 $rootadminpath = "./admin/";
 include ($rootpath . "include/header.php");
-include ($rootadminpath . "include/connect-to-database.php");
+//include ($rootadminpath . "include/connect-to-database.php");
 include ($rootpath . "include/top-menu.php");
 //include ($rootpath . "include/search-bar.php");
 ?>
@@ -58,23 +58,10 @@ include ($rootpath . "include/top-menu.php");
 <!--end banner side-right -->
 <?php */ ?>
 <style>
+	#content_body{
+		width:auto;
+	}
 	
-		#content_body{
-			width:auto;
-		}
-	
-			@media only screen and (max-width:1000px)
-		{
-	
-			#banner-left {
-				display: none;
-			}
-			
-			#banner-right {	
-				display: none;
-			}
-
-		}
 	
 </style>
 <div id="search-bar" class="container_12">
@@ -179,34 +166,7 @@ include ($rootpath . "include/top-menu.php");
 		<div class="grid_6 margin-left-5 margin-right-5" id="content-reccommend">
 			<h2 id="sub-title">Full Time <span class="right"><a href="find-job-recommend-fulltime.php" class="button round black">ดูทั้งหมด</a></span></h2>
 			
-			<?php
-				$sql="
-				SELECT * 
-				FROM  buildthedot_thaijobhd_job
-				WHERE Recomment = '1' AND JobType = '1'
-				ORDER BY JobID DESC	
-				LIMIT 0,3				
-				";
-				$result=@mysql_query($sql);
-				if($result)
-				{	
-					$count = 0;
-					while($rs=@mysql_fetch_array($result))
-					{
-						if(checkTime($rs['StartTime'],$rs['EndTime']))
-						{?>
-				            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="black"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
-				            <p>
-				            <?php 
-				            	$des = substr($rs['JobDescription'], 0 , 125);
-				            	echo $des."..."; 
-				            ?>
-				            <span id="read-more"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>">อ่านต่อ</a></span></p>
-				        <?php	
-			        	}
-					}
-				}
-			?>
+			
 			
 			<div id="banner">
 				<img src="images/banner-1.png" width="100%" <?php // width="458" height="175" ?> alt="Banner">
@@ -215,33 +175,6 @@ include ($rootpath . "include/top-menu.php");
 	
 		<div class="grid_6 margin-left-5 margin-right-5" id="content-reccommend">
 			<h2 id="sub-title">Part Time <span class="right"><a href="find-job-recommend-partime.php" class="button round black">ดูทั้งหมด</a></span></h2>
-			<?php
-				$sql="
-				SELECT * 
-				FROM  buildthedot_thaijobhd_job
-				WHERE Recomment = '1' AND JobType != '1'
-				ORDER BY JobID DESC	
-				LIMIT 0,3				
-				";
-				$result=@mysql_query($sql);
-				if($result)
-				{	
-					$count = 0;
-					while($rs=@mysql_fetch_array($result))
-					{
-						if(checkTime($rs['StartTime'],$rs['EndTime']))
-						{?>
-			            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="black"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
-			            <p><?php
-			            	$des = substr($rs['JobDescription'], 0 , 125);
-			            	echo $des."...";
-			            	?>
-			            <span id="read-more"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>">อ่านต่อ</a></span></p>
-			        <?php
-			        	}
-					}
-				}
-			?>
 
 			<!--h6 id="headline">Lorem Ipsum is simply dummy text of the printing</h6>
 			<p>
@@ -289,34 +222,7 @@ include ($rootpath . "include/top-menu.php");
 	
 		<div class="grid_6 margin-left-5 margin-right-5" id="content-reccommend">
 			<h2 id="sub-title">Full time<span class="right"><a href="find-job-new-fulltime.php" class="button round black">ดูทั้งหมด</a></span></h2>
-			<?php
-				$sql="
-				SELECT *
-				FROM  buildthedot_thaijobhd_job
-				WHERE JobType = '1'
-				ORDER BY JobID DESC	
-				LIMIT 0,3
-				";
-				$result=@mysql_query($sql);
-				if($result)
-				{
-					$count = 0;
-					while($rs=@mysql_fetch_array($result))
-					{
-						if(checkTime($rs['StartTime'],$rs['EndTime']))
-						{
-						?>
-			            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="black" ><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
-			            <p><?php
-			            	$des = substr($rs['JobDescription'], 0 , 125);
-			            	echo $des."...";
-			            	?>
-			            <span id="read-more"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>">อ่านต่อ</a></span></p>
-			        <?php
-			        	}
-					}
-				}
-			?>
+			
 			<!--h6 id="headline">Lorem Ipsum is simply dummy text of the printing</h6>
 			<p>
 				Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -324,34 +230,7 @@ include ($rootpath . "include/top-menu.php");
 		</div>
 		<div class="grid_6 margin-left-5 margin-right-5" id="content-reccommend">
 			<h2 id="sub-title">Part time<span class="right"><a href="find-job-new-parttime.php" class="button round black">ดูทั้งหมด</a></span></h2>
-			<?php
-				$sql="
-				SELECT * 
-				FROM  buildthedot_thaijobhd_job
-				WHERE JobType != '1'
-				ORDER BY JobID DESC	
-				LIMIT 0,3				
-				";
-				$result=@mysql_query($sql);
-				if($result)
-				{	
-					$count = 0;
-					while($rs=@mysql_fetch_array($result))
-					{
-						if(checkTime($rs['StartTime'],$rs['EndTime']))
-						{
-						?>
-			            <h6 id="headline"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>"><font color="black"><?php echo $rs['CompanyName'] . " : " . $rs['PositionThai'];?></font></a></h6>
-			            <p><?php
-			            	$des = substr($rs['JobDescription'], 0 , 125);
-			            	echo $des."...";
-			            	?>
-			            <span id="read-more"><a href="find-job-detail.php?id=<?php echo $rs['JobID']; ?>">อ่านต่อ</a></span></p>
-			        <?php
-						}
-					}
-				}
-			?>
+			
 			<!--h6 id="headline">Lorem Ipsum is simply dummy text of the printing</h6>
 			<p>
 				Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -396,41 +275,6 @@ include ($rootpath . "include/top-menu.php");
 			<h1>ไอเดียธุรกิจแนะนำ </h1>
 		</div>
 		<div id="recommend-idea" class="grid_8">
-<?php
-			$sql_business_ieda_suggest="
-				SELECT * 
-				FROM  `buildthedot_thaijobhd_job_idea`
-				WHERE `IdeaRecomment` = 1
-				ORDER BY TIME(`IdeaTime`), `IdeaTime` DESC 
-				LIMIT 0, 4 ;
-			";
-			$result_business_ieda_suggest=@mysql_query($sql_business_ieda_suggest);
-			while($rs=@mysql_fetch_array($result_business_ieda_suggest)){
-?>
-				<div class="grid_3">
-					<img src="<?php echo $rootpath; ?>images/<?php
-						if(($rs["Pic1"] == "")&&($rs["Pic2"] == "")&&($rs["Pic3"] == "")){
-							echo "banner-2.png";
-						}
-						else{
-							echo "business-idea/";
-							if($rs["Pic1"] != ""){
-								echo $rs["Pic1"];
-							}
-							elseif($rs["Pic2"] != ""){
-								echo $rs["Pic2"];
-							}
-							elseif($rs["Pic3"] != ""){
-								echo $rs["Pic3"];
-							}
-						}
-					?>" width="144" height="143">
-					<h3><?php echo $rs["MainIdea"]; ?></h3>
-					<p><?php echo substr($rs["Description1"], 0 , 125)."..."; ?><span class="right" id="read-more"><a href="<?php echo $rootpath; ?>business-idea-detail.php?id=<?php echo $rs["CompanyID"]; ?>">อ่านต่อ</a></span></p>
-				</div>
-<?php
-			}
-?>
 		</div>
 		<h2 class="right"><a href="<?php echo $rootpath; ?>business-idea.php?menu=suggest" class="button round black">ดูทั้งหมด</a></h2>
 		
@@ -440,40 +284,6 @@ include ($rootpath . "include/top-menu.php");
 			<h1>ไอเดียธุรกิจมาใหม่ </h1>
 		</div>
 		<div id="recommend-idea" class="grid_8">
-<?php
-			$sql_business_ieda_suggest="
-				SELECT * 
-				FROM  `buildthedot_thaijobhd_job_idea`
-				ORDER BY TIME(`IdeaTime`), `IdeaTime` DESC
-				LIMIT 0, 4 ;
-			";
-			$result_business_ieda_suggest=@mysql_query($sql_business_ieda_suggest);
-			while($rs=@mysql_fetch_array($result_business_ieda_suggest)){
-?>
-				<div class="grid_3">
-					<img src="<?php echo $rootpath; ?>images/<?php
-						if(($rs["Pic1"] == "")&&($rs["Pic2"] == "")&&($rs["Pic3"] == "")){
-							echo "banner-2.png";
-						}
-						else{
-							echo "business-idea/";
-							if($rs["Pic1"] != ""){
-								echo $rs["Pic1"];
-							}
-							elseif($rs["Pic2"] != ""){
-								echo $rs["Pic2"];
-							}
-							elseif($rs["Pic3"] != ""){
-								echo $rs["Pic3"];
-							}
-						}
-					?>" width="144" height="143">
-					<h3><?php echo $rs["MainIdea"]; ?></h3>
-					<p><?php echo substr($rs["Description1"], 0 , 125)."..."; ?><span class="right" id="read-more"><a href="<?php echo $rootpath; ?>business-idea-detail.php?id=<?php echo $rs["CompanyID"]; ?>">อ่านต่อ</a></span></p>
-				</div>
-<?php
-			}
-?>
 		</div>
 		
 		<h2 class="right"><a href="<?php echo $rootpath; ?>business-idea.php" class="button round black">ดูทั้งหมด</a></h2>
@@ -518,109 +328,5 @@ include ($rootpath . "include/top-menu.php");
 </div><!--end content -->
 <?php
 	include ("include/footer.php");
-	
-	
-
-	function checkTime($ST,$ET)
-	{
-		$NY = (int)date("Y");
-		$SY = substr($ST,0,4);
-		$EY = substr($ET,0,4);
-		//echo $SY."-".$NY."-".$EY;
-		if($NY < $SY || $NY > $EY) 
-		{	//echo "^_^";
-			return FALSE;
-		}
-		elseif($NY > $SY && $NY < $EY)
-		{	//echo "^.^";
-			return TRUE;	
-		}
-		elseif($NY == $SY && $NY == $EY) 
-		{	//echo "^8^";
-			if(checkStartMonth($ST) && checkEndMonth($ET))
-			{
-				return TRUE;
-			}
-		}
-		elseif($NY == $SY && $NY < $EY)
-		{	//echo "^U^";
-			return checkEndMonth($ET);	
-		}
-		elseif ($NY > $SY && $NY == $EY) 
-		{	//echo "^3^";
-			return checkEndMonth($ET);
-		}
-	}
-	
-	
-	function checkStartMonth($ST)
-	{
-			$NM = (int)date("m");
-			$SM = substr($ST,5,2);
-			//echo $NM."--".$SM;
-			if($NM == $SM)
-			{
-				return checkDayStart($ST);
-			}
-			elseif($NM > $SM) 
-			{
-				return TRUE;	
-			}
-			elseif($NM < $SM) {
-				return FALSE;
-			}
-	}	
-
-	function checkEndMonth($ET)
-	{
-			$NM = (int)date("m");
-			$EM = substr($ET,5,2);
-			//echo $NM."-".$EM;
-			if($NM == $EM)
-			{
-				return checkDayEnd($ET);
-			}
-			elseif($NM > $EM) 
-			{
-				return FALSE;	
-			}
-			elseif($NM < $EM) 
-			{
-				return TRUE;
-			}
-	}
-
-
-	function checkDayStart($ST)
-	{
-		$ND = (int)date("d");
-		$SD = substr($ST,8,2);
-		if($ND ==$SD)
-		{
-			return TRUE;
-		}
-		elseif ($ND > $SD) {
-			return TRUE;
-		}
-		else {
-			return FALSE;		
-		}
-	}
-
-	function checkDayEnd($ET)
-	{
-		$ND = (int)date("d");
-		$ED = substr($ET,8,2);
-		if($ND == $ED)
-		{
-			return TRUE;
-		}
-		elseif ($ND > $ED) {
-			return FALSE;	
-		}
-		else {
-			return TRUE;	
-		}
-	}
-	
 ?>
+	
