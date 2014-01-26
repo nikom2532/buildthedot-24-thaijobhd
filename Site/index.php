@@ -63,7 +63,7 @@ include ($rootpath . "include/top-menu.php");
 			width:auto;
 		}
 	
-			@media only screen and (max-width:1300px)
+			@media only screen and (max-width:1000px)
 		{
 	
 			#banner-left {
