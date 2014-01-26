@@ -16,7 +16,8 @@ else{
 		<!-- HEADER -->
 		<div id="header" class="container_12">
 			<div id="login-intro" class="grid_3">
-				<img src="images/logo.png" width="128" height="71">
+				<!--img src="images/logo.png" width="128" height="71"-->
+				<a href="<?php echo $rootpath; ?>"><img src="images/logo.png" alt="ThaiJobHD" width="130" height="71"></a>
 			</div> <!-- end full-width -->	
 	
 		</div> <!-- end header -->
