@@ -9,25 +9,10 @@ if ($_SESSION["userid"] == "") {
 	include ("include/footer.php");
 } else { echo "aaa";
 	include($rootadminpath."include/top-bar.php");
-?>
-	<!-- HEADER -->
-	<div id="header-with-tabs">
-		
-		<div class="page-full-width cf">
 	
-			<ul id="tabs" class="left">
-				<li><a href="job.php" class="active-tab">งาน</a></li>
-				<li><a href="business-idea.php">ไอเดียธุรกิจ</a></li>
-				<li><a href="advertisement.php">โฆษณา</a></li>
-                <li><a href="top-company.php">บริษัทชั้นนำ</a></li>
-			</ul> <!-- end tabs -->
-			
-			<!-- company logo -->
-			
-		</div> <!-- end full-width -->	
-
-	</div> <!-- end header -->
-		
+	$menu="job";
+	include($rootadminpath."include/top-menu.php");
+?>
 	<!-- MAIN CONTENT -->
 	<div id="content">
 		
