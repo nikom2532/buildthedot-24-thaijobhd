@@ -112,7 +112,7 @@ else{
 					</p>
 					<br class="clear"/>
 					<p class="grid_2">
-						เบอร์โทรศัพท์
+						หมายเลขโทรศัพท์
 					</p>
 					<p class="grid_8">
 						<?php echo $rs_user["phone_number"]; ?>
@@ -263,7 +263,7 @@ else{
 					<br class="clear"/>
 		
 					<p class="grid_2">
-						เบอร์โทรศัพท์
+						หมายเลขโทรศัพท์
 					</p>
 					<p class="grid_2">
 						<?php echo $rs_user_ref["phone_number"]; ?>
