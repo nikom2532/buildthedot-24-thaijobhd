@@ -8,6 +8,7 @@ include ($rootadminpath . "include/connect-to-database.php");
 if($_SESSION["userid"] == "" ) {
 	header("location: ".$rootpath."login.php");
 }
+//test
 else{
 	include ($rootpath . "include/top-menu.php");
 	include ($rootpath . "include/search-bar.php");
