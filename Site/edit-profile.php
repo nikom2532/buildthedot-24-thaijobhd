@@ -37,6 +37,38 @@ else{
 						<br class="clear"/>
 						
 						<p class="grid_2">
+							ชื่อ
+						</p>
+						<p class="grid_8">
+							<input type="text" id="firstname" name ="firstname" class="round" value="<?php echo $rs_user["firstname"]; ?>" />
+						</p>
+						<br class="clear"/>
+						
+						<p class="grid_2">
+							ชื่อกลาง
+						</p>
+						<p class="grid_8">
+							<input type="text" id="midname" name ="midname" class="round" value="<?php echo $rs_user["midname"]; ?>" />
+						</p>
+						<br class="clear"/>
+						
+						<p class="grid_2">
+							ชื่อสกุล
+						</p>
+						<p class="grid_8">
+							<input type="text" id="lastname" name ="lastname" class="round" value="<?php echo $rs_user["lastname"]; ?>" />
+						</p>
+						<br class="clear"/>
+						
+						<p class="grid_2">
+							ชื่อเล่น
+						</p>
+						<p class="grid_8">
+							<input type="text" id="nickname" name ="nickname" class="round" value="<?php echo $rs_user["nickname"]; ?>" />
+						</p>
+						<br class="clear"/>
+						
+						<p class="grid_2">
 							วันเกิด
 						</p>
 						<p class="grid_8">

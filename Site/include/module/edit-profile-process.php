@@ -9,6 +9,10 @@ if($_SESSION["userid"] == "" || (!(isset($_SESSION["userid"])))) {
 	header("location: ".$rootpath."login.php");
 }
 else{
+	$firstname=$_POST["firstname"];
+	$midname=$_POST["midname"];
+	$lastname=$_POST["lastname"];
+	$nickname=$_POST["nickname"];
 	$birthdate=$_POST["birthdate"];
 	$place_of_birth=$_POST["place_of_birth"];
 	$age=$_POST["age"];
@@ -53,6 +57,10 @@ else{
 		$sql_user_edit="
 			UPDATE `buildthedot_thaijobhd_user_account` 
 			SET
+			`firstname` = '{$firstname}',
+			`midname` = '{$midname}',
+			`lastname` = '{$lastname}',
+			`nickname` = '{$nickname}',
 			`birthdate` =  '{$birthdate}' ,
 			`place_of_birth` = '{$place_of_birth}' ,
 			`age` = '{$age}' ,
