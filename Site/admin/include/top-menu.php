@@ -6,7 +6,7 @@
 			<li><a href="<?php echo $rootadminpath; ?>business-idea.php" <?php if($menu=="business-idea"){ ?>class="active-tab"<?php } ?>>ไอเดียธุรกิจ</a></li>
 			<li><a href="<?php echo $rootadminpath; ?>advertisement.php" <?php if($menu=="advertisement"){ ?>class="active-tab"<?php } ?>>โฆษณา</a></li>
 			<li><a href="<?php echo $rootadminpath; ?>top-company.php" <?php if($menu=="top-company"){ ?>class="active-tab"<?php } ?>>บริษัทชั้นนำ</a></li>
-			<li><a href="<?php echo $rootadminpath; ?>view-profile.php" <?php if($menu=="user"){ ?>class="active-tab"<?php } ?>>บริษัทชั้นนำ</a></li>
+			<li><a href="<?php echo $rootadminpath; ?>user-management.php" <?php if($menu=="user-management"){ ?>class="active-tab"<?php } ?>>ข้อมูลผู้ใช้</a></li>
 		</ul> <!-- end tabs -->
 		
 		<!-- company logo -->

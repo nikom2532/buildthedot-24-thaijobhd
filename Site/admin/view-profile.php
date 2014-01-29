@@ -21,7 +21,7 @@ else{
 		include($rootadminpath."include/initial/pagination.php");
 		include($rootadminpath."include/top-bar.php");
 		
-		$menu="user";
+		$menu="user-management";
 		include($rootadminpath."include/top-menu.php");
 ?>
 		<!-- MAIN CONTENT -->
