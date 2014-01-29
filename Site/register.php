@@ -39,19 +39,19 @@ include ($rootpath . "include/top-menu.php");
 				</p>
 				<br class="clear"/>
 				<p class="grid_2">
-					Retry Password *
+					Re-type Password *
 				</p>
 				<p class="grid_8">
 					<input type="password" id="passsword2" name ="passsword2 required" class="round" value="<?php echo $rs_user["password2"]; ?>" required />
 				</p>
 				<br class="clear"/>
-				<h2 class="grid_">เพิ่มรูป </h2>
+				<!--h2 class="grid_"> </h2-->
 				<br class="clear"/>
 				<p class="grid_2">
-					ขนาด 200*200 px
+					เพิ่มรูป 
 				</p>
 				<p class="grid_8">
-					<input class="button black round" type="file" name="profile_picture" />
+					<input class="button black round" type="file" name="profile_picture" />  ขนาด 200x200 px
 				</p>
 				
 				<br class="clear"/>
@@ -65,7 +65,7 @@ include ($rootpath . "include/top-menu.php");
 				<br class="clear"/>
 				
 				<p class="grid_2">
-					สถาทที่เกิด
+					สถานที่เกิด
 				</p>
 				<p class="grid_8">
 					<input type="text" id="place_of_birth" name ="place_of_birth" class="round" value="<?php echo $rs_user["place_of_birth"]; ?>" />
@@ -107,7 +107,7 @@ include ($rootpath . "include/top-menu.php");
 				</p>
 				<br class="clear"/>
 				<p class="grid_2">
-					หมู่เลือด
+					กรุ๊ปเลือด
 				</p>
 				<p class="grid_8">
 					<input type="text" id="blood" name ="blood" class="round" value="<?php echo $rs_user["blood"]; ?>" />
@@ -149,7 +149,7 @@ include ($rootpath . "include/top-menu.php");
 				</p>
 				<br class="clear"/>
 				<p class="grid_2">
-					สถานะทางทหาร
+					ผ่านการศึกษาวิชาทหาร
 				</p>
 				<p class="grid_4 ">
 					<label for="military_status1" class="alt-label">
@@ -209,7 +209,7 @@ include ($rootpath . "include/top-menu.php");
 								?>checked="checked"<?php
 							}
 						?> />
-						อาศัยบิดามารดา </label>
+						อาศัยอยู่กับบิดามารดา </label>
 				</p>
 				<br class="clear"/>
 	
@@ -321,6 +321,9 @@ include ($rootpath . "include/top-menu.php");
 				$result_user_ref = @mysql_query($rs_user_ref);
 				$rs_user_ref = @mysql_fetch_array($result_user_ref)
 ?>
+	<div id="head-title">
+				<h1> <span class="text-blue">บุคคลอ้างอิงที่สามารถติดต่อได้</span></h1>
+			</div>
 				<p class="grid_4">
 					บุคคลอ้างอิงที่ติดต่อได้
 				</p>
@@ -359,7 +362,7 @@ include ($rootpath . "include/top-menu.php");
 				<br class="clear"/>
 	
 				<p class="grid_2">
-					เบอร์โทรศัพท์
+					หมายเลขโทรศัพท์
 				</p>
 				<p class="grid_2">
 					<input type="text" id="ref_phone_number" name ="ref_phone_number" class="round" value="<?php echo $$rs_user_ref["phone_number"]; ?>" />

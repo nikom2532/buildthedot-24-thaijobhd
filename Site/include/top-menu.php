@@ -21,10 +21,10 @@
 				if(!isset($_SESSION['userid']) || empty($_SESSION['userid']) || $_SESSION['userid'] == ""){
 ?>
 					<li>
-						<a href="login.php" class="text-blue">Sign in</a>
+						<a href="login.php" class="text-blue">ลงชื่อเข้าใช้</a>
 					</li>
 					<li>
-						<a href="register.php" class="text-grey">Register</a>
+						<a href="register.php" class="text-grey">ลงทะเบียน</a>
 					</li>
 <?php
 				}
