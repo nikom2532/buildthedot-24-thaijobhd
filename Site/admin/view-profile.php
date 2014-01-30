@@ -25,10 +25,11 @@ else{
 		include($rootadminpath."include/top-menu.php");
 		
 		//Find user
+		$UserID = $_GET["userID"];
 		$sql_user="
 			SELECT * 
 			FROM  `buildthedot_thaijobhd_user_account`
-			WHERE `id` = '".$_SESSION["userid"]."' ;
+			WHERE `id` = '".$UserID."' ;
 		";
 		$result_user = @mysql_query($sql_user);
 		if($result_user){
