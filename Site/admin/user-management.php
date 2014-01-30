@@ -30,7 +30,7 @@ else{
 					
 					<div class="content-module-main">
 					
-						<h2>ไอเดียธุรกิจ<span class="right"><a href="add-recommend-idea.php" class="add-button blue round">เพิ่ม</a></span></h2>
+						<h2>ข้อมูลผู้ใช้<span class="right"><a href="add-recommend-idea.php" class="add-button blue round">เพิ่ม</a></span></h2>
 						
 						<table>
 						
@@ -38,9 +38,8 @@ else{
 						
 								<tr>
 									<th width="8%">ลำดับที่</th>
-									<th width="65%">ชื่อเรื่อง</th>
-									<th width="12%">ไอเดียแนะนำ</th>
-									<th width="15%">Action</th>
+									<th width="65%">User</th>
+									<th width="12%">Admin Status</th>
 								</tr>
 							
 							</thead>
@@ -59,13 +58,13 @@ else{
 								// ";
 								$sql="
 									SELECT * 
-									FROM  `buildthedot_thaijobhd_job_idea`
+									FROM  `buildthedot_thaijobhd_user_account`
 								";
 								$result=@mysql_query($sql);
 								$number_of_items=@mysql_num_rows($result);
 								$sql="
 									SELECT * 
-									FROM  `buildthedot_thaijobhd_job_idea` 
+									FROM  `buildthedot_thaijobhd_user_account` 
 								 	LIMIT {$start} , {$page_limit} ;
 								";
 								$result=@mysql_query($sql);
@@ -74,22 +73,17 @@ else{
 									<tr>
 										<td><?php //echo $rs["CompanyID"]; ?><?php echo $i++; ?></td>
 										<td>
-											<a href="business-idea-detail.php?CompanyID=<?php echo $rs["CompanyID"]; ?>" class="text-black"><?php echo $rs["MainIdea"]; ?></a>
+											<a href="view-profile.php.php?userID=<?php echo $rs["id"]; ?>" class="text-black"><?php echo $rs["firstname"]." ".$rs["midname"]." ".$rs["lastname"]; ?></a>
 										</td>
 										<td id="status">
 											<img src="images/icons/message-boxes/<?php 
-												if($rs["IdeaRecomment"]==1) {
+												if($rs["admin_status"]==1) {
 													echo "confirmation.png";
 												}
-												elseif($rs["IdeaRecomment"]==0){
+												elseif($rs["admin_status"]==0){
 													echo "error.png";
 												}
 											?>" alt="active" />
-										</td>
-										<td id="action" class="center">
-											<a href="edit-recommend-idea.php?CompanyID=<?php echo $rs["CompanyID"]; ?>" class="table-actions-button text-blue">แก้ไข</a>
-											<!-- <a href="<?php echo $rootadminpath; ?>include/module/delete-recommend-idea-process.php?CompanyID=<?php echo $rs["CompanyID"]; ?>" class="table-actions-button text-red">ลบ</a> -->
-											<a href="#" onclick="delete_recommend_idea('<?php echo $rootadminpath; ?>' , '<?php echo $rs["CompanyID"]; ?>');" class="table-actions-button text-red">ลบ</a>
 										</td>
 									</tr>
 <?php
