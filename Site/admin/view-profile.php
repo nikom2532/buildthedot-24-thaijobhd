@@ -23,6 +23,13 @@ else{
 		
 		$menu="user-management";
 		include($rootadminpath."include/top-menu.php");
+		
+		//Find user
+		$sql_user="
+			SELECT * 
+			FROM  `buildthedot_thaijobhd_user_account`
+			WHERE `id` = '".$_SESSION["userid"]."' ;
+		";
 ?>
 		<!-- MAIN CONTENT -->
 		<div id="content">

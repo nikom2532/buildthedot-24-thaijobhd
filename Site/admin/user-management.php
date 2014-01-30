@@ -38,7 +38,8 @@ else{
 						
 								<tr>
 									<th width="8%">ลำดับที่</th>
-									<th width="65%">User</th>
+									<th width="40%">E-mail</th>
+									<th width="40%">Name</th>
 									<th width="12%">Admin Status</th>
 								</tr>
 							
@@ -73,7 +74,10 @@ else{
 									<tr>
 										<td><?php //echo $rs["CompanyID"]; ?><?php echo $i++; ?></td>
 										<td>
-											<a href="view-profile.php.php?userID=<?php echo $rs["id"]; ?>" class="text-black"><?php echo $rs["firstname"]." ".$rs["midname"]." ".$rs["lastname"]; ?></a>
+											<a href="view-profile.php?userID=<?php echo $rs["id"]; ?>" class="text-black"><?php echo $rs["email"]; ?></a>
+										</td>
+										<td>
+											<a href="view-profile.php?userID=<?php echo $rs["id"]; ?>" class="text-black"><?php echo $rs["firstname"]." ".$rs["midname"]." ".$rs["lastname"]; ?></a>
 										</td>
 										<td id="status">
 											<img src="images/icons/message-boxes/<?php 
