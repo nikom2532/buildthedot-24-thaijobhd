@@ -40,12 +40,17 @@ else{
 						<div class="content-module">
 							
 							<div class="content-module-main">
-							
-								<h2>ข้อมูลผู้ใช้<span class="right"><a href="add-recommend-idea.php" class="add-button blue round">เพิ่ม</a></span></h2>
-								
+								<!--
+								<h2>
+									ข้อมูลผู้ใช้
+									<span class="right">
+										<a href="add-recommend-idea.php" class="add-button blue round">เพิ่ม</a>
+									</span>
+								</h2>
+								-->
 								
 								<div id="head-title">
-								<h1>ฝากประวัติ</h1>
+								<h1>ข้อมูลผู้ใช้</h1>
 							</div>
 					
 							<h2 id="sub-title">ประวัติส่วนตัว <span class="right"><a href="<?php echo $rootpath; ?>edit-profile.php" class="button round black right">แก้ไข</a></span></h2>
