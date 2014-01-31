@@ -53,7 +53,7 @@ else{
 								<h1>ข้อมูลผู้ใช้</h1>
 							</div>
 					
-							<h2 id="sub-title">ประวัติส่วนตัว <span class="right"><a href="<?php echo $rootpath; ?>edit-profile.php" class="button round black right">แก้ไข</a></span></h2>
+							<h2 id="sub-title">ประวัติส่วนตัว <span class="right"><a href="<?php echo $rootadminpath; ?>edit-profile.php?userID=<?php echo $rs_user["id"]; ?>" class="button round black right">แก้ไข</a></span></h2>
 							<h3 class="text-grey"><?php echo $rs_user["firstname"]." ".$rs_user["midname"]." ".$rs_user["lastname"]." ".$rs_user["nickname"]; ?></h3>
 							<div>
 								<img src="images/<?php 
