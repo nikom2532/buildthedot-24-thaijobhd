@@ -297,7 +297,7 @@ else{
 							</p>
 							<br class="clear"/>
 							
-							<h2 id="sub-title">ประวัติการศึกษา<span class="right"><a href="<?php echo $rootadminpath; ?>add-education.php?UserID=<?php echo $rs_user["id"]; ?>" class="button round black right">แก้ไข</a></span></h2>
+							<h2 id="sub-title">ประวัติการศึกษา<span class="right"><a href="<?php echo $rootadminpath; ?>add-education.php?userID=<?php echo $rs_user["id"]; ?>" class="button round black right">แก้ไข</a></span></h2>
 		 					<p class="grid_2">
 								Lorem Ipsum
 							</p>
@@ -371,7 +371,7 @@ else{
 								}
 							}
 		?>
-							<h2 id="sub-title">การทำงาน<span class="right"><a href="<?php echo $rootadminpath; ?>add-experience.php?UserID=<?php echo $rs_user["id"]; ?>" class="button round black right">แก้ไข</a></span></h2>
+							<h2 id="sub-title">การทำงาน<span class="right"><a href="<?php echo $rootadminpath; ?>add-experience.php?userID=<?php echo $rs_user["id"]; ?>" class="button round black right">แก้ไข</a></span></h2>
 							<p class="grid_2">
 								Lorem Ipsum
 							</p>
@@ -445,7 +445,7 @@ else{
 								}
 							}
 		?>
-							<h2 id="sub-title">ความสามารถพิเศษ<span class="right"><a href="<?php echo $rootadminpath; ?>add-talent.php?UserID=<?php echo $rs_user["id"]; ?>" class="button round black right">แก้ไข</a></span></h2>
+							<h2 id="sub-title">ความสามารถพิเศษ<span class="right"><a href="<?php echo $rootadminpath; ?>add-talent.php?userID=<?php echo $rs_user["id"]; ?>" class="button round black right">แก้ไข</a></span></h2>
 							<p class="grid_2">
 								ทักษะด้านภาษา
 							</p>
