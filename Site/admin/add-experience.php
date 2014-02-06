@@ -55,6 +55,7 @@ else{
 								<p class="grid_2">เงินเดือน</p>
 								<p class="grid_8"><input type="text" id="salary" name ="salary" class="round width700" onkeypress="return add_education_form_keypress(event)" /></p><br class="clear" />
 					      <h2 class="grid_3"><a href="#" class="add-button black round" onclick="document.getElementById('add_education_form').submit(); ">เพิ่ม</a></h2>
+					      <input type="hidden" name="userid" value="<?php echo $_GET["userID"]; ?>" />
 					    </form>
 				
 							<div id="content-profile-table">

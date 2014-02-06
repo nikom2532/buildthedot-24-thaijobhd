@@ -31,7 +31,7 @@ else{
 			('".$_SESSION["userid"]."', '{$job_position}', '{$company_name}', '{$year_start}', '{$year_end}', '{$salary}') ;
 		";
 		@mysql_query($sql_experiences);
-		?><form id="add_education_message_form" action="<?php echo $rootadminpath; ?>add-experience.php" method="POST">
+		?><form id="add_education_message_form" action="<?php echo $rootadminpath; ?>add-experience.php?userID=<?php echo $_POST['userid']; ?>" method="POST">
 			<input type="hidden" id="add_education_messaage" name="add_education_messaage" value="" />
 		</form>
 		<script>
