@@ -41,7 +41,7 @@ else{
 						<div id="content-profile">
 							<div id="head-title">
 								<h1>ฝากประวัติ <span class="text-blue">-  เพิ่มประวัติการศึกษา</span></h1>
-							</div><?php // ?>
+							</div>
 							<form id="add_education_form" name="add_education_form" action="<?php echo $rootpath; ?>include/module/add-education-process.php" method="POST" enctype="multipart/form-data">
 								<p class="grid_2">ระดับการศึกษา</p>
 								<p class="grid_8"><input type="text" id="education_level" name ="education_level" class="round width700" onkeypress="return add_education_form_keypress(event)" /></p><br class="clear" />
