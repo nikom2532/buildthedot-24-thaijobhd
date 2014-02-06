@@ -8,6 +8,8 @@
 		<link href="<?php echo $rootpath; ?>css/960.css" rel="stylesheet" type="text/css">
 		<link href="<?php echo $rootpath; ?>css/style.css" rel="stylesheet" type="text/css">
 		<link href="<?php echo $rootpath; ?>css/pagination.css" rel="stylesheet" type="text/css">
+		<link href="js/image-slide/js-image-slider.css" rel="stylesheet" type="text/css" />
+		<script src="js/image-slide/js-image-slider.js" type="text/javascript"></script>
 		
 		<!--Date -picker -->
 		<link rel="stylesheet" href="<?php echo $rootadminpath; ?>css/datepicker.css">
