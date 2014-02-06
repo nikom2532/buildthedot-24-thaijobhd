@@ -168,7 +168,14 @@ include ($rootpath . "include/top-menu.php");
 	
 	
 <div  id="slide-image" class="container_12">
-	<img src="images/slide-image.jpg" width="1000" height="280" alt="images">
+		<div id="slider">
+            <img src="images/slide-image2.jpg">
+            <img src="images/slide-image2.jpg">
+            <img src="images/slide-image2.jpg">
+            <img src="images/slide-image2.jpg">
+            <img src="images/slide-image2.jpg">
+        </div>
+	<!--img src="images/slide-image.jpg" width="1000" height="280" alt="images"-->
 </div><!--end slide-image-->
 <div id="content" class="container_12">
 <div id="content_body">
