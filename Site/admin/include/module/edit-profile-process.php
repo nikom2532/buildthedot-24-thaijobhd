@@ -122,7 +122,7 @@ else{
 			include($rootpath."include/module/edit-profile-process2.php");
 		}
 		
-		?><form id="edit_profile_message_form" action="<?php echo $rootadminpath; ?>view-profile.php" method="POST">
+		?><form id="edit_profile_message_form" action="<?php echo $rootadminpath; ?>user-management.php" method="POST">
 			<input type="hidden" id="add_profile_messaage" name="add_profile_messaage" value="" />
 		</form>
 		<script>

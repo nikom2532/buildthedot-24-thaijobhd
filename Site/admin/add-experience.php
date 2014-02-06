@@ -43,7 +43,7 @@ else{
 								<h1>ฝากประวัติ <span class="text-blue">- เพิ่มประสบการณ์ทำงาน</span></h1>
 							</div>
 				
-							<form id="add_education_form" name="add_education_form" action="<?php echo $rootpath; ?>include/module/add-experience-process.php" method="POST" enctype="multipart/form-data">
+							<form id="add_education_form" name="add_education_form" action="<?php echo $rootadminpath; ?>include/module/add-experience-process.php" method="POST" enctype="multipart/form-data">
 								<p class="grid_2">ตำแหน่งงาน</p>
 								<p class="grid_8"><input type="text" id="job_position" name ="job_position" class="round width700" onkeypress="return add_education_form_keypress(event)" /></p><br class="clear" />
 								<p class="grid_2">สถานประกอบการ</p>

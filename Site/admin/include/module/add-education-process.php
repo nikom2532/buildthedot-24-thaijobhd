@@ -30,7 +30,7 @@ else{
 			('".$_SESSION["userid"]."', '{$education_level}', '{$Institution}', '{$year_start}', '{$year_end}', '{$educational_background}') ;
 		";
 		@mysql_query($sql_edu);
-		?><form id="add_education_message_form" action="<?php echo $rootadminpath; ?>add-education.php" method="POST">
+		?><form id="add_education_message_form" action="<?php echo $rootadminpath; ?>add-education.php?userID=<?php echo $_POST['userid']; ?>" method="POST">
 			<input type="hidden" id="add_education_messaage" name="add_education_messaage" value="" />
 		</form>
 		<script>

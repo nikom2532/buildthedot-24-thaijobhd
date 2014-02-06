@@ -42,7 +42,7 @@ else{
 							<div id="head-title">
 						<h1>ฝากประวัติ <span class="text-blue">-  แก้ไขประวัติส่วนตัว</span></h1>
 					</div>
-					<form id="edit_profile_form" name="edit_profile_form" action="<?php echo $rootpath; ?>include/module/edit-profile-process.php" method="POST" enctype="multipart/form-data">
+					<form id="edit_profile_form" name="edit_profile_form" action="<?php echo $rootadminpath; ?>include/module/edit-profile-process.php" method="POST" enctype="multipart/form-data">
 						<h2 class="grid_">เพิ่มรูป </h2>
 						<br class="clear"/>
 						<p class="grid_2">

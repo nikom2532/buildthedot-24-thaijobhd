@@ -45,7 +45,7 @@ else{
 							<p>
 								ทักษะด้านภาษา
 							</p>
-							<form id="edit_talent_form" name="edit_talent_form" action="<?php echo $rootpath; ?>include/module/add-talent-language-process.php" method="POST" enctype="multipart/form-data">
+							<form id="edit_talent_form" name="edit_talent_form" action="<?php echo $rootadminpath; ?>include/module/add-talent-language-process.php" method="POST" enctype="multipart/form-data">
 								<h4 class="">เลือกภาษา
 									<select class="" name="language">
 		<?php
