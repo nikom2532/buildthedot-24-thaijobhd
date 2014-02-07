@@ -1,7 +1,7 @@
 <?php
 @session_start();
-$rootpath ="../../";
-$rootadminpath ="../../admin/";
+$rootpath ="../../../";
+$rootadminpath ="../../";
 include ($rootadminpath . "include/connect-to-database.php");
 if($_SESSION["userid"] == "" || (!(isset($_SESSION["userid"])))) {
 	header("location: ".$rootpath."login.php");
@@ -14,7 +14,7 @@ else{
 	$score_reading = $_POST["score_reading"];
 	$score_writing = $_POST["score_writing"];
 	
-	$sql_user="
+	 $sql_user="
 		SELECT * 
 		FROM  `buildthedot_thaijobhd_user_account`
 		WHERE `id` = '".$_SESSION["userid"]."' ;
@@ -28,8 +28,8 @@ else{
 			VALUE
 			('".$_SESSION["userid"]."', '{$language}', '{$score_speaking}', '{$score_understanding}', '{$score_reading}', '{$score_writing}') ;
 		";
-		@mysql_query($sql_talent_language);					//?userID=<?php echo $userid;
-		?><form id="add_talent_language_message_form" action="<?php echo $rootadminpath; ?>add-talent.php" method="POST">
+		@mysql_query($sql_talent_language);
+		?><form id="add_talent_language_message_form" action="<?php echo $rootadminpath; ?>add-talent.php?userID=<?php echo $userid;?>" method="POST">
 			<input type="hidden" id="add_talent_language_messaage" name="add_talent_language_messaage" value="" />
 		</form>
 		<script>
