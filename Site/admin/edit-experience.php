@@ -2,14 +2,29 @@
 @session_start();
 $rootpath="../";
 $rootadminpath="./";
-include ($rootpath . "include/header.php");
+include($rootadminpath."include/header.php");
 include ($rootadminpath . "include/connect-to-database.php");
-include ($rootpath . "include/top-menu.php");
-include ($rootpath . "include/search-bar.php");
 if($_SESSION["userid"] == "" || (!(isset($_SESSION["userid"])))) {
 	header("location: ".$rootpath."login.php");
 }
 else{
+	
+	//check for Logout mode
+	if($_GET["mode"]=="logout"){
+		include($rootadminpath."include/module/logout_process.php");
+	}
+	//normal mode
+	else{
+		include($rootpath."lib/func_pagination.php");
+		include($rootadminpath."include/initial/pagination.php");
+		include($rootadminpath."include/top-bar.php");
+		
+		$menu="user-management";
+		include($rootadminpath."include/top-menu.php");
+		
+		//Find user
+	
+	
 	$sql_user="
 		SELECT * 
 		FROM  `buildthedot_thaijobhd_user_account`
@@ -24,7 +39,7 @@ else{
 					<div id="head-title">
 						<h1>ฝากประวัติ <span class="text-blue">- แก้ไขประสบการณ์ทำงาน</span></h1>
 					</div>
-					<form id="add_education_form" name="add_education_form" action="<?php echo $rootpath; ?>include/module/edit-experience-process.php" method="POST" enctype="multipart/form-data">
+					<form id="add_education_form" name="add_education_form" action="<?php echo $rootadminpath; ?>include/module/edit-experience-process.php" method="POST" enctype="multipart/form-data">
 <?php
 						$sql_experiences="
 							SELECT * 
@@ -46,15 +61,17 @@ else{
 							<p class="grid_8"><input type="text" id="year_end" name ="year_end" value="<?php echo $rs_experiences["year_end"]; ?>" class="round width700" onkeypress="return add_education_form_keypress(event)" /></p><br class="clear"/>
 							<p class="grid_2">เงินเดือน</p>
 							<p class="grid_8"><input type="text" id="salary" name ="salary" value="<?php echo $rs_experiences["salary"]; ?>" class="round width700" onkeypress="return add_education_form_keypress(event)" /></p><br class="clear" />
-				      <h2 class="grid_3"><a href="#" class="add-button black round" onclick="document.getElementById('add_education_form').submit(); ">เพิ่ม</a></h2>
+						<h2 class="grid_3"><a href="#" class="add-button black round" onclick="document.getElementById('add_education_form').submit(); ">เพิ่ม</a></h2>
 <?php
 						}
 ?>
+						<input type="hidden" name="userID" value="<?php echo $_GET["userID"]; ?>" />
 					</form>
 				</div>	
 			</div><!--end content -->
 <?php
-			include ("include/footer.php");
 		} //end sql_user
+		include ("include/footer.php");
+	}
 }//end check user session
 ?>
