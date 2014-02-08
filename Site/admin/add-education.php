@@ -5,7 +5,6 @@ $rootadminpath="./";
 include($rootadminpath."include/header.php");
 //include($rootpath."include/opendb.php");
 include($rootadminpath."include/connect-to-database.php");
-//$_SESSION["userid"] = "";
 if($_SESSION["userid"] == "") {
 	include ($rootadminpath . "include/login.php");
 	include ("include/footer.php");

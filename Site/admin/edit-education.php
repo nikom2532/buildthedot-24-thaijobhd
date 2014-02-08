@@ -2,14 +2,31 @@
 @session_start();
 $rootpath="../";
 $rootadminpath="./";
-include ($rootpath . "include/header.php");
+include($rootadminpath."include/header.php");
+//include($rootpath."include/opendb.php");
 include ($rootadminpath . "include/connect-to-database.php");
-include ($rootpath . "include/top-menu.php");
-include ($rootpath . "include/search-bar.php");
 if($_SESSION["userid"] == "" || (!(isset($_SESSION["userid"])))) {
-	header("location: ".$rootpath."login.php");
+	include ($rootadminpath . "include/login.php");
+	include ("include/footer.php");
 }
 else{
+	
+	//check for Logout mode
+	if($_GET["mode"]=="logout"){
+		include($rootadminpath."include/module/logout_process.php");
+	}
+	//normal mode
+	else{
+		include($rootpath."lib/func_pagination.php");
+		include($rootadminpath."include/initial/pagination.php");
+		include($rootadminpath."include/top-bar.php");
+		
+		$menu="user-management";
+		include($rootadminpath."include/top-menu.php");
+		
+		//Find user
+	
+	
 	$sql_user="
 		SELECT * 
 		FROM  `buildthedot_thaijobhd_user_account`
@@ -56,7 +73,8 @@ else{
 		</div>	
 	</div><!--end content -->
 <?php
-			include ("include/footer.php");
 		} //end sql_user
+		include ("include/footer.php");
+	}
 }//end check user session
 ?>
