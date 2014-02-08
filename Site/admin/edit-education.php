@@ -40,7 +40,7 @@ else{
 					<p class="grid_2">ระดับการศึกษา</p>
 					<p class="grid_8"><input type="text" id="education_level" name ="education_level" class="round width700" value="<?php echo $rs_edu["education_level"]; ?>" onkeypress="return add_education_form_keypress(event)" /></p><br class="clear" />
 					<p class="grid_2">สถาบัน</p>
-					<p class="grid_8"><input type="text" id="Institution" name ="Institution" class="round width700" value="<?php echo $rs_edu["Institution"]; ?>" onkeypress="return add_education_form_keypress(event)" /></p><br class="clear"/>
+					<p class="grid_8"><input type="text" id="Institution" name ="Institution" class="round width700" value="<?php echo $rs_edu["Institution"]; ?>" onkeypress="return add_education_form_keypress(event)" /></p><br class="clear" />
 					<p class="grid_2">ปีเริ่ม</p>
 					<p class="grid_8"><input type="text" id="year_start" name ="year_start" class="round width700" value="<?php echo $rs_edu["year_start"]; ?>" onkeypress="return add_education_form_keypress(event)" /></p><br class="clear"/>
 					<p class="grid_2">ปีจบ</p>
