@@ -39,7 +39,8 @@ else{
 						ทักษะด้านภาษา
 					</p>
 					
-					<form id="edit_talent_form" name="edit_talent_form" action="<?php echo $rootpath; ?>include/module/edit-talent-language-process.php" method="POST" enctype="multipart/form-data">
+					<form id="edit_talent_form" name="edit_talent_form" action="<?php echo $rootadminpath; ?>include/module/edit-talent-language-process.php" method="POST" enctype="multipart/form-data">
+						<input type="hidden" name="userid" value="<?php echo $_GET["userID"]; ?>" />
 						<input type="hidden" name="id" value="<?php echo $_GET["id"]; ?>" />
 						<h4 class="text-blue">ไทย</h4>
 						<div id="content-profile-table">
