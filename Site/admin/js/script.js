@@ -54,9 +54,9 @@ function delete_top_company(rootadminpath, CompanyID){
 	}
 }
 
-function delete_user_history_talent_languages(rootadminpath, ID){
+function delete_user_history_talent_languages(rootadminpath, ID, userID){
 	if (confirm('Do you want to confirm to delete?')) {
-	    window.location = rootadminpath+"include/module/delete-talent-language-process.php?id="+ID;
+	    window.location = rootadminpath+"include/module/delete-talent-language-process.php?id="+ID+"&userID="+userID;
 	}
 }
 function delete_user_history_experience(rootadminpath, ID, userID){

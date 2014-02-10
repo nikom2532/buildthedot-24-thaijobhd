@@ -246,7 +246,7 @@ else{
 		?>
 											</p>
 											<p class="grid_1 center"><a href="<?php echo $rootadminpath; ?>edit-talent.php?id=<?php echo $rs_talent["user_history_talent_languages_id"]; ?>&userID=<?php echo $_GET["userID"]; ?>" class="text-blue">แก้ไข</a></p>
-											<p class="grid_1 center"><a onclick="delete_user_history_talent_languages('<?php echo $rootpath; ?>', '<?php echo $rs_talent["user_history_talent_languages_id"]; ?>'); " href="#" class="text-red">ลบ</a></p>
+											<p class="grid_1 center"><a onclick="delete_user_history_talent_languages('<?php echo $rootadminpath; ?>', '<?php echo $rs_talent["user_history_talent_languages_id"]; ?>',  '<?php echo $_GET["userID"]; ?>'); " href="#" class="text-red">ลบ</a></p>
 										</div>
 									</div>
 									<br class="clear"/>
