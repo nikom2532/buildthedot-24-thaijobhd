@@ -276,11 +276,11 @@ else{
 							</div>
 							<br class="clear"/>
 							<span class="right">
-								<a href="<?php echo $rootpath; ?>edit-talent-special.php" class="save-button black round right">แก้ไขความสามารถพิเศษ</a>
+								<a href="<?php echo $rootadminpath; ?>edit-talent-special.php?userID=<?php echo $_GET["userID"]; ?>" class="save-button black round right">แก้ไขความสามารถพิเศษ</a>
 							</span>
 				
 							<p class="grid_12 center">
-								<a href="<?php echo $rootpath; ?>view-profile.php" class="save-button blue round">กลับหน้า ฝากประวัติ</a>
+								<a href="<?php echo $rootadminpath; ?>view-profile.php?userID=<?php echo $_GET["userID"]; ?>" class="save-button blue round">กลับหน้า ฝากประวัติ</a>
 							</p>
 				
 						</div>
