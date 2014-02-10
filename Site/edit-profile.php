@@ -33,7 +33,14 @@ else{
 						<p class="grid_8">
 							<input class="button black round" type="file" name="profile_picture" />
 						</p>
+						<br class="clear"/>
 						
+						<p class="grid_2">
+							Resume file
+						</p>
+						<p class="grid_8">
+							<input type="text" id="firstname" name ="firstname" class="round" value="<?php echo $rs_user["firstname"]; ?>" />
+						</p>
 						<br class="clear"/>
 						
 						<p class="grid_2">

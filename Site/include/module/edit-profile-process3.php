@@ -20,7 +20,6 @@ $filename = preg_replace( '/\s+/', ' ', $filename );
 $filename = "user_".$_SESSION["userid"]."_".$time_now."_".$filename;
 $target_path = $target_path . $filename;
 
-$allowedExts = array("gif", "jpeg", "jpg", "png");
 $temp = explode(".", $_FILES["resume_file"]["name"]);
 $extension = end($temp);
 if ($_FILES["resume_file"]["error"] > 0) {

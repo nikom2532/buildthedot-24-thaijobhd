@@ -55,6 +55,7 @@ else{
 						<?php echo $rs_user["place_of_birth"]; ?>
 					</p>
 					<br class="clear"/>
+					
 					<p class="grid_2">
 						อายุ
 					</p>
@@ -62,6 +63,27 @@ else{
 						<?php echo $rs_user["age"]; ?>
 					</p>
 					<br class="clear"/>
+					
+					<p class="grid_2">
+						Resume file
+					</p>
+					<p class="grid_4">
+<?php
+						if($rs_user["resume_file"] != ""){
+							?><a href="./file/resume/<?php echo $rs_user["resume_file"]; ?>"><?php echo $rs_user["resume_file"]; ?></a><?php
+						}
+						else{
+							?>none resume file<?php
+						}
+?>
+					</p>
+					<p class="grid_4">
+						<form action="<?php echo $rootpath; ?>include/module/edit-profile-process3.php" method="POST" enctype="multipart/form-data">
+							<input type="file" name="resume_file" />
+						</form>
+					</p>
+					<br class="clear"/>
+					
 					<p class="grid_2">
 						สัญชาติ
 					</p>
