@@ -140,6 +140,12 @@ else{
 			include($rootpath."include/module/edit-profile-process2.php");
 		}
 		
+		//For add the Resume file
+		if(file_exists($_FILES['resume_file']['tmp_name']) && is_uploaded_file($_FILES['resume_file']['tmp_name'])){
+			// echo $_FILES['profile_picture']['tmp_name'];
+			include($rootpath."include/module/edit-profile-process3.php");
+		}
+		
 		?><form id="register_profile_message_form" action="<?php echo $rootpath; ?>view-profile.php" method="POST">
 			<input type="hidden" id="register_profile_messaage" name="register_profile_messaage" value="Register Success" />
 		</form>
