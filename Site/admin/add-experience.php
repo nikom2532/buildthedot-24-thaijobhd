@@ -125,7 +125,7 @@ else{
 														<?php echo $rs_experiences["salary"]; ?>
 													</p>
 												<p class="grid_1 center"><a href="<?php echo $rootadminpath; ?>edit-experience.php?id=<?php echo $rs_experiences["user_history_experiences_id"]; ?>&userID=<?php echo $_GET["userID"]; ?>" class="text-blue">แก้ไข</a></p>
-												<p class="grid_1 center"><a href="#" onclick="delete_user_history_experience('<?php echo $rootpath; ?>', '<?php echo $rs_experiences["user_history_experiences_id"]; ?>'); " class="text-red">ลบ</a></p>
+												<p class="grid_1 center"><a href="#" onclick="delete_user_history_experience('<?php echo $rootadminpath; ?>', '<?php echo $rs_experiences["user_history_experiences_id"]; ?>', '<?php echo $_GET["userID"]; ?>'); " class="text-red">ลบ</a></p>
 												</div>
 											</div>
 											<br class="clear"/>
