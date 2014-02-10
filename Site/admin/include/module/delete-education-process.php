@@ -1,7 +1,7 @@
 <?php
 @session_start();
 $rootpath ="../../../";
-	$rootadminpath ="../../"; 
+$rootadminpath ="../../"; 
 include ($rootadminpath . "include/connect-to-database.php");
 if($_SESSION["userid"] == "" || (!(isset($_SESSION["userid"])))) {
 	header("location: ".$rootpath."login.php");
