@@ -39,7 +39,7 @@ else{
 							Resume file
 						</p>
 						<p class="grid_8">
-							<input type="text" id="firstname" name ="firstname" class="round" value="<?php echo $rs_user["firstname"]; ?>" />
+							<input class="button black round" type="file" id="resume_file" name ="resume_file" class="round" value="<?php echo $rs_user["resume_file"]; ?>" />
 						</p>
 						<br class="clear"/>
 						
