@@ -6,7 +6,7 @@ $rootadminpath ="../../";
 include ($rootadminpath . "include/connect-to-database.php");
 // include ($rootpath . "include/top-menu.php");
 if($_SESSION["userid"] == "" || (!(isset($_SESSION["userid"])))) {
-	header("location: ".$rootpath."login.php");
+	header("location: ".$rootadminpath."login.php");
 }
 else{
 	$firstname=$_POST["firstname"];
@@ -119,14 +119,20 @@ else{
 		//For add the profile picture
 		if(file_exists($_FILES['profile_picture']['tmp_name']) && is_uploaded_file($_FILES['profile_picture']['tmp_name'])){
 			// echo $_FILES['profile_picture']['tmp_name'];
-			include($rootpath."include/module/edit-profile-process2.php");
+			include($rootadminpath."include/module/edit-profile-process2.php");
+		}
+		
+		//For add the resume file
+		if(file_exists($_FILES['resume_file']['tmp_name']) && is_uploaded_file($_FILES['resume_file']['tmp_name'])){
+			// echo $_FILES['resume_file']['tmp_name'];
+			include($rootadminpath."include/module/edit-profile-process3.php");
 		}
 		
 		?><form id="edit_profile_message_form" action="<?php echo $rootadminpath; ?>view-profile.php?userID=<?php echo $_POST["userid"]; ?>" method="POST">
 			<input type="hidden" id="add_profile_messaage" name="add_profile_messaage" value="" />
 		</form>
 		<script>
-			document.getElementById("edit_profile_message_form").submit();
+			//document.getElementById("edit_profile_message_form").submit();
 		</script> 
 <?php
 	}
