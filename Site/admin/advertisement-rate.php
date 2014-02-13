@@ -35,7 +35,6 @@ else{
 					<div id="content-detail" class="container_12">
 						<section>
 							<form id="form-add-company" action="<?php echo $rootadminpath; ?>include/module/edit-company-process.php" method="POST" enctype="multipart/form-data">
-								<input type="hidden" name="company_id" value="<?php echo $_GET["company_id"]; ?>" />
 <?php
 								$sql="
 									SELECT * 
@@ -49,7 +48,7 @@ else{
 									</div>
 									<div class="grid_8">
 										<p>
-											<input type="text" id="title" name ="title" class="round" value="<?php echo $rs["TopCompanyName"]; ?>"/>
+											<input type="text" id="<?php echo $rs["title"]; ?>" name ="<?php echo $rs["title"]; ?>" class="round" value="<?php echo $rs["detail"]; ?>"/>
 										</p>
 									</div>
 									<br class="clear"/>
