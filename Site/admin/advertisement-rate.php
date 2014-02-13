@@ -34,7 +34,7 @@ else{
 					</div>
 					<div id="content-detail" class="container_12">
 						<section>
-							<form id="form-add-company" action="<?php echo $rootadminpath; ?>include/module/edit-company-process.php" method="POST" enctype="multipart/form-data">
+							<form id="form-add-company" action="<?php echo $rootadminpath; ?>include/module/edit-advertisement-rate-process.php" method="POST" enctype="multipart/form-data">
 <?php
 								$sql="
 									SELECT * 

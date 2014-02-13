@@ -10,41 +10,28 @@ if($_SESSION["userid"] == "") {
 }
 else{
 	
-	// $AdPic = $_POST["AdPic"];
-	$company_id  =$_POST["company_id"];
-	$title = $_POST["title"];
-	
-	function startsWith($haystack, $needle){
-	    return $needle === "" || strpos($haystack, $needle) === 0;
-	}
-	function endsWith($haystack, $needle){
-	    return $needle === "" || substr($haystack, -strlen($needle)) === $needle;
-	}
-	if(startsWith($_POST["LinkAddress"], "http://") ){
-		$LinkAddress = $_POST["LinkAddress"];
-	}
-	else{
-		$LinkAddress = "http://".$_POST["LinkAddress"];
-	}
-	$Status = $_POST["Status"];
-	$time_now = strtotime("now");	//.date('Y-m-d H:i:s', $time_now)
-	
 	$sql="
-		UPDATE `buildthedot_thaijobhd_top_company` 
-		SET 
-		`TopCompanyName` = '".$title."',
-		`LinkAddress` = '".$LinkAddress."',
-		`Status` = '".$Status."',
-		`Time` = '".date('Y-m-d H:i:s', $time_now)."'
-		WHERE `TopCompanyID` = '{$company_id}' ;
+		SELECT * 
+		FROM  `buildthedot_thaijobhd_detail` ;
 	";
-	@mysql_query($sql);
-	
-	if(file_exists($_FILES['CompanyPic']['tmp_name']) && is_uploaded_file($_FILES['CompanyPic']['tmp_name'])){
-		include($rootadminpath."include/module/edit-company-process2.php");
+	$result = @mysql_query($sql);
+	while ($rs = @mysql_fetch_array($result)) {
+		$post_title[] = $rs["title"];
+		$post_detail[] = $_POST[$rs["title"]];
 	}
+	
+	for ($i=0; $i < count($post_title); $i++) {
+		$sql = "
+			UPDATE `buildthedot_thaijobhd_detail`
+			SET `detail` = '" . $post_detail[$i] . "' 
+			WHERE `title` = '" . $post_title[$i] . "' ;
+		";
+		echo $sql;
+		@mysql_query($sql);
+	}
+	
 	// header("Location: {$rootadminpath}top-company.php");
 	?><script type="text/javascript">
-		window.location="<?php echo $rootadminpath; ?>top-company.php";
+		window.location="<?php echo $rootadminpath; ?>advertisement-rate.php";
 	</script><?php
 }
