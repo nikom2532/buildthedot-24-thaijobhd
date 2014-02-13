@@ -30,7 +30,7 @@ else{
 				<div class="content-module-main">
 					
 					<div id="head-title">
-						<h1>บริษัทชั้นนำ <span>- Lorem Ipsum </span><span class="text-black">- แก้ไข </span></h1>
+						<h1>อัตราค่าโฆษณา + เงื่อนไข <span>- advertisement rate and Condition </span><span class="text-black">- แก้ไข </span></h1>
 					</div>
 					<div id="content-detail" class="container_12">
 						<section>
