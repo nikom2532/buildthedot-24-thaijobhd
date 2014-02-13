@@ -18,7 +18,7 @@ else{
 	$result_user = @mysql_query($sql_user);
 	if($rs_user = @mysql_fetch_array($result_user)){
 ?>
-		<div id="wrapper">   
+		<div id="wrapper">
 		  <div id="content" class="container_12">
 		  	<div id="content-profile">
 					<div id="head-title">

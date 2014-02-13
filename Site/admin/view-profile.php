@@ -68,6 +68,21 @@ else{
 							<br class="clear"/>
 							
 							<p class="grid_2">
+								resume file
+							</p>
+							<p class="grid_8">
+<?php
+							if($rs_user["resume_file"] != ""){
+								?><a class="black" href="<?php echo $rootpath; ?>file/resume/<?php echo $rs_user["resume_file"]; ?>"><?php echo $rs_user["resume_file"]; ?></a><?php
+							}
+							else{
+								?>none resume file<?php
+							}
+?>
+							</p>
+							<br class="clear"/>
+							
+							<p class="grid_2">
 								วันเกิด
 							</p>
 							<p class="grid_8">

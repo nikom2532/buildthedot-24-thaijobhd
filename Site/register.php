@@ -53,7 +53,14 @@ include ($rootpath . "include/top-menu.php");
 				<p class="grid_8">
 					<input class="button black round" type="file" name="profile_picture" />  ขนาด 200x200 px
 				</p>
+				<br class="clear"/>
 				
+				<p class="grid_2">
+					Resume file *
+				</p>
+				<p class="grid_8">
+					<input class="button black round" type="file" id="resume_file" name ="Resume_file" value="<?php echo $rs_user["birthdate"]; ?>" required />
+				</p>
 				<br class="clear"/>
 				
 				<p class="grid_2">

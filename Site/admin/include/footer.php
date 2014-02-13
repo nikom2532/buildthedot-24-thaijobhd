@@ -11,6 +11,7 @@
 		<script src="<?php echo $rootadminpath; ?>js/date-picker/jquery.ui.core.js"></script>
 		<script src="<?php echo $rootadminpath; ?>js/date-picker/jquery.ui.widget.js"></script>
 		<script src="<?php echo $rootadminpath; ?>js/date-picker/jquery.ui.datepicker.js"></script> 
+	<!-- <script src="<?php echo $rootpath; ?>js/script.js"></script>   -->
 	<script src="<?php echo $rootadminpath; ?>js/script.js"></script>  
 </body>
 </html>

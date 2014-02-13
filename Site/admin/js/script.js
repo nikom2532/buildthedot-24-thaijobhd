@@ -53,3 +53,19 @@ function delete_top_company(rootadminpath, CompanyID){
 	    window.location = rootadminpath+"include/module/delete-company-process.php?CompanyID="+CompanyID;
 	}
 }
+
+function delete_user_history_talent_languages(rootadminpath, ID, userID){
+	if (confirm('Do you want to confirm to delete?')) {
+	    window.location = rootadminpath+"include/module/delete-talent-language-process.php?id="+ID+"&userID="+userID;
+	}
+}
+function delete_user_history_experience(rootadminpath, ID, userID){
+	if (confirm('Do you want to confirm to delete?')) {
+	    window.location = rootadminpath+"include/module/delete-experience-process.php?id="+ID+"&userID="+userID;
+	}
+}
+function delete_user_history_education(rootadminpath, ID, userID){
+	if (confirm('Do you want to confirm to delete?')) {
+	    window.location = rootadminpath+"include/module/delete-education-process.php?id="+ID+"&userID="+userID;
+	}
+}

@@ -45,7 +45,8 @@ else{
 							<p>
 								ทักษะด้านภาษา
 							</p>
-							<form id="edit_talent_form" name="edit_talent_form" action="<?php echo $rootpath; ?>include/module/add-talent-language-process.php" method="POST" enctype="multipart/form-data">
+							<form id="edit_talent_form" name="edit_talent_form" action="<?php echo $rootadminpath; ?>include/module/add-talent-language-process.php" method="POST" enctype="multipart/form-data">
+								<input type="hidden" name="userid" value="<?php echo $_GET["userID"]; ?>" />
 								<h4 class="">เลือกภาษา
 									<select class="" name="language">
 		<?php
@@ -244,8 +245,8 @@ else{
 												}
 		?>
 											</p>
-											<p class="grid_1 center"><a href="<?php echo $rootpath; ?>edit-talent.php?id=<?php echo $rs_talent["user_history_talent_languages_id"]; ?>" class="text-blue">แก้ไข</a></p>
-											<p class="grid_1 center"><a onclick="delete_user_history_talent_languages('<?php echo $rootpath; ?>', '<?php echo $rs_talent["user_history_talent_languages_id"]; ?>'); " href="#" class="text-red">ลบ</a></p>
+											<p class="grid_1 center"><a href="<?php echo $rootadminpath; ?>edit-talent.php?id=<?php echo $rs_talent["user_history_talent_languages_id"]; ?>&userID=<?php echo $_GET["userID"]; ?>" class="text-blue">แก้ไข</a></p>
+											<p class="grid_1 center"><a onclick="delete_user_history_talent_languages('<?php echo $rootadminpath; ?>', '<?php echo $rs_talent["user_history_talent_languages_id"]; ?>',  '<?php echo $_GET["userID"]; ?>'); " href="#" class="text-red">ลบ</a></p>
 										</div>
 									</div>
 									<br class="clear"/>
@@ -275,11 +276,11 @@ else{
 							</div>
 							<br class="clear"/>
 							<span class="right">
-								<a href="<?php echo $rootpath; ?>edit-talent-special.php" class="save-button black round right">แก้ไขความสามารถพิเศษ</a>
+								<a href="<?php echo $rootadminpath; ?>edit-talent-special.php?userID=<?php echo $_GET["userID"]; ?>" class="save-button black round right">แก้ไขความสามารถพิเศษ</a>
 							</span>
 				
 							<p class="grid_12 center">
-								<a href="<?php echo $rootpath; ?>view-profile.php" class="save-button blue round">กลับหน้า ฝากประวัติ</a>
+								<a href="<?php echo $rootadminpath; ?>view-profile.php?userID=<?php echo $_GET["userID"]; ?>" class="save-button blue round">กลับหน้า ฝากประวัติ</a>
 							</p>
 				
 						</div>
