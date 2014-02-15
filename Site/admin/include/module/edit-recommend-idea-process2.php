@@ -51,4 +51,5 @@ if ((($_FILES["pic1"]["type"] == "image/gif")
 } else {
 	echo "Invalid file";
 }
+die;
 ?>

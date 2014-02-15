@@ -10,7 +10,8 @@
 
 			<li><a href="<?php echo $rootadminpath; ?>slide-picture.php" <?php if($menu=="slide"){ ?>class="active-tab"<?php } ?>>สไลท์</a></li>
 
-			<li><a href="<?php echo $rootadminpath; ?>advertisement-rate.php" <?php if($menu=="advertisement-rate"){ ?>class="active-tab"<?php } ?>
+			<li><a href="<?php echo $rootadminpath; ?>advertisement-rate.php" <?php if($menu=="advertisement-rate"){ ?>class="active-tab"<?php } ?>>ค่าโฆษนา</a></li>
+
 		</ul> <!-- end tabs -->
 		
 		<!-- company logo -->

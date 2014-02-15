@@ -94,7 +94,7 @@ else {
 				<div id="content">
 					<div class="content-module">
 						<div class="content-module-main">
-							<h2>งาน<span class="right"><a href="insert-job.php" class="add-button blue round" vlaue="insert">เพิ่ม</a></span></h2>
+							<h2>งาน<span class="right"> <a href="insert-job.php" class="add-button blue round" vlaue="insert">เพิ่ม</a></span></h2>
 							<table>
 								
 								<thead>
