@@ -80,11 +80,13 @@ else {
 												<h3>เลือกรูป : </h3>
 											</div>
 											<div class="grid_5">
-												<?php echo "รูปที่ ".$_GET['id']; ?>
+												<?php 
+												$_SESSION['slide_id'] = $_GET['id']; 
+												echo "รูปที่ ".$_GET['id']; ?>
 											</div>
 											<br class="clear"/>
 											<div class="prefix_1 grid_5">
-												<input type="file" name="AdPic" class="button round black" />
+												<input type="file" name="SlidePic" class="button round black" />
 											</div>
 	
 										</section>

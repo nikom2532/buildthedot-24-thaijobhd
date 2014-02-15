@@ -9,7 +9,23 @@ if($_SESSION["userid"] == "") {
 	include ("include/footer.php");
 }
 else{
+	echo copy($_FILES["SlidePic"]["tmp_name"],"myfile/".$_FILES["SlidePic"]["name"]);
+		/*if(copy($_FILES["SlidePic"]["tmp_name"],"myfile/".$_FILES["SlidePic"]["name"]))
+		{
+			echo "Copy/Upload Complete<br>";
 	
+			//*** Insert Record ***
+			$objConnect = mysql_connect("localhost","root","") or die("Error Connect to Database");
+			$objDB = mysql_select_db("files");
+			$strSQL = "INSERT INTO files ";
+			$strSQL .="(Name,FilesName) VALUES ('".$_SESSION['slide_id']."','".$_FILES["filUpload"]["name"]."')";
+			$objQuery = mysql_query($strSQL);
+			if($objQuery)
+			{
+				echo ":)";
+			}		
+		}*/
+	/*
 	// $AdPic = $_POST["AdPic"];
 	$AdLink = $_POST["AdLink"];
 	$ad_type = $_POST["ad_type"];
@@ -52,5 +68,5 @@ else{
 	// header("Location: {$rootadminpath}advertisement.php");
 	?><script type="text/javascript">
 		window.location="<?php echo $rootadminpath; ?>advertisement.php";
-	</script><?php
+	</script><?php*/
 }

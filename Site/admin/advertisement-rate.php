@@ -30,12 +30,11 @@ else{
 				<div class="content-module-main">
 					
 					<div id="head-title">
-						<h1>บริษัทชั้นนำ <span>- Lorem Ipsum </span><span class="text-black">- แก้ไข </span></h1>
+						<h1>อัตราค่าโฆษณา + เงื่อนไข <span>- advertisement rate and Condition </span><span class="text-black">- แก้ไข </span></h1>
 					</div>
 					<div id="content-detail" class="container_12">
 						<section>
-							<form id="form-add-company" action="<?php echo $rootadminpath; ?>include/module/edit-company-process.php" method="POST" enctype="multipart/form-data">
-								<input type="hidden" name="company_id" value="<?php echo $_GET["company_id"]; ?>" />
+							<form id="form-add-company" action="<?php echo $rootadminpath; ?>include/module/edit-advertisement-rate-process.php" method="POST" enctype="multipart/form-data">
 <?php
 								$sql="
 									SELECT * 
@@ -49,7 +48,7 @@ else{
 									</div>
 									<div class="grid_8">
 										<p>
-											<input type="text" id="title" name ="title" class="round" value="<?php echo $rs["TopCompanyName"]; ?>"/>
+											<input type="text" id="<?php echo $rs["title"]; ?>" name ="<?php echo $rs["title"]; ?>" class="round" value="<?php echo $rs["detail"]; ?>"/>
 										</p>
 									</div>
 									<br class="clear"/>
