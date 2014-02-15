@@ -10,7 +10,7 @@ if($_SESSION["userid"] == "") {
 }
 else{
 	echo copy($_FILES["SlidePic"]["tmp_name"],"myfile/".$_FILES["SlidePic"]["name"]);
-		/*if(copy($_FILES["SlidePic"]["tmp_name"],"myfile/".$_FILES["SlidePic"]["name"]))
+		if(copy($_FILES["SlidePic"]["tmp_name"],"myfile/".$_FILES["SlidePic"]["name"]))
 		{
 			echo "Copy/Upload Complete<br>";
 	
