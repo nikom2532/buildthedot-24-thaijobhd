@@ -22,16 +22,11 @@ else{
 		{	
 			if(copy($_FILES["SlidePic"]["tmp_name"],$rootadminpath."images/slide". $_SESSION['slide_id'] .".jpg"))
 			{	
-				echo "Copy/Upload Complete<br>";
 				$upload = "slide". $_SESSION['slide_id'] .".jpg";
 				$sid = intval($_SESSION['slide_id']);
 				//*** Insert Record ***//
-				
 				$cn = mysql_connect("localhost","root","");
-				$objQuery1 = mysql_select_db("buildthe_thaijobhd",$cn);
-			
-				echo json_encode($objQuery1);
-				
+				$objQuery1 = mysql_select_db("buildthe_thaijobhd",$cn);				
 				$sql = "INSERT INTO buildthedot_thaijobhd_slide VALUES ( '{$sid}', '{$upload}');";
 				$rs = mysql_query($sql);  
 				if($rs)

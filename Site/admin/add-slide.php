@@ -80,9 +80,20 @@ else {
 												<h3>เลือกรูป : </h3>
 											</div>
 											<div class="grid_5">
-												<?php 
+												<?php
 												$_SESSION['slide_id'] = $_GET['id']; 
-												echo "รูปที่ ".$_GET['id']; ?>
+												$sid = $_SESSION['slide_id'];
+												$sql = "SELECT * FROM buildthedot_thaijobhd_slide WHERE sid = '{$sid}' ";
+												$result = @mysql_query($sql);
+												$count = 1;
+												while($rs = @mysql_fetch_array($result))
+												{
+													$pic = $rs['pic_name'];
+												} 
+													
+													echo "รูปที่ ".$_GET['id']; 
+												
+												?>
 											</div>
 											<br class="clear"/>
 											<div class="prefix_1 grid_5">
@@ -94,7 +105,20 @@ else {
 										<br class="clear"/>
 									</div>
 								<section class="grid_4">
-									<img src="images/banner-1.png" width="600" height="175">   
+									<?php 
+										if(isset($pic))
+										{
+											?>
+												<img src="images/<?php echo $pic; ?>" width="600" height="175">   
+											<?php
+										}
+										else {
+											?>
+												<img src="images/banner-1.png" width="600" height="175">   
+											<?php
+										}
+									?>
+									
 								</section>
 								<br class="clear"/>
 						
