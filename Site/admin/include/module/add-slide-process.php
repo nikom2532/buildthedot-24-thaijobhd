@@ -9,64 +9,48 @@ if($_SESSION["userid"] == "") {
 	include ("include/footer.php");
 }
 else{
-	echo copy($_FILES["SlidePic"]["tmp_name"],"myfile/".$_FILES["SlidePic"]["name"]);
-		if(copy($_FILES["SlidePic"]["tmp_name"],"myfile/".$_FILES["SlidePic"]["name"]))
-		{
-			echo "Copy/Upload Complete<br>";
-	
-			//*** Insert Record ***
-			$objConnect = mysql_connect("localhost","root","") or die("Error Connect to Database");
-			$objDB = mysql_select_db("files");
-			$strSQL = "INSERT INTO files ";
-			$strSQL .="(Name,FilesName) VALUES ('".$_SESSION['slide_id']."','".$_FILES["filUpload"]["name"]."')";
-			$objQuery = mysql_query($strSQL);
-			if($objQuery)
+		$allowedExts = array("gif", "jpeg", "jpg", "png");
+		$temp = explode(".", $_FILES["SlidePic"]["name"]);
+		$extension = end($temp);
+		if ((($_FILES["SlidePic"]["type"] == "image/gif")
+		|| ($_FILES["SlidePic"]["type"] == "image/jpeg")
+		|| ($_FILES["SlidePic"]["type"] == "image/jpg")
+		|| ($_FILES["SlidePic"]["type"] == "image/pjpeg")
+		|| ($_FILES["SlidePic"]["type"] == "image/x-png")
+		|| ($_FILES["SlidePic"]["type"] == "image/png"))
+		&& in_array($extension, $allowedExts))
+		{	
+			if(copy($_FILES["SlidePic"]["tmp_name"],$rootadminpath."images/slide". $_SESSION['slide_id'] .".jpg"))
+			{	
+				echo "Copy/Upload Complete<br>";
+				$upload = "slide". $_SESSION['slide_id'] .".jpg";
+				$sid = intval($_SESSION['slide_id']);
+				//*** Insert Record ***//
+				
+				$cn = mysql_connect("localhost","root","");
+				$objQuery1 = mysql_select_db("buildthe_thaijobhd",$cn);
+			
+				echo json_encode($objQuery1);
+				
+				$sql = "INSERT INTO buildthedot_thaijobhd_slide VALUES ( '{$sid}', '{$upload}');";
+				$rs = mysql_query($sql);  
+				if($rs)
+				{
+					echo "1";
+				}
+				else 
+				{
+					echo "2";
+				}		
+			}
+			else
 			{
-				echo ":)";
-			}		
-		}*/
-	/*
-	// $AdPic = $_POST["AdPic"];
-	$AdLink = $_POST["AdLink"];
-	$ad_type = $_POST["ad_type"];
-	$ad_position = $_POST["ad_position"];
-	$time_now = strtotime("now");	//.date('Y-m-d H:i:s', $time_now)
-	
-	$sql="
-		SELECT * 
-		FROM  `buildthedot_thaijobhd_slide`
-		WHERE  
-	";
-	$result = @mysql_query($sql);
-	if($rs = @mysql_fetch_array($result)){
-		$sql2="
-			UPDATE `buildthedot_thaijobhd_ad` 
-			SET 
-				`AdLink` = '".$AdLink."'
-			WHERE 
-				`AdType` = '".$ad_type."'
-				AND `AdPosition` = '".$ad_position."';
-		";
-		@mysql_query($sql2);
-		$adid=$rs["PictureID"];
-	}
-	else{
-		$sql2="
-			INSERT INTO `buildthedot_thaijobhd_ad` 
-			(`AdLink`, `AdType`, `AdPosition`)
-			VALUE
-			('{$ad_position}') ;
-		";
-		@mysql_query($sql2);
-		$adid = @mysql_insert_id();
-	}
-	
-	if(file_exists($_FILES['AdPic']['tmp_name']) && is_uploaded_file($_FILES['AdPic']['tmp_name'])){
-		//echo $_FILES['pic1']['tmp_name'];
-		include($rootadminpath."include/module/edit-advertisement-process2.php");
-	}
-	// header("Location: {$rootadminpath}advertisement.php");
-	?><script type="text/javascript">
-		window.location="<?php echo $rootadminpath; ?>advertisement.php";
-	</script><?php*/
+				echo "3";
+			}
+		}
+		else
+		{
+			echo "4";
+		}
 }
+?>

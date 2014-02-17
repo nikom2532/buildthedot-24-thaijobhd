@@ -13,15 +13,16 @@ include("include/connect-to-database.php");
   		{ 
 			if (confirm("Do you want to delete")){
      	 		id = $(this).attr('id');
-     	 		$.post("include/module/delete-job-process.php",{JID : id},function(data){
-     	 			if(data == true)
+     	 		$.post("include/module/delete-slide-process.php",{ SID : id },function(data){
+     	 			if(data == "true")
      	 			{
      	 				alert("Delete Complete");
-     	 				  location.reload();
+     	 				location.reload();
      	 			}
      	 			else
-     	 			{
+     	 			{	
      	 				alert("Delete Uncomplete");
+     	 				location.reload();
      	 			}
      	 		});
      	 		//$.post("include/module/delete-job-process.php",{JID = id},function(data){alert("Delete Job Sucess");});	
@@ -74,20 +75,49 @@ else {
 										<th width="23%">การกระทำ</th>
 									</tr>
 								</thead>
-								<?php
-																	
-								?>
+					
+								
 								<tbody>
+								<?php
+									$pic = array();
+									$sql = "SELECT * FROM buildthedot_thaijobhd_slide ORDER BY sid ASC ";
+									$result = @mysql_query($sql);
+									$count = 1;
+									while($rs = @mysql_fetch_array($result))
+									{
+										switch ($rs['sid']) {
+											case '1':
+												$pic['1'] = $rs['pic_name'];
+												break;
+											case '2':
+												$pic['2'] = $rs['pic_name'];
+												break;
+											case '3':
+												$pic['3'] = $rs['pic_name'];
+												break;
+											case '4':
+												$pic['4'] = $rs['pic_name'];
+												break;
+											case '5':
+												$pic['5'] = $rs['pic_name'];
+												break;
+											default:
+												break;
+										}
+			
+										
+									}
+								?>
 									<tr>
 										<td class="center">
 										1
 										</td>
 										<td>
-											
+											<img src="images/<?php echo $pic['1']; ?>">
 										</td>
 										<td id="action" class="center">	
-			                                <a href="add-slide.php?id=1" class="table-actions-button text-blue" id="">เพิ่ม</a>
-			                                <a href="#" class="table-actions-button-del" style="color: red" id="<?php ?>">ลบ</a> 	
+			                                <a href="add-slide.php?id=1" class="table-actions-button text-blue">เพิ่ม</a>
+			                                <a href="#" class="table-actions-button-del" style="color: red" id="1">ลบ</a> 	
 										</td>
 									</tr>
 									
@@ -96,11 +126,11 @@ else {
 										2
 										</td>
 										<td>
-											
+											<img src="images/<?php echo $pic['2']; ?>">
 										</td>
 										<td id="action" class="center">	
-			                                <a href="add-slide.php?id=2" class="table-actions-button text-blue" id="">เพิ่ม</a>
-			                                <a href="#" class="table-actions-button-del" style="color: red" id="<?php ?>">ลบ</a> 	
+			                                <a href="add-slide.php?id=2" class="table-actions-button text-blue">เพิ่ม</a>
+			                                <a href="#" class="table-actions-button-del" style="color: red" id="2">ลบ</a> 	
 										</td>
 									</tr>
 									
@@ -109,11 +139,11 @@ else {
 										3
 										</td>
 										<td>
-											
+											<img src="images/<?php echo $pic['3']; ?>">
 										</td>
 										<td id="action" class="center">	
-			                                <a href="add-slide.php?id=3" class="table-actions-button text-blue" id="">เพิ่ม</a>
-			                                <a href="#" class="table-actions-button-del" style="color: red" id="<?php ?>">ลบ</a> 	
+			                                <a href="add-slide.php?id=3" class="table-actions-button text-blue">เพิ่ม</a>
+			                                <a href="#" class="table-actions-button-del" style="color: red" id="3">ลบ</a> 	
 										</td>
 									</tr>
 									
@@ -122,11 +152,11 @@ else {
 										4
 										</td>
 										<td>
-											
+											<img src="images/<?php echo $pic['4']; ?>">
 										</td>
 										<td id="action" class="center">	
-			                                <a href="add-slide.php?id=4" class="table-actions-button text-blue" id="">เพิ่ม</a>
-			                                <a href="#" class="table-actions-button-del" style="color: red" id="<?php ?>">ลบ</a> 	
+			                                <a href="add-slide.php?id=4" class="table-actions-button text-blue">เพิ่ม</a>
+			                                <a href="#" class="table-actions-button-del" style="color: red" id="4">ลบ</a> 	
 										</td>
 									</tr>
 									
@@ -135,13 +165,14 @@ else {
 										5	
 										</td>
 										<td>
-											
+											<img src="images/<?php echo $pic['5']; ?>">
 										</td>
 										<td id="action" class="center">	
-			                                <a href="add-slide.php?id=5" class="table-actions-button text-blue" id="">เพิ่ม</a>
-			                                <a href="#" class="table-actions-button-del" style="color: red" id="<?php ?>">ลบ</a> 	
+			                                <a href="add-slide.php?id=5" class="table-actions-button text-blue">เพิ่ม</a>
+			                                <a href="#" class="table-actions-button-del" style="color: red" id="5">ลบ</a> 	
 										</td>
 									</tr>
+							
 								</tbody>
 							</table>
 						</div> <!-- end content-module-main -->
@@ -150,7 +181,6 @@ else {
 	}
 }
 ?>
-	
 				</div> <!-- end content -->		
 
 	

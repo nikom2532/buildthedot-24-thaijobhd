@@ -12,22 +12,37 @@ include ("include/top-menu.php");
 		<div id="head-title">
 			<h1>เงื่อนไข</h1>
 		</div>
-		<p>
+		<p><?php /*
 			Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-		</p>
-		<ul id="detail-bullet">
+		*/ ?></p>
+		<p><?php
+			$sql="
+				SELECT `detail`
+				FROM  `buildthedot_thaijobhd_detail` 
+				WHERE `title` = 'condition1'
+			;";
+			$result=@mysql_query($sql);
+			while($rs=@mysql_fetch_array($result)){
+				echo $rs["detail"];
+			}
+		?></p>
+		<ul id="detail-bullet"><?php 
+			/*
 			<li>
 				Lorem Ipsum is simply dummy text
 			</li>
-			<li>
-				Lorem Ipsum is simply dummy text
-			</li>
-			<li>
-				Lorem Ipsum is simply dummy text
-			</li>
-			<li>
-				Lorem Ipsum is simply dummy text
-			</li>
+			*/ 
+			?><li><?php
+				$sql="
+					SELECT `detail`
+					FROM  `buildthedot_thaijobhd_detail` 
+					WHERE `title` = 'condition2'
+				;";
+				$result=@mysql_query($sql);
+				while($rs=@mysql_fetch_array($result)){
+					echo $rs["detail"];
+				}
+			?></li>
 		</ul>
 
 	</div>

@@ -168,12 +168,76 @@ include ($rootpath . "include/top-menu.php");
 	
 	
 <div  id="slide-image" class="container_12">
+								<?php
+									$pic = array();
+									$sql = "SELECT * FROM buildthedot_thaijobhd_slide ORDER BY sid ASC ";
+									$result = @mysql_query($sql);
+									$count = 1;
+									while($rs = @mysql_fetch_array($result))
+									{
+										switch ($rs['sid']) {
+											case '1':
+												$pic['1'] = $rs['pic_name'];
+												break;
+											case '2':
+												$pic['2'] = $rs['pic_name'];
+												break;
+											case '3':
+												$pic['3'] = $rs['pic_name'];
+												break;
+											case '4':
+												$pic['4'] = $rs['pic_name'];
+												break;
+											case '5':
+												$pic['5'] = $rs['pic_name'];
+												break;
+											default:
+												break;
+										}
+									}
+								?>
 		<div id="slider">
-            <img src="images/slide-image2.jpg">
-            <img src="images/slide-image2.jpg">
-            <img src="images/slide-image2.jpg">
-            <img src="images/slide-image2.jpg">
-            <img src="images/slide-image2.jpg">
+			<?php 
+				if(isset($pic['1']))
+				{
+					?>
+						<img src="admin/images/<?php echo $pic['1']; ?>">
+					<?php	
+				}
+			?>
+				<?php 
+				if(isset($pic['2']))
+				{
+					?>
+						<img src="admin/images/<?php echo $pic['2']; ?>">
+					<?php	
+				}
+			?>
+				<?php 
+				if(isset($pic['3']))
+				{
+					?>
+						<img src="admin/images/<?php echo $pic['3']; ?>">
+					<?php	
+				}
+			?>
+				<?php 
+				if(isset($pic['4']))
+				{
+					?>
+						<img src="admin/images/<?php echo $pic['4']; ?>">
+					<?php	
+				}
+			?>
+			<?php 
+				if(isset($pic['5']))
+				{
+					?>
+						<img src="admin/images/<?php echo $pic['5']; ?>">
+					<?php	
+				}
+			?>
+            
         </div>
 	<!--img src="images/slide-image.jpg" width="1000" height="280" alt="images"-->
 </div><!--end slide-image-->
