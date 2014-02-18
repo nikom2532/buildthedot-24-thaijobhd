@@ -37,6 +37,25 @@ include("include/connect-to-database.php");
 <?php
 //For Development mode(No need to login)
  $_SESSION["userid"] = "1";
+if(isset($_GET["check"]))
+{
+	if($_GET["check"] == "1")
+	{
+		?>
+			<script>
+				alert("Upload Complete");
+			</script>
+		<?php
+	}
+	else 
+	{
+		?>
+			<script>
+				alert("Upload Error");
+			</script>
+		<?php	
+	}
+}
 
 if ($_SESSION["userid"] == "") {
 	include ($rootadminpath . "include/login.php");
@@ -81,18 +100,20 @@ else {
 											</div>
 											<div class="grid_5">
 												<?php
-												$_SESSION['slide_id'] = $_GET['id']; 
-												$sid = $_SESSION['slide_id'];
-												$sql = "SELECT * FROM buildthedot_thaijobhd_slide WHERE sid = '{$sid}' ";
-												$result = @mysql_query($sql);
-												$count = 1;
-												while($rs = @mysql_fetch_array($result))
-												{
-													$pic = $rs['pic_name'];
-												} 
-													
-													echo "รูปที่ ".$_GET['id']; 
-												
+													if(isset($_GET['id']))
+													{
+														$_SESSION['slide_id'] = $_GET['id']; 
+														$sid = $_SESSION['slide_id'];
+														$sql = "SELECT * FROM buildthedot_thaijobhd_slide WHERE sid = '{$sid}' ";
+														$result = @mysql_query($sql);
+														$count = 1;
+														while($rs = @mysql_fetch_array($result))
+														{
+															$pic = $rs['pic_name'];
+														} 
+														
+														echo "รูปที่ ".$_GET['id']; 
+													}
 												?>
 											</div>
 											<br class="clear"/>

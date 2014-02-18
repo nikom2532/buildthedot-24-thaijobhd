@@ -21,7 +21,32 @@ else{
 		&& in_array($extension, $allowedExts))
 		{	
 			if(copy($_FILES["SlidePic"]["tmp_name"],$rootadminpath."images/slide". $_SESSION['slide_id'] .".jpg"))
-			{	
+			{
+				$images = $_FILES["SlidePic"]["tmp_name"];
+				
+				$width=950; //*** Fix Width & Heigh (Autu caculate) ***//
+				
+				$size=GetimageSize($images);
+				
+				$height= 280;//round($width*$size[1]/$size[0]);
+				
+				$images_orig = ImageCreateFromJPEG($images);
+				
+				$photoX = ImagesX($images_orig);
+				
+				$photoY = ImagesY($images_orig);
+				
+				$images_fin = ImageCreateTrueColor($width, $height);
+				
+				ImageCopyResampled($images_fin, $images_orig, 0, 0, 0, 0, $width+1, $height+1, $photoX, $photoY);
+				
+				ImageJPEG($images_fin,$rootadminpath."images/slide". $_SESSION['slide_id'] .".jpg");
+				
+				ImageDestroy($images_orig);
+				
+				ImageDestroy($images_fin);
+				
+					
 				$upload = "slide". $_SESSION['slide_id'] .".jpg";
 				$sid = intval($_SESSION['slide_id']);
 				//*** Insert Record ***//
@@ -31,21 +56,51 @@ else{
 				$rs = mysql_query($sql);  
 				if($rs)
 				{
-					echo "1";
+					?>
+						<script type="text/javascript">
+							window.location="<?php echo $rootadminpath; ?>add-slide.php?check=1&id=<?=$_SESSION['slide_id']?> ";
+						</script>
+					<?php
+				
 				}
 				else 
 				{
-					echo "2";
+					$sql = "UPDATE buildthedot_thaijobhd_slide SET pic_name = '{$upload}' WHERE sid = '{$sid}'";
+					$rs = mysql_query($sql);  
+					if($rs)
+					{	
+						?>
+							<script type="text/javascript">
+								window.location="<?php echo $rootadminpath; ?>add-slide.php?check=1&id=<?=$_SESSION['slide_id']?> ";
+							</script>
+						<?php
+					}
+					else 
+					{
+						?>
+							<script type="text/javascript">
+								window.location="<?php echo $rootadminpath; ?>add-slide.php?check=2&id=<?=$_SESSION['slide_id']?> ";
+							</script>
+						<?php
+					}	
 				}		
 			}
 			else
 			{
-				echo "3";
+				?>
+					<script type="text/javascript">
+						window.location="<?php echo $rootadminpath; ?>add-slide.php?check=3&id=<?=$_SESSION['slide_id']?> ";
+					</script>
+				<?php
 			}
 		}
 		else
 		{
-			echo "4";
+			?>
+				<script type="text/javascript">
+					window.location="<?php echo $rootadminpath; ?>add-slide.php?check=4&id=<?=$_SESSION['slide_id']?> ";
+				</script>
+			<?php
 		}
 }
 ?>
