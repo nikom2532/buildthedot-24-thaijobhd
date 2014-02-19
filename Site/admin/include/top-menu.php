@@ -7,7 +7,14 @@
 			<li><a href="<?php echo $rootadminpath; ?>advertisement.php" <?php if($menu=="advertisement"){ ?>class="active-tab"<?php } ?>>โฆษณา</a></li>
 			<li><a href="<?php echo $rootadminpath; ?>top-company.php" <?php if($menu=="top-company"){ ?>class="active-tab"<?php } ?>>บริษัทชั้นนำ</a></li>
 			<li><a href="<?php echo $rootadminpath; ?>user-management.php" <?php if($menu=="user-management"){ ?>class="active-tab"<?php } ?>>ข้อมูลผู้ใช้</a></li>
+
+			<li><a href="<?php echo $rootadminpath; ?>slide-picture.php" <?php if($menu=="slide"){ ?>class="active-tab"<?php } ?>>สไลท์</a></li>
+
+			<li><a href="<?php echo $rootadminpath; ?>advertisement-rate.php" <?php if($menu=="advertisement-rate"){ ?>class="active-tab"<?php } ?>>ค่าโฆษนา</a></li>
+
+
 			<li><a href="<?php echo $rootadminpath; ?>advertisement-rate.php" <?php if($menu=="advertisement-rate"){ ?>class="active-tab"<?php } ?>>อัตราค่าโฆษณา + เงื่อนไข</a></li>
+
 		</ul> <!-- end tabs -->
 		
 		<!-- company logo -->
