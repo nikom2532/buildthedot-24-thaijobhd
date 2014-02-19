@@ -25,10 +25,25 @@ else{
 						<h1>ฝากประวัติ <span class="text-blue">-  แก้ไขประวัติส่วนตัว</span></h1>
 					</div>
 					<form id="edit_profile_form" name="edit_profile_form" action="<?php echo $rootpath; ?>include/module/edit-profile-process.php" method="POST" enctype="multipart/form-data">
-						<h2 class="grid_">เพิ่มรูป </h2>
-						<br class="clear"/>
-						<p class="grid_2">
+						
+						<div class="grid_2">
+							<img src="images/<?php 
+								if($rs_user["profile_picture"] != ""){
+									echo "user_account/".$rs_user["profile_picture"];
+								}
+								else{
+									echo "banner-2.png";
+								}
+							?>" width="144" height="143" />
+						</div>
+						
+						<p class="grid_8">
 							ขนาด 200*200 px
+						</p>
+						<br class="clear"/>
+						
+						<p class="grid_2">
+							แก้ไขรูป
 						</p>
 						<p class="grid_8">
 							<input class="button black round" type="file" name="profile_picture" />
