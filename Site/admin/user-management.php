@@ -29,9 +29,7 @@ else{
 				<div class="content-module">
 					
 					<div class="content-module-main">
-					
-						<h2>ข้อมูลผู้ใช้<span class="right"><a href="add-recommend-idea.php" class="add-button blue round">เพิ่ม</a></span></h2>
-						
+						<h2>ข้อมูลผู้ใช้ <?php /*<span class="right"><a href="add-recommend-idea.php" class="add-button blue round">เพิ่ม</a></span>*/ ?></h2>
 						<table>
 						
 							<thead>

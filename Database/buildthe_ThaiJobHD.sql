@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 06, 2014 at 05:34 PM
+-- Generation Time: Feb 19, 2014 at 12:58 PM
 -- Server version: 5.1.48
 -- PHP Version: 5.2.13
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_ad` (
   `AdType` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
   `AdPosition` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`PictureID`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `buildthedot_thaijobhd_ad`
@@ -40,6 +40,29 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_ad` (
 
 INSERT INTO `buildthedot_thaijobhd_ad` (`PictureID`, `AdPic`, `AdLink`, `AdType`, `AdPosition`) VALUES
 (3, '', 'http://www.jaspal.com/', 'Content_Ads', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `buildthedot_thaijobhd_detail`
+--
+
+CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_detail` (
+  `id` int(100) NOT NULL AUTO_INCREMENT,
+  `title` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `detail` longtext COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `buildthedot_thaijobhd_detail`
+--
+
+INSERT INTO `buildthedot_thaijobhd_detail` (`id`, `title`, `detail`) VALUES
+(1, 'advertisement-rate1', 'test'),
+(2, 'advertisement-rate2', 'test'),
+(3, 'condition1', 'test'),
+(4, 'condition2', 'test');
 
 -- --------------------------------------------------------
 
@@ -159,6 +182,7 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_account` (
   `lastname` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `nickname` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `profile_picture` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `resume_file` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `job_id` int(40) NOT NULL,
   `job_status` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `admin_status` int(1) NOT NULL,
@@ -194,11 +218,11 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_account` (
 -- Dumping data for table `buildthedot_thaijobhd_user_account`
 --
 
-INSERT INTO `buildthedot_thaijobhd_user_account` (`id`, `email`, `password`, `firstname`, `midname`, `lastname`, `nickname`, `profile_picture`, `job_id`, `job_status`, `admin_status`, `birthdate`, `place_of_birth`, `age`, `nationality`, `religion`, `height`, `weight`, `blood`, `lesion`, `current_address`, `phone_number`, `relationship_status`, `pouse_name`, `number_of_children`, `military_status`, `current_address_status`, `father_name`, `father_age`, `father_career`, `father_live_status`, `mother_name`, `mother_age`, `mother_career`, `mother_live_status`) VALUES
-(1, 'a@a.com', '77de54ccf56eb6f7dbf99e4d3be949ab6f9b0a55df8ac28564cb9f63a10be8af6ab3f7c2', 'a', 'a', 'a', '', 'user_1__CN5:-Sensory-and-Motor-Mastication---Google-Chrome_052.png', 1, '1', 1, '2013-11-07', '', 0, '', '', 0, 0, '', '', '', '', '', '', 0, '', 'home', '1', 0, '', '', '', 0, '', ''),
-(2, 'huineken@gmail.com', '0144712dd81be0c3d9724f5e56ce668567a74306b06d0c01624fe0d0249a570f4d093747', '', '', '', '', '', 0, '', 0, '2013-11-29', '', 0, '', '', 0, 0, '', '', '', '', '', '', 0, 'pass_commandeering_soldier', 'live_with_parent', '', 0, '', '', '', 0, '', ''),
-(3, 'guy-phuttikul@hotmail.com', '0144712dd81be0c3d9724f5e56ce668567a74306b06d0c01624fe0d0249a570f4d093747', '', '', '', '', 'user_3_1385720880_phuttikul.jpg', 0, '', 0, '1989-11-23', 'เพชรบุรี', 24, 'ไทย', 'พุทธ', 180, 90, 'โอ', '-', '6/170 ม.3 หมู่บ้านสุขสันต์9 ซ.เพชรเกษม100 แขวงหนองค้างพลู เขตหนองแขม กทม 10160', '0817107885', 'single', '-', 0, 'study_education', 'home', 'นายกิติภูมิ คีรีวรรณ', 51, 'รับราชการ', 'live', 'นางวาสนา คีรีวรรณ', 50, '-', 'live'),
-(4, 'tmjning@gmail.com', '0144712dd81be0c3d9724f5e56ce668567a74306b06d0c01624fe0d0249a570f4d093747', '', '', '', '', 'user_4_1390417973_ninggggg123.jpg', 0, '', 0, '1986-10-12', 'น่าน', 27, 'ไทย', 'พุทธ', 152, 65, 'โอ', 'ไฝ', '67 ถ.เจริญกรุง กทม. 10120', '0909100389', 'single', '-', 0, 'other', 'home', 'a', 67, 'b', 'died', 'b', 63, 'd', 'live');
+INSERT INTO `buildthedot_thaijobhd_user_account` (`id`, `email`, `password`, `firstname`, `midname`, `lastname`, `nickname`, `profile_picture`, `resume_file`, `job_id`, `job_status`, `admin_status`, `birthdate`, `place_of_birth`, `age`, `nationality`, `religion`, `height`, `weight`, `blood`, `lesion`, `current_address`, `phone_number`, `relationship_status`, `pouse_name`, `number_of_children`, `military_status`, `current_address_status`, `father_name`, `father_age`, `father_career`, `father_live_status`, `mother_name`, `mother_age`, `mother_career`, `mother_live_status`) VALUES
+(1, 'a@a.com', '77de54ccf56eb6f7dbf99e4d3be949ab6f9b0a55df8ac28564cb9f63a10be8af6ab3f7c2', 'a', 'a', 'a', '', 'user_1__CN5:-Sensory-and-Motor-Mastication---Google-Chrome_052.png', '', 1, '1', 1, '2013-11-07', '', 0, '', '', 0, 0, '', '', '', '', '', '', 0, '', 'home', '1', 0, '', '', '', 0, '', ''),
+(2, 'huineken@gmail.com', '0144712dd81be0c3d9724f5e56ce668567a74306b06d0c01624fe0d0249a570f4d093747', '', '', '', '', '', '', 0, '', 0, '2013-11-29', '', 0, '', '', 0, 0, '', '', '', '', '', '', 0, 'pass_commandeering_soldier', 'live_with_parent', '', 0, '', '', '', 0, '', ''),
+(3, 'guy-phuttikul@hotmail.com', '0144712dd81be0c3d9724f5e56ce668567a74306b06d0c01624fe0d0249a570f4d093747', '', '', '', '', 'user_3_1385720880_phuttikul.jpg', '', 0, '', 0, '1989-11-23', 'เพชรบุรี', 24, 'ไทย', 'พุทธ', 180, 90, 'โอ', '-', '6/170 ม.3 หมู่บ้านสุขสันต์9 ซ.เพชรเกษม100 แขวงหนองค้างพลู เขตหนองแขม กทม 10160', '0817107885', 'single', '-', 0, 'study_education', 'home', 'นายกิติภูมิ คีรีวรรณ', 51, 'รับราชการ', 'live', 'นางวาสนา คีรีวรรณ', 50, '-', 'live'),
+(4, 'tmjning@gmail.com', '0144712dd81be0c3d9724f5e56ce668567a74306b06d0c01624fe0d0249a570f4d093747', '', '', '', '', 'user_4_1390417973_ninggggg123.jpg', '', 0, '', 0, '1986-10-12', 'น่าน', 27, 'ไทย', 'พุทธ', 152, 65, 'โอ', 'ไฝ', '67 ถ.เจริญกรุง กทม. 10120', '0909100389', 'single', '-', 0, 'other', 'home', 'a', 67, 'b', 'died', 'b', 63, 'd', 'live');
 
 -- --------------------------------------------------------
 
