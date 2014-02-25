@@ -65,6 +65,17 @@ else{
 										</p>
 									</div>
 									<br class="clear"/>
+									
+									<div class="grid_2">
+										<h6 class="detail-title">Headline</h6>
+									</div>
+									<div class="grid_8">
+										<p>
+											<textarea id="name" id="Headline" name ="Headline" class="round"><?php echo $rs["Headline"]; ?></textarea>
+										</p>
+									</div>
+									<br class="clear"/>
+									
 									<div class="grid_2">
 										<h6 class="detail-title">ย่อหน้า</h6>
 									</div>
@@ -74,6 +85,7 @@ else{
 										</p>
 									</div>
 									<br class="clear"/>
+									
 									<div class="grid_2">
 										<h6 class="detail-title pic-post">รูปที่ 1 </h6>
 									</div>
