@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4.1
+-- version 4.0.6deb1
 -- http://www.phpmyadmin.net
 --
--- โฮสต์: 127.0.0.1
--- เวลาในการสร้าง: 
--- เวอร์ชั่นของเซิร์ฟเวอร์: 5.6.11
--- รุ่นของ PHP: 5.5.1
+-- Host: localhost
+-- Generation Time: Feb 25, 2014 at 10:36 AM
+-- Server version: 5.5.35-0ubuntu0.13.10.2
+-- PHP Version: 5.5.3-1ubuntu2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- ฐานข้อมูล: `buildthe_thaijobhd2`
+-- Database: `buildthedot_24thaijobhd`
 --
 
 -- --------------------------------------------------------
 
 --
--- โครงสร้างตาราง `buildthedot_thaijobhd_ad`
+-- Table structure for table `buildthedot_thaijobhd_ad`
 --
 
 CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_ad` (
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_ad` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
 
 --
--- dump ตาราง `buildthedot_thaijobhd_ad`
+-- Dumping data for table `buildthedot_thaijobhd_ad`
 --
 
 INSERT INTO `buildthedot_thaijobhd_ad` (`PictureID`, `AdPic`, `AdLink`, `AdType`, `AdPosition`) VALUES
@@ -45,7 +45,7 @@ INSERT INTO `buildthedot_thaijobhd_ad` (`PictureID`, `AdPic`, `AdLink`, `AdType`
 -- --------------------------------------------------------
 
 --
--- โครงสร้างตาราง `buildthedot_thaijobhd_detail`
+-- Table structure for table `buildthedot_thaijobhd_detail`
 --
 
 CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_detail` (
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_detail` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
 
 --
--- dump ตาราง `buildthedot_thaijobhd_detail`
+-- Dumping data for table `buildthedot_thaijobhd_detail`
 --
 
 INSERT INTO `buildthedot_thaijobhd_detail` (`id`, `title`, `detail`) VALUES
@@ -68,7 +68,7 @@ INSERT INTO `buildthedot_thaijobhd_detail` (`id`, `title`, `detail`) VALUES
 -- --------------------------------------------------------
 
 --
--- โครงสร้างตาราง `buildthedot_thaijobhd_job`
+-- Table structure for table `buildthedot_thaijobhd_job`
 --
 
 CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_job` (
@@ -89,7 +89,7 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_job` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
 
 --
--- dump ตาราง `buildthedot_thaijobhd_job`
+-- Dumping data for table `buildthedot_thaijobhd_job`
 --
 
 INSERT INTO `buildthedot_thaijobhd_job` (`JobID`, `CompanyName`, `PositionThai`, `PositionEng`, `Place`, `Quantity`, `property`, `Saraly`, `JobDescription`, `Recomment`, `StartTime`, `EndTime`, `JobType`) VALUES
@@ -99,7 +99,7 @@ INSERT INTO `buildthedot_thaijobhd_job` (`JobID`, `CompanyName`, `PositionThai`,
 -- --------------------------------------------------------
 
 --
--- โครงสร้างตาราง `buildthedot_thaijobhd_job_attribute`
+-- Table structure for table `buildthedot_thaijobhd_job_attribute`
 --
 
 CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_job_attribute` (
@@ -110,7 +110,7 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_job_attribute` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
 
 --
--- dump ตาราง `buildthedot_thaijobhd_job_attribute`
+-- Dumping data for table `buildthedot_thaijobhd_job_attribute`
 --
 
 INSERT INTO `buildthedot_thaijobhd_job_attribute` (`AttributeID`, `JobID`, `AtrributDescription`) VALUES
@@ -119,12 +119,13 @@ INSERT INTO `buildthedot_thaijobhd_job_attribute` (`AttributeID`, `JobID`, `Atrr
 -- --------------------------------------------------------
 
 --
--- โครงสร้างตาราง `buildthedot_thaijobhd_job_idea`
+-- Table structure for table `buildthedot_thaijobhd_job_idea`
 --
 
 CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_job_idea` (
   `CompanyID` int(11) NOT NULL AUTO_INCREMENT,
   `MainIdea` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
+  `Headline` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
   `Description` text COLLATE utf8_unicode_ci NOT NULL,
   `Pic1` text COLLATE utf8_unicode_ci NOT NULL,
   `Pic2` text COLLATE utf8_unicode_ci NOT NULL,
@@ -137,18 +138,18 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_job_idea` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
 
 --
--- dump ตาราง `buildthedot_thaijobhd_job_idea`
+-- Dumping data for table `buildthedot_thaijobhd_job_idea`
 --
 
-INSERT INTO `buildthedot_thaijobhd_job_idea` (`CompanyID`, `MainIdea`, `Description`, `Pic1`, `Pic2`, `Pic3`, `IdeaRecomment`, `IdeaTime`, `Status`) VALUES
-(1, 'OK 20', '<p><span style="background-color:#FFD700">ธุรกิจสุดฮิต! &nbsp; ลงทุนน้อย! สร้างกำไรอย่างมั่นคง!&nbsp;</span></p>\n\n<p><a href="http://www.ok20-shop.com/#" target="_blank"><img alt="" src="http://www.ok20-shop.com/images/resized/images/stories/slideshow/sl-1_960_360.jpg" style="height:360px; width:960px" /></a></p>\n\n<p>&nbsp;</p>\n\n<p>แฟรนไชส์ร้านขายสินค้าทุกอย่าง 20 บาท จำหน่ายสินค้าลิขสิทธิ์ถูกต้อง มีสาขาที่เปิดจริงแล้วมากกว่า 70 สาขา ทั่วประเทศ</p>\n\n<p>&nbsp;</p>\n\n<div style="background:#eee;border:1px solid #ccc;padding:5px 10px;"><strong><u><span style="font-family:georgia,serif"><span class="marker"><span style="background-color:#FF0000">โปรโมชั่นพิเศษ! รูปแบบที่ 1</span></span><span style="background-color:#FF0000">&nbsp;</span></span></u></strong></div>\n\n<p>ลงทุนวันนี้ เพียง 329,000 บาท ต่อ 1 คูหา (ลูกค้าต้องหาทำเลเอง) จัดร้านเสร็จใน 3 วัน</p>\n\n<p>ราคานี้รวม<em><u>ตกแต่งร้าน ชั้นวางของ เคาน์เตอร๋์คิดเงิน ป้าย ธงญี่ปุ่น สิ่งพิมพ์ (ใบปลิวจำนวน 2,000 ใบ) บริการจัดร้าน เรียงของพร้อมขาย รวมสินค้าภายในร้านมูลค่า 200,000 บาท </u></em></p>\n\n<p><img alt="" src="C:UsersLenovoDesktopOK20_SHOP_35.jpg" /><img alt="" src="C:UsersLenovoDesktopOK20_SHOP_35.jpg" /><a href="http://www.ok20-shop.com/index.php?option=com_content&amp;view=frontpage&amp;Itemid=85" target="_blank"><img alt="" src="http://www.ok20-shop.com/images/photo_ok20/a1/thumbs/OK20_SHOP_35.jpg" style="height:150px; width:150px" /></a>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.ok20-shop.com/index.php?option=com_content&amp;view=frontpage&amp;Itemid=85" target="_blank"><img alt="" src="http://www.ok20-shop.com/images/photo_ok20/a1/thumbs/OK20_SHOP_27.jpg" style="height:150px; width:150px" /></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<a href="http://www.ok20-shop.com/index.php?option=com_content&amp;view=frontpage&amp;Itemid=85" target="_blank"><img alt="" src="http://www.ok20-shop.com/images/photo_ok20/a1/thumbs/OK20_SHOP_6.jpg" style="height:150px; width:150px" /></a></p>\n\n<p>&nbsp;</p>\n\n<div style="background:#eee;border:1px solid #ccc;padding:5px 10px;"><strong><u><span style="background-color:#FF0000">โปรโมชั่นพิเศษ! รูปแบบที่ 2</span></u></strong><span style="background-color:#FF0000">&nbsp;</span></div>\n\n<p><strong><span style="background-color:#FF0000">OK 20 Delivery</span></strong></p>\n\n<p>ราคาเพียง 529,000 บาท ราคานี้ประกอบด้วย</p>\n\n<p>- ค่ารถ 300,00 บาท</p>\n\n<p>- ค่าสินค้าภายในรถ 100,000 บาท</p>\n\n<p>- ค่าตกแต่ง,ดัดแปลง,ภาษี 129,000 บาท</p>\n\n<p>&nbsp;</p>\n\n<p><a href="http://www.ok20-shop.com/index.php?option=com_content&amp;view=frontpage&amp;Itemid=85" target="_blank"><img alt="" src="http://www.ok20-shop.com/images/photo_ok20/a1/thumbs/OK20_DELIVERY2.jpg" style="height:150px; width:150px" /></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<a href="http://www.ok20-shop.com/index.php?option=com_content&amp;view=frontpage&amp;Itemid=85" target="_blank"><img alt="" src="http://www.ok20-shop.com/images/photo_ok20/a1/thumbs/OK20_DELIVERY.jpg" style="height:150px; width:150px" /></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<a href="http://www.ok20-shop.com/index.php?option=com_content&amp;view=frontpage&amp;Itemid=85" target="_blank"><img alt="" src="http://www.ok20-shop.com/images/photo_ok20/a1/thumbs/OK20_SHOP_18.jpg" style="height:150px; width:150px" /></a></p>\n\n<p>&nbsp;</p>\n\n<p>&nbsp;</p>\n\n<p><span style="background-color:#FAEBD7">สนใจธุรกิจ สินค้าทุกอย่าง 20 บาท</span><span style="background-color:#FFA07A"> ติดต่อ คุณนพดล บุญโชคยิ่ง (เบนซ์)</span></p>\n\n<p><span style="background-color:#FFA500">Tel.084-8975555,085-0000020 </span></p>\n\n<p>&nbsp;</p>\n\n<p><span style="background-color:#FFD700">Website</span> : www.ok20-shop.com</p>\n\n<p>&nbsp;</p>\n', 'bi_1_pic1_2014-01-20 13:26:57_ok20.jpg', 'bi_1_pic2_2014-01-20 13:26:57_new_OK20_01.gif', 'bi_1_pic3_2014-01-20 13:26:57_OK20_2013_1.jpg', 1, '2014-02-02 11:58:46', 0),
-(2, 'dfgdfgdfgdfgdfgdfgdgd', 'Lorem Ipsum คือ เนื้อหาจำลองแบบเรียบๆ ที่ใช้กันในธุรกิจงานพิมพ์หรืองานเรียงพิมพ์ มันได้กลายมาเป็นเนื้อหาจำลองมาตรฐานของธุร\nกิจดังกล่าวมาตั้งแต่ศตวรรษที่ 16 เมื่อเครื่องพิมพ์โนเนมเครื่องหนึ่ง\nนำรางตัวพิมพ์มาสลับสับตำแหน่งตัวอักษรเพื่อทำหนังสือตัวอย่าง Lorem Ipsum อยู่ยงคงกระพันมาไม่ใช่แค่เพียงห้าศตวรรษ แต่อยู่มาจนถึงยุคที่พลิกโฉมเข้าสู่งานเรียงพิมพ์ด้วยวิธีทางอิเล็กทรอนิกส์ และยังคงสภาพเดิมไว้อย่างไม่มีการเปลี่ยนแปลง มันได้รับความนิยมมากขึ้นในยุค ค.ศ. 1960 เมื่อแผ่น Letraset วางจำหน่ายโดยมีข้อความบนนั้นเป็น Lorem Ipsum และล่าสุดกว่านั้น คือเมื่อซอฟท์แวร์การทำสื่อสิ่งพิมพ์ (Desktop Publishing) อย่าง Aldus PageMaker ได้รวมเอา Lorem Ipsum เวอร์ชั่นต่างๆ เข้าไว้ในซอฟท์แวร์ด้วย', '', '', '', 1, '2014-02-20 05:41:27', 0),
-(3, 'sfsd', 'fsdfsdfsdfsdfdsfsdfs', '', '', '', 1, '2014-02-01 00:00:00', 1);
+INSERT INTO `buildthedot_thaijobhd_job_idea` (`CompanyID`, `MainIdea`, `Headline`, `Description`, `Pic1`, `Pic2`, `Pic3`, `IdeaRecomment`, `IdeaTime`, `Status`) VALUES
+(1, 'OK 20', '', '<p><span style="background-color:#FFD700">ธุรกิจสุดฮิต! &nbsp; ลงทุนน้อย! สร้างกำไรอย่างมั่นคง!&nbsp;</span></p>\n\n<p><a href="http://www.ok20-shop.com/#" target="_blank"><img alt="" src="http://www.ok20-shop.com/images/resized/images/stories/slideshow/sl-1_960_360.jpg" style="height:360px; width:960px" /></a></p>\n\n<p>&nbsp;</p>\n\n<p>แฟรนไชส์ร้านขายสินค้าทุกอย่าง 20 บาท จำหน่ายสินค้าลิขสิทธิ์ถูกต้อง มีสาขาที่เปิดจริงแล้วมากกว่า 70 สาขา ทั่วประเทศ</p>\n\n<p>&nbsp;</p>\n\n<div style="background:#eee;border:1px solid #ccc;padding:5px 10px;"><strong><u><span style="font-family:georgia,serif"><span class="marker"><span style="background-color:#FF0000">โปรโมชั่นพิเศษ! รูปแบบที่ 1</span></span><span style="background-color:#FF0000">&nbsp;</span></span></u></strong></div>\n\n<p>ลงทุนวันนี้ เพียง 329,000 บาท ต่อ 1 คูหา (ลูกค้าต้องหาทำเลเอง) จัดร้านเสร็จใน 3 วัน</p>\n\n<p>ราคานี้รวม<em><u>ตกแต่งร้าน ชั้นวางของ เคาน์เตอร๋์คิดเงิน ป้าย ธงญี่ปุ่น สิ่งพิมพ์ (ใบปลิวจำนวน 2,000 ใบ) บริการจัดร้าน เรียงของพร้อมขาย รวมสินค้าภายในร้านมูลค่า 200,000 บาท </u></em></p>\n\n<p><img alt="" src="C:UsersLenovoDesktopOK20_SHOP_35.jpg" /><img alt="" src="C:UsersLenovoDesktopOK20_SHOP_35.jpg" /><a href="http://www.ok20-shop.com/index.php?option=com_content&amp;view=frontpage&amp;Itemid=85" target="_blank"><img alt="" src="http://www.ok20-shop.com/images/photo_ok20/a1/thumbs/OK20_SHOP_35.jpg" style="height:150px; width:150px" /></a>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.ok20-shop.com/index.php?option=com_content&amp;view=frontpage&amp;Itemid=85" target="_blank"><img alt="" src="http://www.ok20-shop.com/images/photo_ok20/a1/thumbs/OK20_SHOP_27.jpg" style="height:150px; width:150px" /></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<a href="http://www.ok20-shop.com/index.php?option=com_content&amp;view=frontpage&amp;Itemid=85" target="_blank"><img alt="" src="http://www.ok20-shop.com/images/photo_ok20/a1/thumbs/OK20_SHOP_6.jpg" style="height:150px; width:150px" /></a></p>\n\n<p>&nbsp;</p>\n\n<div style="background:#eee;border:1px solid #ccc;padding:5px 10px;"><strong><u><span style="background-color:#FF0000">โปรโมชั่นพิเศษ! รูปแบบที่ 2</span></u></strong><span style="background-color:#FF0000">&nbsp;</span></div>\n\n<p><strong><span style="background-color:#FF0000">OK 20 Delivery</span></strong></p>\n\n<p>ราคาเพียง 529,000 บาท ราคานี้ประกอบด้วย</p>\n\n<p>- ค่ารถ 300,00 บาท</p>\n\n<p>- ค่าสินค้าภายในรถ 100,000 บาท</p>\n\n<p>- ค่าตกแต่ง,ดัดแปลง,ภาษี 129,000 บาท</p>\n\n<p>&nbsp;</p>\n\n<p><a href="http://www.ok20-shop.com/index.php?option=com_content&amp;view=frontpage&amp;Itemid=85" target="_blank"><img alt="" src="http://www.ok20-shop.com/images/photo_ok20/a1/thumbs/OK20_DELIVERY2.jpg" style="height:150px; width:150px" /></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<a href="http://www.ok20-shop.com/index.php?option=com_content&amp;view=frontpage&amp;Itemid=85" target="_blank"><img alt="" src="http://www.ok20-shop.com/images/photo_ok20/a1/thumbs/OK20_DELIVERY.jpg" style="height:150px; width:150px" /></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<a href="http://www.ok20-shop.com/index.php?option=com_content&amp;view=frontpage&amp;Itemid=85" target="_blank"><img alt="" src="http://www.ok20-shop.com/images/photo_ok20/a1/thumbs/OK20_SHOP_18.jpg" style="height:150px; width:150px" /></a></p>\n\n<p>&nbsp;</p>\n\n<p>&nbsp;</p>\n\n<p><span style="background-color:#FAEBD7">สนใจธุรกิจ สินค้าทุกอย่าง 20 บาท</span><span style="background-color:#FFA07A"> ติดต่อ คุณนพดล บุญโชคยิ่ง (เบนซ์)</span></p>\n\n<p><span style="background-color:#FFA500">Tel.084-8975555,085-0000020 </span></p>\n\n<p>&nbsp;</p>\n\n<p><span style="background-color:#FFD700">Website</span> : www.ok20-shop.com</p>\n\n<p>&nbsp;</p>\n', 'bi_1_pic1_2014-01-20 13:26:57_ok20.jpg', 'bi_1_pic2_2014-01-20 13:26:57_new_OK20_01.gif', 'bi_1_pic3_2014-01-20 13:26:57_OK20_2013_1.jpg', 1, '2014-02-02 11:58:46', 0),
+(2, 'dfgdfgdfgdfgdfgdfgdgd', '', 'Lorem Ipsum คือ เนื้อหาจำลองแบบเรียบๆ ที่ใช้กันในธุรกิจงานพิมพ์หรืองานเรียงพิมพ์ มันได้กลายมาเป็นเนื้อหาจำลองมาตรฐานของธุร\nกิจดังกล่าวมาตั้งแต่ศตวรรษที่ 16 เมื่อเครื่องพิมพ์โนเนมเครื่องหนึ่ง\nนำรางตัวพิมพ์มาสลับสับตำแหน่งตัวอักษรเพื่อทำหนังสือตัวอย่าง Lorem Ipsum อยู่ยงคงกระพันมาไม่ใช่แค่เพียงห้าศตวรรษ แต่อยู่มาจนถึงยุคที่พลิกโฉมเข้าสู่งานเรียงพิมพ์ด้วยวิธีทางอิเล็กทรอนิกส์ และยังคงสภาพเดิมไว้อย่างไม่มีการเปลี่ยนแปลง มันได้รับความนิยมมากขึ้นในยุค ค.ศ. 1960 เมื่อแผ่น Letraset วางจำหน่ายโดยมีข้อความบนนั้นเป็น Lorem Ipsum และล่าสุดกว่านั้น คือเมื่อซอฟท์แวร์การทำสื่อสิ่งพิมพ์ (Desktop Publishing) อย่าง Aldus PageMaker ได้รวมเอา Lorem Ipsum เวอร์ชั่นต่างๆ เข้าไว้ในซอฟท์แวร์ด้วย', '', '', '', 1, '2014-02-20 05:41:27', 0),
+(3, 'sfsd', '', 'fsdfsdfsdfsdfdsfsdfs', '', '', '', 1, '2014-02-01 00:00:00', 1);
 
 -- --------------------------------------------------------
 
 --
--- โครงสร้างตาราง `buildthedot_thaijobhd_slide`
+-- Table structure for table `buildthedot_thaijobhd_slide`
 --
 
 CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_slide` (
@@ -158,7 +159,7 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_slide` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- dump ตาราง `buildthedot_thaijobhd_slide`
+-- Dumping data for table `buildthedot_thaijobhd_slide`
 --
 
 INSERT INTO `buildthedot_thaijobhd_slide` (`sid`, `pic_name`) VALUES
@@ -171,7 +172,7 @@ INSERT INTO `buildthedot_thaijobhd_slide` (`sid`, `pic_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- โครงสร้างตาราง `buildthedot_thaijobhd_top_company`
+-- Table structure for table `buildthedot_thaijobhd_top_company`
 --
 
 CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_top_company` (
@@ -187,7 +188,7 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_top_company` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
 
 --
--- dump ตาราง `buildthedot_thaijobhd_top_company`
+-- Dumping data for table `buildthedot_thaijobhd_top_company`
 --
 
 INSERT INTO `buildthedot_thaijobhd_top_company` (`TopCompanyID`, `TopCompanyName`, `LinkAddress`, `CompanyPic`, `Time`, `Status`, `TopCompanyRecomment`) VALUES
@@ -196,7 +197,7 @@ INSERT INTO `buildthedot_thaijobhd_top_company` (`TopCompanyID`, `TopCompanyName
 -- --------------------------------------------------------
 
 --
--- โครงสร้างตาราง `buildthedot_thaijobhd_user_account`
+-- Table structure for table `buildthedot_thaijobhd_user_account`
 --
 
 CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_account` (
@@ -241,7 +242,7 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_account` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
 
 --
--- dump ตาราง `buildthedot_thaijobhd_user_account`
+-- Dumping data for table `buildthedot_thaijobhd_user_account`
 --
 
 INSERT INTO `buildthedot_thaijobhd_user_account` (`id`, `email`, `password`, `firstname`, `midname`, `lastname`, `nickname`, `profile_picture`, `resume_file`, `job_id`, `job_status`, `admin_status`, `birthdate`, `place_of_birth`, `age`, `nationality`, `religion`, `height`, `weight`, `blood`, `lesion`, `current_address`, `phone_number`, `relationship_status`, `pouse_name`, `number_of_children`, `military_status`, `current_address_status`, `father_name`, `father_age`, `father_career`, `father_live_status`, `mother_name`, `mother_age`, `mother_career`, `mother_live_status`) VALUES
@@ -253,7 +254,7 @@ INSERT INTO `buildthedot_thaijobhd_user_account` (`id`, `email`, `password`, `fi
 -- --------------------------------------------------------
 
 --
--- โครงสร้างตาราง `buildthedot_thaijobhd_user_account_reference_contacts`
+-- Table structure for table `buildthedot_thaijobhd_user_account_reference_contacts`
 --
 
 CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_account_reference_contacts` (
@@ -268,7 +269,7 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_account_reference_contact
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
 
 --
--- dump ตาราง `buildthedot_thaijobhd_user_account_reference_contacts`
+-- Dumping data for table `buildthedot_thaijobhd_user_account_reference_contacts`
 --
 
 INSERT INTO `buildthedot_thaijobhd_user_account_reference_contacts` (`user_account_reference_contacts_id`, `user_account_id`, `name`, `relationship`, `workplace`, `position`, `phone_number`) VALUES
@@ -279,7 +280,7 @@ INSERT INTO `buildthedot_thaijobhd_user_account_reference_contacts` (`user_accou
 -- --------------------------------------------------------
 
 --
--- โครงสร้างตาราง `buildthedot_thaijobhd_user_history_educations`
+-- Table structure for table `buildthedot_thaijobhd_user_history_educations`
 --
 
 CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_history_educations` (
@@ -294,7 +295,7 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_history_educations` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
 
 --
--- dump ตาราง `buildthedot_thaijobhd_user_history_educations`
+-- Dumping data for table `buildthedot_thaijobhd_user_history_educations`
 --
 
 INSERT INTO `buildthedot_thaijobhd_user_history_educations` (`user_history_educations_id`, `user_account_id`, `education_level`, `Institution`, `year_start`, `year_end`, `educational_background`) VALUES
@@ -303,7 +304,7 @@ INSERT INTO `buildthedot_thaijobhd_user_history_educations` (`user_history_educa
 -- --------------------------------------------------------
 
 --
--- โครงสร้างตาราง `buildthedot_thaijobhd_user_history_experiences`
+-- Table structure for table `buildthedot_thaijobhd_user_history_experiences`
 --
 
 CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_history_experiences` (
@@ -320,7 +321,7 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_history_experiences` (
 -- --------------------------------------------------------
 
 --
--- โครงสร้างตาราง `buildthedot_thaijobhd_user_history_talent_languages`
+-- Table structure for table `buildthedot_thaijobhd_user_history_talent_languages`
 --
 
 CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_history_talent_languages` (
@@ -337,7 +338,7 @@ CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_history_talent_languages`
 -- --------------------------------------------------------
 
 --
--- โครงสร้างตาราง `buildthedot_thaijobhd_user_history_talent_others`
+-- Table structure for table `buildthedot_thaijobhd_user_history_talent_others`
 --
 
 CREATE TABLE IF NOT EXISTS `buildthedot_thaijobhd_user_history_talent_others` (
