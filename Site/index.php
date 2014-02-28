@@ -497,7 +497,8 @@ include ($rootpath . "include/top-menu.php");
 						}
 					?>" width="144" height="143">
 					<h3><?php echo $rs["MainIdea"]; ?></h3>
-					<p><?php echo substr($rs["Description"], 0 , 125)."..."; ?><span class="right" id="read-more"><a href="<?php echo $rootpath; ?>business-idea-detail.php?id=<?php echo $rs["CompanyID"]; ?>">อ่านต่อ</a></span></p>
+					<p><?php echo $rs["Headline"]."..."; ?><span class="right" id="read-more"><a href="<?php echo $rootpath; ?>business-idea-detail.php?id=<?php echo $rs["CompanyID"]; ?>">อ่านต่อ</a></span></p>
+					<!-- <p><?php echo substr($rs["Description"], 0 , 125)."..."; ?><span class="right" id="read-more"><a href="<?php echo $rootpath; ?>business-idea-detail.php?id=<?php echo $rs["CompanyID"]; ?>">อ่านต่อ</a></span></p> -->
 				</div>
 <?php
 			}
