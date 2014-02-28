@@ -13,7 +13,7 @@
 			<li><a href="<?php echo $rootadminpath; ?>advertisement-rate.php" <?php if($menu=="advertisement-rate"){ ?>class="active-tab"<?php } ?>>ค่าโฆษนา</a></li>
 
 
-			<li><a href="<?php echo $rootadminpath; ?>advertisement-rate.php" <?php if($menu=="advertisement-rate"){ ?>class="active-tab"<?php } ?>>อัตราค่าโฆษณา + เงื่อนไข</a></li>
+			<li><a href="<?php echo $rootadminpath; ?>advertisement-rate.php" <?php if($menu=="advertisement-rate"){ ?>class="active-tab"<?php } ?>>เงื่อนไขอื่น</a></li>
 
 		</ul> <!-- end tabs -->
 		
