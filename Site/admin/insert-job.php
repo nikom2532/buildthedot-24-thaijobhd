@@ -353,7 +353,7 @@ else {
 				                          </div><br class="clear"/>
 				                         
 				                         <div class="grid_2">
-				                                <h6 class="detail-title">ลายละเอียดงาน</h6>   
+				                                <h6 class="detail-title">รายละเอียดงาน</h6>   
 				                          </div>
 				                          <div class="grid_8">
 				                          		<p><textarea type="text" id="Description" name ="Description" class="round" value=""></textarea> </p>
