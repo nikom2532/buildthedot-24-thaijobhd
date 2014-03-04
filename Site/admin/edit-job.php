@@ -115,6 +115,9 @@ if ($_SESSION["userid"] == "") {
 	//include ("include/footer.php");
 } 
 else {
+	
+	?><script type="text/javascript" src="<?php echo $rootpath; ?>js/ckeditor/ckeditor.js"></script><?php
+	
 	//check for Logout mode
 	if(isset($_GET["mode"])){
 		if($_GET["mode"]=="logout"){
@@ -214,7 +217,7 @@ else {
 		                                <h6 class="detail-title">รายละเอียดงาน</h6>   
 		                          </div>
 		                          <div class="grid_8">
-		                          		<p><textarea type="text" id="Description" name ="Description" class="round"><?php echo $description;?></textarea> </p>
+		                          		<p><textarea type="text" id="Description" name ="Description" class="round ckeditor"><?php echo $description;?></textarea> </p>
 		                          </div><br class="clear"/>
 		                         
 		                          <div class="grid_2">

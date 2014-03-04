@@ -11,6 +11,7 @@ if($_SESSION["userid"] == "") {
 else{
 	// $CompanyID = $_POST["CompanyID"];
 	$MainIdea = $_POST["MainIdea"];
+	$Headline = $_POST["Headline"];
 	$Description = $_POST["Description"];
 	// $Description1 = $_POST["Description1"];
 	// $Description2 = $_POST["Description2"];
@@ -32,8 +33,8 @@ else{
 	// ";
 	$sql="
 		INSERT INTO `buildthedot_thaijobhd_job_idea`
-		(`MainIdea`, `Description`, `IdeaRecomment`, `IdeaTime`) 
-		VALUE('{$MainIdea}', '{$Description}', '{$IdeaRecomment}', '{$time_now}');
+		(`MainIdea`, `Headline`, `Description`, `IdeaRecomment`, `IdeaTime`) 
+		VALUE('{$MainIdea}', '{$Headline}', '{$Description}', '{$IdeaRecomment}', '{$time_now}');
 	";
 	@mysql_query($sql);
 	$CompanyID = @mysql_insert_id();

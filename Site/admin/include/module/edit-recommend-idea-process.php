@@ -11,6 +11,7 @@ if($_SESSION["userid"] == "") {
 else{
 	$CompanyID = $_POST["CompanyID"];
 	$MainIdea = $_POST["MainIdea"];
+	$Headline = $_POST["Headline"];
 	$Description = $_POST["Description"];
 	// $Description1 = $_POST["Description1"];
 	// $Description2 = $_POST["Description2"];
@@ -44,6 +45,7 @@ else{
 	$sql="
 		UPDATE `buildthedot_thaijobhd_job_idea` 
 		SET `MainIdea` = '".$MainIdea."',
+		 `Headline` = '".$Headline."',
 		 `Description` = '".$Description."',
 		 `IdeaRecomment` = '".$IdeaRecomment."',
 		 `IdeaTime` = '".$time_now."'

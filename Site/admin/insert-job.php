@@ -170,7 +170,7 @@
 		                          </div><br class="clear"/>
 		                         
 		                         <div class="grid_2">
-		                                <h6 class="detail-title">]ลายละเอียดงาน</h6>   
+		                                <h6 class="detail-title">]รายละเอียดงาน</h6>   
 		                          </div>
 		                          <div class="grid_8">
 		                          		<p><textarea type="text" id="Description" name ="Description" class="round" value=""></textarea> </p>
@@ -291,6 +291,7 @@ if ($_SESSION["userid"] == "") {
 	//include ("include/footer.php");
 } 
 else {
+	?><script type="text/javascript" src="<?php echo $rootpath; ?>js/ckeditor/ckeditor.js"></script><?php
 	//check for Logout mode
 	if(FALSE){
 		include($rootadminpath."include/module/logout_process.php");
@@ -353,10 +354,10 @@ else {
 				                          </div><br class="clear"/>
 				                         
 				                         <div class="grid_2">
-				                                <h6 class="detail-title">ลายละเอียดงาน</h6>   
+				                                <h6 class="detail-title">รายละเอียดงาน</h6>   
 				                          </div>
 				                          <div class="grid_8">
-				                          		<p><textarea type="text" id="Description" name ="Description" class="round" value=""></textarea> </p>
+				                          		<p><textarea type="text" id="Description" name ="Description" class="round ckeditor" value=""></textarea> </p>
 				                          </div><br class="clear"/>
 				                         
 				                          <div class="grid_2">

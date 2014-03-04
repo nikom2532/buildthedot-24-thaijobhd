@@ -7,56 +7,7 @@ include ($rootadminpath . "include/connect-to-database.php");
 include ($rootpath . "include/top-menu.php");
 //include ($rootpath . "include/search-bar.php");
 ?>
-<?php /* ?>
-<!--start banner -->
-<div id="banner-1">
-	<img src="admin/images/banner-2.png" width="144" height="143">
-</div>
-<div id="banner-3">
-	<img src="admin/images/banner-2.png" width="144" height="143">
-</div>
-<div id="banner-5">
-	<img src="admin/images/banner-2.png" width="144" height="143">
-</div>
-<div id="banner-7">
-	<img src="admin/images/banner-2.png" width="144" height="143">
-</div>
-<div id="banner-9">
-	<img src="admin/images/banner-2.png" width="144" height="143">
-</div>
-<!-- <div id="banner-1">
-	<img src="admin/images/banner-2.png" width="144" height="143">
-</div>
-<div id="banner-2">
-	<img src="admin/images/banner-2.png" width="144" height="143">
-</div>
-<div id="banner-3">
-	<img src="admin/images/banner-2.png" width="144" height="143">
-</div>
-<div id="banner-4">
-	<img src="admin/images/banner-2.png" width="144" height="143">
-</div>
-<div id="banner-5">
-	<img src="admin/images/banner-2.png" width="144" height="143">
-</div> -->
-<!--end banner side-left -->
-<div id="banner-2">
-	<img src="admin/images/banner-2.png" width="144" height="143">
-</div>
-<div id="banner-4">
-	<img src="admin/images/banner-2.png" width="144" height="143">
-</div>
-<div id="banner-6">
-	<img src="admin/images/banner-2.png" width="144" height="143">
-</div>
-<div id="banner-8">
-	<img src="admin/images/banner-2.png" width="144" height="143">
-</div>
-<div id="banner-10">
-	<img src="admin/images/banner-2.png" width="144" height="143">
-</div>
-<!--end banner side-right -->
-<?php */ ?>
+
 <style>
 	
 		#content_body{
@@ -497,7 +448,12 @@ include ($rootpath . "include/top-menu.php");
 						}
 					?>" width="144" height="143">
 					<h3><?php echo $rs["MainIdea"]; ?></h3>
+<<<<<<< HEAD
 					<p><?php echo substr($rs["Description"], 0 , 100)."..."; ?><span class="right" id="read-more"><a href="<?php echo $rootpath; ?>business-idea-detail.php?id=<?php echo $rs["CompanyID"]; ?>">อ่านต่อ</a></span></p>
+=======
+					<p><?php echo $rs["Headline"]."..."; ?><span class="right" id="read-more"><a href="<?php echo $rootpath; ?>business-idea-detail.php?id=<?php echo $rs["CompanyID"]; ?>">อ่านต่อ</a></span></p>
+					<!-- <p><?php echo substr($rs["Description"], 0 , 125)."..."; ?><span class="right" id="read-more"><a href="<?php echo $rootpath; ?>business-idea-detail.php?id=<?php echo $rs["CompanyID"]; ?>">อ่านต่อ</a></span></p> -->
+>>>>>>> 0bd68292164266b34e30cf26e03b06648e643df5
 				</div>
 <?php
 			}
@@ -540,7 +496,7 @@ include ($rootpath . "include/top-menu.php");
 						}
 					?>" width="144" height="143">
 					<h3><?php echo $rs["MainIdea"]; ?></h3>
-					<p><?php echo substr($rs["Description"], 0 , 125)."..."; ?><span class="right" id="read-more"><a href="<?php echo $rootpath; ?>business-idea-detail.php?id=<?php echo $rs["CompanyID"]; ?>">อ่านต่อ</a></span></p>
+					<p><?php echo $rs["Headline"]."..."; ?><span class="right" id="read-more"><a href="<?php echo $rootpath; ?>business-idea-detail.php?id=<?php echo $rs["CompanyID"]; ?>">อ่านต่อ</a></span></p>
 				</div>
 <?php
 			}

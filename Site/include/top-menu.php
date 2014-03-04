@@ -75,6 +75,7 @@
 					<br/>
 					<span id="sub-memu">JobHD</span></a>
 				</li>
+				
 				<li>
 					<a href="find-job.php">หางาน
 					<br/>
@@ -83,7 +84,7 @@
 				<li>
 					<a href="business-idea.php">ไอเดียธุรกิจ
 					<br/>
-					<span id="sub-memu">ไอเดียแนะนำ</span></a>
+					<span id="sub-memu">ไอเดีย</span></a>
 				</li>
 				<li>
 					<a href="advertisement-rate.php">อัตราโฆษณา
